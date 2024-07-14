@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E&J Tour</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header_nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.header_nav a:hover {
+    text-decoration: underline;
+}
+
+.main {
+    padding: 20px;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851;
+}
+.Passeio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    background-color: #fff;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card p {
+    padding: 16px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.card h3 {
+    padding: 16px;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+    </style>
+<body>
+    <header class="header">
+        <div class="header_img">
+            <img src="" alt="">
+        </div>
+
+        <nav class="header_nav">
+            <a href="#">Home</a>
+            <a href="#Transfer">Transporte</a>
+            <a href="#Tour">Passeios</a>
+            <a href="#tour_package">Pacotes</a>
+            <a href="Find_out_more">Descubra</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="Home">
+            <div class="home_page">
+                <h3>Conecte-se com a natureza!</h3>
+                <p>
+                    Foz do Iguaçu possui paisagens incomparáveis e de renome mundial,
+                    como as Cataratas do Iguaçu, que são uma das Novas Sete Maravilhas do Mundo,
+                    e a Itaipu Binacional, que é considerada uma das Sete Maravilhas do Mundo Moderno.
+                </p>
+            </div>
+        </div>
+
+        <!-- colocar imagens dos pontos turisticos
+        <div class="home_img">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+        -->
+
+        <a class="whatsapp-button" href="https://api.whatsapp.com/send?phone=45999023154&text=Olá,%20gostaria%20de%20mais%20informações." target="_blank">
+            Contate-nos pelo WhatsApp
+        </a>
+
+        <div class="transfer_people">
+            <h4>Transporte!</h4>
+            <p>
+                Oferecemos motoristas altamente qualificados, garantindo uma experiência de transporte superior e fornecendo informações detalhadas sobre os pontos turísticos.
+            </p>
+        </div>
+
+        <div class="Passeio">
+            <div class="card Cataratas">
+                <h3>Cataratas do Iguaçu</h3>
+                <img src="" alt="Cataratas do Iguaçu">
+                <p>As Cataratas do Iguaçu são uma das Novas Sete Maravilhas da Natureza, 
+                    localizadas no Parque Nacional do Iguaçu. Com mais de 270 quedas d'água, 
+                    oferecem vistas espetaculares e trilhas para caminhada, 
+                    como a Trilha das Cataratas e a Trilha do Poço Preto. 
+                    Os passeios de barco do Macuco Safari proporcionam uma experiência
+                    emocionante ao navegar próximo às quedas.</p>
+            </div>
+
+            <div class="card bird_park">
+                <h3>Parque das Aves</h3>
+                <img src="" alt="Parque das Aves">
+                <p>O Parque das Aves é um santuário dedicado à conservação e reabilitação de aves 
+                    nativas e exóticas. Com mais de 1.300 aves de 140 espécies diferentes, 
+                    os visitantes podem caminhar por viveiros e observar aves em seus habitats naturais. 
+                    O parque também oferece a oportunidade de interagir com algumas aves e aprender 
+                    sobre a importância da preservação.</p>
+            </div>
+
+            <div class="card Itaipu">
+                <h3>Itaipu Binacional</h3>
+                <img src="" alt="Itaipu Binacional">
+                <p>A usina hidrelétrica de Itaipu é uma das maiores do mundo e oferece vários tipos de visitas guiadas. 
+                O Circuito Especial permite que os visitantes conheçam as áreas internas da usina, 
+                enquanto a Visita Panorâmica oferece uma visão externa impressionante da barragem. 
+                À noite, o espetáculo de Iluminação da Barragem é imperdível.</p>
+            </div>
+
+            <div class="card Landmark_of_the_Three_Borders">
+                <h3>Marco das Três Fronteiras</h3>
+                <img src="" alt="Marco das Três Fronteiras">
+                <p>
+                    O Marco das Três Fronteiras é o ponto onde os rios Iguaçu e Paraná se encontram, 
+                    marcando a divisa entre Brasil, Argentina e Paraguai. 
+                    O local possui um monumento e oferece uma vista panorâmica única, 
+                    além de apresentações culturais que celebram a integração entre os três países.
+                </p>
+            </div>
+
+            <div class="card Budhist_temple">
+                <h3>Templo Budista</h3>
+                <img src="" alt="Templo Budista">
+                <p>O Templo Budista de Foz do Iguaçu é um lugar de paz e reflexão, 
+                    com belos jardins e mais de 120 estátuas de Buda. 
+                    A arquitetura do templo e a tranquilidade do ambiente proporcionam uma experiência espiritual enriquecedora.
+                </p>
+            </div>
+
+            <div class="card mosque">
+                <h3>Mesquita Omar Ibn Al-Khattab</h3>
+                <img src="" alt="Mesquita Omar Ibn Al-Khattab">
+                <p>
+                    A Mesquita Omar Ibn Al-Khattab é um importante centro cultural e religioso para a comunidade islâmica local. 
+                    Com uma arquitetura impressionante, 
+                    oferece visitas guiadas que permitem aprender sobre a cultura islâmica e a importância da mesquita para a comunidade.
+                </p>
+            </div>
+
+            <div class="card ecomuseum">
+                <h3>Ecomuseu de Itaipu</h3>
+                <img src="" alt="Ecomuseu de Itaipu">
+                <p>O Ecomuseu de Itaipu apresenta exposições sobre a história, cultura e biodiversidade da região,
+                 além de destacar a construção da usina de Itaipu. 
+                É um ótimo lugar para aprender sobre a importância da conservação ambiental e o desenvolvimento sustentável.
+                </p>
+            </div>
+
+            <div class="card Dreamland">
+                <h3>Dreamland</h3>
+                <img src="" alt="Dreamland">
+                <p>Dreamland é um complexo de entretenimento que inclui o Museu de Cera, 
+                    com réplicas de celebridades e personagens famosos, e o Vale dos Dinossauros, 
+                    com esculturas em tamanho real de dinossauros. É uma atração divertida para famílias e crianças.
+                </p>
+            </div>
+
+            <div class="card Biological_Refuge">
+                <h3>Refúgio Biológico Bela Vista</h3>
+                <img src="" alt="Refúgio Biológico Bela Vista">
+                <p>Parte do complexo de Itaipu, o Refúgio Biológico Bela Vista é uma área de conservação 
+                    que abriga espécies de fauna e flora ameaçadas de extinção. Oferece trilhas guiadas e a 
+                    oportunidade de observar animais como jaguares, aves e répteis em seu habitat natural.
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
