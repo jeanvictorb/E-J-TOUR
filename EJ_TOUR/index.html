@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E&J Tour</title>
     <link rel="stylesheet" href="./index.css">
-    <script src="./index.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <header class="header">
         <nav class="header_nav">
-            <a href="#">Home</a>
+            <a href="#Home">Home</a>
             <a href="#Transfer">Transporte</a>
             <a href="#Tour">Passeios</a>
-            <a href="#tour_package">Pacotes</a>
-            <a href="Find_out_more">Descubra</a>
+            <a href="#contate">Contatos</a>
         </nav>
     </header>
 
     <main>
-        <div class="Home">
+        <div id="Home" class="Home">
             <div class="home_page">
                 <h3>Conecte-se com a natureza!</h3>
                 <p>
@@ -29,36 +28,19 @@
                     e a Itaipu Binacional, que é considerada uma das Sete Maravilhas do Mundo Moderno.
                 </p>
             </div>
-
-            <!-- Carrossel de Imagens -->
-            <div class="carousel">
-                <div class="carousel-images">
-                    <img src="images/cataratas.jpg" alt="Cataratas do Iguaçu">
-                    <img src="images/parque_aves.jpg" alt="Parque das Aves">
-                    <img src="images/itaipu.jpg" alt="Itaipu Binacional">
-                    <img src="images/marco_tres_fronteiras.jpg" alt="Marco das Três Fronteiras">
-                    <img src="images/templo_budista.jpg" alt="Templo Budista">
-                </div>
-                <button class="carousel-button prev">&lt;</button>
-                <button class="carousel-button next">&gt;</button>
-            </div>
         </div>
 
-        <a class="whatsapp-button" href="https://api.whatsapp.com/send?phone=45999023154&text=Olá,%20gostaria%20de%20mais%20informações." target="_blank">
-            Contate-nos pelo WhatsApp
-        </a>
-
-        <div class="transfer_people">
+        <div id="Transfer" class="transfer_people">
             <h4>Transporte!</h4>
             <p>
                 Oferecemos motoristas altamente qualificados, garantindo uma experiência de transporte superior e fornecendo informações detalhadas sobre os pontos turísticos.
             </p>
         </div>
 
-        <div class="Passeio">
+        <div id="Tour" class="Passeio">
             <div class="card Cataratas">
                 <h3>Cataratas do Iguaçu</h3>
-                <img src="images/cataratas.jpg" alt="Cataratas do Iguaçu">
+                <img src="img/cataratas.jpg" alt="Cataratas do Iguaçu" class="img_card">
                 <p>As Cataratas do Iguaçu são uma das Novas Sete Maravilhas da Natureza, 
                     localizadas no Parque Nacional do Iguaçu. Com mais de 270 quedas d'água, 
                     oferecem vistas espetaculares e trilhas para caminhada, 
@@ -69,7 +51,7 @@
 
             <div class="card bird_park">
                 <h3>Parque das Aves</h3>
-                <img src="images/parque_aves.jpg" alt="Parque das Aves">
+                <img src="img/bird_park.jpg" alt="Parque das Aves">
                 <p>O Parque das Aves é um santuário dedicado à conservação e reabilitação de aves 
                     nativas e exóticas. Com mais de 1.300 aves de 140 espécies diferentes, 
                     os visitantes podem caminhar por viveiros e observar aves em seus habitats naturais. 
@@ -79,7 +61,7 @@
 
             <div class="card Itaipu">
                 <h3>Itaipu Binacional</h3>
-                <img src="images/itaipu.jpg" alt="Itaipu Binacional">
+                <img src="img/itaipu.jpg" alt="Itaipu Binacional">
                 <p>A usina hidrelétrica de Itaipu é uma das maiores do mundo e oferece vários tipos de visitas guiadas. 
                 O Circuito Especial permite que os visitantes conheçam as áreas internas da usina, 
                 enquanto a Visita Panorâmica oferece uma visão externa impressionante da barragem. 
@@ -88,7 +70,7 @@
 
             <div class="card Landmark_of_the_Three_Borders">
                 <h3>Marco das Três Fronteiras</h3>
-                <img src="images/marco_tres_fronteiras.jpg" alt="Marco das Três Fronteiras">
+                <img src="img/marco_tres.jpg" alt="Marco das Três Fronteiras">
                 <p>
                     O Marco das Três Fronteiras é o ponto onde os rios Iguaçu e Paraná se encontram, 
                     marcando a divisa entre Brasil, Argentina e Paraguai. 
@@ -99,12 +81,18 @@
 
             <div class="card Budhist_temple">
                 <h3>Templo Budista</h3>
-                <img src="images/templo_budista.jpg" alt="Templo Budista">
+                <img src="img/templo.jpg" alt="Templo Budista">
                 <p>O Templo Budista de Foz do Iguaçu é um lugar de paz e reflexão, 
                     com belos jardins e mais de 120 estátuas de Buda. 
                     A arquitetura do templo e a tranquilidade do ambiente proporcionam uma experiência espiritual enriquecedora.
                 </p>
             </div>
+        </div>
+
+        <div id="contate">
+            <a class="whatsapp-button" href="https://api.whatsapp.com/send?phone=45999023154&text=Olá,%20gostaria%20de%20mais%20informações." target="_blank">
+                <i class="fab fa-whatsapp"></i> Contate-nos pelo WhatsApp
+            </a>
         </div>
     </main>
 </body>
