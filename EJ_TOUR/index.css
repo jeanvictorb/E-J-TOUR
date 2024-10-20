@@ -9,7 +9,8 @@ body {
 .header {
     background-color: #00796b; 
     color: white;
-    padding: 10px 0;
+    position: fixed;
+    padding: 10px 371px;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
 }
@@ -43,6 +44,10 @@ body {
     margin-left: 40px;
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 1000; 
 }
 
 .whatsapp-button:hover {
@@ -103,3 +108,57 @@ body {
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
+.Pacotes_Promocionais {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Pacotes_Promocionais .card {
+    width: 300px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 16px;
+}
+
+.Pacotes_Promocionais .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.Pacotes_Promocionais h2 {
+    width: 100%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #00796b;
+    padding-bottom: 20px;
+}
+
+.Pacotes_Promocionais h3 {
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #00796b;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.Pacotes_Promocionais p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    text-align: center;
+}
+
