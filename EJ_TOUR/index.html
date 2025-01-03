@@ -4,39 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E&J Tour</title>
-    <link rel="stylesheet" href="./index.css">
-
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+    
     <header class="header">
-        <nav class="header_nav">
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="dropdown">
             <a href="#Home">Home</a>
             <a href="#Transfer">Transporte</a>
             <a href="#Tour">Passeios</a>
-            <a href="#Pacotes">Pacotes Promocionais</a>
-            <a href="#contate">Contatos</a>
+            <a href="#Pacotes">Pacotes</a>
+            <a href="#Contato">Contato</a>
         </nav>
     </header>
 
     <main>
-        <div id="Home" class="Home">
-            <div class="home_page">
-                <h3>Conecte-se com a natureza!</h3>
-                <p>
-                    Foz do Iguaçu possui paisagens incomparáveis e de renome mundial,
-                    como as Cataratas do Iguaçu, que são uma das Novas Sete Maravilhas do Mundo,
-                    e a Itaipu Binacional, que é considerada uma das Sete Maravilhas do Mundo Moderno.
-                </p>
-            </div>
-        </div>
+        <section id="Home" class="hero">
+            <h1>Bem-vindo ao E&J Tour</h1>
+            <p>Descubra as maravilhas de Foz do Iguaçu com conforto e qualidade.</p>
+        </section>
 
-        <div id="Transfer" class="transfer_people">
-            <h4>Transporte!</h4>
-            <p>
-                Oferecemos motoristas altamente qualificados, garantindo uma experiência de transporte superior e fornecendo informações detalhadas sobre os pontos turísticos.
-            </p>
-        </div>
+        <section id="Transfer">
+            <h2>Transporte</h2>
+            <p>Oferecemos transporte com motoristas experientes e veículos confortáveis.</p>
+        </section>
+
+      
 
         <div id="Tour" class="Passeio">
             <div class="card Cataratas">
@@ -90,7 +87,7 @@
             </div>
         </div>
 
-        <!-- Seção de Pacotes Promocionais -->
+
         <div id="Pacotes" class="Pacotes_Promocionais">
             <h2>Pacotes Promocionais</h2>
             <div class="card">
@@ -116,5 +113,6 @@
             </a>
         </div>
     </main>
+    <link rel="stylesheet" href="index.js">
 </body>
 </html>
