@@ -74,7 +74,7 @@ body {
     font-size: 1.2em;
 }
 
-
+/*Card*/
 .cards-section {
     display: flex;
     justify-content: center;
@@ -109,25 +109,6 @@ body {
     color: #555;
 }
 
-
-.whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    font-size: 1.2em;
-    border-radius: 50px;
-    padding: 15px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.whatsapp-button:hover {
-    background: #1DA851;
-}
 
 .Passeio {
     display: flex;
@@ -184,7 +165,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
+/*Pacotes*/
 .Pacotes_Promocionais {
     display: flex;
     flex-wrap: wrap;
@@ -237,3 +218,27 @@ body {
     text-align: center;
 }
 
+.footer {
+    background-color: #003530;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-social a {
+    color: #FFD700;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
