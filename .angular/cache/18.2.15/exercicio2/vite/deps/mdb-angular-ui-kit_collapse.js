@@ -15,7 +15,8 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵdirectiveInject
-} from "./chunk-4QHR2JEP.js";
+} from "./chunk-GDHULENZ.js";
+import "./chunk-WDMUDEB6.js";
 
 // node_modules/mdb-angular-ui-kit/fesm2022/mdb-angular-ui-kit-collapse.mjs
 var TRANSITION_TIME = 350;

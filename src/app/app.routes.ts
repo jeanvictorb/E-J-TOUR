@@ -5,7 +5,7 @@ import { PasseioFromComponent } from './components/passeio/passeio-from/passeio-
 import { IndexComponent } from './components/layout/index/index.component';
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'principal', pathMatch: 'full'},
+    { path: '', redirectTo: 'principal/index', pathMatch: 'full' },
     {path: "principal", component: PrincipalComponent, children: [
         {path: 'index', component: IndexComponent},
         {path: 'pacotes', component: PacoteFromComponent},
