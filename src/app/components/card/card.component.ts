@@ -12,5 +12,11 @@ export class CardComponent {
   @Input() descricao: string = '';
   @Input() imagem: string = '';
   @Input() atividades: string = '';
+  @Input() whatsNumero: string = '';
+
+  get whatsappUrl(): string {
+    const mensagem = `Olá, gostaria de saber mais sobre ${this.titulo}`;
+    return `https://api.whatsapp.com/send?phone=${this.whatsNumero}&text=${encodeURIComponent(mensagem)}`;
+  }
 
 }

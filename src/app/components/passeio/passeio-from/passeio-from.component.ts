@@ -71,7 +71,7 @@ export class PasseioFromComponent {
       titulo: 'Kattamaram II',
       descricao:
         'Navegue pelas águas do Rio Iguaçu em um luxuoso barco, desfrutando de vistas panorâmicas das margens brasileiras, argentinas e paraguaias, com opção de buffet a bordo.',
-      imagem: '',
+      imagem: './../assets/imgCard/katamaram.png',
     },
     {
       titulo: 'Macuco Safari',
