@@ -12,7 +12,7 @@ export class CardComponent {
   @Input() descricao: string = '';
   @Input() imagem: string = '';
   @Input() atividades: string = '';
-  @Input() whatsNumero: string = '';
+  @Input() whatsNumero: string = '5545999492697';
 
   get whatsappUrl(): string {
     const mensagem = `Olá, gostaria de saber mais sobre ${this.titulo}`;

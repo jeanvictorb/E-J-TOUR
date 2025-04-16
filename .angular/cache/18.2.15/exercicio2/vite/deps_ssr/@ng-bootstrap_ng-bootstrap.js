@@ -5,19 +5,13 @@ import {
 } from "./chunk-234BFN4O.js";
 import {
   DOCUMENT,
-  FormStyle,
-  NgForOf,
-  NgIf,
   NgTemplateOutlet,
   PercentPipe,
-  TranslationWidth,
   formatDate,
-  getLocaleDayNames,
-  getLocaleDayPeriods,
-  getLocaleMonthNames,
   isPlatformBrowser
 } from "./chunk-D3JV2RY4.js";
 import {
+  AfterRenderPhase,
   ApplicationRef,
   Attribute,
   ChangeDetectionStrategy,
@@ -30,9 +24,6 @@ import {
   ElementRef,
   EnvironmentInjector,
   EventEmitter,
-  Host,
-  HostBinding,
-  Inject,
   Injectable,
   InjectionToken,
   Injector,
@@ -40,16 +31,15 @@ import {
   LOCALE_ID,
   NgModule,
   NgZone,
-  Optional,
   Output,
   PLATFORM_ID,
-  Renderer2,
-  RendererFactory2,
   TemplateRef,
   ViewChild,
   ViewChildren,
   ViewContainerRef,
   ViewEncapsulation$1,
+  afterNextRender,
+  afterRender,
   assertInInjectionContext,
   createComponent,
   forwardRef,
@@ -67,6 +57,7 @@ import {
   ɵɵclassMap,
   ɵɵclassMapInterpolate2,
   ɵɵclassProp,
+  ɵɵconditional,
   ɵɵcontentQuery,
   ɵɵdefineComponent,
   ɵɵdefineDirective,
@@ -85,7 +76,6 @@ import {
   ɵɵi18n,
   ɵɵi18nApply,
   ɵɵi18nExp,
-  ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵlistener,
   ɵɵloadQuery,
@@ -95,13 +85,15 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵproperty,
-  ɵɵpropertyInterpolate,
-  ɵɵpropertyInterpolate1,
   ɵɵpureFunction1,
   ɵɵpureFunction2,
   ɵɵpureFunction3,
   ɵɵqueryRefresh,
   ɵɵreference,
+  ɵɵrepeater,
+  ɵɵrepeaterCreate,
+  ɵɵrepeaterTrackByIdentity,
+  ɵɵrepeaterTrackByIndex,
   ɵɵresetView,
   ɵɵrestoreView,
   ɵɵstyleProp,
@@ -117,10 +109,6 @@ import {
   __spreadValues,
   __toESM
 } from "./chunk-NQ4HTGF6.js";
-
-// node_modules/@ng-bootstrap/ng-bootstrap/fesm2022/ng-bootstrap.mjs
-var import_rxjs2 = __toESM(require_cjs(), 1);
-var import_operators2 = __toESM(require_operators(), 1);
 
 // node_modules/@angular/core/fesm2022/rxjs-interop.mjs
 var import_rxjs = __toESM(require_cjs(), 1);
@@ -138,6 +126,10 @@ function takeUntilDestroyed(destroyRef) {
     return source.pipe((0, import_operators.takeUntil)(destroyed$));
   };
 }
+
+// node_modules/@ng-bootstrap/ng-bootstrap/fesm2022/ng-bootstrap.mjs
+var import_rxjs2 = __toESM(require_cjs(), 1);
+var import_operators2 = __toESM(require_operators(), 1);
 
 // node_modules/@popperjs/core/lib/enums.js
 var top = "top";
@@ -1604,81 +1596,12 @@ var createPopper3 = popperGenerator({
 });
 
 // node_modules/@ng-bootstrap/ng-bootstrap/fesm2022/ng-bootstrap.mjs
-var _c0 = (a0, a1) => ({
-  $implicit: a0,
-  opened: a1
-});
-function NgbAccordion_ng_template_0_ng_template_2_Template(rf, ctx) {
-}
-function NgbAccordion_ng_template_0_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "button", 3);
-    ɵɵtext(1);
-    ɵɵtemplate(2, NgbAccordion_ng_template_0_ng_template_2_Template, 0, 0, "ng-template", 4);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const panel_r1 = ctx.$implicit;
-    ɵɵproperty("ngbPanelToggle", panel_r1);
-    ɵɵadvance();
-    ɵɵtextInterpolate1(" ", panel_r1.title, " ");
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", panel_r1.titleTpl == null ? null : panel_r1.titleTpl.templateRef);
-  }
-}
-function NgbAccordion_ng_template_2_ng_template_2_Template(rf, ctx) {
-}
-function NgbAccordion_ng_template_2_div_3_ng_template_2_Template(rf, ctx) {
-}
-function NgbAccordion_ng_template_2_div_3_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r2 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 8);
-    ɵɵlistener("ngbRef", function NgbAccordion_ng_template_2_div_3_Template_div_ngbRef_0_listener($event) {
-      ɵɵrestoreView(_r2);
-      const panel_r3 = ɵɵnextContext().$implicit;
-      return ɵɵresetView(panel_r3.panelDiv = $event);
-    });
-    ɵɵelementStart(1, "div", 9);
-    ɵɵtemplate(2, NgbAccordion_ng_template_2_div_3_ng_template_2_Template, 0, 0, "ng-template", 4);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const panel_r3 = ɵɵnextContext().$implicit;
-    ɵɵpropertyInterpolate("id", panel_r3.id);
-    ɵɵattribute("aria-labelledby", panel_r3.id + "-header");
-    ɵɵadvance(2);
-    ɵɵproperty("ngTemplateOutlet", (panel_r3.contentTpl == null ? null : panel_r3.contentTpl.templateRef) || null);
-  }
-}
-function NgbAccordion_ng_template_2_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div")(1, "div", 5);
-    ɵɵtemplate(2, NgbAccordion_ng_template_2_ng_template_2_Template, 0, 0, "ng-template", 6);
-    ɵɵelementEnd();
-    ɵɵtemplate(3, NgbAccordion_ng_template_2_div_3_Template, 3, 3, "div", 7);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const panel_r3 = ctx.$implicit;
-    const ctx_r3 = ɵɵnextContext();
-    const t_r5 = ɵɵreference(1);
-    ɵɵclassMap("accordion-item " + (panel_r3.cardClass || ""));
-    ɵɵadvance();
-    ɵɵclassMap("accordion-header " + (panel_r3.type ? "bg-" + panel_r3.type : ctx_r3.type ? "bg-" + ctx_r3.type : ""));
-    ɵɵpropertyInterpolate1("id", "", panel_r3.id, "-header");
-    ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", (panel_r3.headerTpl == null ? null : panel_r3.headerTpl.templateRef) || t_r5)("ngTemplateOutletContext", ɵɵpureFunction2(9, _c0, panel_r3, panel_r3.isOpen));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r3.destroyOnHide || panel_r3.isOpen || panel_r3.transitionRunning);
-  }
-}
-var _c1 = ["*"];
-function NgbAlert_button_1_Template(rf, ctx) {
+var _c0 = ["*"];
+function NgbAlert_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "button", 1);
-    ɵɵlistener("click", function NgbAlert_button_1_Template_button_click_0_listener() {
+    ɵɵlistener("click", function NgbAlert_Conditional_1_Template_button_click_0_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.close());
@@ -1686,11 +1609,11 @@ function NgbAlert_button_1_Template(rf, ctx) {
     ɵɵelementEnd();
   }
 }
-function NgbCarousel_button_1_Template(rf, ctx) {
+function NgbCarousel_For_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 9);
-    ɵɵlistener("click", function NgbCarousel_button_1_Template_button_click_0_listener() {
+    ɵɵelementStart(0, "button", 7);
+    ɵɵlistener("click", function NgbCarousel_For_2_Template_button_click_0_listener() {
       const slide_r2 = ɵɵrestoreView(_r1).$implicit;
       const ctx_r2 = ɵɵnextContext();
       ctx_r2.focus();
@@ -1705,64 +1628,69 @@ function NgbCarousel_button_1_Template(rf, ctx) {
     ɵɵattribute("aria-labelledby", "slide-" + slide_r2.id)("aria-controls", "slide-" + slide_r2.id)("aria-selected", slide_r2.id === ctx_r2.activeId);
   }
 }
-function NgbCarousel_div_3_ng_template_3_Template(rf, ctx) {
+function NgbCarousel_For_5_ng_template_3_Template(rf, ctx) {
 }
-function NgbCarousel_div_3_Template(rf, ctx) {
+function NgbCarousel_For_5_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 10)(1, "span", 11);
+    ɵɵelementStart(0, "div", 6)(1, "span", 8);
     ɵɵi18n(2, 0);
     ɵɵelementEnd();
-    ɵɵtemplate(3, NgbCarousel_div_3_ng_template_3_Template, 0, 0, "ng-template", 12);
+    ɵɵtemplate(3, NgbCarousel_For_5_ng_template_3_Template, 0, 0, "ng-template", 9);
     ɵɵelementEnd();
   }
   if (rf & 2) {
     const slide_r4 = ctx.$implicit;
-    const i_r5 = ctx.index;
-    const c_r6 = ctx.count;
+    const ɵ$index_8_r5 = ctx.$index;
+    const ɵ$count_8_r6 = ctx.$count;
     ɵɵproperty("id", "slide-" + slide_r4.id);
     ɵɵadvance(2);
-    ɵɵi18nExp(i_r5 + 1)(c_r6);
+    ɵɵi18nExp(ɵ$index_8_r5 + 1)(ɵ$count_8_r6);
     ɵɵi18nApply(2);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", slide_r4.tplRef);
+    ɵɵproperty("ngTemplateOutlet", slide_r4.templateRef);
   }
 }
-function NgbCarousel_button_4_Template(rf, ctx) {
+function NgbCarousel_Conditional_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 13);
-    ɵɵlistener("click", function NgbCarousel_button_4_Template_button_click_0_listener() {
+    ɵɵelementStart(0, "button", 10);
+    ɵɵlistener("click", function NgbCarousel_Conditional_6_Template_button_click_0_listener() {
       ɵɵrestoreView(_r7);
       const ctx_r2 = ɵɵnextContext();
       return ɵɵresetView(ctx_r2.arrowLeft());
     });
-    ɵɵelement(1, "span", 14);
-    ɵɵelementStart(2, "span", 11);
+    ɵɵelement(1, "span", 11);
+    ɵɵelementStart(2, "span", 12);
     ɵɵi18n(3, 1);
     ɵɵelementEnd()();
-  }
-}
-function NgbCarousel_button_5_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r8 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 15);
-    ɵɵlistener("click", function NgbCarousel_button_5_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r8);
+    ɵɵelementStart(4, "button", 13);
+    ɵɵlistener("click", function NgbCarousel_Conditional_6_Template_button_click_4_listener() {
+      ɵɵrestoreView(_r7);
       const ctx_r2 = ɵɵnextContext();
       return ɵɵresetView(ctx_r2.arrowRight());
     });
-    ɵɵelement(1, "span", 16);
-    ɵɵelementStart(2, "span", 11);
-    ɵɵi18n(3, 2);
+    ɵɵelement(5, "span", 14);
+    ɵɵelementStart(6, "span", 12);
+    ɵɵi18n(7, 2);
     ɵɵelementEnd()();
   }
+  if (rf & 2) {
+    const ctx_r2 = ɵɵnextContext();
+    ɵɵattribute("aria-labelledby", ctx_r2.id + "-previous");
+    ɵɵadvance(2);
+    ɵɵproperty("id", ctx_r2.id + "-previous");
+    ɵɵadvance(2);
+    ɵɵattribute("aria-labelledby", ctx_r2.id + "-next");
+    ɵɵadvance(2);
+    ɵɵproperty("id", ctx_r2.id + "-next");
+  }
 }
-var _c2 = ["ngbDatepickerDayView", ""];
-var _c3 = ["month"];
-var _c4 = ["year"];
-function NgbDatepickerNavigationSelect_option_2_Template(rf, ctx) {
+var _c1 = ["ngbDatepickerDayView", ""];
+var _c2 = ["month"];
+var _c3 = ["year"];
+function NgbDatepickerNavigationSelect_For_3_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "option", 5);
+    ɵɵelementStart(0, "option", 3);
     ɵɵtext(1);
     ɵɵelementEnd();
   }
@@ -1775,9 +1703,9 @@ function NgbDatepickerNavigationSelect_option_2_Template(rf, ctx) {
     ɵɵtextInterpolate(ctx_r2.i18n.getMonthShortName(m_r2, ctx_r2.date.year));
   }
 }
-function NgbDatepickerNavigationSelect_option_5_Template(rf, ctx) {
+function NgbDatepickerNavigationSelect_For_7_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "option", 5);
+    ɵɵelementStart(0, "option", 3);
     ɵɵtext(1);
     ɵɵelementEnd();
   }
@@ -1789,11 +1717,11 @@ function NgbDatepickerNavigationSelect_option_5_Template(rf, ctx) {
     ɵɵtextInterpolate(ctx_r2.i18n.getYearNumerals(y_r4));
   }
 }
-function NgbDatepickerNavigation_ngb_datepicker_navigation_select_3_Template(rf, ctx) {
+function NgbDatepickerNavigation_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "ngb-datepicker-navigation-select", 7);
-    ɵɵlistener("select", function NgbDatepickerNavigation_ngb_datepicker_navigation_select_3_Template_ngb_datepicker_navigation_select_select_0_listener($event) {
+    ɵɵelementStart(0, "ngb-datepicker-navigation-select", 6);
+    ɵɵlistener("select", function NgbDatepickerNavigation_Conditional_3_Template_ngb_datepicker_navigation_select_select_0_listener($event) {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.select.emit($event));
@@ -1805,47 +1733,47 @@ function NgbDatepickerNavigation_ngb_datepicker_navigation_select_3_Template(rf,
     ɵɵproperty("date", ctx_r1.date)("disabled", ctx_r1.disabled)("months", ctx_r1.selectBoxes.months)("years", ctx_r1.selectBoxes.years);
   }
 }
-function NgbDatepickerNavigation_4_ng_template_0_div_0_Template(rf, ctx) {
+function NgbDatepickerNavigation_Conditional_4_For_1_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "div", 11);
+    ɵɵelement(0, "div", 7);
   }
 }
-function NgbDatepickerNavigation_4_ng_template_0_div_3_Template(rf, ctx) {
+function NgbDatepickerNavigation_Conditional_4_For_1_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "div", 11);
+    ɵɵelement(0, "div", 7);
   }
 }
-function NgbDatepickerNavigation_4_ng_template_0_Template(rf, ctx) {
+function NgbDatepickerNavigation_Conditional_4_For_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, NgbDatepickerNavigation_4_ng_template_0_div_0_Template, 1, 0, "div", 9);
-    ɵɵelementStart(1, "div", 10);
+    ɵɵtemplate(0, NgbDatepickerNavigation_Conditional_4_For_1_Conditional_0_Template, 1, 0, "div", 7);
+    ɵɵelementStart(1, "div", 8);
     ɵɵtext(2);
     ɵɵelementEnd();
-    ɵɵtemplate(3, NgbDatepickerNavigation_4_ng_template_0_div_3_Template, 1, 0, "div", 9);
+    ɵɵtemplate(3, NgbDatepickerNavigation_Conditional_4_For_1_Conditional_3_Template, 1, 0, "div", 7);
   }
   if (rf & 2) {
     const month_r3 = ctx.$implicit;
-    const i_r4 = ctx.index;
+    const ɵ$index_11_r4 = ctx.$index;
     const ctx_r1 = ɵɵnextContext(2);
-    ɵɵproperty("ngIf", i_r4 > 0);
+    ɵɵconditional(ɵ$index_11_r4 > 0 ? 0 : -1);
     ɵɵadvance(2);
     ɵɵtextInterpolate1(" ", ctx_r1.i18n.getMonthLabel(month_r3.firstDate), " ");
     ɵɵadvance();
-    ɵɵproperty("ngIf", i_r4 !== ctx_r1.months.length - 1);
+    ɵɵconditional(ɵ$index_11_r4 !== ctx_r1.months.length - 1 ? 3 : -1);
   }
 }
-function NgbDatepickerNavigation_4_Template(rf, ctx) {
+function NgbDatepickerNavigation_Conditional_4_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, NgbDatepickerNavigation_4_ng_template_0_Template, 4, 3, "ng-template", 8);
+    ɵɵrepeaterCreate(0, NgbDatepickerNavigation_Conditional_4_For_1_Template, 4, 3, null, null, ɵɵrepeaterTrackByIdentity);
   }
   if (rf & 2) {
     const ctx_r1 = ɵɵnextContext();
-    ɵɵproperty("ngForOf", ctx_r1.months);
+    ɵɵrepeater(ctx_r1.months);
   }
 }
-function NgbDatepickerMonth_div_0_div_1_Template(rf, ctx) {
+function NgbDatepickerMonth_Conditional_0_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 5);
+    ɵɵelementStart(0, "div", 1);
     ɵɵtext(1);
     ɵɵelementEnd();
   }
@@ -1855,9 +1783,9 @@ function NgbDatepickerMonth_div_0_div_1_Template(rf, ctx) {
     ɵɵtextInterpolate(ctx_r0.i18n.getWeekLabel());
   }
 }
-function NgbDatepickerMonth_div_0_div_2_Template(rf, ctx) {
+function NgbDatepickerMonth_Conditional_0_For_3_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 6);
+    ɵɵelementStart(0, "div", 2);
     ɵɵtext(1);
     ɵɵelementEnd();
   }
@@ -1867,23 +1795,24 @@ function NgbDatepickerMonth_div_0_div_2_Template(rf, ctx) {
     ɵɵtextInterpolate(weekday_r2);
   }
 }
-function NgbDatepickerMonth_div_0_Template(rf, ctx) {
+function NgbDatepickerMonth_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 2);
-    ɵɵtemplate(1, NgbDatepickerMonth_div_0_div_1_Template, 2, 1, "div", 3)(2, NgbDatepickerMonth_div_0_div_2_Template, 2, 1, "div", 4);
+    ɵɵelementStart(0, "div", 0);
+    ɵɵtemplate(1, NgbDatepickerMonth_Conditional_0_Conditional_1_Template, 2, 1, "div", 1);
+    ɵɵrepeaterCreate(2, NgbDatepickerMonth_Conditional_0_For_3_Template, 2, 1, "div", 2, ɵɵrepeaterTrackByIndex);
     ɵɵelementEnd();
   }
   if (rf & 2) {
     const ctx_r0 = ɵɵnextContext();
     ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r0.datepicker.showWeekNumbers);
+    ɵɵconditional(ctx_r0.datepicker.showWeekNumbers ? 1 : -1);
     ɵɵadvance();
-    ɵɵproperty("ngForOf", ctx_r0.viewModel.weekdays);
+    ɵɵrepeater(ctx_r0.viewModel.weekdays);
   }
 }
-function NgbDatepickerMonth_ng_template_1_div_0_div_1_Template(rf, ctx) {
+function NgbDatepickerMonth_For_2_Conditional_0_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 11);
+    ɵɵelementStart(0, "div", 4);
     ɵɵtext(1);
     ɵɵelementEnd();
   }
@@ -1894,11 +1823,11 @@ function NgbDatepickerMonth_ng_template_1_div_0_div_1_Template(rf, ctx) {
     ɵɵtextInterpolate(ctx_r0.i18n.getWeekNumerals(week_r3.number));
   }
 }
-function NgbDatepickerMonth_ng_template_1_div_0_div_2_ng_template_1_ng_template_0_Template(rf, ctx) {
+function NgbDatepickerMonth_For_2_Conditional_0_For_3_Conditional_1_ng_template_0_Template(rf, ctx) {
 }
-function NgbDatepickerMonth_ng_template_1_div_0_div_2_ng_template_1_Template(rf, ctx) {
+function NgbDatepickerMonth_For_2_Conditional_0_For_3_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, NgbDatepickerMonth_ng_template_1_div_0_div_2_ng_template_1_ng_template_0_Template, 0, 0, "ng-template", 14);
+    ɵɵtemplate(0, NgbDatepickerMonth_For_2_Conditional_0_For_3_Conditional_1_ng_template_0_Template, 0, 0, "ng-template", 7);
   }
   if (rf & 2) {
     const day_r5 = ɵɵnextContext().$implicit;
@@ -1906,17 +1835,17 @@ function NgbDatepickerMonth_ng_template_1_div_0_div_2_ng_template_1_Template(rf,
     ɵɵproperty("ngTemplateOutlet", ctx_r0.datepicker.dayTemplate)("ngTemplateOutletContext", day_r5.context);
   }
 }
-function NgbDatepickerMonth_ng_template_1_div_0_div_2_Template(rf, ctx) {
+function NgbDatepickerMonth_For_2_Conditional_0_For_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 12);
-    ɵɵlistener("click", function NgbDatepickerMonth_ng_template_1_div_0_div_2_Template_div_click_0_listener($event) {
+    ɵɵelementStart(0, "div", 6);
+    ɵɵlistener("click", function NgbDatepickerMonth_For_2_Conditional_0_For_3_Template_div_click_0_listener($event) {
       const day_r5 = ɵɵrestoreView(_r4).$implicit;
       const ctx_r0 = ɵɵnextContext(3);
       ctx_r0.doSelect(day_r5);
       return ɵɵresetView($event.preventDefault());
     });
-    ɵɵtemplate(1, NgbDatepickerMonth_ng_template_1_div_0_div_2_ng_template_1_Template, 1, 2, "ng-template", 13);
+    ɵɵtemplate(1, NgbDatepickerMonth_For_2_Conditional_0_For_3_Conditional_1_Template, 1, 2, null, 7);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -1925,36 +1854,37 @@ function NgbDatepickerMonth_ng_template_1_div_0_div_2_Template(rf, ctx) {
     ɵɵproperty("tabindex", day_r5.tabindex);
     ɵɵattribute("aria-label", day_r5.ariaLabel);
     ɵɵadvance();
-    ɵɵproperty("ngIf", !day_r5.hidden);
+    ɵɵconditional(!day_r5.hidden ? 1 : -1);
   }
 }
-function NgbDatepickerMonth_ng_template_1_div_0_Template(rf, ctx) {
+function NgbDatepickerMonth_For_2_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 8);
-    ɵɵtemplate(1, NgbDatepickerMonth_ng_template_1_div_0_div_1_Template, 2, 1, "div", 9)(2, NgbDatepickerMonth_ng_template_1_div_0_div_2_Template, 2, 9, "div", 10);
+    ɵɵelementStart(0, "div", 3);
+    ɵɵtemplate(1, NgbDatepickerMonth_For_2_Conditional_0_Conditional_1_Template, 2, 1, "div", 4);
+    ɵɵrepeaterCreate(2, NgbDatepickerMonth_For_2_Conditional_0_For_3_Template, 2, 9, "div", 5, ɵɵrepeaterTrackByIdentity);
     ɵɵelementEnd();
   }
   if (rf & 2) {
     const week_r3 = ɵɵnextContext().$implicit;
     const ctx_r0 = ɵɵnextContext();
     ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r0.datepicker.showWeekNumbers);
+    ɵɵconditional(ctx_r0.datepicker.showWeekNumbers ? 1 : -1);
     ɵɵadvance();
-    ɵɵproperty("ngForOf", week_r3.days);
+    ɵɵrepeater(week_r3.days);
   }
 }
-function NgbDatepickerMonth_ng_template_1_Template(rf, ctx) {
+function NgbDatepickerMonth_For_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, NgbDatepickerMonth_ng_template_1_div_0_Template, 3, 2, "div", 7);
+    ɵɵtemplate(0, NgbDatepickerMonth_For_2_Conditional_0_Template, 4, 1, "div", 3);
   }
   if (rf & 2) {
     const week_r3 = ctx.$implicit;
-    ɵɵproperty("ngIf", !week_r3.collapsed);
+    ɵɵconditional(!week_r3.collapsed ? 0 : -1);
   }
 }
-var _c5 = ["defaultDayTemplate"];
-var _c6 = ["content"];
-var _c7 = (a0) => ({
+var _c4 = ["defaultDayTemplate"];
+var _c5 = ["content"];
+var _c6 = (a0) => ({
   $implicit: a0
 });
 function NgbDatepicker_ng_template_0_Template(rf, ctx) {
@@ -1970,9 +1900,9 @@ function NgbDatepicker_ng_template_0_Template(rf, ctx) {
     ɵɵproperty("date", date_r1)("currentMonth", currentMonth_r2)("selected", selected_r3)("disabled", disabled_r4)("focused", focused_r5);
   }
 }
-function NgbDatepicker_ng_template_2_div_0_div_1_Template(rf, ctx) {
+function NgbDatepicker_ng_template_2_For_1_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 13);
+    ɵɵelementStart(0, "div", 10);
     ɵɵtext(1);
     ɵɵelementEnd();
   }
@@ -1983,40 +1913,40 @@ function NgbDatepicker_ng_template_2_div_0_div_1_Template(rf, ctx) {
     ɵɵtextInterpolate1(" ", ctx_r6.i18n.getMonthLabel(month_r6.firstDate), " ");
   }
 }
-function NgbDatepicker_ng_template_2_div_0_Template(rf, ctx) {
+function NgbDatepicker_ng_template_2_For_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 10);
-    ɵɵtemplate(1, NgbDatepicker_ng_template_2_div_0_div_1_Template, 2, 1, "div", 11);
-    ɵɵelement(2, "ngb-datepicker-month", 12);
+    ɵɵelementStart(0, "div", 9);
+    ɵɵtemplate(1, NgbDatepicker_ng_template_2_For_1_Conditional_1_Template, 2, 1, "div", 10);
+    ɵɵelement(2, "ngb-datepicker-month", 11);
     ɵɵelementEnd();
   }
   if (rf & 2) {
     const month_r6 = ctx.$implicit;
     const ctx_r6 = ɵɵnextContext(2);
     ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r6.navigation === "none" || ctx_r6.displayMonths > 1 && ctx_r6.navigation === "select");
+    ɵɵconditional(ctx_r6.navigation === "none" || ctx_r6.displayMonths > 1 && ctx_r6.navigation === "select" ? 1 : -1);
     ɵɵadvance();
     ɵɵproperty("month", month_r6.firstDate);
   }
 }
 function NgbDatepicker_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, NgbDatepicker_ng_template_2_div_0_Template, 3, 2, "div", 9);
+    ɵɵrepeaterCreate(0, NgbDatepicker_ng_template_2_For_1_Template, 3, 2, "div", 9, ɵɵrepeaterTrackByIdentity);
   }
   if (rf & 2) {
     const ctx_r6 = ɵɵnextContext();
-    ɵɵproperty("ngForOf", ctx_r6.model.months);
+    ɵɵrepeater(ctx_r6.model.months);
   }
 }
-function NgbDatepicker_ngb_datepicker_navigation_5_Template(rf, ctx) {
+function NgbDatepicker_Conditional_5_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "ngb-datepicker-navigation", 14);
-    ɵɵlistener("navigate", function NgbDatepicker_ngb_datepicker_navigation_5_Template_ngb_datepicker_navigation_navigate_0_listener($event) {
+    ɵɵelementStart(0, "ngb-datepicker-navigation", 12);
+    ɵɵlistener("navigate", function NgbDatepicker_Conditional_5_Template_ngb_datepicker_navigation_navigate_0_listener($event) {
       ɵɵrestoreView(_r8);
       const ctx_r6 = ɵɵnextContext();
       return ɵɵresetView(ctx_r6.onNavigateEvent($event));
-    })("select", function NgbDatepicker_ngb_datepicker_navigation_5_Template_ngb_datepicker_navigation_select_0_listener($event) {
+    })("select", function NgbDatepicker_Conditional_5_Template_ngb_datepicker_navigation_select_0_listener($event) {
       ɵɵrestoreView(_r8);
       const ctx_r6 = ɵɵnextContext();
       return ɵɵresetView(ctx_r6.onNavigateDateSelect($event));
@@ -2032,14 +1962,14 @@ function NgbDatepicker_ng_template_8_Template(rf, ctx) {
 }
 function NgbDatepicker_ng_template_9_Template(rf, ctx) {
 }
-var _c8 = ["dialog"];
-var _c9 = ["ngbNavOutlet", ""];
-function NgbNavOutlet_ng_template_0_div_0_ng_template_1_Template(rf, ctx) {
+var _c7 = ["dialog"];
+var _c8 = ["ngbNavOutlet", ""];
+function NgbNavOutlet_For_1_Conditional_0_ng_template_1_Template(rf, ctx) {
 }
-function NgbNavOutlet_ng_template_0_div_0_Template(rf, ctx) {
+function NgbNavOutlet_For_1_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 2);
-    ɵɵtemplate(1, NgbNavOutlet_ng_template_0_div_0_ng_template_1_Template, 0, 0, "ng-template", 3);
+    ɵɵelementStart(0, "div", 0);
+    ɵɵtemplate(1, NgbNavOutlet_For_1_Conditional_0_ng_template_1_Template, 0, 0, "ng-template", 1);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -2047,38 +1977,38 @@ function NgbNavOutlet_ng_template_0_div_0_Template(rf, ctx) {
     const ctx_r1 = ɵɵnextContext();
     ɵɵproperty("item", item_r1)("nav", ctx_r1.nav)("role", ctx_r1.paneRole);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", (item_r1.contentTpl == null ? null : item_r1.contentTpl.templateRef) || null)("ngTemplateOutletContext", ɵɵpureFunction1(5, _c7, item_r1.active || ctx_r1.isPanelTransitioning(item_r1)));
+    ɵɵproperty("ngTemplateOutlet", (item_r1.contentTpl == null ? null : item_r1.contentTpl.templateRef) || null)("ngTemplateOutletContext", ɵɵpureFunction1(5, _c6, item_r1.active || ctx_r1.isPanelTransitioning(item_r1)));
   }
 }
-function NgbNavOutlet_ng_template_0_Template(rf, ctx) {
+function NgbNavOutlet_For_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, NgbNavOutlet_ng_template_0_div_0_Template, 2, 7, "div", 1);
+    ɵɵtemplate(0, NgbNavOutlet_For_1_Conditional_0_Template, 2, 7, "div", 0);
   }
   if (rf & 2) {
     const item_r1 = ctx.$implicit;
     const ctx_r1 = ɵɵnextContext();
-    ɵɵproperty("ngIf", item_r1.isPanelInDom() || ctx_r1.isPanelTransitioning(item_r1));
+    ɵɵconditional(item_r1.isPanelInDom() || ctx_r1.isPanelTransitioning(item_r1) ? 0 : -1);
   }
 }
-var _c10 = (a0, a1, a2) => ({
+var _c9 = (a0, a1, a2) => ({
   $implicit: a0,
   pages: a1,
   disabled: a2
 });
-var _c11 = (a0) => ({
+var _c10 = (a0) => ({
   disabled: true,
   currentPage: a0
 });
-var _c12 = (a0, a1, a2) => ({
+var _c11 = (a0, a1, a2) => ({
   disabled: a0,
   $implicit: a1,
   currentPage: a2
 });
-var _c13 = (a0, a1) => ({
+var _c12 = (a0, a1) => ({
   disabled: a0,
   currentPage: a1
 });
-var _c14 = (a0) => ({
+var _c13 = (a0) => ({
   disabled: a0
 });
 function NgbPagination_ng_template_0_Template(rf, ctx) {
@@ -2123,12 +2053,12 @@ function NgbPagination_ng_template_10_Template(rf, ctx) {
     ɵɵtextInterpolate(page_r1);
   }
 }
-function NgbPagination_ng_template_12_li_0_a_1_ng_template_1_Template(rf, ctx) {
+function NgbPagination_ng_template_12_For_1_Conditional_1_ng_template_1_Template(rf, ctx) {
 }
-function NgbPagination_ng_template_12_li_0_a_1_Template(rf, ctx) {
+function NgbPagination_ng_template_12_For_1_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "a", 18);
-    ɵɵtemplate(1, NgbPagination_ng_template_12_li_0_a_1_ng_template_1_Template, 0, 0, "ng-template", 12);
+    ɵɵelementStart(0, "a", 16);
+    ɵɵtemplate(1, NgbPagination_ng_template_12_For_1_Conditional_1_ng_template_1_Template, 0, 0, "ng-template", 12);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -2136,23 +2066,23 @@ function NgbPagination_ng_template_12_li_0_a_1_Template(rf, ctx) {
     const ctx_r2 = ɵɵnextContext();
     const ellipsis_r4 = ɵɵreference(9);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplEllipsis == null ? null : ctx_r2.tplEllipsis.templateRef) || ellipsis_r4)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c11, page_r2));
+    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplEllipsis == null ? null : ctx_r2.tplEllipsis.templateRef) || ellipsis_r4)("ngTemplateOutletContext", ɵɵpureFunction1(2, _c10, page_r2));
   }
 }
-function NgbPagination_ng_template_12_li_0_a_2_ng_template_1_Template(rf, ctx) {
+function NgbPagination_ng_template_12_For_1_Conditional_2_ng_template_1_Template(rf, ctx) {
 }
-function NgbPagination_ng_template_12_li_0_a_2_Template(rf, ctx) {
+function NgbPagination_ng_template_12_For_1_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "a", 19);
-    ɵɵlistener("click", function NgbPagination_ng_template_12_li_0_a_2_Template_a_click_0_listener($event) {
+    ɵɵelementStart(0, "a", 18);
+    ɵɵlistener("click", function NgbPagination_ng_template_12_For_1_Conditional_2_Template_a_click_0_listener($event) {
       ɵɵrestoreView(_r5);
       const pageNumber_r6 = ɵɵnextContext().$implicit;
       const ctx_r2 = ɵɵnextContext(2);
       ctx_r2.selectPage(pageNumber_r6);
       return ɵɵresetView($event.preventDefault());
     });
-    ɵɵtemplate(1, NgbPagination_ng_template_12_li_0_a_2_ng_template_1_Template, 0, 0, "ng-template", 12);
+    ɵɵtemplate(1, NgbPagination_ng_template_12_For_1_Conditional_2_ng_template_1_Template, 0, 0, "ng-template", 12);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -2164,13 +2094,13 @@ function NgbPagination_ng_template_12_li_0_a_2_Template(rf, ctx) {
     const defaultNumber_r9 = ɵɵreference(11);
     ɵɵattribute("tabindex", disabled_r8 ? "-1" : null)("aria-disabled", disabled_r8 ? "true" : null);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplNumber == null ? null : ctx_r2.tplNumber.templateRef) || defaultNumber_r9)("ngTemplateOutletContext", ɵɵpureFunction3(4, _c12, disabled_r8, pageNumber_r6, page_r2));
+    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplNumber == null ? null : ctx_r2.tplNumber.templateRef) || defaultNumber_r9)("ngTemplateOutletContext", ɵɵpureFunction3(4, _c11, disabled_r8, pageNumber_r6, page_r2));
   }
 }
-function NgbPagination_ng_template_12_li_0_Template(rf, ctx) {
+function NgbPagination_ng_template_12_For_1_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "li", 15);
-    ɵɵtemplate(1, NgbPagination_ng_template_12_li_0_a_1_Template, 2, 4, "a", 16)(2, NgbPagination_ng_template_12_li_0_a_2_Template, 2, 8, "a", 17);
+    ɵɵtemplate(1, NgbPagination_ng_template_12_For_1_Conditional_1_Template, 2, 4, "a", 16)(2, NgbPagination_ng_template_12_For_1_Conditional_2_Template, 2, 8, "a", 17);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -2182,33 +2112,31 @@ function NgbPagination_ng_template_12_li_0_Template(rf, ctx) {
     ɵɵclassProp("active", pageNumber_r6 === page_r2)("disabled", ctx_r2.isEllipsis(pageNumber_r6) || disabled_r8);
     ɵɵattribute("aria-current", pageNumber_r6 === page_r2 ? "page" : null);
     ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r2.isEllipsis(pageNumber_r6));
-    ɵɵadvance();
-    ɵɵproperty("ngIf", !ctx_r2.isEllipsis(pageNumber_r6));
+    ɵɵconditional(ctx_r2.isEllipsis(pageNumber_r6) ? 1 : 2);
   }
 }
 function NgbPagination_ng_template_12_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, NgbPagination_ng_template_12_li_0_Template, 3, 7, "li", 14);
+    ɵɵrepeaterCreate(0, NgbPagination_ng_template_12_For_1_Template, 3, 6, "li", 14, ɵɵrepeaterTrackByIndex);
   }
   if (rf & 2) {
     const pages_r10 = ctx.pages;
-    ɵɵproperty("ngForOf", pages_r10);
+    ɵɵrepeater(pages_r10);
   }
 }
-function NgbPagination_li_15_ng_template_2_Template(rf, ctx) {
+function NgbPagination_Conditional_15_ng_template_2_Template(rf, ctx) {
 }
-function NgbPagination_li_15_Template(rf, ctx) {
+function NgbPagination_Conditional_15_Template(rf, ctx) {
   if (rf & 1) {
     const _r11 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "li", 15)(1, "a", 20);
-    ɵɵlistener("click", function NgbPagination_li_15_Template_a_click_1_listener($event) {
+    ɵɵelementStart(0, "li", 15)(1, "a", 19);
+    ɵɵlistener("click", function NgbPagination_Conditional_15_Template_a_click_1_listener($event) {
       ɵɵrestoreView(_r11);
       const ctx_r2 = ɵɵnextContext();
       ctx_r2.selectPage(1);
       return ɵɵresetView($event.preventDefault());
     });
-    ɵɵtemplate(2, NgbPagination_li_15_ng_template_2_Template, 0, 0, "ng-template", 12);
+    ɵɵtemplate(2, NgbPagination_Conditional_15_ng_template_2_Template, 0, 0, "ng-template", 12);
     ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -2218,22 +2146,22 @@ function NgbPagination_li_15_Template(rf, ctx) {
     ɵɵadvance();
     ɵɵattribute("tabindex", ctx_r2.previousDisabled() ? "-1" : null)("aria-disabled", ctx_r2.previousDisabled() ? "true" : null);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplFirst == null ? null : ctx_r2.tplFirst.templateRef) || first_r12)("ngTemplateOutletContext", ɵɵpureFunction2(6, _c13, ctx_r2.previousDisabled(), ctx_r2.page));
+    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplFirst == null ? null : ctx_r2.tplFirst.templateRef) || first_r12)("ngTemplateOutletContext", ɵɵpureFunction2(6, _c12, ctx_r2.previousDisabled(), ctx_r2.page));
   }
 }
-function NgbPagination_li_16_ng_template_2_Template(rf, ctx) {
+function NgbPagination_Conditional_16_ng_template_2_Template(rf, ctx) {
 }
-function NgbPagination_li_16_Template(rf, ctx) {
+function NgbPagination_Conditional_16_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "li", 15)(1, "a", 21);
-    ɵɵlistener("click", function NgbPagination_li_16_Template_a_click_1_listener($event) {
+    ɵɵelementStart(0, "li", 15)(1, "a", 20);
+    ɵɵlistener("click", function NgbPagination_Conditional_16_Template_a_click_1_listener($event) {
       ɵɵrestoreView(_r13);
       const ctx_r2 = ɵɵnextContext();
       ctx_r2.selectPage(ctx_r2.page - 1);
       return ɵɵresetView($event.preventDefault());
     });
-    ɵɵtemplate(2, NgbPagination_li_16_ng_template_2_Template, 0, 0, "ng-template", 12);
+    ɵɵtemplate(2, NgbPagination_Conditional_16_ng_template_2_Template, 0, 0, "ng-template", 12);
     ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -2243,24 +2171,24 @@ function NgbPagination_li_16_Template(rf, ctx) {
     ɵɵadvance();
     ɵɵattribute("tabindex", ctx_r2.previousDisabled() ? "-1" : null)("aria-disabled", ctx_r2.previousDisabled() ? "true" : null);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplPrevious == null ? null : ctx_r2.tplPrevious.templateRef) || previous_r14)("ngTemplateOutletContext", ɵɵpureFunction1(6, _c14, ctx_r2.previousDisabled()));
+    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplPrevious == null ? null : ctx_r2.tplPrevious.templateRef) || previous_r14)("ngTemplateOutletContext", ɵɵpureFunction1(6, _c13, ctx_r2.previousDisabled()));
   }
 }
 function NgbPagination_ng_template_17_Template(rf, ctx) {
 }
-function NgbPagination_li_18_ng_template_2_Template(rf, ctx) {
+function NgbPagination_Conditional_18_ng_template_2_Template(rf, ctx) {
 }
-function NgbPagination_li_18_Template(rf, ctx) {
+function NgbPagination_Conditional_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "li", 15)(1, "a", 22);
-    ɵɵlistener("click", function NgbPagination_li_18_Template_a_click_1_listener($event) {
+    ɵɵelementStart(0, "li", 15)(1, "a", 21);
+    ɵɵlistener("click", function NgbPagination_Conditional_18_Template_a_click_1_listener($event) {
       ɵɵrestoreView(_r15);
       const ctx_r2 = ɵɵnextContext();
       ctx_r2.selectPage(ctx_r2.page + 1);
       return ɵɵresetView($event.preventDefault());
     });
-    ɵɵtemplate(2, NgbPagination_li_18_ng_template_2_Template, 0, 0, "ng-template", 12);
+    ɵɵtemplate(2, NgbPagination_Conditional_18_ng_template_2_Template, 0, 0, "ng-template", 12);
     ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -2270,22 +2198,22 @@ function NgbPagination_li_18_Template(rf, ctx) {
     ɵɵadvance();
     ɵɵattribute("tabindex", ctx_r2.nextDisabled() ? "-1" : null)("aria-disabled", ctx_r2.nextDisabled() ? "true" : null);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplNext == null ? null : ctx_r2.tplNext.templateRef) || next_r16)("ngTemplateOutletContext", ɵɵpureFunction2(6, _c13, ctx_r2.nextDisabled(), ctx_r2.page));
+    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplNext == null ? null : ctx_r2.tplNext.templateRef) || next_r16)("ngTemplateOutletContext", ɵɵpureFunction2(6, _c12, ctx_r2.nextDisabled(), ctx_r2.page));
   }
 }
-function NgbPagination_li_19_ng_template_2_Template(rf, ctx) {
+function NgbPagination_Conditional_19_ng_template_2_Template(rf, ctx) {
 }
-function NgbPagination_li_19_Template(rf, ctx) {
+function NgbPagination_Conditional_19_Template(rf, ctx) {
   if (rf & 1) {
     const _r17 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "li", 15)(1, "a", 23);
-    ɵɵlistener("click", function NgbPagination_li_19_Template_a_click_1_listener($event) {
+    ɵɵelementStart(0, "li", 15)(1, "a", 22);
+    ɵɵlistener("click", function NgbPagination_Conditional_19_Template_a_click_1_listener($event) {
       ɵɵrestoreView(_r17);
       const ctx_r2 = ɵɵnextContext();
       ctx_r2.selectPage(ctx_r2.pageCount);
       return ɵɵresetView($event.preventDefault());
     });
-    ɵɵtemplate(2, NgbPagination_li_19_ng_template_2_Template, 0, 0, "ng-template", 12);
+    ɵɵtemplate(2, NgbPagination_Conditional_19_ng_template_2_Template, 0, 0, "ng-template", 12);
     ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -2295,10 +2223,10 @@ function NgbPagination_li_19_Template(rf, ctx) {
     ɵɵadvance();
     ɵɵattribute("tabindex", ctx_r2.nextDisabled() ? "-1" : null)("aria-disabled", ctx_r2.nextDisabled() ? "true" : null);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplLast == null ? null : ctx_r2.tplLast.templateRef) || last_r18)("ngTemplateOutletContext", ɵɵpureFunction2(6, _c13, ctx_r2.nextDisabled(), ctx_r2.page));
+    ɵɵproperty("ngTemplateOutlet", (ctx_r2.tplLast == null ? null : ctx_r2.tplLast.templateRef) || last_r18)("ngTemplateOutletContext", ɵɵpureFunction2(6, _c12, ctx_r2.nextDisabled(), ctx_r2.page));
   }
 }
-function NgbPopoverWindow_h3_1_ng_template_1_Template(rf, ctx) {
+function NgbPopoverWindow_Conditional_1_ng_template_1_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵtext(0);
   }
@@ -2307,12 +2235,12 @@ function NgbPopoverWindow_h3_1_ng_template_1_Template(rf, ctx) {
     ɵɵtextInterpolate(ctx_r0.title);
   }
 }
-function NgbPopoverWindow_h3_1_ng_template_3_Template(rf, ctx) {
+function NgbPopoverWindow_Conditional_1_ng_template_3_Template(rf, ctx) {
 }
-function NgbPopoverWindow_h3_1_Template(rf, ctx) {
+function NgbPopoverWindow_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "h3", 4);
-    ɵɵtemplate(1, NgbPopoverWindow_h3_1_ng_template_1_Template, 1, 1, "ng-template", null, 0, ɵɵtemplateRefExtractor)(3, NgbPopoverWindow_h3_1_ng_template_3_Template, 0, 0, "ng-template", 5);
+    ɵɵelementStart(0, "h3", 2);
+    ɵɵtemplate(1, NgbPopoverWindow_Conditional_1_ng_template_1_Template, 1, 1, "ng-template", null, 0, ɵɵtemplateRefExtractor)(3, NgbPopoverWindow_Conditional_1_ng_template_3_Template, 0, 0, "ng-template", 4);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -2322,7 +2250,7 @@ function NgbPopoverWindow_h3_1_Template(rf, ctx) {
     ɵɵproperty("ngTemplateOutlet", ctx_r0.isTitleTemplate() ? ctx_r0.title : simpleTitle_r2)("ngTemplateOutletContext", ctx_r0.context);
   }
 }
-function NgbProgressbar_span_1_Template(rf, ctx) {
+function NgbProgressbar_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "span");
     ɵɵi18n(1, 0);
@@ -2345,50 +2273,70 @@ function NgbRating_ng_template_0_Template(rf, ctx) {
     ɵɵtextInterpolate(fill_r1 === 100 ? "★" : "☆");
   }
 }
-function NgbRating_ng_template_2_ng_template_3_Template(rf, ctx) {
+function NgbRating_For_3_ng_template_3_Template(rf, ctx) {
 }
-function NgbRating_ng_template_2_Template(rf, ctx) {
+function NgbRating_For_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r2 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "span", 2);
+    ɵɵelementStart(0, "span", 1);
     ɵɵtext(1);
     ɵɵelementEnd();
-    ɵɵelementStart(2, "span", 3);
-    ɵɵlistener("mouseenter", function NgbRating_ng_template_2_Template_span_mouseenter_2_listener() {
-      const index_r3 = ɵɵrestoreView(_r2).index;
+    ɵɵelementStart(2, "span", 2);
+    ɵɵlistener("mouseenter", function NgbRating_For_3_Template_span_mouseenter_2_listener() {
+      const ɵ$index_4_r3 = ɵɵrestoreView(_r2).$index;
       const ctx_r3 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r3.enter(index_r3 + 1));
-    })("click", function NgbRating_ng_template_2_Template_span_click_2_listener() {
-      const index_r3 = ɵɵrestoreView(_r2).index;
+      return ɵɵresetView(ctx_r3.enter(ɵ$index_4_r3 + 1));
+    })("click", function NgbRating_For_3_Template_span_click_2_listener() {
+      const ɵ$index_4_r3 = ɵɵrestoreView(_r2).$index;
       const ctx_r3 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r3.handleClick(index_r3 + 1));
+      return ɵɵresetView(ctx_r3.handleClick(ɵ$index_4_r3 + 1));
     });
-    ɵɵtemplate(3, NgbRating_ng_template_2_ng_template_3_Template, 0, 0, "ng-template", 4);
+    ɵɵtemplate(3, NgbRating_For_3_ng_template_3_Template, 0, 0, "ng-template", 3);
     ɵɵelementEnd();
   }
   if (rf & 2) {
-    const index_r3 = ctx.index;
+    const ɵ$index_4_r3 = ctx.$index;
     const ctx_r3 = ɵɵnextContext();
     const t_r5 = ɵɵreference(1);
     ɵɵadvance();
-    ɵɵtextInterpolate1("(", index_r3 < ctx_r3.nextRate ? "*" : " ", ")");
+    ɵɵtextInterpolate1("(", ɵ$index_4_r3 < ctx_r3.nextRate ? "*" : " ", ")");
     ɵɵadvance();
     ɵɵstyleProp("cursor", ctx_r3.isInteractive() ? "pointer" : "default");
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r3.starTemplate || ctx_r3.starTemplateFromContent || t_r5)("ngTemplateOutletContext", ctx_r3.contexts[index_r3]);
+    ɵɵproperty("ngTemplateOutlet", ctx_r3.starTemplate || ctx_r3.starTemplateFromContent || t_r5)("ngTemplateOutletContext", ctx_r3.contexts[ɵ$index_4_r3]);
   }
 }
-function NgbTimepicker_button_3_Template(rf, ctx) {
+function NgbTimepicker_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 20);
-    ɵɵlistener("click", function NgbTimepicker_button_3_Template_button_click_0_listener() {
+    ɵɵelementStart(0, "button", 15);
+    ɵɵlistener("click", function NgbTimepicker_Conditional_3_Template_button_click_0_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.changeHour(ctx_r1.hourStep));
     });
-    ɵɵelement(1, "span", 21);
-    ɵɵelementStart(2, "span", 22);
+    ɵɵelement(1, "span", 16);
+    ɵɵelementStart(2, "span", 17);
+    ɵɵi18n(3, 0);
+    ɵɵelementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = ɵɵnextContext();
+    ɵɵclassProp("btn-sm", ctx_r1.isSmallSize)("btn-lg", ctx_r1.isLargeSize)("disabled", ctx_r1.disabled);
+    ɵɵproperty("disabled", ctx_r1.disabled);
+  }
+}
+function NgbTimepicker_Conditional_5_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "button", 15);
+    ɵɵlistener("click", function NgbTimepicker_Conditional_5_Template_button_click_0_listener() {
+      ɵɵrestoreView(_r3);
+      const ctx_r1 = ɵɵnextContext();
+      return ɵɵresetView(ctx_r1.changeHour(-ctx_r1.hourStep));
+    });
+    ɵɵelement(1, "span", 18);
+    ɵɵelementStart(2, "span", 17);
     ɵɵi18n(3, 1);
     ɵɵelementEnd()();
   }
@@ -2398,17 +2346,17 @@ function NgbTimepicker_button_3_Template(rf, ctx) {
     ɵɵproperty("disabled", ctx_r1.disabled);
   }
 }
-function NgbTimepicker_button_5_Template(rf, ctx) {
+function NgbTimepicker_Conditional_9_Template(rf, ctx) {
   if (rf & 1) {
-    const _r3 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 20);
-    ɵɵlistener("click", function NgbTimepicker_button_5_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r3);
+    const _r4 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "button", 15);
+    ɵɵlistener("click", function NgbTimepicker_Conditional_9_Template_button_click_0_listener() {
+      ɵɵrestoreView(_r4);
       const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.changeHour(-ctx_r1.hourStep));
+      return ɵɵresetView(ctx_r1.changeMinute(ctx_r1.minuteStep));
     });
-    ɵɵelement(1, "span", 23);
-    ɵɵelementStart(2, "span", 22);
+    ɵɵelement(1, "span", 16);
+    ɵɵelementStart(2, "span", 17);
     ɵɵi18n(3, 2);
     ɵɵelementEnd()();
   }
@@ -2418,17 +2366,17 @@ function NgbTimepicker_button_5_Template(rf, ctx) {
     ɵɵproperty("disabled", ctx_r1.disabled);
   }
 }
-function NgbTimepicker_button_9_Template(rf, ctx) {
+function NgbTimepicker_Conditional_11_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 20);
-    ɵɵlistener("click", function NgbTimepicker_button_9_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r4);
+    const _r5 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "button", 15);
+    ɵɵlistener("click", function NgbTimepicker_Conditional_11_Template_button_click_0_listener() {
+      ɵɵrestoreView(_r5);
       const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.changeMinute(ctx_r1.minuteStep));
+      return ɵɵresetView(ctx_r1.changeMinute(-ctx_r1.minuteStep));
     });
-    ɵɵelement(1, "span", 21);
-    ɵɵelementStart(2, "span", 22);
+    ɵɵelement(1, "span", 18);
+    ɵɵelementStart(2, "span", 17);
     ɵɵi18n(3, 3);
     ɵɵelementEnd()();
   }
@@ -2438,44 +2386,37 @@ function NgbTimepicker_button_9_Template(rf, ctx) {
     ɵɵproperty("disabled", ctx_r1.disabled);
   }
 }
-function NgbTimepicker_button_11_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r5 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 20);
-    ɵɵlistener("click", function NgbTimepicker_button_11_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r5);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.changeMinute(-ctx_r1.minuteStep));
-    });
-    ɵɵelement(1, "span", 23);
-    ɵɵelementStart(2, "span", 22);
-    ɵɵi18n(3, 4);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext();
-    ɵɵclassProp("btn-sm", ctx_r1.isSmallSize)("btn-lg", ctx_r1.isLargeSize)("disabled", ctx_r1.disabled);
-    ɵɵproperty("disabled", ctx_r1.disabled);
-  }
-}
-function NgbTimepicker_div_12_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div", 14);
-    ɵɵtext(1, ":");
-    ɵɵelementEnd();
-  }
-}
-function NgbTimepicker_div_13_button_1_Template(rf, ctx) {
+function NgbTimepicker_Conditional_12_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 20);
-    ɵɵlistener("click", function NgbTimepicker_div_13_button_1_Template_button_click_0_listener() {
+    ɵɵelementStart(0, "button", 15);
+    ɵɵlistener("click", function NgbTimepicker_Conditional_12_Conditional_3_Template_button_click_0_listener() {
       ɵɵrestoreView(_r7);
       const ctx_r1 = ɵɵnextContext(2);
       return ɵɵresetView(ctx_r1.changeSecond(ctx_r1.secondStep));
     });
-    ɵɵelement(1, "span", 21);
-    ɵɵelementStart(2, "span", 22);
+    ɵɵelement(1, "span", 16);
+    ɵɵelementStart(2, "span", 17);
+    ɵɵi18n(3, 4);
+    ɵɵelementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = ɵɵnextContext(2);
+    ɵɵclassProp("btn-sm", ctx_r1.isSmallSize)("btn-lg", ctx_r1.isLargeSize)("disabled", ctx_r1.disabled);
+    ɵɵproperty("disabled", ctx_r1.disabled);
+  }
+}
+function NgbTimepicker_Conditional_12_Conditional_5_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r8 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "button", 15);
+    ɵɵlistener("click", function NgbTimepicker_Conditional_12_Conditional_5_Template_button_click_0_listener() {
+      ɵɵrestoreView(_r8);
+      const ctx_r1 = ɵɵnextContext(2);
+      return ɵɵresetView(ctx_r1.changeSecond(-ctx_r1.secondStep));
+    });
+    ɵɵelement(1, "span", 18);
+    ɵɵelementStart(2, "span", 17);
     ɵɵi18n(3, 5);
     ɵɵelementEnd()();
   }
@@ -2485,79 +2426,57 @@ function NgbTimepicker_div_13_button_1_Template(rf, ctx) {
     ɵɵproperty("disabled", ctx_r1.disabled);
   }
 }
-function NgbTimepicker_div_13_button_3_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r8 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 20);
-    ɵɵlistener("click", function NgbTimepicker_div_13_button_3_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r8);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.changeSecond(-ctx_r1.secondStep));
-    });
-    ɵɵelement(1, "span", 23);
-    ɵɵelementStart(2, "span", 22);
-    ɵɵi18n(3, 6);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵclassProp("btn-sm", ctx_r1.isSmallSize)("btn-lg", ctx_r1.isLargeSize)("disabled", ctx_r1.disabled);
-    ɵɵproperty("disabled", ctx_r1.disabled);
-  }
-}
-function NgbTimepicker_div_13_Template(rf, ctx) {
+function NgbTimepicker_Conditional_12_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 24);
-    ɵɵtemplate(1, NgbTimepicker_div_13_button_1_Template, 4, 7, "button", 12);
-    ɵɵelementStart(2, "input", 25);
-    ɵɵlistener("change", function NgbTimepicker_div_13_Template_input_change_2_listener($event) {
+    ɵɵelementStart(0, "div", 12);
+    ɵɵtext(1, ":");
+    ɵɵelementEnd();
+    ɵɵelementStart(2, "div", 19);
+    ɵɵtemplate(3, NgbTimepicker_Conditional_12_Conditional_3_Template, 4, 7, "button", 10);
+    ɵɵelementStart(4, "input", 20);
+    ɵɵlistener("change", function NgbTimepicker_Conditional_12_Template_input_change_4_listener($event) {
       ɵɵrestoreView(_r6);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.updateSecond($event.target.value));
-    })("blur", function NgbTimepicker_div_13_Template_input_blur_2_listener() {
+    })("blur", function NgbTimepicker_Conditional_12_Template_input_blur_4_listener() {
       ɵɵrestoreView(_r6);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.handleBlur());
-    })("input", function NgbTimepicker_div_13_Template_input_input_2_listener($event) {
+    })("input", function NgbTimepicker_Conditional_12_Template_input_input_4_listener($event) {
       ɵɵrestoreView(_r6);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.formatInput($event.target));
-    })("keydown.ArrowUp", function NgbTimepicker_div_13_Template_input_keydown_ArrowUp_2_listener($event) {
+    })("keydown.ArrowUp", function NgbTimepicker_Conditional_12_Template_input_keydown_ArrowUp_4_listener($event) {
       ɵɵrestoreView(_r6);
       const ctx_r1 = ɵɵnextContext();
       ctx_r1.changeSecond(ctx_r1.secondStep);
       return ɵɵresetView($event.preventDefault());
-    })("keydown.ArrowDown", function NgbTimepicker_div_13_Template_input_keydown_ArrowDown_2_listener($event) {
+    })("keydown.ArrowDown", function NgbTimepicker_Conditional_12_Template_input_keydown_ArrowDown_4_listener($event) {
       ɵɵrestoreView(_r6);
       const ctx_r1 = ɵɵnextContext();
       ctx_r1.changeSecond(-ctx_r1.secondStep);
       return ɵɵresetView($event.preventDefault());
     });
     ɵɵelementEnd();
-    ɵɵtemplate(3, NgbTimepicker_div_13_button_3_Template, 4, 7, "button", 12);
+    ɵɵtemplate(5, NgbTimepicker_Conditional_12_Conditional_5_Template, 4, 7, "button", 10);
     ɵɵelementEnd();
   }
   if (rf & 2) {
     const ctx_r1 = ɵɵnextContext();
-    ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.spinners);
+    ɵɵadvance(3);
+    ɵɵconditional(ctx_r1.spinners ? 3 : -1);
     ɵɵadvance();
     ɵɵclassProp("form-control-sm", ctx_r1.isSmallSize)("form-control-lg", ctx_r1.isLargeSize);
     ɵɵproperty("value", ctx_r1.formatMinSec(ctx_r1.model == null ? null : ctx_r1.model.second))("readOnly", ctx_r1.readonlyInputs)("disabled", ctx_r1.disabled);
     ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.spinners);
+    ɵɵconditional(ctx_r1.spinners ? 5 : -1);
   }
 }
-function NgbTimepicker_div_14_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelement(0, "div", 14);
-  }
-}
-function NgbTimepicker_div_15_ng_container_2_Template(rf, ctx) {
+function NgbTimepicker_Conditional_13_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementContainerStart(0);
-    ɵɵi18n(1, 7);
+    ɵɵi18n(1, 6);
     ɵɵelementContainerEnd();
   }
   if (rf & 2) {
@@ -2567,36 +2486,38 @@ function NgbTimepicker_div_15_ng_container_2_Template(rf, ctx) {
     ɵɵi18nApply(1);
   }
 }
-function NgbTimepicker_div_15_ng_template_3_Template(rf, ctx) {
+function NgbTimepicker_Conditional_13_Conditional_4_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵi18n(0, 8);
+    ɵɵelementContainerStart(0);
+    ɵɵtext(1);
+    ɵɵelementContainerEnd();
   }
   if (rf & 2) {
     const ctx_r1 = ɵɵnextContext(2);
-    ɵɵi18nExp(ctx_r1.i18n.getMorningPeriod());
-    ɵɵi18nApply(0);
+    ɵɵadvance();
+    ɵɵtextInterpolate(ctx_r1.i18n.getMorningPeriod());
   }
 }
-function NgbTimepicker_div_15_Template(rf, ctx) {
+function NgbTimepicker_Conditional_13_Template(rf, ctx) {
   if (rf & 1) {
     const _r9 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 26)(1, "button", 27);
-    ɵɵlistener("click", function NgbTimepicker_div_15_Template_button_click_1_listener() {
+    ɵɵelement(0, "div", 12);
+    ɵɵelementStart(1, "div", 21)(2, "button", 22);
+    ɵɵlistener("click", function NgbTimepicker_Conditional_13_Template_button_click_2_listener() {
       ɵɵrestoreView(_r9);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.toggleMeridian());
     });
-    ɵɵtemplate(2, NgbTimepicker_div_15_ng_container_2_Template, 2, 1, "ng-container", 28)(3, NgbTimepicker_div_15_ng_template_3_Template, 1, 1, "ng-template", null, 0, ɵɵtemplateRefExtractor);
+    ɵɵtemplate(3, NgbTimepicker_Conditional_13_Conditional_3_Template, 2, 1, "ng-container")(4, NgbTimepicker_Conditional_13_Conditional_4_Template, 2, 1, "ng-container");
     ɵɵelementEnd()();
   }
   if (rf & 2) {
-    const am_r10 = ɵɵreference(4);
     const ctx_r1 = ɵɵnextContext();
-    ɵɵadvance();
+    ɵɵadvance(2);
     ɵɵclassProp("btn-sm", ctx_r1.isSmallSize)("btn-lg", ctx_r1.isLargeSize)("disabled", ctx_r1.disabled);
     ɵɵproperty("disabled", ctx_r1.disabled);
     ɵɵadvance();
-    ɵɵproperty("ngIf", ctx_r1.model && ctx_r1.model.hour >= 12)("ngIfElse", am_r10);
+    ɵɵconditional(ctx_r1.model && ctx_r1.model.hour >= 12 ? 3 : 4);
   }
 }
 function NgbToast_ng_template_0_Template(rf, ctx) {
@@ -2611,15 +2532,15 @@ function NgbToast_ng_template_0_Template(rf, ctx) {
     ɵɵtextInterpolate(ctx_r0.header);
   }
 }
-function NgbToast_ng_template_2_ng_template_1_Template(rf, ctx) {
+function NgbToast_Conditional_2_ng_template_1_Template(rf, ctx) {
 }
-function NgbToast_ng_template_2_Template(rf, ctx) {
+function NgbToast_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r2 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 4);
-    ɵɵtemplate(1, NgbToast_ng_template_2_ng_template_1_Template, 0, 0, "ng-template", 5);
-    ɵɵelementStart(2, "button", 6);
-    ɵɵlistener("click", function NgbToast_ng_template_2_Template_button_click_2_listener() {
+    ɵɵelementStart(0, "div", 1);
+    ɵɵtemplate(1, NgbToast_Conditional_2_ng_template_1_Template, 0, 0, "ng-template", 4);
+    ɵɵelementStart(2, "button", 5);
+    ɵɵlistener("click", function NgbToast_Conditional_2_Template_button_click_2_listener() {
       ɵɵrestoreView(_r2);
       const ctx_r0 = ɵɵnextContext();
       return ɵɵresetView(ctx_r0.hide());
@@ -2633,7 +2554,7 @@ function NgbToast_ng_template_2_Template(rf, ctx) {
     ɵɵproperty("ngTemplateOutlet", ctx_r0.contentHeaderTpl || headerTpl_r3);
   }
 }
-function NgbHighlight_ng_template_0_span_0_Template(rf, ctx) {
+function NgbHighlight_For_1_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "span");
     ɵɵtext(1);
@@ -2647,26 +2568,28 @@ function NgbHighlight_ng_template_0_span_0_Template(rf, ctx) {
     ɵɵtextInterpolate(part_r1);
   }
 }
-function NgbHighlight_ng_template_0_ng_template_1_Template(rf, ctx) {
+function NgbHighlight_For_1_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtext(0);
+    ɵɵelementContainerStart(0);
+    ɵɵtext(1);
+    ɵɵelementContainerEnd();
   }
   if (rf & 2) {
     const part_r1 = ɵɵnextContext().$implicit;
+    ɵɵadvance();
     ɵɵtextInterpolate(part_r1);
   }
 }
-function NgbHighlight_ng_template_0_Template(rf, ctx) {
+function NgbHighlight_For_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵtemplate(0, NgbHighlight_ng_template_0_span_0_Template, 2, 3, "span", 2)(1, NgbHighlight_ng_template_0_ng_template_1_Template, 1, 1, "ng-template", null, 0, ɵɵtemplateRefExtractor);
+    ɵɵtemplate(0, NgbHighlight_For_1_Conditional_0_Template, 2, 4, "span", 0)(1, NgbHighlight_For_1_Conditional_1_Template, 2, 1, "ng-container");
   }
   if (rf & 2) {
-    const isOdd_r3 = ctx.odd;
-    const even_r4 = ɵɵreference(2);
-    ɵɵproperty("ngIf", isOdd_r3)("ngIfElse", even_r4);
+    const ɵ$index_1_r3 = ctx.$index;
+    ɵɵconditional(ɵ$index_1_r3 % 2 !== 0 ? 0 : 1);
   }
 }
-var _c15 = (a0, a1, a2) => ({
+var _c14 = (a0, a1, a2) => ({
   result: a0,
   term: a1,
   formatter: a2
@@ -2682,34 +2605,105 @@ function NgbTypeaheadWindow_ng_template_0_Template(rf, ctx) {
     ɵɵproperty("result", formatter_r3(result_r1))("term", term_r2);
   }
 }
-function NgbTypeaheadWindow_ng_template_2_ng_template_1_Template(rf, ctx) {
+function NgbTypeaheadWindow_For_3_ng_template_1_Template(rf, ctx) {
 }
-function NgbTypeaheadWindow_ng_template_2_Template(rf, ctx) {
+function NgbTypeaheadWindow_For_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "button", 3);
-    ɵɵlistener("mouseenter", function NgbTypeaheadWindow_ng_template_2_Template_button_mouseenter_0_listener() {
-      const idx_r5 = ɵɵrestoreView(_r4).index;
+    ɵɵlistener("mouseenter", function NgbTypeaheadWindow_For_3_Template_button_mouseenter_0_listener() {
+      const $index_r5 = ɵɵrestoreView(_r4).$index;
       const ctx_r5 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r5.markActive(idx_r5));
-    })("click", function NgbTypeaheadWindow_ng_template_2_Template_button_click_0_listener() {
+      return ɵɵresetView(ctx_r5.markActive($index_r5));
+    })("click", function NgbTypeaheadWindow_For_3_Template_button_click_0_listener() {
       const result_r7 = ɵɵrestoreView(_r4).$implicit;
       const ctx_r5 = ɵɵnextContext();
       return ɵɵresetView(ctx_r5.select(result_r7));
     });
-    ɵɵtemplate(1, NgbTypeaheadWindow_ng_template_2_ng_template_1_Template, 0, 0, "ng-template", 4);
+    ɵɵtemplate(1, NgbTypeaheadWindow_For_3_ng_template_1_Template, 0, 0, "ng-template", 4);
     ɵɵelementEnd();
   }
   if (rf & 2) {
     const result_r7 = ctx.$implicit;
-    const idx_r5 = ctx.index;
+    const $index_r5 = ctx.$index;
     const ctx_r5 = ɵɵnextContext();
     const rt_r8 = ɵɵreference(1);
-    ɵɵclassProp("active", idx_r5 === ctx_r5.activeIdx);
-    ɵɵproperty("id", ctx_r5.id + "-" + idx_r5);
+    ɵɵclassProp("active", $index_r5 === ctx_r5.activeIdx);
+    ɵɵproperty("id", ctx_r5.id + "-" + $index_r5);
     ɵɵadvance();
-    ɵɵproperty("ngTemplateOutlet", ctx_r5.resultTemplate || rt_r8)("ngTemplateOutletContext", ɵɵpureFunction3(5, _c15, result_r7, ctx_r5.term, ctx_r5.formatter));
+    ɵɵproperty("ngTemplateOutlet", ctx_r5.resultTemplate || rt_r8)("ngTemplateOutletContext", ɵɵpureFunction3(5, _c14, result_r7, ctx_r5.term, ctx_r5.formatter));
   }
+}
+var environment = {
+  animation: true,
+  transitionTimerDelayMs: 5
+};
+var NgbConfig = class _NgbConfig {
+  constructor() {
+    this.animation = environment.animation;
+  }
+  static {
+    this.ɵfac = function NgbConfig_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbConfig)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbConfig,
+      factory: _NgbConfig.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbConfig, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
+var NgbAccordionConfig = class _NgbAccordionConfig {
+  constructor() {
+    this._ngbConfig = inject(NgbConfig);
+    this.closeOthers = false;
+    this.destroyOnHide = true;
+  }
+  get animation() {
+    return this._animation ?? this._ngbConfig.animation;
+  }
+  set animation(animation) {
+    this._animation = animation;
+  }
+  static {
+    this.ɵfac = function NgbAccordionConfig_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbAccordionConfig)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbAccordionConfig,
+      factory: _NgbAccordionConfig.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbAccordionConfig, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
+function getTransitionDurationMs(element) {
+  const {
+    transitionDelay,
+    transitionDuration
+  } = window.getComputedStyle(element);
+  const transitionDelaySec = parseFloat(transitionDelay);
+  const transitionDurationSec = parseFloat(transitionDuration);
+  return (transitionDelaySec + transitionDurationSec) * 1e3;
 }
 function toInteger(value) {
   return parseInt(`${value}`, 10);
@@ -2781,19 +2775,6 @@ function getActiveElement(root = document) {
   }
   return activeEl.shadowRoot ? getActiveElement(activeEl.shadowRoot) : activeEl;
 }
-function getTransitionDurationMs(element) {
-  const {
-    transitionDelay,
-    transitionDuration
-  } = window.getComputedStyle(element);
-  const transitionDelaySec = parseFloat(transitionDelay);
-  const transitionDurationSec = parseFloat(transitionDuration);
-  return (transitionDelaySec + transitionDurationSec) * 1e3;
-}
-var environment = {
-  animation: true,
-  transitionTimerDelayMs: 5
-};
 var noopFn = () => {
 };
 var {
@@ -2892,9 +2873,7 @@ var ngbCollapsingTransition = (element, animation, context) => {
     maxSize = measureCollapsingElementDimensionPx(element, dimension);
     context.maxSize = maxSize;
     element.style[dimension] = direction !== "show" ? maxSize : "0px";
-    classList.remove("collapse");
-    classList.remove("collapsing");
-    classList.remove("show");
+    classList.remove("collapse", "collapsing", "show");
     reflow(element);
     classList.add("collapsing");
   }
@@ -2905,702 +2884,20 @@ var ngbCollapsingTransition = (element, animation, context) => {
     element.style[dimension] = "";
   };
 };
-var NgbConfig = class _NgbConfig {
-  constructor() {
-    this.animation = environment.animation;
-  }
-  static {
-    this.ɵfac = function NgbConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbConfig)();
-    };
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _NgbConfig,
-      factory: _NgbConfig.ɵfac,
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbConfig, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-var NgbAccordionConfig = class _NgbAccordionConfig {
-  constructor(_ngbConfig) {
-    this._ngbConfig = _ngbConfig;
-    this.closeOthers = false;
-    this.destroyOnHide = true;
-  }
-  get animation() {
-    return this._animation === void 0 ? this._ngbConfig.animation : this._animation;
-  }
-  set animation(animation) {
-    this._animation = animation;
-  }
-  static {
-    this.ɵfac = function NgbAccordionConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbAccordionConfig)(ɵɵinject(NgbConfig));
-    };
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _NgbAccordionConfig,
-      factory: _NgbAccordionConfig.ɵfac,
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbAccordionConfig, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], function() {
-    return [{
-      type: NgbConfig
-    }];
-  }, null);
-})();
-var nextId$4 = 0;
-var NgbPanelHeader = class _NgbPanelHeader {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
-  }
-  static {
-    this.ɵfac = function NgbPanelHeader_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPanelHeader)(ɵɵdirectiveInject(TemplateRef));
-    };
-  }
-  static {
-    this.ɵdir = ɵɵdefineDirective({
-      type: _NgbPanelHeader,
-      selectors: [["ng-template", "ngbPanelHeader", ""]],
-      standalone: true
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbPanelHeader, [{
-    type: Directive,
-    args: [{
-      selector: "ng-template[ngbPanelHeader]",
-      standalone: true
-    }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
-})();
-var NgbPanelTitle = class _NgbPanelTitle {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
-  }
-  static {
-    this.ɵfac = function NgbPanelTitle_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPanelTitle)(ɵɵdirectiveInject(TemplateRef));
-    };
-  }
-  static {
-    this.ɵdir = ɵɵdefineDirective({
-      type: _NgbPanelTitle,
-      selectors: [["ng-template", "ngbPanelTitle", ""]],
-      standalone: true
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbPanelTitle, [{
-    type: Directive,
-    args: [{
-      selector: "ng-template[ngbPanelTitle]",
-      standalone: true
-    }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
-})();
-var NgbPanelContent = class _NgbPanelContent {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
-  }
-  static {
-    this.ɵfac = function NgbPanelContent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPanelContent)(ɵɵdirectiveInject(TemplateRef));
-    };
-  }
-  static {
-    this.ɵdir = ɵɵdefineDirective({
-      type: _NgbPanelContent,
-      selectors: [["ng-template", "ngbPanelContent", ""]],
-      standalone: true
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbPanelContent, [{
-    type: Directive,
-    args: [{
-      selector: "ng-template[ngbPanelContent]",
-      standalone: true
-    }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
-})();
-var NgbPanel = class _NgbPanel {
-  constructor() {
-    this.disabled = false;
-    this.id = `ngb-panel-${nextId$4++}`;
-    this.isOpen = false;
-    this.initClassDone = false;
-    this.transitionRunning = false;
-    this.shown = new EventEmitter();
-    this.hidden = new EventEmitter();
-  }
-  ngAfterContentChecked() {
-    this.titleTpl = this.titleTpls.first;
-    this.headerTpl = this.headerTpls.first;
-    this.contentTpl = this.contentTpls.first;
-  }
-  static {
-    this.ɵfac = function NgbPanel_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPanel)();
-    };
-  }
-  static {
-    this.ɵdir = ɵɵdefineDirective({
-      type: _NgbPanel,
-      selectors: [["ngb-panel"]],
-      contentQueries: function NgbPanel_ContentQueries(rf, ctx, dirIndex) {
-        if (rf & 1) {
-          ɵɵcontentQuery(dirIndex, NgbPanelTitle, 4);
-          ɵɵcontentQuery(dirIndex, NgbPanelHeader, 4);
-          ɵɵcontentQuery(dirIndex, NgbPanelContent, 4);
-        }
-        if (rf & 2) {
-          let _t;
-          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.titleTpls = _t);
-          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.headerTpls = _t);
-          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.contentTpls = _t);
-        }
-      },
-      inputs: {
-        disabled: "disabled",
-        id: "id",
-        title: "title",
-        type: "type",
-        cardClass: "cardClass"
-      },
-      outputs: {
-        shown: "shown",
-        hidden: "hidden"
-      },
-      standalone: true
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbPanel, [{
-    type: Directive,
-    args: [{
-      selector: "ngb-panel",
-      standalone: true
-    }]
-  }], null, {
-    disabled: [{
-      type: Input
-    }],
-    id: [{
-      type: Input
-    }],
-    title: [{
-      type: Input
-    }],
-    type: [{
-      type: Input
-    }],
-    cardClass: [{
-      type: Input
-    }],
-    shown: [{
-      type: Output
-    }],
-    hidden: [{
-      type: Output
-    }],
-    titleTpls: [{
-      type: ContentChildren,
-      args: [NgbPanelTitle, {
-        descendants: false
-      }]
-    }],
-    headerTpls: [{
-      type: ContentChildren,
-      args: [NgbPanelHeader, {
-        descendants: false
-      }]
-    }],
-    contentTpls: [{
-      type: ContentChildren,
-      args: [NgbPanelContent, {
-        descendants: false
-      }]
-    }]
-  });
-})();
-var NgbRefDirective = class _NgbRefDirective {
-  constructor(_El) {
-    this._El = _El;
-    this.ngbRef = new EventEmitter();
-  }
-  ngOnInit() {
-    this.ngbRef.emit(this._El.nativeElement);
-  }
-  ngOnDestroy() {
-    this.ngbRef.emit(null);
-  }
-  static {
-    this.ɵfac = function NgbRefDirective_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbRefDirective)(ɵɵdirectiveInject(ElementRef));
-    };
-  }
-  static {
-    this.ɵdir = ɵɵdefineDirective({
-      type: _NgbRefDirective,
-      selectors: [["", "ngbRef", ""]],
-      outputs: {
-        ngbRef: "ngbRef"
-      },
-      standalone: true
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbRefDirective, [{
-    type: Directive,
-    args: [{
-      selector: "[ngbRef]",
-      standalone: true
-    }]
-  }], function() {
-    return [{
-      type: ElementRef
-    }];
-  }, {
-    ngbRef: [{
-      type: Output
-    }]
-  });
-})();
-var NgbPanelToggle = class _NgbPanelToggle {
-  set ngbPanelToggle(panel) {
-    if (panel) {
-      this.panel = panel;
-    }
-  }
-  constructor(accordion, panel) {
-    this.accordion = accordion;
-    this.panel = panel;
-  }
-  static {
-    this.ɵfac = function NgbPanelToggle_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPanelToggle)(ɵɵdirectiveInject(forwardRef(() => NgbAccordion)), ɵɵdirectiveInject(NgbPanel, 9));
-    };
-  }
-  static {
-    this.ɵdir = ɵɵdefineDirective({
-      type: _NgbPanelToggle,
-      selectors: [["button", "ngbPanelToggle", ""]],
-      hostAttrs: ["type", "button"],
-      hostVars: 5,
-      hostBindings: function NgbPanelToggle_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          ɵɵlistener("click", function NgbPanelToggle_click_HostBindingHandler() {
-            return ctx.accordion.toggle(ctx.panel.id);
-          });
-        }
-        if (rf & 2) {
-          ɵɵhostProperty("disabled", ctx.panel.disabled);
-          ɵɵattribute("aria-expanded", ctx.panel.isOpen)("aria-controls", ctx.panel.id);
-          ɵɵclassProp("collapsed", !ctx.panel.isOpen);
-        }
-      },
-      inputs: {
-        ngbPanelToggle: "ngbPanelToggle"
-      },
-      standalone: true
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbPanelToggle, [{
-    type: Directive,
-    args: [{
-      selector: "button[ngbPanelToggle]",
-      standalone: true,
-      host: {
-        type: "button",
-        "[disabled]": "panel.disabled",
-        "[class.collapsed]": "!panel.isOpen",
-        "[attr.aria-expanded]": "panel.isOpen",
-        "[attr.aria-controls]": "panel.id",
-        "(click)": "accordion.toggle(panel.id)"
-      }
-    }]
-  }], function() {
-    return [{
-      type: NgbAccordion,
-      decorators: [{
-        type: Inject,
-        args: [forwardRef(() => NgbAccordion)]
-      }]
-    }, {
-      type: NgbPanel,
-      decorators: [{
-        type: Optional
-      }, {
-        type: Host
-      }]
-    }];
-  }, {
-    ngbPanelToggle: [{
-      type: Input
-    }]
-  });
-})();
-var NgbAccordion = class _NgbAccordion {
-  constructor(config, _ngZone, _changeDetector) {
-    this._ngZone = _ngZone;
-    this._changeDetector = _changeDetector;
-    this.activeIds = [];
-    this.destroyOnHide = true;
-    this.panelChange = new EventEmitter();
-    this.shown = new EventEmitter();
-    this.hidden = new EventEmitter();
-    this.animation = config.animation;
-    this.type = config.type;
-    this.closeOtherPanels = config.closeOthers;
-  }
-  /**
-   * Checks if a panel with a given id is expanded.
-   */
-  isExpanded(panelId) {
-    return this.activeIds.indexOf(panelId) > -1;
-  }
-  /**
-   * Expands a panel with a given id.
-   *
-   * Has no effect if the panel is already expanded or disabled.
-   */
-  expand(panelId) {
-    this._changeOpenState(this._findPanelById(panelId), true);
-  }
-  /**
-   * Expands all panels, if `[closeOthers]` is `false`.
-   *
-   * If `[closeOthers]` is `true`, it will expand the first panel, unless there is already a panel opened.
-   */
-  expandAll() {
-    if (this.closeOtherPanels) {
-      if (this.activeIds.length === 0 && this.panels.length) {
-        this._changeOpenState(this.panels.first, true);
-      }
-    } else {
-      this.panels.forEach((panel) => this._changeOpenState(panel, true));
-    }
-  }
-  /**
-   * Collapses a panel with the given id.
-   *
-   * Has no effect if the panel is already collapsed or disabled.
-   */
-  collapse(panelId) {
-    this._changeOpenState(this._findPanelById(panelId), false);
-  }
-  /**
-   * Collapses all opened panels.
-   */
-  collapseAll() {
-    this.panels.forEach((panel) => {
-      this._changeOpenState(panel, false);
-    });
-  }
-  /**
-   * Toggles a panel with the given id.
-   *
-   * Has no effect if the panel is disabled.
-   */
-  toggle(panelId) {
-    const panel = this._findPanelById(panelId);
-    if (panel) {
-      this._changeOpenState(panel, !panel.isOpen);
-    }
-  }
-  ngAfterContentChecked() {
-    if (isString(this.activeIds)) {
-      this.activeIds = this.activeIds.split(/\s*,\s*/);
-    }
-    this.panels.forEach((panel) => {
-      panel.isOpen = !panel.disabled && this.activeIds.indexOf(panel.id) > -1;
-    });
-    if (this.activeIds.length > 1 && this.closeOtherPanels) {
-      this._closeOthers(this.activeIds[0], false);
-      this._updateActiveIds();
-    }
-    this._ngZone.onStable.pipe((0, import_operators2.take)(1)).subscribe(() => {
-      this.panels.forEach((panel) => {
-        const panelElement = panel.panelDiv;
-        if (panelElement) {
-          if (!panel.initClassDone) {
-            panel.initClassDone = true;
-            ngbRunTransition(this._ngZone, panelElement, ngbCollapsingTransition, {
-              animation: false,
-              runningTransition: "continue",
-              context: {
-                direction: panel.isOpen ? "show" : "hide",
-                dimension: "height"
-              }
-            });
-          }
-        } else {
-          panel.initClassDone = false;
-        }
-      });
-    });
-  }
-  _changeOpenState(panel, nextState) {
-    if (panel != null && !panel.disabled && panel.isOpen !== nextState) {
-      let defaultPrevented = false;
-      this.panelChange.emit({
-        panelId: panel.id,
-        nextState,
-        preventDefault: () => {
-          defaultPrevented = true;
-        }
-      });
-      if (!defaultPrevented) {
-        panel.isOpen = nextState;
-        panel.transitionRunning = true;
-        if (nextState && this.closeOtherPanels) {
-          this._closeOthers(panel.id);
-        }
-        this._updateActiveIds();
-        this._runTransitions(this.animation);
-      }
-    }
-  }
-  _closeOthers(panelId, enableTransition = true) {
-    this.panels.forEach((panel) => {
-      if (panel.id !== panelId && panel.isOpen) {
-        panel.isOpen = false;
-        panel.transitionRunning = enableTransition;
-      }
-    });
-  }
-  _findPanelById(panelId) {
-    return this.panels.find((p) => p.id === panelId) || null;
-  }
-  _updateActiveIds() {
-    this.activeIds = this.panels.filter((panel) => panel.isOpen && !panel.disabled).map((panel) => panel.id);
-  }
-  _runTransitions(animation) {
-    this._changeDetector.detectChanges();
-    this.panels.forEach((panel) => {
-      if (panel.transitionRunning) {
-        const panelElement = panel.panelDiv;
-        ngbRunTransition(this._ngZone, panelElement, ngbCollapsingTransition, {
-          animation,
-          runningTransition: "stop",
-          context: {
-            direction: panel.isOpen ? "show" : "hide",
-            dimension: "height"
-          }
-        }).subscribe(() => {
-          panel.transitionRunning = false;
-          const {
-            id
-          } = panel;
-          if (panel.isOpen) {
-            panel.shown.emit();
-            this.shown.emit(id);
-          } else {
-            panel.hidden.emit();
-            this.hidden.emit(id);
-          }
-        });
-      }
-    });
-  }
-  static {
-    this.ɵfac = function NgbAccordion_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbAccordion)(ɵɵdirectiveInject(NgbAccordionConfig), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ChangeDetectorRef));
-    };
-  }
-  static {
-    this.ɵcmp = ɵɵdefineComponent({
-      type: _NgbAccordion,
-      selectors: [["ngb-accordion"]],
-      contentQueries: function NgbAccordion_ContentQueries(rf, ctx, dirIndex) {
-        if (rf & 1) {
-          ɵɵcontentQuery(dirIndex, NgbPanel, 4);
-        }
-        if (rf & 2) {
-          let _t;
-          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.panels = _t);
-        }
-      },
-      hostAttrs: ["role", "tablist", 1, "accordion"],
-      hostVars: 1,
-      hostBindings: function NgbAccordion_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          ɵɵattribute("aria-multiselectable", !ctx.closeOtherPanels);
-        }
-      },
-      inputs: {
-        animation: "animation",
-        activeIds: "activeIds",
-        closeOtherPanels: [0, "closeOthers", "closeOtherPanels"],
-        destroyOnHide: "destroyOnHide",
-        type: "type"
-      },
-      outputs: {
-        panelChange: "panelChange",
-        shown: "shown",
-        hidden: "hidden"
-      },
-      exportAs: ["ngbAccordion"],
-      standalone: true,
-      features: [ɵɵStandaloneFeature],
-      decls: 3,
-      vars: 1,
-      consts: [["t", ""], ["ngbPanelHeader", ""], ["ngFor", "", 3, "ngForOf"], [1, "accordion-button", 3, "ngbPanelToggle"], [3, "ngTemplateOutlet"], ["role", "tab", 3, "id"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["role", "tabpanel", 3, "id", "ngbRef", 4, "ngIf"], ["role", "tabpanel", 3, "ngbRef", "id"], [1, "accordion-body"]],
-      template: function NgbAccordion_Template(rf, ctx) {
-        if (rf & 1) {
-          ɵɵtemplate(0, NgbAccordion_ng_template_0_Template, 3, 3, "ng-template", 1, 0, ɵɵtemplateRefExtractor)(2, NgbAccordion_ng_template_2_Template, 4, 12, "ng-template", 2);
-        }
-        if (rf & 2) {
-          ɵɵadvance(2);
-          ɵɵproperty("ngForOf", ctx.panels);
-        }
-      },
-      dependencies: [NgForOf, NgTemplateOutlet, NgbPanelToggle, NgbRefDirective, NgbPanelHeader, NgIf],
-      encapsulation: 2
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbAccordion, [{
-    type: Component,
-    args: [{
-      selector: "ngb-accordion",
-      exportAs: "ngbAccordion",
-      standalone: true,
-      imports: [NgForOf, NgTemplateOutlet, NgbPanelToggle, NgbRefDirective, NgbPanelHeader, NgIf],
-      encapsulation: ViewEncapsulation$1.None,
-      host: {
-        class: "accordion",
-        role: "tablist",
-        "[attr.aria-multiselectable]": "!closeOtherPanels"
-      },
-      template: `
-		<ng-template #t ngbPanelHeader let-panel>
-			<button class="accordion-button" [ngbPanelToggle]="panel">
-				{{ panel.title }}
-				<ng-template [ngTemplateOutlet]="panel.titleTpl?.templateRef"></ng-template>
-			</button>
-		</ng-template>
-		<ng-template ngFor let-panel [ngForOf]="panels">
-			<div [class]="'accordion-item ' + (panel.cardClass || '')">
-				<div
-					role="tab"
-					id="{{ panel.id }}-header"
-					[class]="'accordion-header ' + (panel.type ? 'bg-' + panel.type : type ? 'bg-' + type : '')"
-				>
-					<ng-template
-						[ngTemplateOutlet]="panel.headerTpl?.templateRef || t"
-						[ngTemplateOutletContext]="{ $implicit: panel, opened: panel.isOpen }"
-					></ng-template>
-				</div>
-				<div
-					id="{{ panel.id }}"
-					(ngbRef)="panel.panelDiv = $event"
-					role="tabpanel"
-					[attr.aria-labelledby]="panel.id + '-header'"
-					*ngIf="!destroyOnHide || panel.isOpen || panel.transitionRunning"
-				>
-					<div class="accordion-body">
-						<ng-template [ngTemplateOutlet]="panel.contentTpl?.templateRef || null"></ng-template>
-					</div>
-				</div>
-			</div>
-		</ng-template>
-	`
-    }]
-  }], function() {
-    return [{
-      type: NgbAccordionConfig
-    }, {
-      type: NgZone
-    }, {
-      type: ChangeDetectorRef
-    }];
-  }, {
-    panels: [{
-      type: ContentChildren,
-      args: [NgbPanel]
-    }],
-    animation: [{
-      type: Input
-    }],
-    activeIds: [{
-      type: Input
-    }],
-    closeOtherPanels: [{
-      type: Input,
-      args: ["closeOthers"]
-    }],
-    destroyOnHide: [{
-      type: Input
-    }],
-    type: [{
-      type: Input
-    }],
-    panelChange: [{
-      type: Output
-    }],
-    shown: [{
-      type: Output
-    }],
-    hidden: [{
-      type: Output
-    }]
-  });
-})();
 var NgbCollapseConfig = class _NgbCollapseConfig {
-  constructor(_ngbConfig) {
-    this._ngbConfig = _ngbConfig;
+  constructor() {
+    this._ngbConfig = inject(NgbConfig);
     this.horizontal = false;
   }
   get animation() {
-    return this._animation === void 0 ? this._ngbConfig.animation : this._animation;
+    return this._animation ?? this._ngbConfig.animation;
   }
   set animation(animation) {
     this._animation = animation;
   }
   static {
     this.ɵfac = function NgbCollapseConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbCollapseConfig)(ɵɵinject(NgbConfig));
+      return new (__ngFactoryType__ || _NgbCollapseConfig)();
     };
   }
   static {
@@ -3617,13 +2914,21 @@ var NgbCollapseConfig = class _NgbCollapseConfig {
     args: [{
       providedIn: "root"
     }]
-  }], function() {
-    return [{
-      type: NgbConfig
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbCollapse = class _NgbCollapse {
+  constructor() {
+    this._config = inject(NgbCollapseConfig);
+    this._element = inject(ElementRef);
+    this._zone = inject(NgZone);
+    this.animation = this._config.animation;
+    this._afterInit = false;
+    this._isCollapsed = false;
+    this.ngbCollapseChange = new EventEmitter();
+    this.horizontal = this._config.horizontal;
+    this.shown = new EventEmitter();
+    this.hidden = new EventEmitter();
+  }
   /**
    * If `true`, will collapse the element or show it otherwise.
    */
@@ -3634,17 +2939,6 @@ var NgbCollapse = class _NgbCollapse {
         this._runTransitionWithEvents(isCollapsed, this.animation);
       }
     }
-  }
-  constructor(_element, config, _zone) {
-    this._element = _element;
-    this._zone = _zone;
-    this._afterInit = false;
-    this._isCollapsed = false;
-    this.ngbCollapseChange = new EventEmitter();
-    this.shown = new EventEmitter();
-    this.hidden = new EventEmitter();
-    this.animation = config.animation;
-    this.horizontal = config.horizontal;
   }
   ngOnInit() {
     this._runTransition(this._isCollapsed, false);
@@ -3683,7 +2977,7 @@ var NgbCollapse = class _NgbCollapse {
   }
   static {
     this.ɵfac = function NgbCollapse_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbCollapse)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgbCollapseConfig), ɵɵdirectiveInject(NgZone));
+      return new (__ngFactoryType__ || _NgbCollapse)();
     };
   }
   static {
@@ -3722,15 +3016,7 @@ var NgbCollapse = class _NgbCollapse {
         "[class.collapse-horizontal]": "horizontal"
       }
     }]
-  }], function() {
-    return [{
-      type: ElementRef
-    }, {
-      type: NgbCollapseConfig
-    }, {
-      type: NgZone
-    }];
-  }, {
+  }], null, {
     animation: [{
       type: Input
     }],
@@ -3755,7 +3041,7 @@ var NgbCollapse = class _NgbCollapse {
 var nextId$3 = 0;
 var NgbAccordionBody = class _NgbAccordionBody {
   constructor() {
-    this._appRef = inject(ApplicationRef);
+    this._vcr = inject(ViewContainerRef);
     this._element = inject(ElementRef).nativeElement;
     this._item = inject(NgbAccordionItem);
     this._viewRef = null;
@@ -3773,17 +3059,13 @@ var NgbAccordionBody = class _NgbAccordionBody {
     this._destroyViewIfExists();
   }
   _destroyViewIfExists() {
-    if (this._viewRef) {
-      this._appRef.detachView(this._viewRef);
-      this._viewRef.destroy();
-      this._viewRef = null;
-    }
+    this._viewRef?.destroy();
+    this._viewRef = null;
   }
   _createViewIfNotExists() {
     if (!this._viewRef) {
-      this._viewRef = this._bodyTpl.createEmbeddedView(null);
+      this._viewRef = this._vcr.createEmbeddedView(this._bodyTpl);
       this._viewRef.detectChanges();
-      this._appRef.attachView(this._viewRef);
       for (const node of this._viewRef.rootNodes) {
         this._element.appendChild(node);
       }
@@ -3807,12 +3089,7 @@ var NgbAccordionBody = class _NgbAccordionBody {
           ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._bodyTpl = _t.first);
         }
       },
-      hostVars: 2,
-      hostBindings: function NgbAccordionBody_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          ɵɵclassProp("accordion-body", true);
-        }
-      },
+      hostAttrs: [1, "accordion-body"],
       standalone: true
     });
   }
@@ -3824,7 +3101,7 @@ var NgbAccordionBody = class _NgbAccordionBody {
       selector: "[ngbAccordionBody]",
       standalone: true,
       host: {
-        "[class.accordion-body]": "true"
+        class: "accordion-body"
       }
     }]
   }], null, {
@@ -3850,13 +3127,12 @@ var NgbAccordionCollapse = class _NgbAccordionCollapse {
     this.ɵdir = ɵɵdefineDirective({
       type: _NgbAccordionCollapse,
       selectors: [["", "ngbAccordionCollapse", ""]],
-      hostAttrs: ["role", "region"],
-      hostVars: 4,
+      hostAttrs: ["role", "region", 1, "accordion-collapse"],
+      hostVars: 2,
       hostBindings: function NgbAccordionCollapse_HostBindings(rf, ctx) {
         if (rf & 2) {
           ɵɵhostProperty("id", ctx.item.collapseId);
           ɵɵattribute("aria-labelledby", ctx.item.toggleId);
-          ɵɵclassProp("accordion-collapse", true);
         }
       },
       exportAs: ["ngbAccordionCollapse"],
@@ -3874,7 +3150,7 @@ var NgbAccordionCollapse = class _NgbAccordionCollapse {
       selector: "[ngbAccordionCollapse]",
       host: {
         role: "region",
-        "[class.accordion-collapse]": "true",
+        class: "accordion-collapse",
         "[id]": "item.collapseId",
         "[attr.aria-labelledby]": "item.toggleId"
       },
@@ -3942,12 +3218,11 @@ var NgbAccordionButton = class _NgbAccordionButton {
     this.ɵdir = ɵɵdefineDirective({
       type: _NgbAccordionButton,
       selectors: [["button", "ngbAccordionButton", ""]],
-      hostAttrs: ["type", "button"],
-      hostVars: 3,
+      hostAttrs: ["type", "button", 1, "accordion-button"],
+      hostVars: 1,
       hostBindings: function NgbAccordionButton_HostBindings(rf, ctx) {
         if (rf & 2) {
           ɵɵhostProperty("disabled", ctx.item.disabled);
-          ɵɵclassProp("accordion-button", true);
         }
       },
       standalone: true,
@@ -3963,7 +3238,7 @@ var NgbAccordionButton = class _NgbAccordionButton {
       standalone: true,
       host: {
         "[disabled]": "item.disabled",
-        "[class.accordion-button]": "true",
+        class: "accordion-button",
         type: "button"
       },
       hostDirectives: [NgbAccordionToggle]
@@ -3983,11 +3258,11 @@ var NgbAccordionHeader = class _NgbAccordionHeader {
     this.ɵdir = ɵɵdefineDirective({
       type: _NgbAccordionHeader,
       selectors: [["", "ngbAccordionHeader", ""]],
-      hostAttrs: ["role", "heading"],
-      hostVars: 4,
+      hostAttrs: ["role", "heading", 1, "accordion-header"],
+      hostVars: 2,
       hostBindings: function NgbAccordionHeader_HostBindings(rf, ctx) {
         if (rf & 2) {
-          ɵɵclassProp("accordion-header", true)("collapsed", ctx.item.collapsed);
+          ɵɵclassProp("collapsed", ctx.item.collapsed);
         }
       },
       standalone: true
@@ -4002,7 +3277,7 @@ var NgbAccordionHeader = class _NgbAccordionHeader {
       standalone: true,
       host: {
         role: "heading",
-        "[class.accordion-header]": "true",
+        class: "accordion-header",
         "[class.collapsed]": "item.collapsed"
       }
     }]
@@ -4142,11 +3417,11 @@ var NgbAccordionItem = class _NgbAccordionItem {
           ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._collapse = _t.first);
         }
       },
-      hostVars: 3,
+      hostAttrs: [1, "accordion-item"],
+      hostVars: 1,
       hostBindings: function NgbAccordionItem_HostBindings(rf, ctx) {
         if (rf & 2) {
           ɵɵhostProperty("id", ctx.id);
-          ɵɵclassProp("accordion-item", true);
         }
       },
       inputs: {
@@ -4174,8 +3449,8 @@ var NgbAccordionItem = class _NgbAccordionItem {
       exportAs: "ngbAccordionItem",
       standalone: true,
       host: {
-        "[class.accordion-item]": "true",
-        "[id]": "id"
+        "[id]": "id",
+        class: "accordion-item"
       }
     }]
   }], null, {
@@ -4213,15 +3488,16 @@ var NgbAccordionItem = class _NgbAccordionItem {
   });
 })();
 var NgbAccordionDirective = class _NgbAccordionDirective {
-  constructor(config) {
+  constructor() {
+    this._config = inject(NgbAccordionConfig);
+    this._anItemWasAlreadyExpandedDuringInitialisation = false;
+    this.animation = this._config.animation;
+    this.closeOthers = this._config.closeOthers;
+    this.destroyOnHide = this._config.destroyOnHide;
     this.show = new EventEmitter();
     this.shown = new EventEmitter();
     this.hide = new EventEmitter();
     this.hidden = new EventEmitter();
-    this._anItemWasAlreadyExpandedDuringInitialisation = false;
-    this.animation = config.animation;
-    this.closeOthers = config.closeOthers;
-    this.destroyOnHide = config.destroyOnHide;
   }
   /**
    * Toggles an item with the given id.
@@ -4311,7 +3587,7 @@ var NgbAccordionDirective = class _NgbAccordionDirective {
   }
   static {
     this.ɵfac = function NgbAccordionDirective_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbAccordionDirective)(ɵɵdirectiveInject(NgbAccordionConfig));
+      return new (__ngFactoryType__ || _NgbAccordionDirective)();
     };
   }
   static {
@@ -4327,12 +3603,7 @@ var NgbAccordionDirective = class _NgbAccordionDirective {
           ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._items = _t);
         }
       },
-      hostVars: 2,
-      hostBindings: function NgbAccordionDirective_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          ɵɵclassProp("accordion", true);
-        }
-      },
+      hostAttrs: [1, "accordion"],
       inputs: {
         animation: "animation",
         closeOthers: "closeOthers",
@@ -4357,14 +3628,10 @@ var NgbAccordionDirective = class _NgbAccordionDirective {
       standalone: true,
       exportAs: "ngbAccordion",
       host: {
-        "[class.accordion]": "true"
+        class: "accordion"
       }
     }]
-  }], function() {
-    return [{
-      type: NgbAccordionConfig
-    }];
-  }, {
+  }], null, {
     _items: [{
       type: ContentChildren,
       args: [NgbAccordionItem, {
@@ -4394,7 +3661,7 @@ var NgbAccordionDirective = class _NgbAccordionDirective {
     }]
   });
 })();
-var NGB_ACCORDION_DIRECTIVES = [NgbAccordion, NgbPanel, NgbPanelTitle, NgbPanelContent, NgbPanelHeader, NgbPanelToggle, NgbAccordionButton, NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionBody, NgbAccordionCollapse];
+var NGB_ACCORDION_DIRECTIVES = [NgbAccordionButton, NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionBody, NgbAccordionCollapse];
 var NgbAccordionModule = class _NgbAccordionModule {
   static {
     this.ɵfac = function NgbAccordionModule_Factory(__ngFactoryType__) {
@@ -4404,8 +3671,8 @@ var NgbAccordionModule = class _NgbAccordionModule {
   static {
     this.ɵmod = ɵɵdefineNgModule({
       type: _NgbAccordionModule,
-      imports: [NgbAccordion, NgbPanel, NgbPanelTitle, NgbPanelContent, NgbPanelHeader, NgbPanelToggle, NgbAccordionButton, NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionBody, NgbAccordionCollapse],
-      exports: [NgbAccordion, NgbPanel, NgbPanelTitle, NgbPanelContent, NgbPanelHeader, NgbPanelToggle, NgbAccordionButton, NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionBody, NgbAccordionCollapse]
+      imports: [NgbAccordionButton, NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionBody, NgbAccordionCollapse],
+      exports: [NgbAccordionButton, NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionBody, NgbAccordionCollapse]
     });
   }
   static {
@@ -4421,26 +3688,21 @@ var NgbAccordionModule = class _NgbAccordionModule {
     }]
   }], null, null);
 })();
-var ngbAlertFadingTransition = ({
-  classList
-}) => {
-  classList.remove("show");
-};
 var NgbAlertConfig = class _NgbAlertConfig {
-  constructor(_ngbConfig) {
-    this._ngbConfig = _ngbConfig;
+  constructor() {
+    this._ngbConfig = inject(NgbConfig);
     this.dismissible = true;
     this.type = "warning";
   }
   get animation() {
-    return this._animation === void 0 ? this._ngbConfig.animation : this._animation;
+    return this._animation ?? this._ngbConfig.animation;
   }
   set animation(animation) {
     this._animation = animation;
   }
   static {
     this.ɵfac = function NgbAlertConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbAlertConfig)(ɵɵinject(NgbConfig));
+      return new (__ngFactoryType__ || _NgbAlertConfig)();
     };
   }
   static {
@@ -4457,20 +3719,22 @@ var NgbAlertConfig = class _NgbAlertConfig {
     args: [{
       providedIn: "root"
     }]
-  }], function() {
-    return [{
-      type: NgbConfig
-    }];
-  }, null);
+  }], null, null);
 })();
+var ngbAlertFadingTransition = ({
+  classList
+}) => {
+  classList.remove("show");
+};
 var NgbAlert = class _NgbAlert {
-  constructor(config, _element, _zone) {
-    this._element = _element;
-    this._zone = _zone;
+  constructor() {
+    this._config = inject(NgbAlertConfig);
+    this._elementRef = inject(ElementRef);
+    this._zone = inject(NgZone);
+    this.animation = this._config.animation;
+    this.dismissible = this._config.dismissible;
+    this.type = this._config.type;
     this.closed = new EventEmitter();
-    this.dismissible = config.dismissible;
-    this.type = config.type;
-    this.animation = config.animation;
   }
   /**
    * Triggers alert closing programmatically (same as clicking on the close button (×)).
@@ -4483,7 +3747,7 @@ var NgbAlert = class _NgbAlert {
    * @since 8.0.0
    */
   close() {
-    const transition = ngbRunTransition(this._zone, this._element.nativeElement, ngbAlertFadingTransition, {
+    const transition = ngbRunTransition(this._zone, this._elementRef.nativeElement, ngbAlertFadingTransition, {
       animation: this.animation,
       runningTransition: "continue"
     });
@@ -4492,7 +3756,7 @@ var NgbAlert = class _NgbAlert {
   }
   static {
     this.ɵfac = function NgbAlert_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbAlert)(ɵɵdirectiveInject(NgbAlertConfig), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+      return new (__ngFactoryType__ || _NgbAlert)();
     };
   }
   static {
@@ -4518,7 +3782,7 @@ var NgbAlert = class _NgbAlert {
       exportAs: ["ngbAlert"],
       standalone: true,
       features: [ɵɵStandaloneFeature],
-      ngContentSelectors: _c1,
+      ngContentSelectors: _c0,
       decls: 2,
       vars: 1,
       consts: () => {
@@ -4529,20 +3793,19 @@ var NgbAlert = class _NgbAlert {
         } else {
           i18n_0 = $localize`:@@ngb.alert.close:Close`;
         }
-        return [["type", "button", "class", "btn-close", "aria-label", i18n_0, 3, "click", 4, "ngIf"], ["type", "button", "aria-label", i18n_0, 1, "btn-close", 3, "click"]];
+        return [["type", "button", "aria-label", i18n_0, 1, "btn-close"], ["type", "button", "aria-label", i18n_0, 1, "btn-close", 3, "click"]];
       },
       template: function NgbAlert_Template(rf, ctx) {
         if (rf & 1) {
           ɵɵprojectionDef();
           ɵɵprojection(0);
-          ɵɵtemplate(1, NgbAlert_button_1_Template, 1, 0, "button", 0);
+          ɵɵtemplate(1, NgbAlert_Conditional_1_Template, 1, 0, "button", 0);
         }
         if (rf & 2) {
           ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.dismissible);
+          ɵɵconditional(ctx.dismissible ? 1 : -1);
         }
       },
-      dependencies: [NgIf],
       styles: ["ngb-alert{display:block}\n"],
       encapsulation: 2,
       changeDetection: 0
@@ -4556,7 +3819,6 @@ var NgbAlert = class _NgbAlert {
       selector: "ngb-alert",
       exportAs: "ngbAlert",
       standalone: true,
-      imports: [NgIf],
       changeDetection: ChangeDetectionStrategy.OnPush,
       encapsulation: ViewEncapsulation$1.None,
       host: {
@@ -4566,28 +3828,20 @@ var NgbAlert = class _NgbAlert {
         "[class.alert-dismissible]": "dismissible"
       },
       template: `
-		<ng-content></ng-content>
-		<button
-			*ngIf="dismissible"
-			type="button"
-			class="btn-close"
-			aria-label="Close"
-			i18n-aria-label="@@ngb.alert.close"
-			(click)="close()"
-		>
-		</button>
+		<ng-content />
+		@if (dismissible) {
+			<button
+				type="button"
+				class="btn-close"
+				aria-label="Close"
+				i18n-aria-label="@@ngb.alert.close"
+				(click)="close()"
+			></button>
+		}
 	`,
       styles: ["ngb-alert{display:block}\n"]
     }]
-  }], function() {
-    return [{
-      type: NgbAlertConfig
-    }, {
-      type: ElementRef
-    }, {
-      type: NgZone
-    }];
-  }, {
+  }], null, {
     animation: [{
       type: Input
     }],
@@ -4628,6 +3882,44 @@ var NgbAlertModule = class _NgbAlertModule {
     }]
   }], null, null);
 })();
+var NgbCarouselConfig = class _NgbCarouselConfig {
+  constructor() {
+    this._ngbConfig = inject(NgbConfig);
+    this.interval = 5e3;
+    this.wrap = true;
+    this.keyboard = true;
+    this.pauseOnHover = true;
+    this.pauseOnFocus = true;
+    this.showNavigationArrows = true;
+    this.showNavigationIndicators = true;
+  }
+  get animation() {
+    return this._animation ?? this._ngbConfig.animation;
+  }
+  set animation(animation) {
+    this._animation = animation;
+  }
+  static {
+    this.ɵfac = function NgbCarouselConfig_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbCarouselConfig)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbCarouselConfig,
+      factory: _NgbCarouselConfig.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbCarouselConfig, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
 var NgbSlideEventDirection;
 (function(NgbSlideEventDirection2) {
   NgbSlideEventDirection2["START"] = "start";
@@ -4639,13 +3931,11 @@ var isBeingAnimated = ({
   return classList.contains("carousel-item-start") || classList.contains("carousel-item-end");
 };
 var removeDirectionClasses = (classList) => {
-  classList.remove("carousel-item-start");
-  classList.remove("carousel-item-end");
+  classList.remove("carousel-item-start", "carousel-item-end");
 };
 var removeClasses = (classList) => {
   removeDirectionClasses(classList);
-  classList.remove("carousel-item-prev");
-  classList.remove("carousel-item-next");
+  classList.remove("carousel-item-prev", "carousel-item-next");
 };
 var ngbCarouselTransitionIn = (element, animation, {
   direction
@@ -4654,7 +3944,6 @@ var ngbCarouselTransitionIn = (element, animation, {
     classList
   } = element;
   if (!animation) {
-    removeDirectionClasses(classList);
     removeClasses(classList);
     classList.add("active");
     return;
@@ -4678,7 +3967,6 @@ var ngbCarouselTransitionOut = (element, animation, {
     classList
   } = element;
   if (!animation) {
-    removeDirectionClasses(classList);
     removeClasses(classList);
     classList.remove("active");
     return;
@@ -4693,58 +3981,17 @@ var ngbCarouselTransitionOut = (element, animation, {
     classList.remove("active");
   };
 };
-var NgbCarouselConfig = class _NgbCarouselConfig {
-  constructor(_ngbConfig) {
-    this._ngbConfig = _ngbConfig;
-    this.interval = 5e3;
-    this.wrap = true;
-    this.keyboard = true;
-    this.pauseOnHover = true;
-    this.pauseOnFocus = true;
-    this.showNavigationArrows = true;
-    this.showNavigationIndicators = true;
-  }
-  get animation() {
-    return this._animation === void 0 ? this._ngbConfig.animation : this._animation;
-  }
-  set animation(animation) {
-    this._animation = animation;
-  }
-  static {
-    this.ɵfac = function NgbCarouselConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbCarouselConfig)(ɵɵinject(NgbConfig));
-    };
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _NgbCarouselConfig,
-      factory: _NgbCarouselConfig.ɵfac,
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbCarouselConfig, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], function() {
-    return [{
-      type: NgbConfig
-    }];
-  }, null);
-})();
 var nextId$2 = 0;
+var carouselId = 0;
 var NgbSlide = class _NgbSlide {
-  constructor(tplRef) {
-    this.tplRef = tplRef;
+  constructor() {
+    this.templateRef = inject(TemplateRef);
     this.id = `ngb-slide-${nextId$2++}`;
     this.slid = new EventEmitter();
   }
   static {
     this.ɵfac = function NgbSlide_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbSlide)(ɵɵdirectiveInject(TemplateRef));
+      return new (__ngFactoryType__ || _NgbSlide)();
     };
   }
   static {
@@ -4768,11 +4015,7 @@ var NgbSlide = class _NgbSlide {
       selector: "ng-template[ngbSlide]",
       standalone: true
     }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, {
+  }], null, {
     id: [{
       type: Input
     }],
@@ -4782,6 +4025,31 @@ var NgbSlide = class _NgbSlide {
   });
 })();
 var NgbCarousel = class _NgbCarousel {
+  constructor() {
+    this.NgbSlideEventSource = NgbSlideEventSource;
+    this._config = inject(NgbCarouselConfig);
+    this._platformId = inject(PLATFORM_ID);
+    this._ngZone = inject(NgZone);
+    this._cd = inject(ChangeDetectorRef);
+    this._container = inject(ElementRef);
+    this._destroyRef = inject(DestroyRef);
+    this._injector = inject(Injector);
+    this._interval$ = new import_rxjs2.BehaviorSubject(this._config.interval);
+    this._mouseHover$ = new import_rxjs2.BehaviorSubject(false);
+    this._focused$ = new import_rxjs2.BehaviorSubject(false);
+    this._pauseOnHover$ = new import_rxjs2.BehaviorSubject(this._config.pauseOnHover);
+    this._pauseOnFocus$ = new import_rxjs2.BehaviorSubject(this._config.pauseOnFocus);
+    this._pause$ = new import_rxjs2.BehaviorSubject(false);
+    this._wrap$ = new import_rxjs2.BehaviorSubject(this._config.wrap);
+    this.id = `ngb-carousel-${carouselId++}`;
+    this.animation = this._config.animation;
+    this.keyboard = this._config.keyboard;
+    this.showNavigationArrows = this._config.showNavigationArrows;
+    this.showNavigationIndicators = this._config.showNavigationIndicators;
+    this.slide = new EventEmitter();
+    this.slid = new EventEmitter();
+    this._transitionIds = null;
+  }
   /**
    * Time in milliseconds before the next slide is shown.
    */
@@ -4832,32 +4100,6 @@ var NgbCarousel = class _NgbCarousel {
   get focused() {
     return this._focused$.value;
   }
-  constructor(config, _platformId, _ngZone, _cd, _container) {
-    this._platformId = _platformId;
-    this._ngZone = _ngZone;
-    this._cd = _cd;
-    this._container = _container;
-    this.NgbSlideEventSource = NgbSlideEventSource;
-    this._destroy$ = new import_rxjs2.Subject();
-    this._interval$ = new import_rxjs2.BehaviorSubject(0);
-    this._mouseHover$ = new import_rxjs2.BehaviorSubject(false);
-    this._focused$ = new import_rxjs2.BehaviorSubject(false);
-    this._pauseOnHover$ = new import_rxjs2.BehaviorSubject(false);
-    this._pauseOnFocus$ = new import_rxjs2.BehaviorSubject(false);
-    this._pause$ = new import_rxjs2.BehaviorSubject(false);
-    this._wrap$ = new import_rxjs2.BehaviorSubject(false);
-    this.slide = new EventEmitter();
-    this.slid = new EventEmitter();
-    this._transitionIds = null;
-    this.animation = config.animation;
-    this.interval = config.interval;
-    this.wrap = config.wrap;
-    this.keyboard = config.keyboard;
-    this.pauseOnHover = config.pauseOnHover;
-    this.pauseOnFocus = config.pauseOnFocus;
-    this.showNavigationArrows = config.showNavigationArrows;
-    this.showNavigationIndicators = config.showNavigationIndicators;
-  }
   arrowLeft() {
     this.focus();
     this.prev(NgbSlideEventSource.ARROW_LEFT);
@@ -4874,14 +4116,14 @@ var NgbCarousel = class _NgbCarousel {
           const currentSlideIdx = this._getSlideIdxById(currentSlideId);
           return wrap ? slideArr.length > 1 : currentSlideIdx < slideArr.length - 1;
         }), (0, import_operators2.distinctUntilChanged)());
-        (0, import_rxjs2.combineLatest)([this._pause$, this._pauseOnHover$, this._mouseHover$, this._pauseOnFocus$, this._focused$, this._interval$, hasNextSlide$]).pipe((0, import_operators2.map)(([pause, pauseOnHover, mouseHover, pauseOnFocus, focused, interval, hasNextSlide]) => pause || pauseOnHover && mouseHover || pauseOnFocus && focused || !hasNextSlide ? 0 : interval), (0, import_operators2.distinctUntilChanged)(), (0, import_operators2.switchMap)((interval) => interval > 0 ? (0, import_rxjs2.timer)(interval, interval) : import_rxjs2.NEVER), (0, import_operators2.takeUntil)(this._destroy$)).subscribe(() => this._ngZone.run(() => this.next(NgbSlideEventSource.TIMER)));
+        (0, import_rxjs2.combineLatest)([this._pause$, this._pauseOnHover$, this._mouseHover$, this._pauseOnFocus$, this._focused$, this._interval$, hasNextSlide$]).pipe((0, import_operators2.map)(([pause, pauseOnHover, mouseHover, pauseOnFocus, focused, interval, hasNextSlide]) => pause || pauseOnHover && mouseHover || pauseOnFocus && focused || !hasNextSlide ? 0 : interval), (0, import_operators2.distinctUntilChanged)(), (0, import_operators2.switchMap)((interval) => interval > 0 ? (0, import_rxjs2.timer)(interval, interval) : import_rxjs2.NEVER), takeUntilDestroyed(this._destroyRef)).subscribe(() => this._ngZone.run(() => this.next(NgbSlideEventSource.TIMER)));
       });
     }
-    this.slides.changes.pipe((0, import_operators2.takeUntil)(this._destroy$)).subscribe(() => {
+    this.slides.changes.pipe(takeUntilDestroyed(this._destroyRef)).subscribe(() => {
       this._transitionIds?.forEach((id) => ngbCompleteTransition(this._getSlideElement(id)));
       this._transitionIds = null;
       this._cd.markForCheck();
-      this._ngZone.onStable.pipe((0, import_operators2.take)(1)).subscribe(() => {
+      afterNextRender(() => {
         for (const {
           id
         } of this.slides) {
@@ -4892,6 +4134,9 @@ var NgbCarousel = class _NgbCarousel {
             element.classList.remove("active");
           }
         }
+      }, {
+        phase: AfterRenderPhase.MixedReadWrite,
+        injector: this._injector
       });
     });
   }
@@ -4906,9 +4151,6 @@ var NgbCarousel = class _NgbCarousel {
         element.classList.add("active");
       }
     }
-  }
-  ngOnDestroy() {
-    this._destroy$.next();
   }
   /**
    * Navigates to a slide with the specified identifier.
@@ -5035,7 +4277,7 @@ var NgbCarousel = class _NgbCarousel {
   }
   static {
     this.ɵfac = function NgbCarousel_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbCarousel)(ɵɵdirectiveInject(NgbCarouselConfig), ɵɵdirectiveInject(PLATFORM_ID), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef));
+      return new (__ngFactoryType__ || _NgbCarousel)();
     };
   }
   static {
@@ -5092,8 +4334,8 @@ var NgbCarousel = class _NgbCarousel {
       exportAs: ["ngbCarousel"],
       standalone: true,
       features: [ɵɵStandaloneFeature],
-      decls: 6,
-      vars: 6,
+      decls: 7,
+      vars: 3,
       consts: () => {
         let i18n_1;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
@@ -5124,31 +4366,29 @@ var NgbCarousel = class _NgbCarousel {
         } else {
           i18n_3 = $localize`:@@ngb.carousel.next:Next`;
         }
-        return [i18n_1, i18n_2, i18n_3, ["role", "tablist", 1, "carousel-indicators"], ["type", "button", "data-bs-target", "", "role", "tab", 3, "active", "click", 4, "ngFor", "ngForOf"], [1, "carousel-inner"], ["class", "carousel-item", "role", "tabpanel", 3, "id", 4, "ngFor", "ngForOf"], ["class", "carousel-control-prev", "type", "button", 3, "click", 4, "ngIf"], ["class", "carousel-control-next", "type", "button", 3, "click", 4, "ngIf"], ["type", "button", "data-bs-target", "", "role", "tab", 3, "click"], ["role", "tabpanel", 1, "carousel-item", 3, "id"], [1, "visually-hidden"], [3, "ngTemplateOutlet"], ["type", "button", 1, "carousel-control-prev", 3, "click"], ["aria-hidden", "true", 1, "carousel-control-prev-icon"], ["type", "button", 1, "carousel-control-next", 3, "click"], ["aria-hidden", "true", 1, "carousel-control-next-icon"]];
+        return [i18n_1, i18n_2, i18n_3, ["role", "tablist", 1, "carousel-indicators"], ["type", "button", "data-bs-target", "", "role", "tab", 3, "active"], [1, "carousel-inner"], ["role", "tabpanel", 1, "carousel-item", 3, "id"], ["type", "button", "data-bs-target", "", "role", "tab", 3, "click"], [1, "visually-hidden"], [3, "ngTemplateOutlet"], ["type", "button", 1, "carousel-control-prev", 3, "click"], ["aria-hidden", "true", 1, "carousel-control-prev-icon"], [1, "visually-hidden", 3, "id"], ["type", "button", 1, "carousel-control-next", 3, "click"], ["aria-hidden", "true", 1, "carousel-control-next-icon"]];
       },
       template: function NgbCarousel_Template(rf, ctx) {
         if (rf & 1) {
           ɵɵelementStart(0, "div", 3);
-          ɵɵtemplate(1, NgbCarousel_button_1_Template, 1, 5, "button", 4);
+          ɵɵrepeaterCreate(1, NgbCarousel_For_2_Template, 1, 5, "button", 4, ɵɵrepeaterTrackByIdentity);
           ɵɵelementEnd();
-          ɵɵelementStart(2, "div", 5);
-          ɵɵtemplate(3, NgbCarousel_div_3_Template, 4, 4, "div", 6);
+          ɵɵelementStart(3, "div", 5);
+          ɵɵrepeaterCreate(4, NgbCarousel_For_5_Template, 4, 4, "div", 6, ɵɵrepeaterTrackByIdentity);
           ɵɵelementEnd();
-          ɵɵtemplate(4, NgbCarousel_button_4_Template, 4, 0, "button", 7)(5, NgbCarousel_button_5_Template, 4, 0, "button", 8);
+          ɵɵtemplate(6, NgbCarousel_Conditional_6_Template, 8, 4);
         }
         if (rf & 2) {
           ɵɵclassProp("visually-hidden", !ctx.showNavigationIndicators);
           ɵɵadvance();
-          ɵɵproperty("ngForOf", ctx.slides);
+          ɵɵrepeater(ctx.slides);
+          ɵɵadvance(3);
+          ɵɵrepeater(ctx.slides);
           ɵɵadvance(2);
-          ɵɵproperty("ngForOf", ctx.slides);
-          ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.showNavigationArrows);
-          ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.showNavigationArrows);
+          ɵɵconditional(ctx.showNavigationArrows ? 6 : -1);
         }
       },
-      dependencies: [NgForOf, NgTemplateOutlet, NgIf],
+      dependencies: [NgTemplateOutlet],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -5161,7 +4401,7 @@ var NgbCarousel = class _NgbCarousel {
       selector: "ngb-carousel",
       exportAs: "ngbCarousel",
       standalone: true,
-      imports: [NgForOf, NgTemplateOutlet, NgIf],
+      imports: [NgTemplateOutlet],
       changeDetection: ChangeDetectionStrategy.OnPush,
       encapsulation: ViewEncapsulation$1.None,
       host: {
@@ -5178,61 +4418,50 @@ var NgbCarousel = class _NgbCarousel {
       },
       template: `
 		<div class="carousel-indicators" [class.visually-hidden]="!showNavigationIndicators" role="tablist">
-			<button
-				type="button"
-				data-bs-target
-				*ngFor="let slide of slides"
-				[class.active]="slide.id === activeId"
-				role="tab"
-				[attr.aria-labelledby]="'slide-' + slide.id"
-				[attr.aria-controls]="'slide-' + slide.id"
-				[attr.aria-selected]="slide.id === activeId"
-				(click)="focus(); select(slide.id, NgbSlideEventSource.INDICATOR)"
-			></button>
+			@for (slide of slides; track slide) {
+				<button
+					type="button"
+					data-bs-target
+					[class.active]="slide.id === activeId"
+					role="tab"
+					[attr.aria-labelledby]="'slide-' + slide.id"
+					[attr.aria-controls]="'slide-' + slide.id"
+					[attr.aria-selected]="slide.id === activeId"
+					(click)="focus(); select(slide.id, NgbSlideEventSource.INDICATOR)"
+				></button>
+			}
 		</div>
 		<div class="carousel-inner">
-			<div
-				*ngFor="let slide of slides; index as i; count as c"
-				class="carousel-item"
-				[id]="'slide-' + slide.id"
-				role="tabpanel"
-			>
-				<span
-					class="visually-hidden"
-					i18n="Currently selected slide number read by screen reader@@ngb.carousel.slide-number"
-				>
-					Slide {{ i + 1 }} of {{ c }}
-				</span>
-				<ng-template [ngTemplateOutlet]="slide.tplRef"></ng-template>
-			</div>
+			@for (slide of slides; track slide; let i = $index; let c = $count) {
+				<div class="carousel-item" [id]="'slide-' + slide.id" role="tabpanel">
+					<span
+						class="visually-hidden"
+						i18n="Currently selected slide number read by screen reader@@ngb.carousel.slide-number"
+					>
+						Slide {{ i + 1 }} of {{ c }}
+					</span>
+					<ng-template [ngTemplateOutlet]="slide.templateRef" />
+				</div>
+			}
 		</div>
-		<button class="carousel-control-prev" type="button" (click)="arrowLeft()" *ngIf="showNavigationArrows">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden" i18n="@@ngb.carousel.previous">Previous</span>
-		</button>
-		<button class="carousel-control-next" type="button" (click)="arrowRight()" *ngIf="showNavigationArrows">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden" i18n="@@ngb.carousel.next">Next</span>
-		</button>
+		@if (showNavigationArrows) {
+			<button
+				class="carousel-control-prev"
+				type="button"
+				(click)="arrowLeft()"
+				[attr.aria-labelledby]="id + '-previous'"
+			>
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden" i18n="@@ngb.carousel.previous" [id]="id + '-previous'">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" (click)="arrowRight()" [attr.aria-labelledby]="id + '-next'">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden" i18n="@@ngb.carousel.next" [id]="id + '-next'">Next</span>
+			</button>
+		}
 	`
     }]
-  }], function() {
-    return [{
-      type: NgbCarouselConfig
-    }, {
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [PLATFORM_ID]
-      }]
-    }, {
-      type: NgZone
-    }, {
-      type: ChangeDetectorRef
-    }, {
-      type: ElementRef
-    }];
-  }, {
+  }], null, {
     slides: [{
       type: ContentChildren,
       args: [NgbSlide]
@@ -5391,6 +4620,134 @@ var NgbDate = class _NgbDate {
     }
   }
 };
+function fromJSDate(jsDate) {
+  return new NgbDate(jsDate.getFullYear(), jsDate.getMonth() + 1, jsDate.getDate());
+}
+function toJSDate(date) {
+  const jsDate = new Date(date.year, date.month - 1, date.day, 12);
+  if (!isNaN(jsDate.getTime())) {
+    jsDate.setFullYear(date.year);
+  }
+  return jsDate;
+}
+function NGB_DATEPICKER_CALENDAR_FACTORY() {
+  return new NgbCalendarGregorian();
+}
+var NgbCalendar = class _NgbCalendar {
+  static {
+    this.ɵfac = function NgbCalendar_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbCalendar)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbCalendar,
+      factory: () => NGB_DATEPICKER_CALENDAR_FACTORY(),
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbCalendar, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root",
+      useFactory: NGB_DATEPICKER_CALENDAR_FACTORY
+    }]
+  }], null, null);
+})();
+var NgbCalendarGregorian = class _NgbCalendarGregorian extends NgbCalendar {
+  getDaysPerWeek() {
+    return 7;
+  }
+  getMonths() {
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  }
+  getWeeksPerMonth() {
+    return 6;
+  }
+  getNext(date, period = "d", number = 1) {
+    let jsDate = toJSDate(date);
+    let checkMonth = true;
+    let expectedMonth = jsDate.getMonth();
+    switch (period) {
+      case "y":
+        jsDate.setFullYear(jsDate.getFullYear() + number);
+        break;
+      case "m":
+        expectedMonth += number;
+        jsDate.setMonth(expectedMonth);
+        expectedMonth = expectedMonth % 12;
+        if (expectedMonth < 0) {
+          expectedMonth = expectedMonth + 12;
+        }
+        break;
+      case "d":
+        jsDate.setDate(jsDate.getDate() + number);
+        checkMonth = false;
+        break;
+      default:
+        return date;
+    }
+    if (checkMonth && jsDate.getMonth() !== expectedMonth) {
+      jsDate.setDate(0);
+    }
+    return fromJSDate(jsDate);
+  }
+  getPrev(date, period = "d", number = 1) {
+    return this.getNext(date, period, -number);
+  }
+  getWeekday(date) {
+    let jsDate = toJSDate(date);
+    let day = jsDate.getDay();
+    return day === 0 ? 7 : day;
+  }
+  getWeekNumber(week, firstDayOfWeek) {
+    if (firstDayOfWeek === 7) {
+      firstDayOfWeek = 0;
+    }
+    const thursdayIndex = (4 + 7 - firstDayOfWeek) % 7;
+    let date = week[thursdayIndex];
+    const jsDate = toJSDate(date);
+    jsDate.setDate(jsDate.getDate() + 4 - (jsDate.getDay() || 7));
+    const time = jsDate.getTime();
+    jsDate.setMonth(0);
+    jsDate.setDate(1);
+    return Math.floor(Math.round((time - jsDate.getTime()) / 864e5) / 7) + 1;
+  }
+  getToday() {
+    return fromJSDate(/* @__PURE__ */ new Date());
+  }
+  isValid(date) {
+    if (!date || !isInteger(date.year) || !isInteger(date.month) || !isInteger(date.day)) {
+      return false;
+    }
+    if (date.year === 0) {
+      return false;
+    }
+    const jsDate = toJSDate(date);
+    return !isNaN(jsDate.getTime()) && jsDate.getFullYear() === date.year && jsDate.getMonth() + 1 === date.month && jsDate.getDate() === date.day;
+  }
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵNgbCalendarGregorian_BaseFactory;
+      return function NgbCalendarGregorian_Factory(__ngFactoryType__) {
+        return (ɵNgbCalendarGregorian_BaseFactory || (ɵNgbCalendarGregorian_BaseFactory = ɵɵgetInheritedFactory(_NgbCalendarGregorian)))(__ngFactoryType__ || _NgbCalendarGregorian);
+      };
+    })();
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbCalendarGregorian,
+      factory: _NgbCalendarGregorian.ɵfac
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbCalendarGregorian, [{
+    type: Injectable
+  }], null, null);
+})();
 function isChangedDate(prev, next) {
   return !dateComparator(prev, next);
 }
@@ -5583,137 +4940,6 @@ function getFirstViewDate(calendar, date, firstDayOfWeek) {
   const dayOfWeek = calendar.getWeekday(firstMonthDate) % daysPerWeek;
   return calendar.getPrev(firstMonthDate, "d", (daysPerWeek + dayOfWeek - firstDayOfWeek) % daysPerWeek);
 }
-function fromJSDate(jsDate) {
-  return new NgbDate(jsDate.getFullYear(), jsDate.getMonth() + 1, jsDate.getDate());
-}
-function toJSDate(date) {
-  const jsDate = new Date(date.year, date.month - 1, date.day, 12);
-  if (!isNaN(jsDate.getTime())) {
-    jsDate.setFullYear(date.year);
-  }
-  return jsDate;
-}
-function NGB_DATEPICKER_CALENDAR_FACTORY() {
-  return new NgbCalendarGregorian();
-}
-var NgbCalendar = class _NgbCalendar {
-  static {
-    this.ɵfac = function NgbCalendar_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbCalendar)();
-    };
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _NgbCalendar,
-      factory: () => NGB_DATEPICKER_CALENDAR_FACTORY(),
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbCalendar, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root",
-      useFactory: NGB_DATEPICKER_CALENDAR_FACTORY
-    }]
-  }], null, null);
-})();
-var NgbCalendarGregorian = class _NgbCalendarGregorian extends NgbCalendar {
-  getDaysPerWeek() {
-    return 7;
-  }
-  getMonths() {
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  }
-  getWeeksPerMonth() {
-    return 6;
-  }
-  getNext(date, period = "d", number = 1) {
-    let jsDate = toJSDate(date);
-    let checkMonth = true;
-    let expectedMonth = jsDate.getMonth();
-    switch (period) {
-      case "y":
-        jsDate.setFullYear(jsDate.getFullYear() + number);
-        break;
-      case "m":
-        expectedMonth += number;
-        jsDate.setMonth(expectedMonth);
-        expectedMonth = expectedMonth % 12;
-        if (expectedMonth < 0) {
-          expectedMonth = expectedMonth + 12;
-        }
-        break;
-      case "d":
-        jsDate.setDate(jsDate.getDate() + number);
-        checkMonth = false;
-        break;
-      default:
-        return date;
-    }
-    if (checkMonth && jsDate.getMonth() !== expectedMonth) {
-      jsDate.setDate(0);
-    }
-    return fromJSDate(jsDate);
-  }
-  getPrev(date, period = "d", number = 1) {
-    return this.getNext(date, period, -number);
-  }
-  getWeekday(date) {
-    let jsDate = toJSDate(date);
-    let day = jsDate.getDay();
-    return day === 0 ? 7 : day;
-  }
-  getWeekNumber(week, firstDayOfWeek) {
-    if (firstDayOfWeek === 7) {
-      firstDayOfWeek = 0;
-    }
-    const thursdayIndex = (4 + 7 - firstDayOfWeek) % 7;
-    let date = week[thursdayIndex];
-    const jsDate = toJSDate(date);
-    jsDate.setDate(jsDate.getDate() + 4 - (jsDate.getDay() || 7));
-    const time = jsDate.getTime();
-    jsDate.setMonth(0);
-    jsDate.setDate(1);
-    return Math.floor(Math.round((time - jsDate.getTime()) / 864e5) / 7) + 1;
-  }
-  getToday() {
-    return fromJSDate(/* @__PURE__ */ new Date());
-  }
-  isValid(date) {
-    if (!date || !isInteger(date.year) || !isInteger(date.month) || !isInteger(date.day)) {
-      return false;
-    }
-    if (date.year === 0) {
-      return false;
-    }
-    const jsDate = toJSDate(date);
-    return !isNaN(jsDate.getTime()) && jsDate.getFullYear() === date.year && jsDate.getMonth() + 1 === date.month && jsDate.getDate() === date.day;
-  }
-  static {
-    this.ɵfac = /* @__PURE__ */ (() => {
-      let ɵNgbCalendarGregorian_BaseFactory;
-      return function NgbCalendarGregorian_Factory(__ngFactoryType__) {
-        return (ɵNgbCalendarGregorian_BaseFactory || (ɵNgbCalendarGregorian_BaseFactory = ɵɵgetInheritedFactory(_NgbCalendarGregorian)))(__ngFactoryType__ || _NgbCalendarGregorian);
-      };
-    })();
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _NgbCalendarGregorian,
-      factory: _NgbCalendarGregorian.ɵfac
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbCalendarGregorian, [{
-    type: Injectable
-  }], null, null);
-})();
-function NGB_DATEPICKER_18N_FACTORY(locale) {
-  return new NgbDatepickerI18nDefault(locale);
-}
 var NgbDatepickerI18n = class _NgbDatepickerI18n {
   /**
    * Returns the text label to display above the day view.
@@ -5763,15 +4989,7 @@ var NgbDatepickerI18n = class _NgbDatepickerI18n {
   static {
     this.ɵprov = ɵɵdefineInjectable({
       token: _NgbDatepickerI18n,
-      factory: function NgbDatepickerI18n_Factory(__ngFactoryType__) {
-        let __ngConditionalFactory__ = null;
-        if (__ngFactoryType__) {
-          __ngConditionalFactory__ = new __ngFactoryType__();
-        } else {
-          __ngConditionalFactory__ = NGB_DATEPICKER_18N_FACTORY(ɵɵinject(LOCALE_ID));
-        }
-        return __ngConditionalFactory__;
-      },
+      factory: () => (() => new NgbDatepickerI18nDefault())(),
       providedIn: "root"
     });
   }
@@ -5781,21 +4999,28 @@ var NgbDatepickerI18n = class _NgbDatepickerI18n {
     type: Injectable,
     args: [{
       providedIn: "root",
-      useFactory: NGB_DATEPICKER_18N_FACTORY,
-      deps: [LOCALE_ID]
+      useFactory: () => new NgbDatepickerI18nDefault()
     }]
   }], null, null);
 })();
 var NgbDatepickerI18nDefault = class _NgbDatepickerI18nDefault extends NgbDatepickerI18n {
-  constructor(_locale) {
-    super();
-    this._locale = _locale;
-    this._monthsShort = getLocaleMonthNames(_locale, FormStyle.Standalone, TranslationWidth.Abbreviated);
-    this._monthsFull = getLocaleMonthNames(_locale, FormStyle.Standalone, TranslationWidth.Wide);
+  constructor() {
+    super(...arguments);
+    this._locale = inject(LOCALE_ID);
+    this._monthsShort = [...Array(12).keys()].map((month) => Intl.DateTimeFormat(this._locale, {
+      month: "short",
+      timeZone: "UTC"
+    }).format(Date.UTC(2e3, month)));
+    this._monthsFull = [...Array(12).keys()].map((month) => Intl.DateTimeFormat(this._locale, {
+      month: "long",
+      timeZone: "UTC"
+    }).format(Date.UTC(2e3, month)));
   }
-  getWeekdayLabel(weekday, width) {
-    const weekdaysStartingOnSunday = getLocaleDayNames(this._locale, FormStyle.Standalone, width === void 0 ? TranslationWidth.Short : width);
-    const weekdays = weekdaysStartingOnSunday.map((day, index) => weekdaysStartingOnSunday[(index + 1) % 7]);
+  getWeekdayLabel(weekday, width = "narrow") {
+    const weekdays = [1, 2, 3, 4, 5, 6, 7].map((day) => Intl.DateTimeFormat(this._locale, {
+      weekday: width,
+      timeZone: "UTC"
+    }).format(Date.UTC(2e3, 4, day)));
     return weekdays[weekday - 1] || "";
   }
   getMonthShortName(month) {
@@ -5809,9 +5034,12 @@ var NgbDatepickerI18nDefault = class _NgbDatepickerI18nDefault extends NgbDatepi
     return formatDate(jsDate, "fullDate", this._locale);
   }
   static {
-    this.ɵfac = function NgbDatepickerI18nDefault_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDatepickerI18nDefault)(ɵɵinject(LOCALE_ID));
-    };
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵNgbDatepickerI18nDefault_BaseFactory;
+      return function NgbDatepickerI18nDefault_Factory(__ngFactoryType__) {
+        return (ɵNgbDatepickerI18nDefault_BaseFactory || (ɵNgbDatepickerI18nDefault_BaseFactory = ɵɵgetInheritedFactory(_NgbDatepickerI18nDefault)))(__ngFactoryType__ || _NgbDatepickerI18nDefault);
+      };
+    })();
   }
   static {
     this.ɵprov = ɵɵdefineInjectable({
@@ -5823,32 +5051,10 @@ var NgbDatepickerI18nDefault = class _NgbDatepickerI18nDefault extends NgbDatepi
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDatepickerI18nDefault, [{
     type: Injectable
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [LOCALE_ID]
-      }]
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbDatepickerService = class _NgbDatepickerService {
-  get model$() {
-    return this._model$.pipe((0, import_operators2.filter)((model) => model.months.length > 0));
-  }
-  get dateSelect$() {
-    return this._dateSelect$.pipe((0, import_operators2.filter)((date) => date !== null));
-  }
-  set(options) {
-    let patch = Object.keys(options).map((key) => this._VALIDATORS[key](options[key])).reduce((obj, part) => __spreadValues(__spreadValues({}, obj), part), {});
-    if (Object.keys(patch).length > 0) {
-      this._nextState(patch);
-    }
-  }
-  constructor(_calendar, _i18n) {
-    this._calendar = _calendar;
-    this._i18n = _i18n;
+  constructor() {
     this._VALIDATORS = {
       dayTemplateData: (dayTemplateData) => {
         if (this._state.dayTemplateData !== dayTemplateData) {
@@ -5925,7 +5131,7 @@ var NgbDatepickerService = class _NgbDatepickerService {
         }
       },
       weekdays: (weekdays) => {
-        const weekdayWidth = weekdays === true || weekdays === false ? TranslationWidth.Short : weekdays;
+        const weekdayWidth = weekdays === true || weekdays === false ? "narrow" : weekdays;
         const weekdaysVisible = weekdays === true || weekdays === false ? weekdays : true;
         if (this._state.weekdayWidth !== weekdayWidth || this._state.weekdaysVisible !== weekdaysVisible) {
           return {
@@ -5935,6 +5141,8 @@ var NgbDatepickerService = class _NgbDatepickerService {
         }
       }
     };
+    this._calendar = inject(NgbCalendar);
+    this._i18n = inject(NgbDatepickerI18n);
     this._model$ = new import_rxjs2.Subject();
     this._dateSelect$ = new import_rxjs2.Subject();
     this._state = {
@@ -5959,9 +5167,21 @@ var NgbDatepickerService = class _NgbDatepickerService {
         years: [],
         months: []
       },
-      weekdayWidth: TranslationWidth.Short,
+      weekdayWidth: "narrow",
       weekdaysVisible: true
     };
+  }
+  get model$() {
+    return this._model$.pipe((0, import_operators2.filter)((model) => model.months.length > 0));
+  }
+  get dateSelect$() {
+    return this._dateSelect$.pipe((0, import_operators2.filter)((date) => date !== null));
+  }
+  set(options) {
+    let patch = Object.keys(options).map((key) => this._VALIDATORS[key](options[key])).reduce((obj, part) => __spreadValues(__spreadValues({}, obj), part), {});
+    if (Object.keys(patch).length > 0) {
+      this._nextState(patch);
+    }
   }
   focus(date) {
     const focusedDate = this.toValidDate(date, null);
@@ -6117,7 +5337,7 @@ var NgbDatepickerService = class _NgbDatepickerService {
   }
   static {
     this.ɵfac = function NgbDatepickerService_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDatepickerService)(ɵɵinject(NgbCalendar), ɵɵinject(NgbDatepickerI18n));
+      return new (__ngFactoryType__ || _NgbDatepickerService)();
     };
   }
   static {
@@ -6130,590 +5350,13 @@ var NgbDatepickerService = class _NgbDatepickerService {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDatepickerService, [{
     type: Injectable
-  }], function() {
-    return [{
-      type: NgbCalendar
-    }, {
-      type: NgbDatepickerI18n
-    }];
-  }, null);
+  }], null, null);
 })();
 var NavigationEvent;
 (function(NavigationEvent2) {
   NavigationEvent2[NavigationEvent2["PREV"] = 0] = "PREV";
   NavigationEvent2[NavigationEvent2["NEXT"] = 1] = "NEXT";
 })(NavigationEvent || (NavigationEvent = {}));
-var NgbDatepickerDayView = class _NgbDatepickerDayView {
-  constructor(i18n) {
-    this.i18n = i18n;
-  }
-  isMuted() {
-    return !this.selected && (this.date.month !== this.currentMonth || this.disabled);
-  }
-  static {
-    this.ɵfac = function NgbDatepickerDayView_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDatepickerDayView)(ɵɵdirectiveInject(NgbDatepickerI18n));
-    };
-  }
-  static {
-    this.ɵcmp = ɵɵdefineComponent({
-      type: _NgbDatepickerDayView,
-      selectors: [["", "ngbDatepickerDayView", ""]],
-      hostAttrs: [1, "btn-light"],
-      hostVars: 10,
-      hostBindings: function NgbDatepickerDayView_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          ɵɵclassProp("bg-primary", ctx.selected)("text-white", ctx.selected)("text-muted", ctx.isMuted())("outside", ctx.isMuted())("active", ctx.focused);
-        }
-      },
-      inputs: {
-        currentMonth: "currentMonth",
-        date: "date",
-        disabled: "disabled",
-        focused: "focused",
-        selected: "selected"
-      },
-      standalone: true,
-      features: [ɵɵStandaloneFeature],
-      attrs: _c2,
-      decls: 1,
-      vars: 1,
-      template: function NgbDatepickerDayView_Template(rf, ctx) {
-        if (rf & 1) {
-          ɵɵtext(0);
-        }
-        if (rf & 2) {
-          ɵɵtextInterpolate(ctx.i18n.getDayNumerals(ctx.date));
-        }
-      },
-      styles: ["[ngbDatepickerDayView]{text-align:center;width:2rem;height:2rem;line-height:2rem;border-radius:.25rem;background:transparent}[ngbDatepickerDayView]:hover:not(.bg-primary),[ngbDatepickerDayView].active:not(.bg-primary){background-color:var(--bs-btn-bg);outline:1px solid var(--bs-border-color)}[ngbDatepickerDayView].outside{opacity:.5}\n"],
-      encapsulation: 2,
-      changeDetection: 0
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDatepickerDayView, [{
-    type: Component,
-    args: [{
-      selector: "[ngbDatepickerDayView]",
-      standalone: true,
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      encapsulation: ViewEncapsulation$1.None,
-      host: {
-        class: "btn-light",
-        "[class.bg-primary]": "selected",
-        "[class.text-white]": "selected",
-        "[class.text-muted]": "isMuted()",
-        "[class.outside]": "isMuted()",
-        "[class.active]": "focused"
-      },
-      template: `{{ i18n.getDayNumerals(date) }}`,
-      styles: ["[ngbDatepickerDayView]{text-align:center;width:2rem;height:2rem;line-height:2rem;border-radius:.25rem;background:transparent}[ngbDatepickerDayView]:hover:not(.bg-primary),[ngbDatepickerDayView].active:not(.bg-primary){background-color:var(--bs-btn-bg);outline:1px solid var(--bs-border-color)}[ngbDatepickerDayView].outside{opacity:.5}\n"]
-    }]
-  }], function() {
-    return [{
-      type: NgbDatepickerI18n
-    }];
-  }, {
-    currentMonth: [{
-      type: Input
-    }],
-    date: [{
-      type: Input
-    }],
-    disabled: [{
-      type: Input
-    }],
-    focused: [{
-      type: Input
-    }],
-    selected: [{
-      type: Input
-    }]
-  });
-})();
-var NgbDatepickerNavigationSelect = class _NgbDatepickerNavigationSelect {
-  constructor(i18n, _renderer) {
-    this.i18n = i18n;
-    this._renderer = _renderer;
-    this.select = new EventEmitter();
-    this._month = -1;
-    this._year = -1;
-  }
-  changeMonth(month) {
-    this.select.emit(new NgbDate(this.date.year, toInteger(month), 1));
-  }
-  changeYear(year) {
-    this.select.emit(new NgbDate(toInteger(year), this.date.month, 1));
-  }
-  ngAfterViewChecked() {
-    if (this.date) {
-      if (this.date.month !== this._month) {
-        this._month = this.date.month;
-        this._renderer.setProperty(this.monthSelect.nativeElement, "value", this._month);
-      }
-      if (this.date.year !== this._year) {
-        this._year = this.date.year;
-        this._renderer.setProperty(this.yearSelect.nativeElement, "value", this._year);
-      }
-    }
-  }
-  static {
-    this.ɵfac = function NgbDatepickerNavigationSelect_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDatepickerNavigationSelect)(ɵɵdirectiveInject(NgbDatepickerI18n), ɵɵdirectiveInject(Renderer2));
-    };
-  }
-  static {
-    this.ɵcmp = ɵɵdefineComponent({
-      type: _NgbDatepickerNavigationSelect,
-      selectors: [["ngb-datepicker-navigation-select"]],
-      viewQuery: function NgbDatepickerNavigationSelect_Query(rf, ctx) {
-        if (rf & 1) {
-          ɵɵviewQuery(_c3, 7, ElementRef);
-          ɵɵviewQuery(_c4, 7, ElementRef);
-        }
-        if (rf & 2) {
-          let _t;
-          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.monthSelect = _t.first);
-          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.yearSelect = _t.first);
-        }
-      },
-      inputs: {
-        date: "date",
-        disabled: "disabled",
-        months: "months",
-        years: "years"
-      },
-      outputs: {
-        select: "select"
-      },
-      standalone: true,
-      features: [ɵɵStandaloneFeature],
-      decls: 6,
-      vars: 4,
-      consts: () => {
-        let i18n_4;
-        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4 = goog.getMsg("Select month");
-          i18n_4 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4;
-        } else {
-          i18n_4 = $localize`:@@ngb.datepicker.select-month:Select month`;
-        }
-        let i18n_5;
-        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5 = goog.getMsg("Select month");
-          i18n_5 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5;
-        } else {
-          i18n_5 = $localize`:@@ngb.datepicker.select-month:Select month`;
-        }
-        let i18n_6;
-        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6 = goog.getMsg("Select year");
-          i18n_6 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6;
-        } else {
-          i18n_6 = $localize`:@@ngb.datepicker.select-year:Select year`;
-        }
-        let i18n_7;
-        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7 = goog.getMsg("Select year");
-          i18n_7 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7;
-        } else {
-          i18n_7 = $localize`:@@ngb.datepicker.select-year:Select year`;
-        }
-        return [["month", ""], ["year", ""], ["aria-label", i18n_4, "title", i18n_5, 1, "form-select", 3, "change", "disabled"], [3, "value", 4, "ngFor", "ngForOf"], ["aria-label", i18n_6, "title", i18n_7, 1, "form-select", 3, "change", "disabled"], [3, "value"]];
-      },
-      template: function NgbDatepickerNavigationSelect_Template(rf, ctx) {
-        if (rf & 1) {
-          const _r1 = ɵɵgetCurrentView();
-          ɵɵelementStart(0, "select", 2, 0);
-          ɵɵlistener("change", function NgbDatepickerNavigationSelect_Template_select_change_0_listener($event) {
-            ɵɵrestoreView(_r1);
-            return ɵɵresetView(ctx.changeMonth($event.target.value));
-          });
-          ɵɵtemplate(2, NgbDatepickerNavigationSelect_option_2_Template, 2, 3, "option", 3);
-          ɵɵelementEnd();
-          ɵɵelementStart(3, "select", 4, 1);
-          ɵɵlistener("change", function NgbDatepickerNavigationSelect_Template_select_change_3_listener($event) {
-            ɵɵrestoreView(_r1);
-            return ɵɵresetView(ctx.changeYear($event.target.value));
-          });
-          ɵɵtemplate(5, NgbDatepickerNavigationSelect_option_5_Template, 2, 2, "option", 3);
-          ɵɵelementEnd();
-        }
-        if (rf & 2) {
-          ɵɵproperty("disabled", ctx.disabled);
-          ɵɵadvance(2);
-          ɵɵproperty("ngForOf", ctx.months);
-          ɵɵadvance();
-          ɵɵproperty("disabled", ctx.disabled);
-          ɵɵadvance(2);
-          ɵɵproperty("ngForOf", ctx.years);
-        }
-      },
-      dependencies: [NgForOf],
-      styles: ["ngb-datepicker-navigation-select>.form-select{flex:1 1 auto;padding:0 .5rem;font-size:.875rem;height:1.85rem}ngb-datepicker-navigation-select>.form-select:focus{z-index:1}ngb-datepicker-navigation-select>.form-select::-ms-value{background-color:transparent!important}\n"],
-      encapsulation: 2,
-      changeDetection: 0
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDatepickerNavigationSelect, [{
-    type: Component,
-    args: [{
-      selector: "ngb-datepicker-navigation-select",
-      standalone: true,
-      imports: [NgForOf],
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      encapsulation: ViewEncapsulation$1.None,
-      template: `
-		<select
-			#month
-			[disabled]="disabled"
-			class="form-select"
-			i18n-aria-label="@@ngb.datepicker.select-month"
-			aria-label="Select month"
-			i18n-title="@@ngb.datepicker.select-month"
-			title="Select month"
-			(change)="changeMonth($any($event).target.value)"
-		>
-			<option *ngFor="let m of months" [attr.aria-label]="i18n.getMonthFullName(m, date.year)" [value]="m">{{
-				i18n.getMonthShortName(m, date.year)
-			}}</option> </select
-		><select
-			#year
-			[disabled]="disabled"
-			class="form-select"
-			i18n-aria-label="@@ngb.datepicker.select-year"
-			aria-label="Select year"
-			i18n-title="@@ngb.datepicker.select-year"
-			title="Select year"
-			(change)="changeYear($any($event).target.value)"
-		>
-			<option *ngFor="let y of years" [value]="y">{{ i18n.getYearNumerals(y) }}</option>
-		</select>
-	`,
-      styles: ["ngb-datepicker-navigation-select>.form-select{flex:1 1 auto;padding:0 .5rem;font-size:.875rem;height:1.85rem}ngb-datepicker-navigation-select>.form-select:focus{z-index:1}ngb-datepicker-navigation-select>.form-select::-ms-value{background-color:transparent!important}\n"]
-    }]
-  }], function() {
-    return [{
-      type: NgbDatepickerI18n
-    }, {
-      type: Renderer2
-    }];
-  }, {
-    date: [{
-      type: Input
-    }],
-    disabled: [{
-      type: Input
-    }],
-    months: [{
-      type: Input
-    }],
-    years: [{
-      type: Input
-    }],
-    select: [{
-      type: Output
-    }],
-    monthSelect: [{
-      type: ViewChild,
-      args: ["month", {
-        static: true,
-        read: ElementRef
-      }]
-    }],
-    yearSelect: [{
-      type: ViewChild,
-      args: ["year", {
-        static: true,
-        read: ElementRef
-      }]
-    }]
-  });
-})();
-var NgbDatepickerNavigation = class _NgbDatepickerNavigation {
-  constructor(i18n) {
-    this.i18n = i18n;
-    this.navigation = NavigationEvent;
-    this.months = [];
-    this.navigate = new EventEmitter();
-    this.select = new EventEmitter();
-  }
-  onClickPrev(event) {
-    event.currentTarget.focus();
-    this.navigate.emit(this.navigation.PREV);
-  }
-  onClickNext(event) {
-    event.currentTarget.focus();
-    this.navigate.emit(this.navigation.NEXT);
-  }
-  static {
-    this.ɵfac = function NgbDatepickerNavigation_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDatepickerNavigation)(ɵɵdirectiveInject(NgbDatepickerI18n));
-    };
-  }
-  static {
-    this.ɵcmp = ɵɵdefineComponent({
-      type: _NgbDatepickerNavigation,
-      selectors: [["ngb-datepicker-navigation"]],
-      inputs: {
-        date: "date",
-        disabled: "disabled",
-        months: "months",
-        showSelect: "showSelect",
-        prevDisabled: "prevDisabled",
-        nextDisabled: "nextDisabled",
-        selectBoxes: "selectBoxes"
-      },
-      outputs: {
-        navigate: "navigate",
-        select: "select"
-      },
-      standalone: true,
-      features: [ɵɵStandaloneFeature],
-      decls: 8,
-      vars: 4,
-      consts: () => {
-        let i18n_8;
-        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8 = goog.getMsg("Previous month");
-          i18n_8 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8;
-        } else {
-          i18n_8 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
-        }
-        let i18n_9;
-        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9 = goog.getMsg("Previous month");
-          i18n_9 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9;
-        } else {
-          i18n_9 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
-        }
-        let i18n_10;
-        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10 = goog.getMsg("Next month");
-          i18n_10 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10;
-        } else {
-          i18n_10 = $localize`:@@ngb.datepicker.next-month:Next month`;
-        }
-        let i18n_11;
-        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11 = goog.getMsg("Next month");
-          i18n_11 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11;
-        } else {
-          i18n_11 = $localize`:@@ngb.datepicker.next-month:Next month`;
-        }
-        return [[1, "ngb-dp-arrow", "ngb-dp-arrow-prev"], ["type", "button", "aria-label", i18n_8, "title", i18n_9, 1, "btn", "btn-link", "ngb-dp-arrow-btn", 3, "click", "disabled"], [1, "ngb-dp-navigation-chevron"], ["class", "ngb-dp-navigation-select", 3, "date", "disabled", "months", "years", "select", 4, "ngIf"], [4, "ngIf"], [1, "ngb-dp-arrow", "ngb-dp-arrow-next"], ["type", "button", "aria-label", i18n_10, "title", i18n_11, 1, "btn", "btn-link", "ngb-dp-arrow-btn", 3, "click", "disabled"], [1, "ngb-dp-navigation-select", 3, "select", "date", "disabled", "months", "years"], ["ngFor", "", 3, "ngForOf"], ["class", "ngb-dp-arrow", 4, "ngIf"], [1, "ngb-dp-month-name"], [1, "ngb-dp-arrow"]];
-      },
-      template: function NgbDatepickerNavigation_Template(rf, ctx) {
-        if (rf & 1) {
-          ɵɵelementStart(0, "div", 0)(1, "button", 1);
-          ɵɵlistener("click", function NgbDatepickerNavigation_Template_button_click_1_listener($event) {
-            return ctx.onClickPrev($event);
-          });
-          ɵɵelement(2, "span", 2);
-          ɵɵelementEnd()();
-          ɵɵtemplate(3, NgbDatepickerNavigation_ngb_datepicker_navigation_select_3_Template, 1, 4, "ngb-datepicker-navigation-select", 3)(4, NgbDatepickerNavigation_4_Template, 1, 1, null, 4);
-          ɵɵelementStart(5, "div", 5)(6, "button", 6);
-          ɵɵlistener("click", function NgbDatepickerNavigation_Template_button_click_6_listener($event) {
-            return ctx.onClickNext($event);
-          });
-          ɵɵelement(7, "span", 2);
-          ɵɵelementEnd()();
-        }
-        if (rf & 2) {
-          ɵɵadvance();
-          ɵɵproperty("disabled", ctx.prevDisabled);
-          ɵɵadvance(2);
-          ɵɵproperty("ngIf", ctx.showSelect);
-          ɵɵadvance();
-          ɵɵproperty("ngIf", !ctx.showSelect);
-          ɵɵadvance(2);
-          ɵɵproperty("disabled", ctx.nextDisabled);
-        }
-      },
-      dependencies: [NgIf, NgForOf, NgbDatepickerNavigationSelect],
-      styles: ["ngb-datepicker-navigation{display:flex;align-items:center}.ngb-dp-navigation-chevron{border-style:solid;border-width:.2em .2em 0 0;display:inline-block;width:.75em;height:.75em;margin-left:.25em;margin-right:.15em;transform:rotate(-135deg)}.ngb-dp-arrow{display:flex;flex:1 1 auto;padding-right:0;padding-left:0;margin:0;width:2rem;height:2rem}.ngb-dp-arrow-next{justify-content:flex-end}.ngb-dp-arrow-next .ngb-dp-navigation-chevron{transform:rotate(45deg);margin-left:.15em;margin-right:.25em}.ngb-dp-arrow-btn{padding:0 .25rem;margin:0 .5rem;border:none;background-color:transparent;z-index:1}.ngb-dp-arrow-btn:focus{outline-width:1px;outline-style:auto}@media all and (-ms-high-contrast: none),(-ms-high-contrast: active){.ngb-dp-arrow-btn:focus{outline-style:solid}}.ngb-dp-month-name{font-size:larger;height:2rem;line-height:2rem;text-align:center}.ngb-dp-navigation-select{display:flex;flex:1 1 9rem}\n"],
-      encapsulation: 2,
-      changeDetection: 0
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDatepickerNavigation, [{
-    type: Component,
-    args: [{
-      selector: "ngb-datepicker-navigation",
-      standalone: true,
-      imports: [NgIf, NgForOf, NgbDatepickerNavigationSelect],
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      encapsulation: ViewEncapsulation$1.None,
-      template: `
-		<div class="ngb-dp-arrow ngb-dp-arrow-prev">
-			<button
-				type="button"
-				class="btn btn-link ngb-dp-arrow-btn"
-				(click)="onClickPrev($event)"
-				[disabled]="prevDisabled"
-				i18n-aria-label="@@ngb.datepicker.previous-month"
-				aria-label="Previous month"
-				i18n-title="@@ngb.datepicker.previous-month"
-				title="Previous month"
-			>
-				<span class="ngb-dp-navigation-chevron"></span>
-			</button>
-		</div>
-		<ngb-datepicker-navigation-select
-			*ngIf="showSelect"
-			class="ngb-dp-navigation-select"
-			[date]="date"
-			[disabled]="disabled"
-			[months]="selectBoxes.months"
-			[years]="selectBoxes.years"
-			(select)="select.emit($event)"
-		>
-		</ngb-datepicker-navigation-select>
-
-		<ng-template *ngIf="!showSelect" ngFor let-month [ngForOf]="months" let-i="index">
-			<div class="ngb-dp-arrow" *ngIf="i > 0"></div>
-			<div class="ngb-dp-month-name">
-				{{ i18n.getMonthLabel(month.firstDate) }}
-			</div>
-			<div class="ngb-dp-arrow" *ngIf="i !== months.length - 1"></div>
-		</ng-template>
-		<div class="ngb-dp-arrow ngb-dp-arrow-next">
-			<button
-				type="button"
-				class="btn btn-link ngb-dp-arrow-btn"
-				(click)="onClickNext($event)"
-				[disabled]="nextDisabled"
-				i18n-aria-label="@@ngb.datepicker.next-month"
-				aria-label="Next month"
-				i18n-title="@@ngb.datepicker.next-month"
-				title="Next month"
-			>
-				<span class="ngb-dp-navigation-chevron"></span>
-			</button>
-		</div>
-	`,
-      styles: ["ngb-datepicker-navigation{display:flex;align-items:center}.ngb-dp-navigation-chevron{border-style:solid;border-width:.2em .2em 0 0;display:inline-block;width:.75em;height:.75em;margin-left:.25em;margin-right:.15em;transform:rotate(-135deg)}.ngb-dp-arrow{display:flex;flex:1 1 auto;padding-right:0;padding-left:0;margin:0;width:2rem;height:2rem}.ngb-dp-arrow-next{justify-content:flex-end}.ngb-dp-arrow-next .ngb-dp-navigation-chevron{transform:rotate(45deg);margin-left:.15em;margin-right:.25em}.ngb-dp-arrow-btn{padding:0 .25rem;margin:0 .5rem;border:none;background-color:transparent;z-index:1}.ngb-dp-arrow-btn:focus{outline-width:1px;outline-style:auto}@media all and (-ms-high-contrast: none),(-ms-high-contrast: active){.ngb-dp-arrow-btn:focus{outline-style:solid}}.ngb-dp-month-name{font-size:larger;height:2rem;line-height:2rem;text-align:center}.ngb-dp-navigation-select{display:flex;flex:1 1 9rem}\n"]
-    }]
-  }], function() {
-    return [{
-      type: NgbDatepickerI18n
-    }];
-  }, {
-    date: [{
-      type: Input
-    }],
-    disabled: [{
-      type: Input
-    }],
-    months: [{
-      type: Input
-    }],
-    showSelect: [{
-      type: Input
-    }],
-    prevDisabled: [{
-      type: Input
-    }],
-    nextDisabled: [{
-      type: Input
-    }],
-    selectBoxes: [{
-      type: Input
-    }],
-    navigate: [{
-      type: Output
-    }],
-    select: [{
-      type: Output
-    }]
-  });
-})();
-var Key;
-(function(Key2) {
-  Key2[Key2["Tab"] = 9] = "Tab";
-  Key2[Key2["Enter"] = 13] = "Enter";
-  Key2[Key2["Escape"] = 27] = "Escape";
-  Key2[Key2["Space"] = 32] = "Space";
-  Key2[Key2["PageUp"] = 33] = "PageUp";
-  Key2[Key2["PageDown"] = 34] = "PageDown";
-  Key2[Key2["End"] = 35] = "End";
-  Key2[Key2["Home"] = 36] = "Home";
-  Key2[Key2["ArrowLeft"] = 37] = "ArrowLeft";
-  Key2[Key2["ArrowUp"] = 38] = "ArrowUp";
-  Key2[Key2["ArrowRight"] = 39] = "ArrowRight";
-  Key2[Key2["ArrowDown"] = 40] = "ArrowDown";
-})(Key || (Key = {}));
-var NgbDatepickerKeyboardService = class _NgbDatepickerKeyboardService {
-  /**
-   * Processes a keyboard event.
-   */
-  processKey(event, datepicker) {
-    const {
-      state,
-      calendar
-    } = datepicker;
-    switch (event.which) {
-      case Key.PageUp:
-        datepicker.focusDate(calendar.getPrev(state.focusedDate, event.shiftKey ? "y" : "m", 1));
-        break;
-      case Key.PageDown:
-        datepicker.focusDate(calendar.getNext(state.focusedDate, event.shiftKey ? "y" : "m", 1));
-        break;
-      case Key.End:
-        datepicker.focusDate(event.shiftKey ? state.maxDate : state.lastDate);
-        break;
-      case Key.Home:
-        datepicker.focusDate(event.shiftKey ? state.minDate : state.firstDate);
-        break;
-      case Key.ArrowLeft:
-        datepicker.focusDate(calendar.getPrev(state.focusedDate, "d", 1));
-        break;
-      case Key.ArrowUp:
-        datepicker.focusDate(calendar.getPrev(state.focusedDate, "d", calendar.getDaysPerWeek()));
-        break;
-      case Key.ArrowRight:
-        datepicker.focusDate(calendar.getNext(state.focusedDate, "d", 1));
-        break;
-      case Key.ArrowDown:
-        datepicker.focusDate(calendar.getNext(state.focusedDate, "d", calendar.getDaysPerWeek()));
-        break;
-      case Key.Enter:
-      case Key.Space:
-        datepicker.focusSelect();
-        break;
-      default:
-        return;
-    }
-    event.preventDefault();
-    event.stopPropagation();
-  }
-  static {
-    this.ɵfac = function NgbDatepickerKeyboardService_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDatepickerKeyboardService)();
-    };
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _NgbDatepickerKeyboardService,
-      factory: _NgbDatepickerKeyboardService.ɵfac,
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDatepickerKeyboardService, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
 var NgbDatepickerConfig = class _NgbDatepickerConfig {
   constructor() {
     this.displayMonths = 1;
@@ -6721,7 +5364,7 @@ var NgbDatepickerConfig = class _NgbDatepickerConfig {
     this.navigation = "select";
     this.outsideDays = "visible";
     this.showWeekNumbers = false;
-    this.weekdays = TranslationWidth.Short;
+    this.weekdays = "narrow";
   }
   static {
     this.ɵfac = function NgbDatepickerConfig_Factory(__ngFactoryType__) {
@@ -6811,13 +5454,562 @@ var NgbDateStructAdapter = class _NgbDateStructAdapter extends NgbDateAdapter {
     type: Injectable
   }], null, null);
 })();
+var NgbDatepickerKeyboardService = class _NgbDatepickerKeyboardService {
+  /**
+   * Processes a keyboard event.
+   */
+  processKey(event, datepicker) {
+    const {
+      state,
+      calendar
+    } = datepicker;
+    switch (event.key) {
+      case "PageUp":
+        datepicker.focusDate(calendar.getPrev(state.focusedDate, event.shiftKey ? "y" : "m", 1));
+        break;
+      case "PageDown":
+        datepicker.focusDate(calendar.getNext(state.focusedDate, event.shiftKey ? "y" : "m", 1));
+        break;
+      case "End":
+        datepicker.focusDate(event.shiftKey ? state.maxDate : state.lastDate);
+        break;
+      case "Home":
+        datepicker.focusDate(event.shiftKey ? state.minDate : state.firstDate);
+        break;
+      case "ArrowLeft":
+        datepicker.focusDate(calendar.getPrev(state.focusedDate, "d", 1));
+        break;
+      case "ArrowUp":
+        datepicker.focusDate(calendar.getPrev(state.focusedDate, "d", calendar.getDaysPerWeek()));
+        break;
+      case "ArrowRight":
+        datepicker.focusDate(calendar.getNext(state.focusedDate, "d", 1));
+        break;
+      case "ArrowDown":
+        datepicker.focusDate(calendar.getNext(state.focusedDate, "d", calendar.getDaysPerWeek()));
+        break;
+      case "Enter":
+      case " ":
+        datepicker.focusSelect();
+        break;
+      default:
+        return;
+    }
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  static {
+    this.ɵfac = function NgbDatepickerKeyboardService_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbDatepickerKeyboardService)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbDatepickerKeyboardService,
+      factory: _NgbDatepickerKeyboardService.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDatepickerKeyboardService, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
+var NgbDatepickerDayView = class _NgbDatepickerDayView {
+  constructor() {
+    this.i18n = inject(NgbDatepickerI18n);
+  }
+  isMuted() {
+    return !this.selected && (this.date.month !== this.currentMonth || this.disabled);
+  }
+  static {
+    this.ɵfac = function NgbDatepickerDayView_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbDatepickerDayView)();
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _NgbDatepickerDayView,
+      selectors: [["", "ngbDatepickerDayView", ""]],
+      hostAttrs: [1, "btn-light"],
+      hostVars: 10,
+      hostBindings: function NgbDatepickerDayView_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          ɵɵclassProp("bg-primary", ctx.selected)("text-white", ctx.selected)("text-muted", ctx.isMuted())("outside", ctx.isMuted())("active", ctx.focused);
+        }
+      },
+      inputs: {
+        currentMonth: "currentMonth",
+        date: "date",
+        disabled: "disabled",
+        focused: "focused",
+        selected: "selected"
+      },
+      standalone: true,
+      features: [ɵɵStandaloneFeature],
+      attrs: _c1,
+      decls: 1,
+      vars: 1,
+      template: function NgbDatepickerDayView_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵtext(0);
+        }
+        if (rf & 2) {
+          ɵɵtextInterpolate(ctx.i18n.getDayNumerals(ctx.date));
+        }
+      },
+      styles: ["[ngbDatepickerDayView]{text-align:center;width:2rem;height:2rem;line-height:2rem;border-radius:.25rem;background:transparent}[ngbDatepickerDayView]:hover:not(.bg-primary),[ngbDatepickerDayView].active:not(.bg-primary){background-color:var(--bs-tertiary-bg);outline:1px solid var(--bs-border-color)}[ngbDatepickerDayView].outside{opacity:.5}\n"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDatepickerDayView, [{
+    type: Component,
+    args: [{
+      selector: "[ngbDatepickerDayView]",
+      standalone: true,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation$1.None,
+      host: {
+        class: "btn-light",
+        "[class.bg-primary]": "selected",
+        "[class.text-white]": "selected",
+        "[class.text-muted]": "isMuted()",
+        "[class.outside]": "isMuted()",
+        "[class.active]": "focused"
+      },
+      template: `{{ i18n.getDayNumerals(date) }}`,
+      styles: ["[ngbDatepickerDayView]{text-align:center;width:2rem;height:2rem;line-height:2rem;border-radius:.25rem;background:transparent}[ngbDatepickerDayView]:hover:not(.bg-primary),[ngbDatepickerDayView].active:not(.bg-primary){background-color:var(--bs-tertiary-bg);outline:1px solid var(--bs-border-color)}[ngbDatepickerDayView].outside{opacity:.5}\n"]
+    }]
+  }], null, {
+    currentMonth: [{
+      type: Input
+    }],
+    date: [{
+      type: Input
+    }],
+    disabled: [{
+      type: Input
+    }],
+    focused: [{
+      type: Input
+    }],
+    selected: [{
+      type: Input
+    }]
+  });
+})();
+var NgbDatepickerNavigationSelect = class _NgbDatepickerNavigationSelect {
+  constructor() {
+    this._month = -1;
+    this._year = -1;
+    this.i18n = inject(NgbDatepickerI18n);
+    this.select = new EventEmitter();
+  }
+  changeMonth(month) {
+    this.select.emit(new NgbDate(this.date.year, toInteger(month), 1));
+  }
+  changeYear(year) {
+    this.select.emit(new NgbDate(toInteger(year), this.date.month, 1));
+  }
+  ngAfterViewChecked() {
+    if (this.date) {
+      if (this.date.month !== this._month) {
+        this._month = this.date.month;
+        this.monthSelect.nativeElement.value = `${this._month}`;
+      }
+      if (this.date.year !== this._year) {
+        this._year = this.date.year;
+        this.yearSelect.nativeElement.value = `${this._year}`;
+      }
+    }
+  }
+  static {
+    this.ɵfac = function NgbDatepickerNavigationSelect_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbDatepickerNavigationSelect)();
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _NgbDatepickerNavigationSelect,
+      selectors: [["ngb-datepicker-navigation-select"]],
+      viewQuery: function NgbDatepickerNavigationSelect_Query(rf, ctx) {
+        if (rf & 1) {
+          ɵɵviewQuery(_c2, 7, ElementRef);
+          ɵɵviewQuery(_c3, 7, ElementRef);
+        }
+        if (rf & 2) {
+          let _t;
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.monthSelect = _t.first);
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.yearSelect = _t.first);
+        }
+      },
+      inputs: {
+        date: "date",
+        disabled: "disabled",
+        months: "months",
+        years: "years"
+      },
+      outputs: {
+        select: "select"
+      },
+      standalone: true,
+      features: [ɵɵStandaloneFeature],
+      decls: 8,
+      vars: 2,
+      consts: () => {
+        let i18n_4;
+        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4 = goog.getMsg("Select month");
+          i18n_4 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4;
+        } else {
+          i18n_4 = $localize`:@@ngb.datepicker.select-month:Select month`;
+        }
+        let i18n_5;
+        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5 = goog.getMsg("Select month");
+          i18n_5 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5;
+        } else {
+          i18n_5 = $localize`:@@ngb.datepicker.select-month:Select month`;
+        }
+        let i18n_6;
+        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6 = goog.getMsg("Select year");
+          i18n_6 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6;
+        } else {
+          i18n_6 = $localize`:@@ngb.datepicker.select-year:Select year`;
+        }
+        let i18n_7;
+        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7 = goog.getMsg("Select year");
+          i18n_7 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7;
+        } else {
+          i18n_7 = $localize`:@@ngb.datepicker.select-year:Select year`;
+        }
+        return [["month", ""], ["year", ""], ["aria-label", i18n_4, "title", i18n_5, 1, "form-select", 3, "change", "disabled"], [3, "value"], ["aria-label", i18n_6, "title", i18n_7, 1, "form-select", 3, "change", "disabled"]];
+      },
+      template: function NgbDatepickerNavigationSelect_Template(rf, ctx) {
+        if (rf & 1) {
+          const _r1 = ɵɵgetCurrentView();
+          ɵɵelementStart(0, "select", 2, 0);
+          ɵɵlistener("change", function NgbDatepickerNavigationSelect_Template_select_change_0_listener($event) {
+            ɵɵrestoreView(_r1);
+            return ɵɵresetView(ctx.changeMonth($event.target.value));
+          });
+          ɵɵrepeaterCreate(2, NgbDatepickerNavigationSelect_For_3_Template, 2, 3, "option", 3, ɵɵrepeaterTrackByIdentity);
+          ɵɵelementEnd();
+          ɵɵelementStart(4, "select", 4, 1);
+          ɵɵlistener("change", function NgbDatepickerNavigationSelect_Template_select_change_4_listener($event) {
+            ɵɵrestoreView(_r1);
+            return ɵɵresetView(ctx.changeYear($event.target.value));
+          });
+          ɵɵrepeaterCreate(6, NgbDatepickerNavigationSelect_For_7_Template, 2, 2, "option", 3, ɵɵrepeaterTrackByIdentity);
+          ɵɵelementEnd();
+        }
+        if (rf & 2) {
+          ɵɵproperty("disabled", ctx.disabled);
+          ɵɵadvance(2);
+          ɵɵrepeater(ctx.months);
+          ɵɵadvance(2);
+          ɵɵproperty("disabled", ctx.disabled);
+          ɵɵadvance(2);
+          ɵɵrepeater(ctx.years);
+        }
+      },
+      styles: ["ngb-datepicker-navigation-select>.form-select{flex:1 1 auto;padding:0 .5rem;font-size:.875rem;height:1.85rem}ngb-datepicker-navigation-select>.form-select:focus{z-index:1}ngb-datepicker-navigation-select>.form-select::-ms-value{background-color:transparent!important}\n"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDatepickerNavigationSelect, [{
+    type: Component,
+    args: [{
+      selector: "ngb-datepicker-navigation-select",
+      standalone: true,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation$1.None,
+      template: `
+		<select
+			#month
+			[disabled]="disabled"
+			class="form-select"
+			i18n-aria-label="@@ngb.datepicker.select-month"
+			aria-label="Select month"
+			i18n-title="@@ngb.datepicker.select-month"
+			title="Select month"
+			(change)="changeMonth($any($event).target.value)"
+		>
+			@for (m of months; track m) {
+				<option [attr.aria-label]="i18n.getMonthFullName(m, date.year)" [value]="m">{{
+					i18n.getMonthShortName(m, date.year)
+				}}</option>
+			}</select
+		><select
+			#year
+			[disabled]="disabled"
+			class="form-select"
+			i18n-aria-label="@@ngb.datepicker.select-year"
+			aria-label="Select year"
+			i18n-title="@@ngb.datepicker.select-year"
+			title="Select year"
+			(change)="changeYear($any($event).target.value)"
+		>
+			@for (y of years; track y) {
+				<option [value]="y">{{ i18n.getYearNumerals(y) }}</option>
+			}
+		</select>
+	`,
+      styles: ["ngb-datepicker-navigation-select>.form-select{flex:1 1 auto;padding:0 .5rem;font-size:.875rem;height:1.85rem}ngb-datepicker-navigation-select>.form-select:focus{z-index:1}ngb-datepicker-navigation-select>.form-select::-ms-value{background-color:transparent!important}\n"]
+    }]
+  }], null, {
+    date: [{
+      type: Input
+    }],
+    disabled: [{
+      type: Input
+    }],
+    months: [{
+      type: Input
+    }],
+    years: [{
+      type: Input
+    }],
+    select: [{
+      type: Output
+    }],
+    monthSelect: [{
+      type: ViewChild,
+      args: ["month", {
+        static: true,
+        read: ElementRef
+      }]
+    }],
+    yearSelect: [{
+      type: ViewChild,
+      args: ["year", {
+        static: true,
+        read: ElementRef
+      }]
+    }]
+  });
+})();
+var NgbDatepickerNavigation = class _NgbDatepickerNavigation {
+  constructor() {
+    this.navigation = NavigationEvent;
+    this.i18n = inject(NgbDatepickerI18n);
+    this.months = [];
+    this.navigate = new EventEmitter();
+    this.select = new EventEmitter();
+  }
+  onClickPrev(event) {
+    event.currentTarget.focus();
+    this.navigate.emit(this.navigation.PREV);
+  }
+  onClickNext(event) {
+    event.currentTarget.focus();
+    this.navigate.emit(this.navigation.NEXT);
+  }
+  static {
+    this.ɵfac = function NgbDatepickerNavigation_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbDatepickerNavigation)();
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _NgbDatepickerNavigation,
+      selectors: [["ngb-datepicker-navigation"]],
+      inputs: {
+        date: "date",
+        disabled: "disabled",
+        months: "months",
+        showSelect: "showSelect",
+        prevDisabled: "prevDisabled",
+        nextDisabled: "nextDisabled",
+        selectBoxes: "selectBoxes"
+      },
+      outputs: {
+        navigate: "navigate",
+        select: "select"
+      },
+      standalone: true,
+      features: [ɵɵStandaloneFeature],
+      decls: 8,
+      vars: 4,
+      consts: () => {
+        let i18n_8;
+        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8 = goog.getMsg("Previous month");
+          i18n_8 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8;
+        } else {
+          i18n_8 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
+        }
+        let i18n_9;
+        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9 = goog.getMsg("Previous month");
+          i18n_9 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9;
+        } else {
+          i18n_9 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
+        }
+        let i18n_10;
+        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10 = goog.getMsg("Next month");
+          i18n_10 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10;
+        } else {
+          i18n_10 = $localize`:@@ngb.datepicker.next-month:Next month`;
+        }
+        let i18n_11;
+        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
+          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11 = goog.getMsg("Next month");
+          i18n_11 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11;
+        } else {
+          i18n_11 = $localize`:@@ngb.datepicker.next-month:Next month`;
+        }
+        return [[1, "ngb-dp-arrow", "ngb-dp-arrow-prev"], ["type", "button", "aria-label", i18n_8, "title", i18n_9, 1, "btn", "btn-link", "ngb-dp-arrow-btn", 3, "click", "disabled"], [1, "ngb-dp-navigation-chevron"], [1, "ngb-dp-navigation-select", 3, "date", "disabled", "months", "years"], [1, "ngb-dp-arrow", "ngb-dp-arrow-next"], ["type", "button", "aria-label", i18n_10, "title", i18n_11, 1, "btn", "btn-link", "ngb-dp-arrow-btn", 3, "click", "disabled"], [1, "ngb-dp-navigation-select", 3, "select", "date", "disabled", "months", "years"], [1, "ngb-dp-arrow"], [1, "ngb-dp-month-name"]];
+      },
+      template: function NgbDatepickerNavigation_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementStart(0, "div", 0)(1, "button", 1);
+          ɵɵlistener("click", function NgbDatepickerNavigation_Template_button_click_1_listener($event) {
+            return ctx.onClickPrev($event);
+          });
+          ɵɵelement(2, "span", 2);
+          ɵɵelementEnd()();
+          ɵɵtemplate(3, NgbDatepickerNavigation_Conditional_3_Template, 1, 4, "ngb-datepicker-navigation-select", 3)(4, NgbDatepickerNavigation_Conditional_4_Template, 2, 0);
+          ɵɵelementStart(5, "div", 4)(6, "button", 5);
+          ɵɵlistener("click", function NgbDatepickerNavigation_Template_button_click_6_listener($event) {
+            return ctx.onClickNext($event);
+          });
+          ɵɵelement(7, "span", 2);
+          ɵɵelementEnd()();
+        }
+        if (rf & 2) {
+          ɵɵadvance();
+          ɵɵproperty("disabled", ctx.prevDisabled);
+          ɵɵadvance(2);
+          ɵɵconditional(ctx.showSelect ? 3 : -1);
+          ɵɵadvance();
+          ɵɵconditional(!ctx.showSelect ? 4 : -1);
+          ɵɵadvance(2);
+          ɵɵproperty("disabled", ctx.nextDisabled);
+        }
+      },
+      dependencies: [NgbDatepickerNavigationSelect],
+      styles: ["ngb-datepicker-navigation{display:flex;align-items:center}.ngb-dp-navigation-chevron{border-style:solid;border-width:.2em .2em 0 0;display:inline-block;width:.75em;height:.75em;margin-left:.25em;margin-right:.15em;transform:rotate(-135deg)}.ngb-dp-arrow{display:flex;flex:1 1 auto;padding-right:0;padding-left:0;margin:0;width:2rem;height:2rem}.ngb-dp-arrow-next{justify-content:flex-end}.ngb-dp-arrow-next .ngb-dp-navigation-chevron{transform:rotate(45deg);margin-left:.15em;margin-right:.25em}.ngb-dp-arrow-btn{padding:0 .25rem;margin:0 .5rem;border:none;background-color:transparent;z-index:1}.ngb-dp-arrow-btn:focus{outline-width:1px;outline-style:auto}@media all and (-ms-high-contrast: none),(-ms-high-contrast: active){.ngb-dp-arrow-btn:focus{outline-style:solid}}.ngb-dp-month-name{font-size:larger;height:2rem;line-height:2rem;text-align:center}.ngb-dp-navigation-select{display:flex;flex:1 1 9rem}\n"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDatepickerNavigation, [{
+    type: Component,
+    args: [{
+      selector: "ngb-datepicker-navigation",
+      standalone: true,
+      imports: [NgbDatepickerNavigationSelect],
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation$1.None,
+      template: `
+		<div class="ngb-dp-arrow ngb-dp-arrow-prev">
+			<button
+				type="button"
+				class="btn btn-link ngb-dp-arrow-btn"
+				(click)="onClickPrev($event)"
+				[disabled]="prevDisabled"
+				i18n-aria-label="@@ngb.datepicker.previous-month"
+				aria-label="Previous month"
+				i18n-title="@@ngb.datepicker.previous-month"
+				title="Previous month"
+			>
+				<span class="ngb-dp-navigation-chevron"></span>
+			</button>
+		</div>
+		@if (showSelect) {
+			<ngb-datepicker-navigation-select
+				class="ngb-dp-navigation-select"
+				[date]="date"
+				[disabled]="disabled"
+				[months]="selectBoxes.months"
+				[years]="selectBoxes.years"
+				(select)="select.emit($event)"
+			/>
+		}
+
+		@if (!showSelect) {
+			@for (month of months; track month; let i = $index) {
+				@if (i > 0) {
+					<div class="ngb-dp-arrow"></div>
+				}
+				<div class="ngb-dp-month-name">
+					{{ i18n.getMonthLabel(month.firstDate) }}
+				</div>
+				@if (i !== months.length - 1) {
+					<div class="ngb-dp-arrow"></div>
+				}
+			}
+		}
+		<div class="ngb-dp-arrow ngb-dp-arrow-next">
+			<button
+				type="button"
+				class="btn btn-link ngb-dp-arrow-btn"
+				(click)="onClickNext($event)"
+				[disabled]="nextDisabled"
+				i18n-aria-label="@@ngb.datepicker.next-month"
+				aria-label="Next month"
+				i18n-title="@@ngb.datepicker.next-month"
+				title="Next month"
+			>
+				<span class="ngb-dp-navigation-chevron"></span>
+			</button>
+		</div>
+	`,
+      styles: ["ngb-datepicker-navigation{display:flex;align-items:center}.ngb-dp-navigation-chevron{border-style:solid;border-width:.2em .2em 0 0;display:inline-block;width:.75em;height:.75em;margin-left:.25em;margin-right:.15em;transform:rotate(-135deg)}.ngb-dp-arrow{display:flex;flex:1 1 auto;padding-right:0;padding-left:0;margin:0;width:2rem;height:2rem}.ngb-dp-arrow-next{justify-content:flex-end}.ngb-dp-arrow-next .ngb-dp-navigation-chevron{transform:rotate(45deg);margin-left:.15em;margin-right:.25em}.ngb-dp-arrow-btn{padding:0 .25rem;margin:0 .5rem;border:none;background-color:transparent;z-index:1}.ngb-dp-arrow-btn:focus{outline-width:1px;outline-style:auto}@media all and (-ms-high-contrast: none),(-ms-high-contrast: active){.ngb-dp-arrow-btn:focus{outline-style:solid}}.ngb-dp-month-name{font-size:larger;height:2rem;line-height:2rem;text-align:center}.ngb-dp-navigation-select{display:flex;flex:1 1 9rem}\n"]
+    }]
+  }], null, {
+    date: [{
+      type: Input
+    }],
+    disabled: [{
+      type: Input
+    }],
+    months: [{
+      type: Input
+    }],
+    showSelect: [{
+      type: Input
+    }],
+    prevDisabled: [{
+      type: Input
+    }],
+    nextDisabled: [{
+      type: Input
+    }],
+    selectBoxes: [{
+      type: Input
+    }],
+    navigate: [{
+      type: Output
+    }],
+    select: [{
+      type: Output
+    }]
+  });
+})();
 var NgbDatepickerContent = class _NgbDatepickerContent {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
+  constructor() {
+    this.templateRef = inject(TemplateRef);
   }
   static {
     this.ɵfac = function NgbDatepickerContent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDatepickerContent)(ɵɵdirectiveInject(TemplateRef));
+      return new (__ngFactoryType__ || _NgbDatepickerContent)();
     };
   }
   static {
@@ -6835,13 +6027,15 @@ var NgbDatepickerContent = class _NgbDatepickerContent {
       selector: "ng-template[ngbDatepickerContent]",
       standalone: true
     }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbDatepickerMonth = class _NgbDatepickerMonth {
+  constructor() {
+    this._keyboardService = inject(NgbDatepickerKeyboardService);
+    this._service = inject(NgbDatepickerService);
+    this.i18n = inject(NgbDatepickerI18n);
+    this.datepicker = inject(NgbDatepicker);
+  }
   /**
    * The first date of month to be rendered.
    *
@@ -6850,12 +6044,6 @@ var NgbDatepickerMonth = class _NgbDatepickerMonth {
    */
   set month(month) {
     this.viewModel = this._service.getMonth(month);
-  }
-  constructor(i18n, datepicker, _keyboardService, _service) {
-    this.i18n = i18n;
-    this.datepicker = datepicker;
-    this._keyboardService = _keyboardService;
-    this._service = _service;
   }
   onKeyDown(event) {
     this._keyboardService.processKey(event, this.datepicker);
@@ -6867,7 +6055,7 @@ var NgbDatepickerMonth = class _NgbDatepickerMonth {
   }
   static {
     this.ɵfac = function NgbDatepickerMonth_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDatepickerMonth)(ɵɵdirectiveInject(NgbDatepickerI18n), ɵɵdirectiveInject(forwardRef(() => NgbDatepicker)), ɵɵdirectiveInject(NgbDatepickerKeyboardService), ɵɵdirectiveInject(NgbDatepickerService));
+      return new (__ngFactoryType__ || _NgbDatepickerMonth)();
     };
   }
   static {
@@ -6887,21 +6075,22 @@ var NgbDatepickerMonth = class _NgbDatepickerMonth {
       },
       standalone: true,
       features: [ɵɵStandaloneFeature],
-      decls: 2,
-      vars: 2,
-      consts: [["class", "ngb-dp-week ngb-dp-weekdays", "role", "row", 4, "ngIf"], ["ngFor", "", 3, "ngForOf"], ["role", "row", 1, "ngb-dp-week", "ngb-dp-weekdays"], ["class", "ngb-dp-weekday ngb-dp-showweek small", 4, "ngIf"], ["class", "ngb-dp-weekday small", "role", "columnheader", 4, "ngFor", "ngForOf"], [1, "ngb-dp-weekday", "ngb-dp-showweek", "small"], ["role", "columnheader", 1, "ngb-dp-weekday", "small"], ["class", "ngb-dp-week", "role", "row", 4, "ngIf"], ["role", "row", 1, "ngb-dp-week"], ["class", "ngb-dp-week-number small text-muted", 4, "ngIf"], ["class", "ngb-dp-day", "role", "gridcell", 3, "disabled", "tabindex", "hidden", "ngb-dp-today", "click", 4, "ngFor", "ngForOf"], [1, "ngb-dp-week-number", "small", "text-muted"], ["role", "gridcell", 1, "ngb-dp-day", 3, "click", "tabindex"], [3, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
+      decls: 3,
+      vars: 1,
+      consts: [["role", "row", 1, "ngb-dp-week", "ngb-dp-weekdays"], [1, "ngb-dp-weekday", "ngb-dp-showweek", "small"], ["role", "columnheader", 1, "ngb-dp-weekday", "small"], ["role", "row", 1, "ngb-dp-week"], [1, "ngb-dp-week-number", "small", "text-muted"], ["role", "gridcell", 1, "ngb-dp-day", 3, "disabled", "tabindex", "hidden", "ngb-dp-today"], ["role", "gridcell", 1, "ngb-dp-day", 3, "click", "tabindex"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
       template: function NgbDatepickerMonth_Template(rf, ctx) {
         if (rf & 1) {
-          ɵɵtemplate(0, NgbDatepickerMonth_div_0_Template, 3, 2, "div", 0)(1, NgbDatepickerMonth_ng_template_1_Template, 1, 1, "ng-template", 1);
+          ɵɵtemplate(0, NgbDatepickerMonth_Conditional_0_Template, 4, 1, "div", 0);
+          ɵɵrepeaterCreate(1, NgbDatepickerMonth_For_2_Template, 1, 1, null, null, ɵɵrepeaterTrackByIdentity);
         }
         if (rf & 2) {
-          ɵɵproperty("ngIf", ctx.viewModel.weekdays.length > 0);
+          ɵɵconditional(ctx.viewModel.weekdays.length > 0 ? 0 : -1);
           ɵɵadvance();
-          ɵɵproperty("ngForOf", ctx.viewModel.weeks);
+          ɵɵrepeater(ctx.viewModel.weeks);
         }
       },
-      dependencies: [NgIf, NgForOf, NgTemplateOutlet],
-      styles: ['ngb-datepicker-month{display:block}.ngb-dp-weekday,.ngb-dp-week-number{line-height:2rem;text-align:center;font-style:italic}.ngb-dp-weekday{color:var(--bs-info)}.ngb-dp-week{border-radius:.25rem;display:flex}.ngb-dp-weekdays{border-bottom:1px solid var(--bs-border-color);border-radius:0;background-color:var(--bs-light)}.ngb-dp-day,.ngb-dp-weekday,.ngb-dp-week-number{width:2rem;height:2rem}.ngb-dp-day{cursor:pointer}.ngb-dp-day.disabled,.ngb-dp-day.hidden{cursor:default;pointer-events:none}.ngb-dp-day[tabindex="0"]{z-index:1}\n'],
+      dependencies: [NgTemplateOutlet],
+      styles: ['ngb-datepicker-month{display:block}.ngb-dp-weekday,.ngb-dp-week-number{line-height:2rem;text-align:center;font-style:italic}.ngb-dp-weekday{color:var(--bs-info)}.ngb-dp-week{border-radius:.25rem;display:flex}.ngb-dp-weekdays{border-bottom:1px solid var(--bs-border-color);border-radius:0;background-color:var(--bs-tertiary-bg)}.ngb-dp-day,.ngb-dp-weekday,.ngb-dp-week-number{width:2rem;height:2rem}.ngb-dp-day{cursor:pointer}.ngb-dp-day.disabled,.ngb-dp-day.hidden{cursor:default;pointer-events:none}.ngb-dp-day[tabindex="0"]{z-index:1}\n'],
       encapsulation: 2
     });
   }
@@ -6912,92 +6101,96 @@ var NgbDatepickerMonth = class _NgbDatepickerMonth {
     args: [{
       selector: "ngb-datepicker-month",
       standalone: true,
-      imports: [NgIf, NgForOf, NgTemplateOutlet],
+      imports: [NgTemplateOutlet],
       host: {
         role: "grid",
         "(keydown)": "onKeyDown($event)"
       },
       encapsulation: ViewEncapsulation$1.None,
       template: `
-		<div *ngIf="viewModel.weekdays.length > 0" class="ngb-dp-week ngb-dp-weekdays" role="row">
-			<div *ngIf="datepicker.showWeekNumbers" class="ngb-dp-weekday ngb-dp-showweek small">{{
-				i18n.getWeekLabel()
-			}}</div>
-			<div *ngFor="let weekday of viewModel.weekdays" class="ngb-dp-weekday small" role="columnheader">{{
-				weekday
-			}}</div>
-		</div>
-		<ng-template ngFor let-week [ngForOf]="viewModel.weeks">
-			<div *ngIf="!week.collapsed" class="ngb-dp-week" role="row">
-				<div *ngIf="datepicker.showWeekNumbers" class="ngb-dp-week-number small text-muted">{{
-					i18n.getWeekNumerals(week.number)
-				}}</div>
-				<div
-					*ngFor="let day of week.days"
-					(click)="doSelect(day); $event.preventDefault()"
-					class="ngb-dp-day"
-					role="gridcell"
-					[class.disabled]="day.context.disabled"
-					[tabindex]="day.tabindex"
-					[class.hidden]="day.hidden"
-					[class.ngb-dp-today]="day.context.today"
-					[attr.aria-label]="day.ariaLabel"
-				>
-					<ng-template [ngIf]="!day.hidden">
-						<ng-template
-							[ngTemplateOutlet]="datepicker.dayTemplate"
-							[ngTemplateOutletContext]="day.context"
-						></ng-template>
-					</ng-template>
-				</div>
+		@if (viewModel.weekdays.length > 0) {
+			<div class="ngb-dp-week ngb-dp-weekdays" role="row">
+				@if (datepicker.showWeekNumbers) {
+					<div class="ngb-dp-weekday ngb-dp-showweek small">{{ i18n.getWeekLabel() }}</div>
+				}
+				@for (weekday of viewModel.weekdays; track $index) {
+					<div class="ngb-dp-weekday small" role="columnheader">{{ weekday }}</div>
+				}
 			</div>
-		</ng-template>
+		}
+		@for (week of viewModel.weeks; track week) {
+			@if (!week.collapsed) {
+				<div class="ngb-dp-week" role="row">
+					@if (datepicker.showWeekNumbers) {
+						<div class="ngb-dp-week-number small text-muted">{{ i18n.getWeekNumerals(week.number) }}</div>
+					}
+					@for (day of week.days; track day) {
+						<div
+							(click)="doSelect(day); $event.preventDefault()"
+							class="ngb-dp-day"
+							role="gridcell"
+							[class.disabled]="day.context.disabled"
+							[tabindex]="day.tabindex"
+							[class.hidden]="day.hidden"
+							[class.ngb-dp-today]="day.context.today"
+							[attr.aria-label]="day.ariaLabel"
+						>
+							@if (!day.hidden) {
+								<ng-template [ngTemplateOutlet]="datepicker.dayTemplate" [ngTemplateOutletContext]="day.context" />
+							}
+						</div>
+					}
+				</div>
+			}
+		}
 	`,
-      styles: ['ngb-datepicker-month{display:block}.ngb-dp-weekday,.ngb-dp-week-number{line-height:2rem;text-align:center;font-style:italic}.ngb-dp-weekday{color:var(--bs-info)}.ngb-dp-week{border-radius:.25rem;display:flex}.ngb-dp-weekdays{border-bottom:1px solid var(--bs-border-color);border-radius:0;background-color:var(--bs-light)}.ngb-dp-day,.ngb-dp-weekday,.ngb-dp-week-number{width:2rem;height:2rem}.ngb-dp-day{cursor:pointer}.ngb-dp-day.disabled,.ngb-dp-day.hidden{cursor:default;pointer-events:none}.ngb-dp-day[tabindex="0"]{z-index:1}\n']
+      styles: ['ngb-datepicker-month{display:block}.ngb-dp-weekday,.ngb-dp-week-number{line-height:2rem;text-align:center;font-style:italic}.ngb-dp-weekday{color:var(--bs-info)}.ngb-dp-week{border-radius:.25rem;display:flex}.ngb-dp-weekdays{border-bottom:1px solid var(--bs-border-color);border-radius:0;background-color:var(--bs-tertiary-bg)}.ngb-dp-day,.ngb-dp-weekday,.ngb-dp-week-number{width:2rem;height:2rem}.ngb-dp-day{cursor:pointer}.ngb-dp-day.disabled,.ngb-dp-day.hidden{cursor:default;pointer-events:none}.ngb-dp-day[tabindex="0"]{z-index:1}\n']
     }]
-  }], function() {
-    return [{
-      type: NgbDatepickerI18n
-    }, {
-      type: NgbDatepicker,
-      decorators: [{
-        type: Inject,
-        args: [forwardRef(() => NgbDatepicker)]
-      }]
-    }, {
-      type: NgbDatepickerKeyboardService
-    }, {
-      type: NgbDatepickerService
-    }];
-  }, {
+  }], null, {
     month: [{
       type: Input
     }]
   });
 })();
 var NgbDatepicker = class _NgbDatepicker {
-  constructor(_service, _calendar, _i18n, config, cd, _elementRef, _ngbDateAdapter, _ngZone) {
-    this._service = _service;
-    this._calendar = _calendar;
-    this._i18n = _i18n;
-    this._elementRef = _elementRef;
-    this._ngbDateAdapter = _ngbDateAdapter;
-    this._ngZone = _ngZone;
+  constructor() {
     this.injector = inject(Injector);
+    this._service = inject(NgbDatepickerService);
+    this._calendar = inject(NgbCalendar);
+    this._i18n = inject(NgbDatepickerI18n);
+    this._config = inject(NgbDatepickerConfig);
+    this._nativeElement = inject(ElementRef).nativeElement;
+    this._ngbDateAdapter = inject(NgbDateAdapter);
+    this._ngZone = inject(NgZone);
+    this._destroyRef = inject(DestroyRef);
+    this._injector = inject(Injector);
     this._controlValue = null;
-    this._destroyed$ = new import_rxjs2.Subject();
     this._publicState = {};
+    this._initialized = false;
+    this.dayTemplate = this._config.dayTemplate;
+    this.dayTemplateData = this._config.dayTemplateData;
+    this.displayMonths = this._config.displayMonths;
+    this.firstDayOfWeek = this._config.firstDayOfWeek;
+    this.footerTemplate = this._config.footerTemplate;
+    this.markDisabled = this._config.markDisabled;
+    this.maxDate = this._config.maxDate;
+    this.minDate = this._config.minDate;
+    this.navigation = this._config.navigation;
+    this.outsideDays = this._config.outsideDays;
+    this.showWeekNumbers = this._config.showWeekNumbers;
+    this.startDate = this._config.startDate;
+    this.weekdays = this._config.weekdays;
     this.navigate = new EventEmitter();
     this.dateSelect = new EventEmitter();
     this.onChange = (_) => {
     };
     this.onTouched = () => {
     };
-    ["contentTemplate", "dayTemplate", "dayTemplateData", "displayMonths", "firstDayOfWeek", "footerTemplate", "markDisabled", "minDate", "maxDate", "navigation", "outsideDays", "showWeekNumbers", "startDate", "weekdays"].forEach((input) => this[input] = config[input]);
-    _service.dateSelect$.pipe((0, import_operators2.takeUntil)(this._destroyed$)).subscribe((date) => {
+    const cd = inject(ChangeDetectorRef);
+    this._service.dateSelect$.pipe(takeUntilDestroyed()).subscribe((date) => {
       this.dateSelect.emit(date);
     });
-    _service.model$.pipe((0, import_operators2.takeUntil)(this._destroyed$)).subscribe((model) => {
+    this._service.model$.pipe(takeUntilDestroyed()).subscribe((model) => {
       const newDate = model.firstDate;
       const oldDate = this.model ? this.model.firstDate : null;
       this._publicState = {
@@ -7078,11 +6271,11 @@ var NgbDatepicker = class _NgbDatepicker {
     this._service.focusSelect();
   }
   focus() {
-    this._ngZone.onStable.asObservable().pipe((0, import_operators2.take)(1)).subscribe(() => {
-      const elementToFocus = this._elementRef.nativeElement.querySelector('div.ngb-dp-day[tabindex="0"]');
-      if (elementToFocus) {
-        elementToFocus.focus();
-      }
+    afterNextRender(() => {
+      this._nativeElement.querySelector('div.ngb-dp-day[tabindex="0"]')?.focus();
+    }, {
+      phase: AfterRenderPhase.Read,
+      injector: this._injector
     });
   }
   /**
@@ -7102,22 +6295,16 @@ var NgbDatepicker = class _NgbDatepicker {
     this._ngZone.runOutsideAngular(() => {
       const focusIns$ = (0, import_rxjs2.fromEvent)(this._contentEl.nativeElement, "focusin");
       const focusOuts$ = (0, import_rxjs2.fromEvent)(this._contentEl.nativeElement, "focusout");
-      const {
-        nativeElement
-      } = this._elementRef;
       (0, import_rxjs2.merge)(focusIns$, focusOuts$).pipe((0, import_operators2.filter)((focusEvent) => {
         const target = focusEvent.target;
         const relatedTarget = focusEvent.relatedTarget;
-        return !(target?.classList.contains("ngb-dp-day") && relatedTarget?.classList.contains("ngb-dp-day") && nativeElement.contains(target) && nativeElement.contains(relatedTarget));
-      }), (0, import_operators2.takeUntil)(this._destroyed$)).subscribe(({
+        return !(target?.classList.contains("ngb-dp-day") && relatedTarget?.classList.contains("ngb-dp-day") && this._nativeElement.contains(target) && this._nativeElement.contains(relatedTarget));
+      }), takeUntilDestroyed(this._destroyRef)).subscribe(({
         type
       }) => this._ngZone.run(() => this._service.set({
         focusVisible: type === "focusin"
       })));
     });
-  }
-  ngOnDestroy() {
-    this._destroyed$.next();
   }
   ngOnInit() {
     if (this.model === void 0) {
@@ -7129,12 +6316,13 @@ var NgbDatepicker = class _NgbDatepicker {
     if (!this.dayTemplate) {
       this.dayTemplate = this._defaultDayTemplate;
     }
+    this._initialized = true;
   }
   ngOnChanges(changes) {
     const inputs = {};
     ["dayTemplateData", "displayMonths", "markDisabled", "firstDayOfWeek", "navigation", "minDate", "maxDate", "outsideDays", "weekdays"].filter((name) => name in changes).forEach((name) => inputs[name] = this[name]);
     this._service.set(inputs);
-    if ("startDate" in changes) {
+    if ("startDate" in changes && this._initialized) {
       const {
         currentValue,
         previousValue
@@ -7180,7 +6368,7 @@ var NgbDatepicker = class _NgbDatepicker {
   }
   static {
     this.ɵfac = function NgbDatepicker_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDatepicker)(ɵɵdirectiveInject(NgbDatepickerService), ɵɵdirectiveInject(NgbCalendar), ɵɵdirectiveInject(NgbDatepickerI18n), ɵɵdirectiveInject(NgbDatepickerConfig), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgbDateAdapter), ɵɵdirectiveInject(NgZone));
+      return new (__ngFactoryType__ || _NgbDatepicker)();
     };
   }
   static {
@@ -7198,8 +6386,8 @@ var NgbDatepicker = class _NgbDatepicker {
       },
       viewQuery: function NgbDatepicker_Query(rf, ctx) {
         if (rf & 1) {
+          ɵɵviewQuery(_c4, 7);
           ɵɵviewQuery(_c5, 7);
-          ɵɵviewQuery(_c6, 7);
         }
         if (rf & 2) {
           let _t;
@@ -7242,12 +6430,12 @@ var NgbDatepicker = class _NgbDatepicker {
       }, NgbDatepickerService]), ɵɵNgOnChangesFeature, ɵɵStandaloneFeature],
       decls: 10,
       vars: 9,
-      consts: [["defaultDayTemplate", ""], ["defaultContentTemplate", ""], ["content", ""], [1, "ngb-dp-header"], [3, "date", "months", "disabled", "showSelect", "prevDisabled", "nextDisabled", "selectBoxes", "navigate", "select", 4, "ngIf"], [1, "ngb-dp-content"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", "ngTemplateOutletInjector"], [3, "ngTemplateOutlet"], ["ngbDatepickerDayView", "", 3, "date", "currentMonth", "selected", "disabled", "focused"], ["class", "ngb-dp-month", 4, "ngFor", "ngForOf"], [1, "ngb-dp-month"], ["class", "ngb-dp-month-name", 4, "ngIf"], [3, "month"], [1, "ngb-dp-month-name"], [3, "navigate", "select", "date", "months", "disabled", "showSelect", "prevDisabled", "nextDisabled", "selectBoxes"]],
+      consts: [["defaultDayTemplate", ""], ["defaultContentTemplate", ""], ["content", ""], [1, "ngb-dp-header"], [3, "date", "months", "disabled", "showSelect", "prevDisabled", "nextDisabled", "selectBoxes"], [1, "ngb-dp-content"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", "ngTemplateOutletInjector"], [3, "ngTemplateOutlet"], ["ngbDatepickerDayView", "", 3, "date", "currentMonth", "selected", "disabled", "focused"], [1, "ngb-dp-month"], [1, "ngb-dp-month-name"], [3, "month"], [3, "navigate", "select", "date", "months", "disabled", "showSelect", "prevDisabled", "nextDisabled", "selectBoxes"]],
       template: function NgbDatepicker_Template(rf, ctx) {
         if (rf & 1) {
-          ɵɵtemplate(0, NgbDatepicker_ng_template_0_Template, 1, 5, "ng-template", null, 0, ɵɵtemplateRefExtractor)(2, NgbDatepicker_ng_template_2_Template, 1, 1, "ng-template", null, 1, ɵɵtemplateRefExtractor);
+          ɵɵtemplate(0, NgbDatepicker_ng_template_0_Template, 1, 5, "ng-template", null, 0, ɵɵtemplateRefExtractor)(2, NgbDatepicker_ng_template_2_Template, 2, 0, "ng-template", null, 1, ɵɵtemplateRefExtractor);
           ɵɵelementStart(4, "div", 3);
-          ɵɵtemplate(5, NgbDatepicker_ngb_datepicker_navigation_5_Template, 1, 7, "ngb-datepicker-navigation", 4);
+          ɵɵtemplate(5, NgbDatepicker_Conditional_5_Template, 1, 7, "ngb-datepicker-navigation", 4);
           ɵɵelementEnd();
           ɵɵelementStart(6, "div", 5, 2);
           ɵɵtemplate(8, NgbDatepicker_ng_template_8_Template, 0, 0, "ng-template", 6);
@@ -7257,17 +6445,17 @@ var NgbDatepicker = class _NgbDatepicker {
         if (rf & 2) {
           const defaultContentTemplate_r9 = ɵɵreference(3);
           ɵɵadvance(5);
-          ɵɵproperty("ngIf", ctx.navigation !== "none");
+          ɵɵconditional(ctx.navigation !== "none" ? 5 : -1);
           ɵɵadvance();
           ɵɵclassProp("ngb-dp-months", !ctx.contentTemplate);
           ɵɵadvance(2);
-          ɵɵproperty("ngTemplateOutlet", ctx.contentTemplate || (ctx.contentTemplateFromContent == null ? null : ctx.contentTemplateFromContent.templateRef) || defaultContentTemplate_r9)("ngTemplateOutletContext", ɵɵpureFunction1(7, _c7, ctx))("ngTemplateOutletInjector", ctx.injector);
+          ɵɵproperty("ngTemplateOutlet", ctx.contentTemplate || (ctx.contentTemplateFromContent == null ? null : ctx.contentTemplateFromContent.templateRef) || defaultContentTemplate_r9)("ngTemplateOutletContext", ɵɵpureFunction1(7, _c6, ctx))("ngTemplateOutletInjector", ctx.injector);
           ɵɵadvance();
           ɵɵproperty("ngTemplateOutlet", ctx.footerTemplate);
         }
       },
-      dependencies: [NgIf, NgForOf, NgTemplateOutlet, NgbDatepickerDayView, NgbDatepickerMonth, NgbDatepickerNavigation],
-      styles: ["ngb-datepicker{border:1px solid var(--bs-border-color);border-radius:.25rem;display:inline-block}ngb-datepicker-month{pointer-events:auto}ngb-datepicker.dropdown-menu{padding:0}ngb-datepicker.disabled .ngb-dp-weekday,ngb-datepicker.disabled .ngb-dp-week-number,ngb-datepicker.disabled .ngb-dp-month-name{color:var(--bs-text-muted)}.ngb-dp-body{z-index:1055}.ngb-dp-header{border-bottom:0;border-radius:.25rem .25rem 0 0;padding-top:.25rem;background-color:var(--bs-light)}.ngb-dp-months{display:flex}.ngb-dp-month{pointer-events:none}.ngb-dp-month-name{font-size:larger;height:2rem;line-height:2rem;text-align:center;background-color:var(--bs-light)}.ngb-dp-month+.ngb-dp-month .ngb-dp-month-name,.ngb-dp-month+.ngb-dp-month .ngb-dp-week{padding-left:1rem}.ngb-dp-month:last-child .ngb-dp-week{padding-right:.25rem}.ngb-dp-month:first-child .ngb-dp-week{padding-left:.25rem}.ngb-dp-month .ngb-dp-week:last-child{padding-bottom:.25rem}\n"],
+      dependencies: [NgTemplateOutlet, NgbDatepickerDayView, NgbDatepickerMonth, NgbDatepickerNavigation],
+      styles: ["ngb-datepicker{border:1px solid var(--bs-border-color);border-radius:.25rem;display:inline-block}ngb-datepicker-month{pointer-events:auto}ngb-datepicker.dropdown-menu{padding:0}ngb-datepicker.disabled .ngb-dp-weekday,ngb-datepicker.disabled .ngb-dp-week-number,ngb-datepicker.disabled .ngb-dp-month-name{color:var(--bs-text-muted)}.ngb-dp-body{z-index:1055}.ngb-dp-header{border-bottom:0;border-radius:.25rem .25rem 0 0;padding-top:.25rem;background-color:var(--bs-tertiary-bg)}.ngb-dp-months{display:flex}.ngb-dp-month{pointer-events:none}.ngb-dp-month-name{font-size:larger;height:2rem;line-height:2rem;text-align:center;background-color:var(--bs-tertiary-bg)}.ngb-dp-month+.ngb-dp-month .ngb-dp-month-name,.ngb-dp-month+.ngb-dp-month .ngb-dp-week{padding-left:1rem}.ngb-dp-month:last-child .ngb-dp-week{padding-right:.25rem}.ngb-dp-month:first-child .ngb-dp-week{padding-left:.25rem}.ngb-dp-month .ngb-dp-week:last-child{padding-bottom:.25rem}\n"],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -7280,7 +6468,7 @@ var NgbDatepicker = class _NgbDatepicker {
       exportAs: "ngbDatepicker",
       selector: "ngb-datepicker",
       standalone: true,
-      imports: [NgIf, NgForOf, NgTemplateOutlet, NgbDatepickerDayView, NgbDatepickerMonth, NgbDatepickerNavigation],
+      imports: [NgTemplateOutlet, NgbDatepickerDayView, NgbDatepickerMonth, NgbDatepickerNavigation],
       changeDetection: ChangeDetectionStrategy.OnPush,
       encapsulation: ViewEncapsulation$1.None,
       host: {
@@ -7307,28 +6495,32 @@ var NgbDatepicker = class _NgbDatepicker {
 		</ng-template>
 
 		<ng-template #defaultContentTemplate>
-			<div *ngFor="let month of model.months; let i = index" class="ngb-dp-month">
-				<div *ngIf="navigation === 'none' || (displayMonths > 1 && navigation === 'select')" class="ngb-dp-month-name">
-					{{ i18n.getMonthLabel(month.firstDate) }}
+			@for (month of model.months; track month) {
+				<div class="ngb-dp-month">
+					@if (navigation === 'none' || (displayMonths > 1 && navigation === 'select')) {
+						<div class="ngb-dp-month-name">
+							{{ i18n.getMonthLabel(month.firstDate) }}
+						</div>
+					}
+					<ngb-datepicker-month [month]="month.firstDate" />
 				</div>
-				<ngb-datepicker-month [month]="month.firstDate"></ngb-datepicker-month>
-			</div>
+			}
 		</ng-template>
 
 		<div class="ngb-dp-header">
-			<ngb-datepicker-navigation
-				*ngIf="navigation !== 'none'"
-				[date]="model.firstDate!"
-				[months]="model.months"
-				[disabled]="model.disabled"
-				[showSelect]="model.navigation === 'select'"
-				[prevDisabled]="model.prevDisabled"
-				[nextDisabled]="model.nextDisabled"
-				[selectBoxes]="model.selectBoxes"
-				(navigate)="onNavigateEvent($event)"
-				(select)="onNavigateDateSelect($event)"
-			>
-			</ngb-datepicker-navigation>
+			@if (navigation !== 'none') {
+				<ngb-datepicker-navigation
+					[date]="model.firstDate!"
+					[months]="model.months"
+					[disabled]="model.disabled"
+					[showSelect]="model.navigation === 'select'"
+					[prevDisabled]="model.prevDisabled"
+					[nextDisabled]="model.nextDisabled"
+					[selectBoxes]="model.selectBoxes"
+					(navigate)="onNavigateEvent($event)"
+					(select)="onNavigateDateSelect($event)"
+				/>
+			}
 		</div>
 
 		<div class="ngb-dp-content" [class.ngb-dp-months]="!contentTemplate" #content>
@@ -7336,37 +6528,19 @@ var NgbDatepicker = class _NgbDatepicker {
 				[ngTemplateOutlet]="contentTemplate || contentTemplateFromContent?.templateRef || defaultContentTemplate"
 				[ngTemplateOutletContext]="{ $implicit: this }"
 				[ngTemplateOutletInjector]="injector"
-			></ng-template>
+			/>
 		</div>
 
-		<ng-template [ngTemplateOutlet]="footerTemplate"></ng-template>
+		<ng-template [ngTemplateOutlet]="footerTemplate" />
 	`,
       providers: [{
         provide: NG_VALUE_ACCESSOR,
         useExisting: forwardRef(() => NgbDatepicker),
         multi: true
       }, NgbDatepickerService],
-      styles: ["ngb-datepicker{border:1px solid var(--bs-border-color);border-radius:.25rem;display:inline-block}ngb-datepicker-month{pointer-events:auto}ngb-datepicker.dropdown-menu{padding:0}ngb-datepicker.disabled .ngb-dp-weekday,ngb-datepicker.disabled .ngb-dp-week-number,ngb-datepicker.disabled .ngb-dp-month-name{color:var(--bs-text-muted)}.ngb-dp-body{z-index:1055}.ngb-dp-header{border-bottom:0;border-radius:.25rem .25rem 0 0;padding-top:.25rem;background-color:var(--bs-light)}.ngb-dp-months{display:flex}.ngb-dp-month{pointer-events:none}.ngb-dp-month-name{font-size:larger;height:2rem;line-height:2rem;text-align:center;background-color:var(--bs-light)}.ngb-dp-month+.ngb-dp-month .ngb-dp-month-name,.ngb-dp-month+.ngb-dp-month .ngb-dp-week{padding-left:1rem}.ngb-dp-month:last-child .ngb-dp-week{padding-right:.25rem}.ngb-dp-month:first-child .ngb-dp-week{padding-left:.25rem}.ngb-dp-month .ngb-dp-week:last-child{padding-bottom:.25rem}\n"]
+      styles: ["ngb-datepicker{border:1px solid var(--bs-border-color);border-radius:.25rem;display:inline-block}ngb-datepicker-month{pointer-events:auto}ngb-datepicker.dropdown-menu{padding:0}ngb-datepicker.disabled .ngb-dp-weekday,ngb-datepicker.disabled .ngb-dp-week-number,ngb-datepicker.disabled .ngb-dp-month-name{color:var(--bs-text-muted)}.ngb-dp-body{z-index:1055}.ngb-dp-header{border-bottom:0;border-radius:.25rem .25rem 0 0;padding-top:.25rem;background-color:var(--bs-tertiary-bg)}.ngb-dp-months{display:flex}.ngb-dp-month{pointer-events:none}.ngb-dp-month-name{font-size:larger;height:2rem;line-height:2rem;text-align:center;background-color:var(--bs-tertiary-bg)}.ngb-dp-month+.ngb-dp-month .ngb-dp-month-name,.ngb-dp-month+.ngb-dp-month .ngb-dp-week{padding-left:1rem}.ngb-dp-month:last-child .ngb-dp-week{padding-right:.25rem}.ngb-dp-month:first-child .ngb-dp-week{padding-left:.25rem}.ngb-dp-month .ngb-dp-week:last-child{padding-bottom:.25rem}\n"]
     }]
-  }], function() {
-    return [{
-      type: NgbDatepickerService
-    }, {
-      type: NgbCalendar
-    }, {
-      type: NgbDatepickerI18n
-    }, {
-      type: NgbDatepickerConfig
-    }, {
-      type: ChangeDetectorRef
-    }, {
-      type: ElementRef
-    }, {
-      type: NgbDateAdapter
-    }, {
-      type: NgZone
-    }];
-  }, {
+  }], () => [], {
     _defaultDayTemplate: [{
       type: ViewChild,
       args: ["defaultDayTemplate", {
@@ -7459,12 +6633,7 @@ function ngbAutoClose(zone, document2, type, close, closed$, insideElements, ign
           return matchesSelectorIfAny(element, insideSelector) || !isContainedIn(element, insideElements);
         }
       };
-      const escapes$ = (0, import_rxjs2.fromEvent)(document2, "keydown").pipe(
-        (0, import_operators2.takeUntil)(closed$),
-        /* eslint-disable-next-line deprecation/deprecation */
-        (0, import_operators2.filter)((e) => e.which === Key.Escape),
-        (0, import_operators2.tap)((e) => e.preventDefault())
-      );
+      const escapes$ = (0, import_rxjs2.fromEvent)(document2, "keydown").pipe((0, import_operators2.takeUntil)(closed$), (0, import_operators2.filter)((e) => e.key === "Escape"), (0, import_operators2.tap)((e) => e.preventDefault()));
       const mouseDowns$ = (0, import_rxjs2.fromEvent)(document2, "mousedown").pipe((0, import_operators2.map)(shouldCloseOnClick), (0, import_operators2.takeUntil)(closed$));
       const closeableClicks$ = (0, import_rxjs2.fromEvent)(document2, "mouseup").pipe((0, import_operators2.withLatestFrom)(mouseDowns$), (0, import_operators2.filter)(([_, shouldClose]) => shouldClose), (0, import_operators2.delay)(0), (0, import_operators2.takeUntil)(closed$));
       (0, import_rxjs2.race)([escapes$.pipe((0, import_operators2.map)(
@@ -7485,12 +6654,7 @@ function getFocusableBoundaryElements(element) {
 var ngbFocusTrap = (zone, element, stopFocusTrap$, refocusOnClick = false) => {
   zone.runOutsideAngular(() => {
     const lastFocusedElement$ = (0, import_rxjs2.fromEvent)(element, "focusin").pipe((0, import_operators2.takeUntil)(stopFocusTrap$), (0, import_operators2.map)((e) => e.target));
-    (0, import_rxjs2.fromEvent)(element, "keydown").pipe(
-      (0, import_operators2.takeUntil)(stopFocusTrap$),
-      /* eslint-disable-next-line deprecation/deprecation */
-      (0, import_operators2.filter)((e) => e.which === Key.Tab),
-      (0, import_operators2.withLatestFrom)(lastFocusedElement$)
-    ).subscribe(([tabEvent, focusedElement]) => {
+    (0, import_rxjs2.fromEvent)(element, "keydown").pipe((0, import_operators2.takeUntil)(stopFocusTrap$), (0, import_operators2.filter)((e) => e.key === "Tab"), (0, import_operators2.withLatestFrom)(lastFocusedElement$)).subscribe(([tabEvent, focusedElement]) => {
       const [first, last] = getFocusableBoundaryElements(element);
       if ((focusedElement === first || focusedElement === element) && tabEvent.shiftKey) {
         last.focus();
@@ -7507,15 +6671,15 @@ var ngbFocusTrap = (zone, element, stopFocusTrap$, refocusOnClick = false) => {
   });
 };
 var NgbRTL = class _NgbRTL {
-  constructor(document2) {
-    this._element = document2.documentElement;
+  constructor() {
+    this._element = inject(DOCUMENT).documentElement;
   }
   isRTL() {
     return (this._element.getAttribute("dir") || "").toLowerCase() === "rtl";
   }
   static {
     this.ɵfac = function NgbRTL_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbRTL)(ɵɵinject(DOCUMENT));
+      return new (__ngFactoryType__ || _NgbRTL)();
     };
   }
   static {
@@ -7532,15 +6696,7 @@ var NgbRTL = class _NgbRTL {
     args: [{
       providedIn: "root"
     }]
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }];
-  }, null);
+  }], null, null);
 })();
 var placementSeparator = /\s+/;
 var spacesRegExp = /  +/gi;
@@ -7678,49 +6834,6 @@ function ngbPositioning() {
     }
   };
 }
-var NgbInputDatepickerConfig = class _NgbInputDatepickerConfig extends NgbDatepickerConfig {
-  constructor() {
-    super(...arguments);
-    this.autoClose = true;
-    this.placement = ["bottom-start", "bottom-end", "top-start", "top-end"];
-    this.popperOptions = (options) => options;
-    this.restoreFocus = true;
-  }
-  static {
-    this.ɵfac = /* @__PURE__ */ (() => {
-      let ɵNgbInputDatepickerConfig_BaseFactory;
-      return function NgbInputDatepickerConfig_Factory(__ngFactoryType__) {
-        return (ɵNgbInputDatepickerConfig_BaseFactory || (ɵNgbInputDatepickerConfig_BaseFactory = ɵɵgetInheritedFactory(_NgbInputDatepickerConfig)))(__ngFactoryType__ || _NgbInputDatepickerConfig);
-      };
-    })();
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _NgbInputDatepickerConfig,
-      factory: _NgbInputDatepickerConfig.ɵfac,
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbInputDatepickerConfig, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-function addPopperOffset(offset$1) {
-  return (options) => {
-    options.modifiers.push(offset_default, {
-      name: "offset",
-      options: {
-        offset: () => offset$1
-      }
-    });
-    return options;
-  };
-}
 function NGB_DATEPICKER_PARSER_FORMATTER_FACTORY() {
   return new NgbDateISOParserFormatter();
 }
@@ -7796,31 +6909,72 @@ var NgbDateISOParserFormatter = class _NgbDateISOParserFormatter extends NgbDate
     type: Injectable
   }], null, null);
 })();
+var NgbInputDatepickerConfig = class _NgbInputDatepickerConfig extends NgbDatepickerConfig {
+  constructor() {
+    super(...arguments);
+    this.autoClose = true;
+    this.placement = ["bottom-start", "bottom-end", "top-start", "top-end"];
+    this.popperOptions = (options) => options;
+    this.restoreFocus = true;
+  }
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵNgbInputDatepickerConfig_BaseFactory;
+      return function NgbInputDatepickerConfig_Factory(__ngFactoryType__) {
+        return (ɵNgbInputDatepickerConfig_BaseFactory || (ɵNgbInputDatepickerConfig_BaseFactory = ɵɵgetInheritedFactory(_NgbInputDatepickerConfig)))(__ngFactoryType__ || _NgbInputDatepickerConfig);
+      };
+    })();
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbInputDatepickerConfig,
+      factory: _NgbInputDatepickerConfig.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbInputDatepickerConfig, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
+function addPopperOffset(offset$1) {
+  return (options) => {
+    options.modifiers.push(offset_default, {
+      name: "offset",
+      options: {
+        offset: () => offset$1
+      }
+    });
+    return options;
+  };
+}
 var NgbInputDatepicker = class _NgbInputDatepicker {
-  get disabled() {
-    return this._disabled;
-  }
-  set disabled(value) {
-    this._disabled = value === "" || value && value !== "false";
-    if (this.isOpen()) {
-      this._cRef.instance.setDisabledState(this._disabled);
-    }
-  }
-  constructor(_parserFormatter, _elRef, _vcRef, _renderer, _ngZone, _calendar, _dateAdapter, _document, _changeDetector, config) {
-    this._parserFormatter = _parserFormatter;
-    this._elRef = _elRef;
-    this._vcRef = _vcRef;
-    this._renderer = _renderer;
-    this._ngZone = _ngZone;
-    this._calendar = _calendar;
-    this._dateAdapter = _dateAdapter;
-    this._document = _document;
-    this._changeDetector = _changeDetector;
+  constructor() {
+    this._parserFormatter = inject(NgbDateParserFormatter);
+    this._elRef = inject(ElementRef);
+    this._vcRef = inject(ViewContainerRef);
+    this._ngZone = inject(NgZone);
+    this._calendar = inject(NgbCalendar);
+    this._dateAdapter = inject(NgbDateAdapter);
+    this._document = inject(DOCUMENT);
+    this._changeDetector = inject(ChangeDetectorRef);
+    this._injector = inject(Injector);
+    this._config = inject(NgbInputDatepickerConfig);
     this._cRef = null;
     this._disabled = false;
     this._elWithFocus = null;
     this._model = null;
+    this._positioning = ngbPositioning();
     this._destroyCloseHandlers$ = new import_rxjs2.Subject();
+    this.autoClose = this._config.autoClose;
+    this.placement = this._config.placement;
+    this.popperOptions = this._config.popperOptions;
+    this.container = this._config.container;
+    this.positionTarget = this._config.positionTarget;
     this.dateSelect = new EventEmitter();
     this.navigate = new EventEmitter();
     this.closed = new EventEmitter();
@@ -7830,8 +6984,15 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
     };
     this._validatorChange = () => {
     };
-    ["autoClose", "container", "positionTarget", "placement", "popperOptions"].forEach((input) => this[input] = config[input]);
-    this._positioning = ngbPositioning();
+  }
+  get disabled() {
+    return this._disabled;
+  }
+  set disabled(value) {
+    this._disabled = value === "" || value && value !== "false";
+    if (this.isOpen()) {
+      this._cRef.instance.setDisabledState(this._disabled);
+    }
   }
   registerOnChange(fn2) {
     this._onChange = fn2;
@@ -7908,7 +7069,9 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
    */
   open() {
     if (!this.isOpen()) {
-      this._cRef = this._vcRef.createComponent(NgbDatepicker);
+      this._cRef = this._vcRef.createComponent(NgbDatepicker, {
+        injector: this._injector
+      });
       this._applyPopupStyling(this._cRef.location.nativeElement);
       this._applyDatepickerInputs(this._cRef);
       this._subscribeForDatepickerOutputs(this._cRef.instance);
@@ -7922,7 +7085,7 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
       this._cRef.changeDetectorRef.detectChanges();
       this._cRef.instance.setDisabledState(this.disabled);
       if (this.container === "body") {
-        this._document.querySelector(this.container).appendChild(this._cRef.location.nativeElement);
+        this._document.querySelector(this.container)?.appendChild(this._cRef.location.nativeElement);
       }
       this._elWithFocus = this._document.activeElement;
       ngbFocusTrap(this._ngZone, this._cRef.location.nativeElement, this.closed, true);
@@ -7935,21 +7098,25 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
       } else {
         hostElement = this._elRef.nativeElement;
       }
+      if (this.positionTarget && !hostElement) {
+        throw new Error("ngbDatepicker could not find element declared in [positionTarget] to position against.");
+      }
       this._ngZone.runOutsideAngular(() => {
-        if (this._cRef) {
+        if (this._cRef && hostElement) {
           this._positioning.createPopper({
             hostElement,
             targetElement: this._cRef.location.nativeElement,
             placement: this.placement,
-            appendToBody: this.container === "body",
             updatePopperOptions: (options) => this.popperOptions(addPopperOffset([0, 2])(options))
           });
-          this._zoneSubscription = this._ngZone.onStable.subscribe(() => this._positioning.update());
+          this._afterRenderRef = afterRender(() => {
+            this._positioning.update();
+          }, {
+            phase: AfterRenderPhase.MixedReadWrite,
+            injector: this._injector
+          });
         }
       });
-      if (this.positionTarget && !hostElement) {
-        throw new Error("ngbDatepicker could not find element declared in [positionTarget] to position against.");
-      }
       this._setCloseHandlers();
     }
   }
@@ -7958,10 +7125,10 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
    */
   close() {
     if (this.isOpen()) {
-      this._vcRef.remove(this._vcRef.indexOf(this._cRef.hostView));
+      this._cRef?.destroy();
       this._cRef = null;
       this._positioning.destroy();
-      this._zoneSubscription?.unsubscribe();
+      this._afterRenderRef?.destroy();
       this._destroyCloseHandlers$.next();
       this.closed.emit();
       this._changeDetector.markForCheck();
@@ -8012,12 +7179,11 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
       this._validatorChange();
       if (this.isOpen()) {
         if (changes["minDate"]) {
-          this._cRef.instance.minDate = this.minDate;
+          this._cRef.setInput("minDate", this.minDate);
         }
         if (changes["maxDate"]) {
-          this._cRef.instance.maxDate = this.maxDate;
+          this._cRef.setInput("maxDate", this.maxDate);
         }
-        this._cRef.instance.ngOnChanges(changes);
       }
     }
     if (changes["datepickerClass"]) {
@@ -8046,18 +7212,17 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
     const popupEl = this._cRef?.location.nativeElement;
     if (popupEl) {
       if (newClass) {
-        this._renderer.addClass(popupEl, newClass);
+        popupEl.classList.add(newClass);
       }
       if (oldClass) {
-        this._renderer.removeClass(popupEl, oldClass);
+        popupEl.classList.remove(oldClass);
       }
     }
   }
   _applyPopupStyling(nativeElement) {
-    this._renderer.addClass(nativeElement, "dropdown-menu");
-    this._renderer.addClass(nativeElement, "show");
+    nativeElement.classList.add("dropdown-menu", "show");
     if (this.container === "body") {
-      this._renderer.addClass(nativeElement, "ngb-dp-body");
+      nativeElement.classList.add("ngb-dp-body");
     }
     this._applyPopupClass(this.datepickerClass);
   }
@@ -8073,7 +7238,7 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
   _writeModelValue(model) {
     const value = this._parserFormatter.format(model);
     this._inputValue = value;
-    this._renderer.setProperty(this._elRef.nativeElement, "value", value);
+    this._elRef.nativeElement.value = value;
     if (this.isOpen()) {
       this._cRef.instance.writeValue(this._dateAdapter.toModel(model));
       this._onTouched();
@@ -8089,7 +7254,7 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
   }
   static {
     this.ɵfac = function NgbInputDatepicker_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbInputDatepicker)(ɵɵdirectiveInject(NgbDateParserFormatter), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(NgbCalendar), ɵɵdirectiveInject(NgbDateAdapter), ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(NgbInputDatepickerConfig));
+      return new (__ngFactoryType__ || _NgbInputDatepicker)();
     };
   }
   static {
@@ -8186,33 +7351,7 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
         useExisting: NgbInputDatepickerConfig
       }]
     }]
-  }], function() {
-    return [{
-      type: NgbDateParserFormatter
-    }, {
-      type: ElementRef
-    }, {
-      type: ViewContainerRef
-    }, {
-      type: Renderer2
-    }, {
-      type: NgZone
-    }, {
-      type: NgbCalendar
-    }, {
-      type: NgbDateAdapter
-    }, {
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }, {
-      type: ChangeDetectorRef
-    }, {
-      type: NgbInputDatepickerConfig
-    }];
-  }, {
+  }], null, {
     autoClose: [{
       type: Input
     }],
@@ -8949,14 +8088,14 @@ var NgbCalendarIslamicUmalqura = class _NgbCalendarIslamicUmalqura extends NgbCa
     type: Injectable
   }], null, null);
 })();
-function toGregorian$2(jalaliDate) {
+function toGregorian$3(jalaliDate) {
   let jdn = jalaliToJulian(jalaliDate.year, jalaliDate.month, jalaliDate.day);
-  let date = julianToGregorian(jdn);
+  let date = julianToGregorian$1(jdn);
   date.setHours(6, 30, 3, 200);
   return date;
 }
-function fromGregorian$2(gdate) {
-  let g2d = gregorianToJulian(gdate.getFullYear(), gdate.getMonth() + 1, gdate.getDate());
+function fromGregorian$3(gdate) {
+  let g2d = gregorianToJulian$1(gdate.getFullYear(), gdate.getMonth() + 1, gdate.getDate());
   return julianToJalali(g2d);
 }
 function setJalaliYear(date, yearValue) {
@@ -8970,18 +8109,18 @@ function setJalaliMonth(date, month) {
   return date;
 }
 function setJalaliDay(date, day) {
-  let mDays = getDaysPerMonth(date.month, date.year);
+  let mDays = getDaysPerMonth$1(date.month, date.year);
   if (day <= 0) {
     while (day <= 0) {
       date = setJalaliMonth(date, date.month - 1);
-      mDays = getDaysPerMonth(date.month, date.year);
+      mDays = getDaysPerMonth$1(date.month, date.year);
       day += mDays;
     }
   } else if (day > mDays) {
     while (day > mDays) {
       day -= mDays;
       date = setJalaliMonth(date, date.month + 1);
-      mDays = getDaysPerMonth(date.month, date.year);
+      mDays = getDaysPerMonth$1(date.month, date.year);
     }
   }
   date.day = day;
@@ -9032,7 +8171,7 @@ function jalCal(jalaliYear) {
     march
   };
 }
-function julianToGregorian(julianDayNumber) {
+function julianToGregorian$1(julianDayNumber) {
   let j = 4 * julianDayNumber + 139361631;
   j = j + div(div(4 * julianDayNumber + 183187720, 146097) * 3, 4) * 4 - 3908;
   const i = div(mod(j, 1461), 4) * 5 + 308;
@@ -9041,13 +8180,13 @@ function julianToGregorian(julianDayNumber) {
   const gYear = div(j, 1461) - 100100 + div(8 - gMonth, 6);
   return new Date(gYear, gMonth - 1, gDay);
 }
-function gregorianToJulian(gy, gm, gd) {
+function gregorianToJulian$1(gy, gm, gd) {
   let d = div((gy + div(gm - 8, 6) + 100100) * 1461, 4) + div(153 * mod(gm + 9, 12) + 2, 5) + gd - 34840408;
   d = d - div(div(gy + 100100 + div(gm - 8, 6), 100) * 3, 4) + 752;
   return d;
 }
 function julianToJalali(julianDayNumber) {
-  let gy = julianToGregorian(julianDayNumber).getFullYear(), jalaliYear = gy - 621, r = jalCal(jalaliYear), gregorianDay = gregorianToJulian(gy, 3, r.march), jalaliDay, jalaliMonth, numberOfDays;
+  let gy = julianToGregorian$1(julianDayNumber).getFullYear(), jalaliYear = gy - 621, r = jalCal(jalaliYear), gregorianDay = gregorianToJulian$1(gy, 3, r.march), jalaliDay, jalaliMonth, numberOfDays;
   numberOfDays = julianDayNumber - gregorianDay;
   if (numberOfDays >= 0) {
     if (numberOfDays <= 185) {
@@ -9070,9 +8209,9 @@ function julianToJalali(julianDayNumber) {
 }
 function jalaliToJulian(jYear, jMonth, jDay) {
   let r = jalCal(jYear);
-  return gregorianToJulian(r.gy, 3, r.march) + (jMonth - 1) * 31 - div(jMonth, 7) * (jMonth - 7) + jDay - 1;
+  return gregorianToJulian$1(r.gy, 3, r.march) + (jMonth - 1) * 31 - div(jMonth, 7) * (jMonth - 7) + jDay - 1;
 }
-function getDaysPerMonth(month, year) {
+function getDaysPerMonth$1(month, year) {
   if (month <= 6) {
     return 31;
   }
@@ -9116,7 +8255,7 @@ var NgbCalendarPersian = class _NgbCalendarPersian extends NgbCalendar {
     return this.getNext(date, period, -number);
   }
   getWeekday(date) {
-    const day = toGregorian$2(date).getDay();
+    const day = toGregorian$3(date).getDay();
     return day === 0 ? 7 : day;
   }
   getWeekNumber(week, firstDayOfWeek) {
@@ -9125,17 +8264,17 @@ var NgbCalendarPersian = class _NgbCalendarPersian extends NgbCalendar {
     }
     const thursdayIndex = (4 + 7 - firstDayOfWeek) % 7;
     const date = week[thursdayIndex];
-    const jsDate = toGregorian$2(date);
+    const jsDate = toGregorian$3(date);
     jsDate.setDate(jsDate.getDate() + 4 - (jsDate.getDay() || 7));
     const time = jsDate.getTime();
-    const startDate = toGregorian$2(new NgbDate(date.year, 1, 1));
+    const startDate = toGregorian$3(new NgbDate(date.year, 1, 1));
     return Math.floor(Math.round((time - startDate.getTime()) / 864e5) / 7) + 1;
   }
   getToday() {
-    return fromGregorian$2(/* @__PURE__ */ new Date());
+    return fromGregorian$3(/* @__PURE__ */ new Date());
   }
   isValid(date) {
-    return date != null && isInteger(date.year) && isInteger(date.month) && isInteger(date.day) && !isNaN(toGregorian$2(date).getTime());
+    return date != null && isInteger(date.year) && isInteger(date.month) && isInteger(date.day) && !isNaN(toGregorian$3(date).getTime());
   }
   static {
     this.ɵfac = /* @__PURE__ */ (() => {
@@ -9289,7 +8428,7 @@ function setHebrewDay(date, val) {
   }
   return date;
 }
-function fromGregorian$1(gdate) {
+function fromGregorian$2(gdate) {
   const date = new Date(gdate);
   const gYear = date.getFullYear(), gMonth = date.getMonth(), gDay = date.getDate();
   let julianDay = GREGORIAN_EPOCH - 1 + 365 * (gYear - 1) + Math.floor((gYear - 1) / 4) - Math.floor((gYear - 1) / 100) + Math.floor((gYear - 1) / 400) + Math.floor((367 * (gMonth + 1) - 362) / 12 + (gMonth + 1 <= 2 ? 0 : isGregorianLeapYear(gYear) ? -1 : -2) + gDay);
@@ -9312,7 +8451,7 @@ function fromGregorian$1(gdate) {
   }
   return new NgbDate(hYear, hMonth, hDay);
 }
-function toGregorian$1(hebrewDate) {
+function toGregorian$2(hebrewDate) {
   const hYear = hebrewDate.year;
   const hMonth = hebrewDate.month;
   const hDay = hebrewDate.day;
@@ -9427,7 +8566,7 @@ var NgbCalendarHebrew = class _NgbCalendarHebrew extends NgbCalendar {
       let b = isNumber(date.year) && isNumber(date.month) && isNumber(date.day);
       b = b && date.month > 0 && date.month <= (isHebrewLeapYear(date.year) ? 13 : 12);
       b = b && date.day > 0 && date.day <= getDaysInHebrewMonth(date.month, date.year);
-      return b && !isNaN(toGregorian$1(date).getTime());
+      return b && !isNaN(toGregorian$2(date).getTime());
     }
     return false;
   }
@@ -9453,7 +8592,7 @@ var NgbCalendarHebrew = class _NgbCalendarHebrew extends NgbCalendar {
     return this.getNext(date, period, -number);
   }
   getWeekday(date) {
-    const day = toGregorian$1(date).getDay();
+    const day = toGregorian$2(date).getDay();
     return day === 0 ? 7 : day;
   }
   getWeekNumber(week, firstDayOfWeek) {
@@ -9461,19 +8600,19 @@ var NgbCalendarHebrew = class _NgbCalendarHebrew extends NgbCalendar {
     return Math.ceil(getDayNumberInHebrewYear(date) / 7);
   }
   getToday() {
-    return fromGregorian$1(/* @__PURE__ */ new Date());
+    return fromGregorian$2(/* @__PURE__ */ new Date());
   }
   /**
    * @since 3.4.0
    */
   toGregorian(date) {
-    return fromJSDate(toGregorian$1(date));
+    return fromJSDate(toGregorian$2(date));
   }
   /**
    * @since 3.4.0
    */
   fromGregorian(date) {
-    return fromGregorian$1(toJSDate(date));
+    return fromGregorian$2(toJSDate(date));
   }
   static {
     this.ɵfac = /* @__PURE__ */ (() => {
@@ -9495,18 +8634,18 @@ var NgbCalendarHebrew = class _NgbCalendarHebrew extends NgbCalendar {
     type: Injectable
   }], null, null);
 })();
-var WEEKDAYS = ["שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת", "ראשון"];
-var MONTHS = ["תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר", "ניסן", "אייר", "סיון", "תמוז", "אב", "אלול"];
+var WEEKDAYS$1 = ["שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת", "ראשון"];
+var MONTHS$1 = ["תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר", "ניסן", "אייר", "סיון", "תמוז", "אב", "אלול"];
 var MONTHS_LEAP = ["תשרי", "חשון", "כסלו", "טבת", "שבט", "אדר א׳", "אדר ב׳", "ניסן", "אייר", "סיון", "תמוז", "אב", "אלול"];
 var NgbDatepickerI18nHebrew = class _NgbDatepickerI18nHebrew extends NgbDatepickerI18n {
   getMonthShortName(month, year) {
     return this.getMonthFullName(month, year);
   }
   getMonthFullName(month, year) {
-    return isHebrewLeapYear(year) ? MONTHS_LEAP[month - 1] || "" : MONTHS[month - 1] || "";
+    return isHebrewLeapYear(year) ? MONTHS_LEAP[month - 1] || "" : MONTHS$1[month - 1] || "";
   }
   getWeekdayLabel(weekday, width) {
-    return WEEKDAYS[weekday - 1] || "";
+    return WEEKDAYS$1[weekday - 1] || "";
   }
   getDayAriaLabel(date) {
     return `${hebrewNumerals(date.day)} ${this.getMonthFullName(date.month, date.year)} ${hebrewNumerals(date.year)}`;
@@ -9540,18 +8679,18 @@ var NgbDatepickerI18nHebrew = class _NgbDatepickerI18nHebrew extends NgbDatepick
     type: Injectable
   }], null, null);
 })();
-function toGregorian(date) {
+function toGregorian$1(date) {
   return new Date(date.year - 543, date.month - 1, date.day);
 }
-function fromGregorian(gdate) {
+function fromGregorian$1(gdate) {
   return new NgbDate(gdate.getFullYear() + 543, gdate.getMonth() + 1, gdate.getDate());
 }
 var NgbCalendarBuddhist = class _NgbCalendarBuddhist extends NgbCalendarGregorian {
   getToday() {
-    return fromGregorian(/* @__PURE__ */ new Date());
+    return fromGregorian$1(/* @__PURE__ */ new Date());
   }
   getNext(date, period = "d", number = 1) {
-    let jsDate = toGregorian(date);
+    let jsDate = toGregorian$1(date);
     let checkMonth = true;
     let expectedMonth = jsDate.getMonth();
     switch (period) {
@@ -9576,13 +8715,13 @@ var NgbCalendarBuddhist = class _NgbCalendarBuddhist extends NgbCalendarGregoria
     if (checkMonth && jsDate.getMonth() !== expectedMonth) {
       jsDate.setDate(0);
     }
-    return fromGregorian(jsDate);
+    return fromGregorian$1(jsDate);
   }
   getPrev(date, period = "d", number = 1) {
     return this.getNext(date, period, -number);
   }
   getWeekday(date) {
-    let jsDate = toGregorian(date);
+    let jsDate = toGregorian$1(date);
     let day = jsDate.getDay();
     return day === 0 ? 7 : day;
   }
@@ -9592,7 +8731,7 @@ var NgbCalendarBuddhist = class _NgbCalendarBuddhist extends NgbCalendarGregoria
     }
     const thursdayIndex = (4 + 7 - firstDayOfWeek) % 7;
     let date = week[thursdayIndex];
-    const jsDate = toGregorian(date);
+    const jsDate = toGregorian$1(date);
     jsDate.setDate(jsDate.getDate() + 4 - (jsDate.getDay() || 7));
     const time = jsDate.getTime();
     jsDate.setMonth(0);
@@ -9606,7 +8745,7 @@ var NgbCalendarBuddhist = class _NgbCalendarBuddhist extends NgbCalendarGregoria
     if (date.year === 0) {
       return false;
     }
-    const jsDate = toGregorian(date);
+    const jsDate = toGregorian$1(date);
     return !isNaN(jsDate.getTime()) && jsDate.getFullYear() === date.year - 543 && jsDate.getMonth() + 1 === date.month && jsDate.getDate() === date.day;
   }
   static {
@@ -9626,6 +8765,209 @@ var NgbCalendarBuddhist = class _NgbCalendarBuddhist extends NgbCalendarGregoria
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbCalendarBuddhist, [{
+    type: Injectable
+  }], null, null);
+})();
+var JD_EPOCH = 17242205e-1;
+var DAYSPERMONTH = [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 5];
+function isEthiopianLeapYear(year) {
+  if (year != null) {
+    return year % 4 == 3 || year % 4 == -1;
+  }
+  return false;
+}
+function setEthiopianYear(date, yearValue) {
+  date.year = +yearValue;
+  return date;
+}
+function setEthiopianMonth(date, val) {
+  val = +val;
+  date.year = date.year + Math.floor((val - 1) / 13);
+  date.month = Math.floor(((val - 1) % 13 + 13) % 13) + 1;
+  return date;
+}
+function setEthiopianDay(date, day) {
+  let mDays = getDaysPerMonth(date.month, date.year);
+  if (day <= 0) {
+    while (day <= 0) {
+      date = setEthiopianMonth(date, date.month - 1);
+      mDays = getDaysPerMonth(date.month, date.year);
+      day += mDays;
+    }
+  } else if (day > mDays) {
+    while (day > mDays) {
+      day -= mDays;
+      date = setEthiopianMonth(date, date.month + 1);
+      mDays = getDaysPerMonth(date.month, date.year);
+    }
+  }
+  date.day = day;
+  return date;
+}
+function getDaysPerMonth(month, year) {
+  let leapYear = isEthiopianLeapYear(year);
+  return DAYSPERMONTH[month - 1] + (month === 13 && leapYear ? 1 : 0);
+}
+function toGregorian(ethiopianDate) {
+  let jdn = ethiopianToJulian(ethiopianDate.year, ethiopianDate.month, ethiopianDate.day);
+  let date = julianToGregorian(jdn);
+  date.setHours(6, 30, 3, 200);
+  return date;
+}
+function fromGregorian(gdate) {
+  let g2d = gregorianToJulian(gdate.getFullYear(), gdate.getMonth() + 1, gdate.getDate());
+  return juilianToEthiopia(g2d);
+}
+function ethiopianToJulian(year, month, day) {
+  if (year < 0) {
+    year++;
+  }
+  return day + (month - 1) * 30 + (year - 1) * 365 + Math.floor(year / 4) + JD_EPOCH - 1;
+}
+function juilianToEthiopia(jd) {
+  let c = Math.floor(jd) + 0.5 - JD_EPOCH;
+  let year = Math.floor((c - Math.floor((c + 366) / 1461)) / 365) + 1;
+  if (year <= 0) {
+    year--;
+  }
+  c = Math.floor(jd) + 0.5 - ethiopianToJulian(year, 1, 1);
+  let month = Math.floor(c / 30) + 1;
+  let day = c - (month - 1) * 30 + 1;
+  return new NgbDate(year, month, day);
+}
+function julianToGregorian(jd) {
+  let z = Math.floor(jd + 0.5);
+  let a = Math.floor((z - 186721625e-2) / 36524.25);
+  a = z + 1 + a - Math.floor(a / 4);
+  let b = a + 1524;
+  let c = Math.floor((b - 122.1) / 365.25);
+  let d = Math.floor(365.25 * c);
+  let e = Math.floor((b - d) / 30.6001);
+  let day = b - d - Math.floor(e * 30.6001);
+  let month = e - (e > 13.5 ? 13 : 1);
+  let year = c - (month > 2.5 ? 4716 : 4715);
+  if (year <= 0) {
+    year--;
+  }
+  return new Date(year, month, day);
+}
+function gregorianToJulian(year, month, day) {
+  if (year < 0) {
+    year++;
+  }
+  if (month < 3) {
+    month += 12;
+    year--;
+  }
+  let a = Math.floor(year / 100);
+  let b = 2 - a + Math.floor(a / 4);
+  return Math.floor(365.25 * (year + 4716)) + Math.floor(30.6001 * (month + 1)) + day + b - 1524.5;
+}
+var NgbCalendarEthiopian = class _NgbCalendarEthiopian extends NgbCalendar {
+  getDaysPerWeek() {
+    return 7;
+  }
+  getMonths(year) {
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  }
+  getNext(date, period = "d", number = 1) {
+    date = new NgbDate(date.year, date.month, date.day);
+    switch (period) {
+      case "y":
+        date = setEthiopianYear(date, date.year + number);
+        date.month = 1;
+        date.day = 1;
+        return date;
+      case "m":
+        date = setEthiopianMonth(date, date.month + number);
+        date.day = 1;
+        return date;
+      case "d":
+        return setEthiopianDay(date, date.day + number);
+      default:
+        return date;
+    }
+  }
+  getPrev(date, period = "d", number = 1) {
+    return this.getNext(date, period, -number);
+  }
+  getWeekday(date) {
+    const dt = Math.floor(ethiopianToJulian(date.year, date.month, date.day) + 3) % 7;
+    return dt === 0 ? 7 : dt;
+  }
+  getWeekNumber(week, firstDayOfWeek) {
+    if (firstDayOfWeek === 7) {
+      firstDayOfWeek = 0;
+    }
+    const thursdayIndex = (4 + 7 - firstDayOfWeek) % 7;
+    const date = week[thursdayIndex];
+    const jsDate = toGregorian(date);
+    jsDate.setDate(jsDate.getDate() + 4 - (jsDate.getDay() || 7));
+    const time = jsDate.getTime();
+    const startDate = toGregorian(new NgbDate(date.year, 1, 1));
+    return Math.floor(Math.round((time - startDate.getTime()) / 864e5) / 7) + 1;
+  }
+  getWeeksPerMonth() {
+    return 6;
+  }
+  getToday() {
+    return fromGregorian(/* @__PURE__ */ new Date());
+  }
+  isValid(date) {
+    return date && isInteger(date.year) && isInteger(date.month) && isInteger(date.day) && !isNaN(toGregorian(date).getTime());
+  }
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵNgbCalendarEthiopian_BaseFactory;
+      return function NgbCalendarEthiopian_Factory(__ngFactoryType__) {
+        return (ɵNgbCalendarEthiopian_BaseFactory || (ɵNgbCalendarEthiopian_BaseFactory = ɵɵgetInheritedFactory(_NgbCalendarEthiopian)))(__ngFactoryType__ || _NgbCalendarEthiopian);
+      };
+    })();
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbCalendarEthiopian,
+      factory: _NgbCalendarEthiopian.ɵfac
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbCalendarEthiopian, [{
+    type: Injectable
+  }], null, null);
+})();
+var WEEKDAYS = ["እሑድ", "ሰኞ", "ማክሰኞ", "ረቡዕ", "ሓሙስ", "ዓርብ", "ቅዳሜ"];
+var MONTHS = ["መስከረም", "ጥቅምት", "ኅዳር", "ታህሣሥ", "ጥር", "የካቲት", "መጋቢት", "ሚያዝያ", "ግንቦት", "ሰኔ", "ሐምሌ", "ነሐሴ", "ጳጉሜ"];
+var NgbDatepickerI18nAmharic = class _NgbDatepickerI18nAmharic extends NgbDatepickerI18n {
+  getMonthShortName(month, year) {
+    return this.getMonthFullName(month, year);
+  }
+  getMonthFullName(month, year) {
+    return MONTHS[month - 1];
+  }
+  getWeekdayLabel(weekday, width) {
+    return WEEKDAYS[weekday - 1];
+  }
+  getDayAriaLabel(date) {
+    return `${date.day} ${this.getMonthFullName(date.month, date.year)} ${date.year}`;
+  }
+  static {
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵNgbDatepickerI18nAmharic_BaseFactory;
+      return function NgbDatepickerI18nAmharic_Factory(__ngFactoryType__) {
+        return (ɵNgbDatepickerI18nAmharic_BaseFactory || (ɵNgbDatepickerI18nAmharic_BaseFactory = ɵɵgetInheritedFactory(_NgbDatepickerI18nAmharic)))(__ngFactoryType__ || _NgbDatepickerI18nAmharic);
+      };
+    })();
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbDatepickerI18nAmharic,
+      factory: _NgbDatepickerI18nAmharic.ɵfac
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDatepickerI18nAmharic, [{
     type: Injectable
   }], null, null);
 })();
@@ -9739,6 +9081,7 @@ var NgbDropdownConfig = class _NgbDropdownConfig {
     this.autoClose = true;
     this.placement = ["bottom-start", "bottom-end", "top-start", "top-end"];
     this.popperOptions = (options) => options;
+    this.container = null;
   }
   static {
     this.ɵfac = function NgbDropdownConfig_Factory(__ngFactoryType__) {
@@ -9761,45 +9104,21 @@ var NgbDropdownConfig = class _NgbDropdownConfig {
     }]
   }], null, null);
 })();
-var NgbNavbar = class _NgbNavbar {
-  static {
-    this.ɵfac = function NgbNavbar_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbNavbar)();
-    };
-  }
-  static {
-    this.ɵdir = ɵɵdefineDirective({
-      type: _NgbNavbar,
-      selectors: [["", 8, "navbar"]],
-      standalone: true
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbNavbar, [{
-    type: Directive,
-    args: [{
-      selector: ".navbar",
-      standalone: true
-    }]
-  }], null, null);
-})();
 var NgbDropdownItem = class _NgbDropdownItem {
+  constructor() {
+    this._disabled = false;
+    this.nativeElement = inject(ElementRef).nativeElement;
+    this.tabindex = 0;
+  }
   set disabled(value) {
     this._disabled = value === "" || value === true;
-    this._renderer.setProperty(this.elementRef.nativeElement, "disabled", this._disabled);
   }
   get disabled() {
     return this._disabled;
   }
-  constructor(elementRef, _renderer) {
-    this.elementRef = elementRef;
-    this._renderer = _renderer;
-    this._disabled = false;
-  }
   static {
     this.ɵfac = function NgbDropdownItem_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDropdownItem)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2));
+      return new (__ngFactoryType__ || _NgbDropdownItem)();
     };
   }
   static {
@@ -9810,11 +9129,12 @@ var NgbDropdownItem = class _NgbDropdownItem {
       hostVars: 3,
       hostBindings: function NgbDropdownItem_HostBindings(rf, ctx) {
         if (rf & 2) {
-          ɵɵhostProperty("tabIndex", ctx.disabled ? -1 : 0);
+          ɵɵhostProperty("tabIndex", ctx.disabled ? -1 : ctx.tabindex);
           ɵɵclassProp("disabled", ctx.disabled);
         }
       },
       inputs: {
+        tabindex: "tabindex",
         disabled: "disabled"
       },
       standalone: true
@@ -9830,31 +9150,61 @@ var NgbDropdownItem = class _NgbDropdownItem {
       host: {
         class: "dropdown-item",
         "[class.disabled]": "disabled",
-        "[tabIndex]": "disabled ? -1 : 0"
+        "[tabIndex]": "disabled ? -1 : tabindex"
       }
     }]
-  }], function() {
-    return [{
-      type: ElementRef
-    }, {
-      type: Renderer2
-    }];
-  }, {
+  }], null, {
+    tabindex: [{
+      type: Input
+    }],
     disabled: [{
       type: Input
     }]
   });
 })();
+var NgbDropdownButtonItem = class _NgbDropdownButtonItem {
+  constructor() {
+    this.item = inject(NgbDropdownItem);
+  }
+  static {
+    this.ɵfac = function NgbDropdownButtonItem_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbDropdownButtonItem)();
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _NgbDropdownButtonItem,
+      selectors: [["button", "ngbDropdownItem", ""]],
+      hostVars: 1,
+      hostBindings: function NgbDropdownButtonItem_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          ɵɵhostProperty("disabled", ctx.item.disabled);
+        }
+      },
+      standalone: true
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbDropdownButtonItem, [{
+    type: Directive,
+    args: [{
+      selector: "button[ngbDropdownItem]",
+      standalone: true,
+      host: {
+        "[disabled]": "item.disabled"
+      }
+    }]
+  }], null, null);
+})();
 var NgbDropdownMenu = class _NgbDropdownMenu {
-  constructor(dropdown, _elementRef) {
-    this.dropdown = dropdown;
-    this.placement = "bottom";
-    this.isOpen = false;
-    this.nativeElement = _elementRef.nativeElement;
+  constructor() {
+    this.dropdown = inject(NgbDropdown);
+    this.nativeElement = inject(ElementRef).nativeElement;
   }
   static {
     this.ɵfac = function NgbDropdownMenu_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDropdownMenu)(ɵɵdirectiveInject(forwardRef(() => NgbDropdown)), ɵɵdirectiveInject(ElementRef));
+      return new (__ngFactoryType__ || _NgbDropdownMenu)();
     };
   }
   static {
@@ -9870,7 +9220,8 @@ var NgbDropdownMenu = class _NgbDropdownMenu {
           ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.menuItems = _t);
         }
       },
-      hostVars: 4,
+      hostAttrs: [1, "dropdown-menu"],
+      hostVars: 2,
       hostBindings: function NgbDropdownMenu_HostBindings(rf, ctx) {
         if (rf & 1) {
           ɵɵlistener("keydown.ArrowUp", function NgbDropdownMenu_keydown_ArrowUp_HostBindingHandler($event) {
@@ -9892,7 +9243,7 @@ var NgbDropdownMenu = class _NgbDropdownMenu {
           });
         }
         if (rf & 2) {
-          ɵɵclassProp("dropdown-menu", true)("show", ctx.dropdown.isOpen());
+          ɵɵclassProp("show", ctx.dropdown.isOpen());
         }
       },
       standalone: true
@@ -9906,7 +9257,7 @@ var NgbDropdownMenu = class _NgbDropdownMenu {
       selector: "[ngbDropdownMenu]",
       standalone: true,
       host: {
-        "[class.dropdown-menu]": "true",
+        class: "dropdown-menu",
         "[class.show]": "dropdown.isOpen()",
         "(keydown.ArrowUp)": "dropdown.onKeyDown($event)",
         "(keydown.ArrowDown)": "dropdown.onKeyDown($event)",
@@ -9918,17 +9269,7 @@ var NgbDropdownMenu = class _NgbDropdownMenu {
         "(keydown.Shift.Tab)": "dropdown.onKeyDown($event)"
       }
     }]
-  }], function() {
-    return [{
-      type: NgbDropdown,
-      decorators: [{
-        type: Inject,
-        args: [forwardRef(() => NgbDropdown)]
-      }]
-    }, {
-      type: ElementRef
-    }];
-  }, {
+  }], null, {
     menuItems: [{
       type: ContentChildren,
       args: [NgbDropdownItem]
@@ -9936,13 +9277,13 @@ var NgbDropdownMenu = class _NgbDropdownMenu {
   });
 })();
 var NgbDropdownAnchor = class _NgbDropdownAnchor {
-  constructor(dropdown, _elementRef) {
-    this.dropdown = dropdown;
-    this.nativeElement = _elementRef.nativeElement;
+  constructor() {
+    this.dropdown = inject(NgbDropdown);
+    this.nativeElement = inject(ElementRef).nativeElement;
   }
   static {
     this.ɵfac = function NgbDropdownAnchor_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDropdownAnchor)(ɵɵdirectiveInject(forwardRef(() => NgbDropdown)), ɵɵdirectiveInject(ElementRef));
+      return new (__ngFactoryType__ || _NgbDropdownAnchor)();
     };
   }
   static {
@@ -9950,10 +9291,11 @@ var NgbDropdownAnchor = class _NgbDropdownAnchor {
       type: _NgbDropdownAnchor,
       selectors: [["", "ngbDropdownAnchor", ""]],
       hostAttrs: [1, "dropdown-toggle"],
-      hostVars: 1,
+      hostVars: 3,
       hostBindings: function NgbDropdownAnchor_HostBindings(rf, ctx) {
         if (rf & 2) {
           ɵɵattribute("aria-expanded", ctx.dropdown.isOpen());
+          ɵɵclassProp("show", ctx.dropdown.isOpen());
         }
       },
       standalone: true
@@ -9968,36 +9310,27 @@ var NgbDropdownAnchor = class _NgbDropdownAnchor {
       standalone: true,
       host: {
         class: "dropdown-toggle",
+        "[class.show]": "dropdown.isOpen()",
         "[attr.aria-expanded]": "dropdown.isOpen()"
       }
     }]
-  }], function() {
-    return [{
-      type: NgbDropdown,
-      decorators: [{
-        type: Inject,
-        args: [forwardRef(() => NgbDropdown)]
-      }]
-    }, {
-      type: ElementRef
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbDropdownToggle = class _NgbDropdownToggle extends NgbDropdownAnchor {
-  constructor(dropdown, elementRef) {
-    super(dropdown, elementRef);
-  }
   static {
-    this.ɵfac = function NgbDropdownToggle_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDropdownToggle)(ɵɵdirectiveInject(forwardRef(() => NgbDropdown)), ɵɵdirectiveInject(ElementRef));
-    };
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵNgbDropdownToggle_BaseFactory;
+      return function NgbDropdownToggle_Factory(__ngFactoryType__) {
+        return (ɵNgbDropdownToggle_BaseFactory || (ɵNgbDropdownToggle_BaseFactory = ɵɵgetInheritedFactory(_NgbDropdownToggle)))(__ngFactoryType__ || _NgbDropdownToggle);
+      };
+    })();
   }
   static {
     this.ɵdir = ɵɵdefineDirective({
       type: _NgbDropdownToggle,
       selectors: [["", "ngbDropdownToggle", ""]],
       hostAttrs: [1, "dropdown-toggle"],
-      hostVars: 1,
+      hostVars: 3,
       hostBindings: function NgbDropdownToggle_HostBindings(rf, ctx) {
         if (rf & 1) {
           ɵɵlistener("click", function NgbDropdownToggle_click_HostBindingHandler() {
@@ -10018,6 +9351,7 @@ var NgbDropdownToggle = class _NgbDropdownToggle extends NgbDropdownAnchor {
         }
         if (rf & 2) {
           ɵɵattribute("aria-expanded", ctx.dropdown.isOpen());
+          ɵɵclassProp("show", ctx.dropdown.isOpen());
         }
       },
       standalone: true,
@@ -10036,6 +9370,7 @@ var NgbDropdownToggle = class _NgbDropdownToggle extends NgbDropdownAnchor {
       standalone: true,
       host: {
         class: "dropdown-toggle",
+        "[class.show]": "dropdown.isOpen()",
         "[attr.aria-expanded]": "dropdown.isOpen()",
         "(click)": "dropdown.toggle()",
         "(keydown.ArrowUp)": "dropdown.onKeyDown($event)",
@@ -10050,46 +9385,40 @@ var NgbDropdownToggle = class _NgbDropdownToggle extends NgbDropdownAnchor {
         useExisting: forwardRef(() => NgbDropdownToggle)
       }]
     }]
-  }], function() {
-    return [{
-      type: NgbDropdown,
-      decorators: [{
-        type: Inject,
-        args: [forwardRef(() => NgbDropdown)]
-      }]
-    }, {
-      type: ElementRef
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbDropdown = class _NgbDropdown {
-  constructor(_changeDetector, config, _document, _ngZone, _elementRef, _renderer) {
-    this._changeDetector = _changeDetector;
-    this._document = _document;
-    this._ngZone = _ngZone;
-    this._elementRef = _elementRef;
-    this._renderer = _renderer;
+  constructor() {
+    this._changeDetector = inject(ChangeDetectorRef);
+    this._config = inject(NgbDropdownConfig);
+    this._document = inject(DOCUMENT);
+    this._injector = inject(Injector);
+    this._ngZone = inject(NgZone);
+    this._nativeElement = inject(ElementRef).nativeElement;
     this._destroyCloseHandlers$ = new import_rxjs2.Subject();
     this._bodyContainer = null;
-    this._open = false;
-    this.openChange = new EventEmitter();
-    this.placement = config.placement;
-    this.popperOptions = config.popperOptions;
-    this.container = config.container;
-    this.autoClose = config.autoClose;
     this._positioning = ngbPositioning();
+    this.autoClose = this._config.autoClose;
+    this._open = false;
+    this.placement = this._config.placement;
+    this.popperOptions = this._config.popperOptions;
+    this.container = this._config.container;
+    this.openChange = new EventEmitter();
   }
   ngOnInit() {
     if (!this.display) {
-      this.display = this._elementRef.nativeElement.closest(".navbar") ? "static" : "dynamic";
+      this.display = this._nativeElement.closest(".navbar") ? "static" : "dynamic";
     }
   }
   ngAfterContentInit() {
-    this._ngZone.onStable.pipe((0, import_operators2.take)(1)).subscribe(() => {
+    afterNextRender(() => {
       this._applyPlacementClasses();
       if (this._open) {
         this._setCloseHandlers();
       }
+    }, {
+      phase: AfterRenderPhase.Write,
+      injector: this._injector
     });
   }
   ngOnChanges(changes) {
@@ -10100,8 +9429,7 @@ var NgbDropdown = class _NgbDropdown {
       this._positioning.setOptions({
         hostElement: this._anchor.nativeElement,
         targetElement: this._bodyContainer || this._menu.nativeElement,
-        placement: this.placement,
-        appendToBody: this.container === "body"
+        placement: this.placement
       });
       this._applyPlacementClasses();
     }
@@ -10140,11 +9468,15 @@ var NgbDropdown = class _NgbDropdown {
               hostElement: this._anchor.nativeElement,
               targetElement: this._bodyContainer || this._menu.nativeElement,
               placement: this.placement,
-              appendToBody: this.container === "body",
               updatePopperOptions: (options) => this.popperOptions(addPopperOffset([0, 2])(options))
             });
             this._applyPlacementClasses();
-            this._zoneSubscription = this._ngZone.onStable.subscribe(() => this._positionMenu());
+            this._afterRenderRef = afterRender(() => {
+              this._positionMenu();
+            }, {
+              phase: AfterRenderPhase.Write,
+              injector: this._injector
+            });
           });
         }
       }
@@ -10167,7 +9499,7 @@ var NgbDropdown = class _NgbDropdown {
       this._open = false;
       this._resetContainer();
       this._positioning.destroy();
-      this._zoneSubscription?.unsubscribe();
+      this._afterRenderRef?.destroy();
       this._destroyCloseHandlers$.next();
       this.openChange.emit(false);
       this._changeDetector.markForCheck();
@@ -10187,7 +9519,9 @@ var NgbDropdown = class _NgbDropdown {
     this.close();
   }
   onKeyDown(event) {
-    const key = event.which;
+    const {
+      key
+    } = event;
     const itemElements = this._getMenuElements();
     let position = -1;
     let itemElement = null;
@@ -10202,19 +9536,19 @@ var NgbDropdown = class _NgbDropdown {
         }
       });
     }
-    if (key === Key.Space || key === Key.Enter) {
+    if (key === " " || key === "Enter") {
       if (itemElement && (this.autoClose === true || this.autoClose === "inside")) {
         (0, import_rxjs2.fromEvent)(itemElement, "click").pipe((0, import_operators2.take)(1)).subscribe(() => this.close());
       }
       return;
     }
-    if (key === Key.Tab) {
+    if (key === "Tab") {
       if (event.target && this.isOpen() && this.autoClose) {
         if (this._anchor.nativeElement === event.target) {
           if (this.container === "body" && !event.shiftKey) {
-            this._renderer.setAttribute(this._menu.nativeElement, "tabindex", "0");
+            this._menu.nativeElement.setAttribute("tabindex", "0");
             this._menu.nativeElement.focus();
-            this._renderer.removeAttribute(this._menu.nativeElement, "tabindex");
+            this._menu.nativeElement.removeAttribute("tabindex");
           } else if (event.shiftKey) {
             this.close();
           }
@@ -10232,7 +9566,7 @@ var NgbDropdown = class _NgbDropdown {
           (0, import_rxjs2.fromEvent)(event.target, "focusout").pipe((0, import_operators2.take)(1)).subscribe(({
             relatedTarget
           }) => {
-            if (!this._elementRef.nativeElement.contains(relatedTarget)) {
+            if (!this._nativeElement.contains(relatedTarget)) {
               this.close();
             }
           });
@@ -10244,20 +9578,20 @@ var NgbDropdown = class _NgbDropdown {
       this.open();
       if (itemElements.length) {
         switch (key) {
-          case Key.ArrowDown:
+          case "ArrowDown":
             position = Math.min(position + 1, itemElements.length - 1);
             break;
-          case Key.ArrowUp:
+          case "ArrowUp":
             if (this._isDropup() && position === -1) {
               position = itemElements.length - 1;
               break;
             }
             position = Math.max(position - 1, 0);
             break;
-          case Key.Home:
+          case "Home":
             position = 0;
             break;
-          case Key.End:
+          case "End":
             position = itemElements.length - 1;
             break;
         }
@@ -10267,17 +9601,17 @@ var NgbDropdown = class _NgbDropdown {
     }
   }
   _isDropup() {
-    return this._elementRef.nativeElement.classList.contains("dropup");
+    return this._nativeElement.classList.contains("dropup");
   }
   _isEventFromToggle(event) {
     return this._anchor.nativeElement.contains(event.target);
   }
   _getMenuElements() {
-    const menu = this._menu;
-    if (menu == null) {
-      return [];
-    }
-    return menu.menuItems.filter((item) => !item.disabled).map((item) => item.elementRef.nativeElement);
+    return this._menu ? this._menu.menuItems.filter(({
+      disabled
+    }) => !disabled).map(({
+      nativeElement
+    }) => nativeElement) : [];
   }
   _positionMenu() {
     const menu = this._menu;
@@ -10294,75 +9628,60 @@ var NgbDropdown = class _NgbDropdown {
     return Array.isArray(placement) ? placement[0] : placement.split(" ")[0];
   }
   _resetContainer() {
-    const renderer = this._renderer;
     if (this._menu) {
-      const dropdownElement = this._elementRef.nativeElement;
-      const dropdownMenuElement = this._menu.nativeElement;
-      renderer.appendChild(dropdownElement, dropdownMenuElement);
+      this._nativeElement.appendChild(this._menu.nativeElement);
     }
     if (this._bodyContainer) {
-      renderer.removeChild(this._document.body, this._bodyContainer);
+      this._document.body.removeChild(this._bodyContainer);
       this._bodyContainer = null;
     }
   }
   _applyContainer(container = null) {
     this._resetContainer();
     if (container === "body") {
-      const renderer = this._renderer;
       const dropdownMenuElement = this._menu.nativeElement;
-      const bodyContainer = this._bodyContainer = this._bodyContainer || renderer.createElement("div");
-      renderer.setStyle(bodyContainer, "position", "absolute");
-      renderer.setStyle(dropdownMenuElement, "position", "static");
-      renderer.setStyle(bodyContainer, "z-index", "1055");
-      renderer.appendChild(bodyContainer, dropdownMenuElement);
-      renderer.appendChild(this._document.body, bodyContainer);
+      const bodyContainer = this._bodyContainer = this._bodyContainer || this._document.createElement("div");
+      bodyContainer.style.position = "absolute";
+      dropdownMenuElement.style.position = "static";
+      bodyContainer.style.zIndex = "1055";
+      bodyContainer.appendChild(dropdownMenuElement);
+      this._document.body.appendChild(bodyContainer);
     }
     this._applyCustomDropdownClass(this.dropdownClass);
   }
   _applyCustomDropdownClass(newClass, oldClass) {
-    const targetElement = this.container === "body" ? this._bodyContainer : this._elementRef.nativeElement;
+    const targetElement = this.container === "body" ? this._bodyContainer : this._nativeElement;
     if (targetElement) {
       if (oldClass) {
-        this._renderer.removeClass(targetElement, oldClass);
+        targetElement.classList.remove(oldClass);
       }
       if (newClass) {
-        this._renderer.addClass(targetElement, newClass);
+        targetElement.classList.add(newClass);
       }
     }
   }
   _applyPlacementClasses(placement) {
-    const menu = this._menu;
-    if (menu) {
+    if (this._menu) {
       if (!placement) {
         placement = this._getFirstPlacement(this.placement);
       }
-      const renderer = this._renderer;
-      const dropdownElement = this._elementRef.nativeElement;
-      renderer.removeClass(dropdownElement, "dropup");
-      renderer.removeClass(dropdownElement, "dropdown");
-      const {
-        nativeElement
-      } = menu;
+      this._nativeElement.classList.remove("dropup", "dropdown");
       if (this.display === "static") {
-        menu.placement = null;
-        renderer.setAttribute(nativeElement, "data-bs-popper", "static");
+        this._menu.nativeElement.setAttribute("data-bs-popper", "static");
       } else {
-        menu.placement = placement;
-        renderer.removeAttribute(nativeElement, "data-bs-popper");
+        this._menu.nativeElement.removeAttribute("data-bs-popper");
       }
       const dropdownClass = placement.search("^top") !== -1 ? "dropup" : "dropdown";
-      renderer.addClass(dropdownElement, dropdownClass);
-      const bodyContainer = this._bodyContainer;
-      if (bodyContainer) {
-        renderer.removeClass(bodyContainer, "dropup");
-        renderer.removeClass(bodyContainer, "dropdown");
-        renderer.addClass(bodyContainer, dropdownClass);
+      this._nativeElement.classList.add(dropdownClass);
+      if (this._bodyContainer) {
+        this._bodyContainer.classList.remove("dropup", "dropdown");
+        this._bodyContainer.classList.add(dropdownClass);
       }
     }
   }
   static {
     this.ɵfac = function NgbDropdown_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbDropdown)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(NgbDropdownConfig), ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2));
+      return new (__ngFactoryType__ || _NgbDropdown)();
     };
   }
   static {
@@ -10415,25 +9734,7 @@ var NgbDropdown = class _NgbDropdown {
         "[class.show]": "isOpen()"
       }
     }]
-  }], function() {
-    return [{
-      type: ChangeDetectorRef
-    }, {
-      type: NgbDropdownConfig
-    }, {
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }, {
-      type: NgZone
-    }, {
-      type: ElementRef
-    }, {
-      type: Renderer2
-    }];
-  }, {
+  }], null, {
     _menu: [{
       type: ContentChild,
       args: [NgbDropdownMenu, {
@@ -10473,7 +9774,7 @@ var NgbDropdown = class _NgbDropdown {
     }]
   });
 })();
-var NGB_DROPDOWN_DIRECTIVES = [NgbDropdown, NgbDropdownAnchor, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem];
+var NGB_DROPDOWN_DIRECTIVES = [NgbDropdown, NgbDropdownAnchor, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, NgbDropdownButtonItem];
 var NgbDropdownModule = class _NgbDropdownModule {
   static {
     this.ɵfac = function NgbDropdownModule_Factory(__ngFactoryType__) {
@@ -10483,8 +9784,8 @@ var NgbDropdownModule = class _NgbDropdownModule {
   static {
     this.ɵmod = ɵɵdefineNgModule({
       type: _NgbDropdownModule,
-      imports: [NgbDropdown, NgbDropdownAnchor, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem],
-      exports: [NgbDropdown, NgbDropdownAnchor, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem]
+      imports: [NgbDropdown, NgbDropdownAnchor, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, NgbDropdownButtonItem],
+      exports: [NgbDropdown, NgbDropdownAnchor, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, NgbDropdownButtonItem]
     });
   }
   static {
@@ -10500,6 +9801,40 @@ var NgbDropdownModule = class _NgbDropdownModule {
     }]
   }], null, null);
 })();
+var NgbModalConfig = class _NgbModalConfig {
+  constructor() {
+    this._ngbConfig = inject(NgbConfig);
+    this.backdrop = true;
+    this.fullscreen = false;
+    this.keyboard = true;
+  }
+  get animation() {
+    return this._animation ?? this._ngbConfig.animation;
+  }
+  set animation(animation) {
+    this._animation = animation;
+  }
+  static {
+    this.ɵfac = function NgbModalConfig_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbModalConfig)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbModalConfig,
+      factory: _NgbModalConfig.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbModalConfig, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
 var ContentRef = class {
   constructor(nodes, viewRef, componentRef) {
     this.nodes = nodes;
@@ -10508,15 +9843,15 @@ var ContentRef = class {
   }
 };
 var PopupService = class {
-  constructor(_componentType, _injector, _viewContainerRef, _renderer, _ngZone, _applicationRef) {
+  constructor(_componentType) {
     this._componentType = _componentType;
-    this._injector = _injector;
-    this._viewContainerRef = _viewContainerRef;
-    this._renderer = _renderer;
-    this._ngZone = _ngZone;
-    this._applicationRef = _applicationRef;
     this._windowRef = null;
     this._contentRef = null;
+    this._document = inject(DOCUMENT);
+    this._applicationRef = inject(ApplicationRef);
+    this._injector = inject(Injector);
+    this._viewContainerRef = inject(ViewContainerRef);
+    this._ngZone = inject(NgZone);
   }
   open(content, templateContext, animation = false) {
     if (!this._windowRef) {
@@ -10529,7 +9864,15 @@ var PopupService = class {
     const {
       nativeElement
     } = this._windowRef.location;
-    const transition$ = this._ngZone.onStable.pipe((0, import_operators2.take)(1), (0, import_operators2.mergeMap)(() => ngbRunTransition(this._ngZone, nativeElement, ({
+    const nextRenderSubject = new import_rxjs2.Subject();
+    afterNextRender(() => {
+      nextRenderSubject.next();
+      nextRenderSubject.complete();
+    }, {
+      injector: this._injector,
+      phase: AfterRenderPhase.MixedReadWrite
+    });
+    const transition$ = nextRenderSubject.pipe((0, import_operators2.mergeMap)(() => ngbRunTransition(this._ngZone, nativeElement, ({
       classList
     }) => classList.add("show"), {
       animation,
@@ -10550,15 +9893,10 @@ var PopupService = class {
       animation,
       runningTransition: "stop"
     }).pipe((0, import_operators2.tap)(() => {
-      if (this._windowRef) {
-        this._viewContainerRef.remove(this._viewContainerRef.indexOf(this._windowRef.hostView));
-        this._windowRef = null;
-      }
-      if (this._contentRef?.viewRef) {
-        this._applicationRef.detachView(this._contentRef.viewRef);
-        this._contentRef.viewRef.destroy();
-        this._contentRef = null;
-      }
+      this._windowRef?.destroy();
+      this._contentRef?.viewRef?.destroy();
+      this._windowRef = null;
+      this._contentRef = null;
     }));
   }
   _getContentRef(content, templateContext) {
@@ -10569,30 +9907,85 @@ var PopupService = class {
       this._applicationRef.attachView(viewRef);
       return new ContentRef([viewRef.rootNodes], viewRef);
     } else {
-      return new ContentRef([[this._renderer.createText(`${content}`)]]);
+      return new ContentRef([[this._document.createTextNode(`${content}`)]]);
     }
   }
 };
+var ScrollBar = class _ScrollBar {
+  constructor() {
+    this._document = inject(DOCUMENT);
+  }
+  /**
+   * To be called to hide a potential vertical scrollbar:
+   * - if a scrollbar is there and has a width greater than 0, adds some compensation
+   * padding to the body to keep the same layout as when the scrollbar is there
+   * - adds overflow: hidden
+   *
+   * @return a callback used to revert the change
+   */
+  hide() {
+    const scrollbarWidth = Math.abs(window.innerWidth - this._document.documentElement.clientWidth);
+    const body = this._document.body;
+    const bodyStyle = body.style;
+    const {
+      overflow,
+      paddingRight
+    } = bodyStyle;
+    if (scrollbarWidth > 0) {
+      const actualPadding = parseFloat(window.getComputedStyle(body).paddingRight);
+      bodyStyle.paddingRight = `${actualPadding + scrollbarWidth}px`;
+    }
+    bodyStyle.overflow = "hidden";
+    return () => {
+      if (scrollbarWidth > 0) {
+        bodyStyle.paddingRight = paddingRight;
+      }
+      bodyStyle.overflow = overflow;
+    };
+  }
+  static {
+    this.ɵfac = function ScrollBar_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _ScrollBar)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _ScrollBar,
+      factory: _ScrollBar.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ScrollBar, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
 var NgbModalBackdrop = class _NgbModalBackdrop {
-  constructor(_el, _zone) {
-    this._el = _el;
-    this._zone = _zone;
+  constructor() {
+    this._nativeElement = inject(ElementRef).nativeElement;
+    this._zone = inject(NgZone);
+    this._injector = inject(Injector);
   }
   ngOnInit() {
-    this._zone.onStable.asObservable().pipe((0, import_operators2.take)(1)).subscribe(() => {
-      ngbRunTransition(this._zone, this._el.nativeElement, (element, animation) => {
-        if (animation) {
-          reflow(element);
-        }
-        element.classList.add("show");
-      }, {
-        animation: this.animation,
-        runningTransition: "continue"
-      });
+    afterNextRender(() => ngbRunTransition(this._zone, this._nativeElement, (element, animation) => {
+      if (animation) {
+        reflow(element);
+      }
+      element.classList.add("show");
+    }, {
+      animation: this.animation,
+      runningTransition: "continue"
+    }), {
+      injector: this._injector,
+      phase: AfterRenderPhase.MixedReadWrite
     });
   }
   hide() {
-    return ngbRunTransition(this._zone, this._el.nativeElement, ({
+    return ngbRunTransition(this._zone, this._nativeElement, ({
       classList
     }) => classList.remove("show"), {
       animation: this.animation,
@@ -10601,7 +9994,7 @@ var NgbModalBackdrop = class _NgbModalBackdrop {
   }
   static {
     this.ɵfac = function NgbModalBackdrop_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbModalBackdrop)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+      return new (__ngFactoryType__ || _NgbModalBackdrop)();
     };
   }
   static {
@@ -10645,13 +10038,7 @@ var NgbModalBackdrop = class _NgbModalBackdrop {
         style: "z-index: 1055"
       }
     }]
-  }], function() {
-    return [{
-      type: ElementRef
-    }, {
-      type: NgZone
-    }];
-  }, {
+  }], null, {
     animation: [{
       type: Input
     }],
@@ -10833,9 +10220,7 @@ var NgbModalRef = class {
       } = this._windowCmptRef.location;
       nativeElement.parentNode.removeChild(nativeElement);
       this._windowCmptRef.destroy();
-      if (this._contentRef && this._contentRef.viewRef) {
-        this._contentRef.viewRef.destroy();
-      }
+      this._contentRef?.viewRef?.destroy();
       this._windowCmptRef = null;
       this._contentRef = null;
     });
@@ -10861,10 +10246,11 @@ var ModalDismissReasons;
   ModalDismissReasons2[ModalDismissReasons2["ESC"] = 1] = "ESC";
 })(ModalDismissReasons || (ModalDismissReasons = {}));
 var NgbModalWindow = class _NgbModalWindow {
-  constructor(_document, _elRef, _zone) {
-    this._document = _document;
-    this._elRef = _elRef;
-    this._zone = _zone;
+  constructor() {
+    this._document = inject(DOCUMENT);
+    this._elRef = inject(ElementRef);
+    this._zone = inject(NgZone);
+    this._injector = inject(Injector);
     this._closed$ = new import_rxjs2.Subject();
     this._elWithFocus = null;
     this.backdrop = true;
@@ -10881,8 +10267,9 @@ var NgbModalWindow = class _NgbModalWindow {
   }
   ngOnInit() {
     this._elWithFocus = this._document.activeElement;
-    this._zone.onStable.asObservable().pipe((0, import_operators2.take)(1)).subscribe(() => {
-      this._show();
+    afterNextRender(() => this._show(), {
+      injector: this._injector,
+      phase: AfterRenderPhase.MixedReadWrite
     });
   }
   ngOnDestroy() {
@@ -10933,11 +10320,7 @@ var NgbModalWindow = class _NgbModalWindow {
       nativeElement
     } = this._elRef;
     this._zone.runOutsideAngular(() => {
-      (0, import_rxjs2.fromEvent)(nativeElement, "keydown").pipe(
-        (0, import_operators2.takeUntil)(this._closed$),
-        /* eslint-disable-next-line deprecation/deprecation */
-        (0, import_operators2.filter)((e) => e.which === Key.Escape)
-      ).subscribe((event) => {
+      (0, import_rxjs2.fromEvent)(nativeElement, "keydown").pipe((0, import_operators2.takeUntil)(this._closed$), (0, import_operators2.filter)((e) => e.key === "Escape")).subscribe((event) => {
         if (this.keyboard) {
           requestAnimationFrame(() => {
             if (!event.defaultPrevented) {
@@ -11011,7 +10394,7 @@ var NgbModalWindow = class _NgbModalWindow {
   }
   static {
     this.ɵfac = function NgbModalWindow_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbModalWindow)(ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+      return new (__ngFactoryType__ || _NgbModalWindow)();
     };
   }
   static {
@@ -11020,7 +10403,7 @@ var NgbModalWindow = class _NgbModalWindow {
       selectors: [["ngb-modal-window"]],
       viewQuery: function NgbModalWindow_Query(rf, ctx) {
         if (rf & 1) {
-          ɵɵviewQuery(_c8, 7);
+          ɵɵviewQuery(_c7, 7);
         }
         if (rf & 2) {
           let _t;
@@ -11054,7 +10437,7 @@ var NgbModalWindow = class _NgbModalWindow {
       },
       standalone: true,
       features: [ɵɵStandaloneFeature],
-      ngContentSelectors: _c1,
+      ngContentSelectors: _c0,
       decls: 4,
       vars: 2,
       consts: [["dialog", ""], ["role", "document"], [1, "modal-content"]],
@@ -11102,25 +10485,13 @@ var NgbModalWindow = class _NgbModalWindow {
 			"
 			role="document"
 		>
-			<div class="modal-content"><ng-content></ng-content></div>
+			<div class="modal-content"><ng-content /></div>
 		</div>
 	`,
       encapsulation: ViewEncapsulation$1.None,
       styles: ["ngb-modal-window .component-host-scrollable{display:flex;flex-direction:column;overflow:hidden}\n"]
     }]
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }, {
-      type: ElementRef
-    }, {
-      type: NgZone
-    }];
-  }, {
+  }], null, {
     _dialogEl: [{
       type: ViewChild,
       args: ["dialog", {
@@ -11166,86 +10537,24 @@ var NgbModalWindow = class _NgbModalWindow {
     }]
   });
 })();
-var ScrollBar = class _ScrollBar {
-  constructor(_document) {
-    this._document = _document;
-  }
-  /**
-   * To be called to hide a potential vertical scrollbar:
-   * - if a scrollbar is there and has a width greater than 0, adds some compensation
-   * padding to the body to keep the same layout as when the scrollbar is there
-   * - adds overflow: hidden
-   *
-   * @return a callback used to revert the change
-   */
-  hide() {
-    const scrollbarWidth = Math.abs(window.innerWidth - this._document.documentElement.clientWidth);
-    const body = this._document.body;
-    const bodyStyle = body.style;
-    const {
-      overflow,
-      paddingRight
-    } = bodyStyle;
-    if (scrollbarWidth > 0) {
-      const actualPadding = parseFloat(window.getComputedStyle(body).paddingRight);
-      bodyStyle.paddingRight = `${actualPadding + scrollbarWidth}px`;
-    }
-    bodyStyle.overflow = "hidden";
-    return () => {
-      if (scrollbarWidth > 0) {
-        bodyStyle.paddingRight = paddingRight;
-      }
-      bodyStyle.overflow = overflow;
-    };
-  }
-  static {
-    this.ɵfac = function ScrollBar_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _ScrollBar)(ɵɵinject(DOCUMENT));
-    };
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _ScrollBar,
-      factory: _ScrollBar.ɵfac,
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ScrollBar, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }];
-  }, null);
-})();
 var NgbModalStack = class _NgbModalStack {
-  constructor(_applicationRef, _injector, _environmentInjector, _document, _scrollBar, _rendererFactory, _ngZone) {
-    this._applicationRef = _applicationRef;
-    this._injector = _injector;
-    this._environmentInjector = _environmentInjector;
-    this._document = _document;
-    this._scrollBar = _scrollBar;
-    this._rendererFactory = _rendererFactory;
-    this._ngZone = _ngZone;
+  constructor() {
+    this._applicationRef = inject(ApplicationRef);
+    this._injector = inject(Injector);
+    this._environmentInjector = inject(EnvironmentInjector);
+    this._document = inject(DOCUMENT);
+    this._scrollBar = inject(ScrollBar);
     this._activeWindowCmptHasChanged = new import_rxjs2.Subject();
     this._ariaHiddenValues = /* @__PURE__ */ new Map();
     this._scrollBarRestoreFn = null;
     this._modalRefs = [];
     this._windowCmpts = [];
     this._activeInstances = new EventEmitter();
+    const ngZone = inject(NgZone);
     this._activeWindowCmptHasChanged.subscribe(() => {
       if (this._windowCmpts.length) {
         const activeWindowCmpt = this._windowCmpts[this._windowCmpts.length - 1];
-        ngbFocusTrap(this._ngZone, activeWindowCmpt.location.nativeElement, this._activeWindowCmptHasChanged);
+        ngbFocusTrap(ngZone, activeWindowCmpt.location.nativeElement, this._activeWindowCmptHasChanged);
         this._revertAriaHidden();
         this._setAriaHidden(activeWindowCmpt.location.nativeElement);
       }
@@ -11265,7 +10574,6 @@ var NgbModalStack = class _NgbModalStack {
   }
   open(contentInjector, content, options) {
     const containerEl = options.container instanceof HTMLElement ? options.container : isDefined(options.container) ? this._document.querySelector(options.container) : this._document.body;
-    const renderer = this._rendererFactory.createRenderer(null, null);
     if (!containerEl) {
       throw new Error(`The specified modal container "${options.container || "body"}" was not found in the DOM.`);
     }
@@ -11281,7 +10589,7 @@ var NgbModalStack = class _NgbModalStack {
     this._registerWindowCmpt(windowCmptRef);
     ngbModalRef.hidden.pipe((0, import_operators2.take)(1)).subscribe(() => Promise.resolve(true).then(() => {
       if (!this._modalRefs.length) {
-        renderer.removeClass(this._document.body, "modal-open");
+        this._document.body.classList.remove("modal-open");
         this._restoreScrollBar();
         this._revertAriaHidden();
       }
@@ -11297,7 +10605,7 @@ var NgbModalStack = class _NgbModalStack {
     };
     ngbModalRef.update(options);
     if (this._modalRefs.length === 1) {
-      renderer.addClass(this._document.body, "modal-open");
+      this._document.body.classList.add("modal-open");
     }
     if (backdropCmptRef && backdropCmptRef.instance) {
       backdropCmptRef.changeDetectorRef.detectChanges();
@@ -11428,7 +10736,7 @@ var NgbModalStack = class _NgbModalStack {
   }
   static {
     this.ɵfac = function NgbModalStack_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbModalStack)(ɵɵinject(ApplicationRef), ɵɵinject(Injector), ɵɵinject(EnvironmentInjector), ɵɵinject(DOCUMENT), ɵɵinject(ScrollBar), ɵɵinject(RendererFactory2), ɵɵinject(NgZone));
+      return new (__ngFactoryType__ || _NgbModalStack)();
     };
   }
   static {
@@ -11445,71 +10753,13 @@ var NgbModalStack = class _NgbModalStack {
     args: [{
       providedIn: "root"
     }]
-  }], function() {
-    return [{
-      type: ApplicationRef
-    }, {
-      type: Injector
-    }, {
-      type: EnvironmentInjector
-    }, {
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }, {
-      type: ScrollBar
-    }, {
-      type: RendererFactory2
-    }, {
-      type: NgZone
-    }];
-  }, null);
-})();
-var NgbModalConfig = class _NgbModalConfig {
-  constructor(_ngbConfig) {
-    this._ngbConfig = _ngbConfig;
-    this.backdrop = true;
-    this.fullscreen = false;
-    this.keyboard = true;
-  }
-  get animation() {
-    return this._animation === void 0 ? this._ngbConfig.animation : this._animation;
-  }
-  set animation(animation) {
-    this._animation = animation;
-  }
-  static {
-    this.ɵfac = function NgbModalConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbModalConfig)(ɵɵinject(NgbConfig));
-    };
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _NgbModalConfig,
-      factory: _NgbModalConfig.ɵfac,
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbModalConfig, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], function() {
-    return [{
-      type: NgbConfig
-    }];
-  }, null);
+  }], () => [], null);
 })();
 var NgbModal = class _NgbModal {
-  constructor(_injector, _modalStack, _config) {
-    this._injector = _injector;
-    this._modalStack = _modalStack;
-    this._config = _config;
+  constructor() {
+    this._injector = inject(Injector);
+    this._modalStack = inject(NgbModalStack);
+    this._config = inject(NgbModalConfig);
   }
   /**
    * Opens a new modal window with the specified content and supplied options.
@@ -11550,7 +10800,7 @@ var NgbModal = class _NgbModal {
   }
   static {
     this.ɵfac = function NgbModal_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbModal)(ɵɵinject(Injector), ɵɵinject(NgbModalStack), ɵɵinject(NgbModalConfig));
+      return new (__ngFactoryType__ || _NgbModal)();
     };
   }
   static {
@@ -11567,15 +10817,7 @@ var NgbModal = class _NgbModal {
     args: [{
       providedIn: "root"
     }]
-  }], function() {
-    return [{
-      type: Injector
-    }, {
-      type: NgbModalStack
-    }, {
-      type: NgbModalConfig
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbModalModule = class _NgbModalModule {
   static {
@@ -11603,22 +10845,22 @@ var NgbModalModule = class _NgbModalModule {
   }], null, null);
 })();
 var NgbNavConfig = class _NgbNavConfig {
-  constructor(_ngbConfig) {
-    this._ngbConfig = _ngbConfig;
+  constructor() {
+    this._ngbConfig = inject(NgbConfig);
     this.destroyOnHide = true;
     this.orientation = "horizontal";
     this.roles = "tablist";
-    this.keyboard = false;
+    this.keyboard = true;
   }
   get animation() {
-    return this._animation === void 0 ? this._ngbConfig.animation : this._animation;
+    return this._animation ?? this._ngbConfig.animation;
   }
   set animation(animation) {
     this._animation = animation;
   }
   static {
     this.ɵfac = function NgbNavConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbNavConfig)(ɵɵinject(NgbConfig));
+      return new (__ngFactoryType__ || _NgbNavConfig)();
     };
   }
   static {
@@ -11635,21 +10877,17 @@ var NgbNavConfig = class _NgbNavConfig {
     args: [{
       providedIn: "root"
     }]
-  }], function() {
-    return [{
-      type: NgbConfig
-    }];
-  }, null);
+  }], null, null);
 })();
 var isValidNavId = (id) => isDefined(id) && id !== "";
 var navCounter = 0;
 var NgbNavContent = class _NgbNavContent {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
+  constructor() {
+    this.templateRef = inject(TemplateRef);
   }
   static {
     this.ɵfac = function NgbNavContent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbNavContent)(ɵɵdirectiveInject(TemplateRef));
+      return new (__ngFactoryType__ || _NgbNavContent)();
     };
   }
   static {
@@ -11667,20 +10905,16 @@ var NgbNavContent = class _NgbNavContent {
       selector: "ng-template[ngbNavContent]",
       standalone: true
     }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbNavItemRole = class _NgbNavItemRole {
-  constructor(role, nav) {
+  constructor(role) {
     this.role = role;
-    this.nav = nav;
+    this.nav = inject(NgbNav);
   }
   static {
     this.ɵfac = function NgbNavItemRole_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbNavItemRole)(ɵɵinjectAttribute("role"), ɵɵdirectiveInject(forwardRef(() => NgbNav)));
+      return new (__ngFactoryType__ || _NgbNavItemRole)(ɵɵinjectAttribute("role"));
     };
   }
   static {
@@ -11707,32 +10941,21 @@ var NgbNavItemRole = class _NgbNavItemRole {
         "[attr.role]": `role ? role : nav.roles ? 'presentation' : undefined`
       }
     }]
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Attribute,
-        args: ["role"]
-      }]
-    }, {
-      type: NgbNav,
-      decorators: [{
-        type: Inject,
-        args: [forwardRef(() => NgbNav)]
-      }]
-    }];
-  }, null);
+  }], () => [{
+    type: void 0,
+    decorators: [{
+      type: Attribute,
+      args: ["role"]
+    }]
+  }], null);
 })();
 var NgbNavItem = class _NgbNavItem {
-  constructor(_nav, elementRef) {
-    this._nav = _nav;
-    this.elementRef = elementRef;
+  constructor() {
+    this._nav = inject(NgbNav);
+    this._nativeElement = inject(ElementRef).nativeElement;
     this.disabled = false;
     this.shown = new EventEmitter();
     this.hidden = new EventEmitter();
-  }
-  ngAfterContentChecked() {
-    this.contentTpl = this.contentTpls.first;
   }
   ngOnInit() {
     if (!isDefined(this.domId)) {
@@ -11751,9 +10974,15 @@ var NgbNavItem = class _NgbNavItem {
   isPanelInDom() {
     return (isDefined(this.destroyOnHide) ? !this.destroyOnHide : !this._nav.destroyOnHide) || this.active;
   }
+  /**
+   * @internal
+   */
+  isNgContainer() {
+    return this._nativeElement.nodeType === Node.COMMENT_NODE;
+  }
   static {
     this.ɵfac = function NgbNavItem_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbNavItem)(ɵɵdirectiveInject(forwardRef(() => NgbNav)), ɵɵdirectiveInject(ElementRef));
+      return new (__ngFactoryType__ || _NgbNavItem)();
     };
   }
   static {
@@ -11766,15 +10995,10 @@ var NgbNavItem = class _NgbNavItem {
         }
         if (rf & 2) {
           let _t;
-          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.contentTpls = _t);
+          ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.contentTpl = _t.first);
         }
       },
-      hostVars: 2,
-      hostBindings: function NgbNavItem_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          ɵɵclassProp("nav-item", true);
-        }
-      },
+      hostAttrs: [1, "nav-item"],
       inputs: {
         destroyOnHide: "destroyOnHide",
         disabled: "disabled",
@@ -11798,20 +11022,10 @@ var NgbNavItem = class _NgbNavItem {
       exportAs: "ngbNavItem",
       standalone: true,
       host: {
-        "[class.nav-item]": "true"
+        class: "nav-item"
       }
     }]
-  }], function() {
-    return [{
-      type: NgbNav,
-      decorators: [{
-        type: Inject,
-        args: [forwardRef(() => NgbNav)]
-      }]
-    }, {
-      type: ElementRef
-    }];
-  }, {
+  }], null, {
     destroyOnHide: [{
       type: Input
     }],
@@ -11831,8 +11045,8 @@ var NgbNavItem = class _NgbNavItem {
     hidden: [{
       type: Output
     }],
-    contentTpls: [{
-      type: ContentChildren,
+    contentTpl: [{
+      type: ContentChild,
       args: [NgbNavContent, {
         descendants: false
       }]
@@ -11840,79 +11054,73 @@ var NgbNavItem = class _NgbNavItem {
   });
 })();
 var NgbNav = class _NgbNav {
-  constructor(role, config, _cd, _document) {
+  constructor(role) {
     this.role = role;
-    this._cd = _cd;
-    this._document = _document;
+    this._config = inject(NgbNavConfig);
+    this._cd = inject(ChangeDetectorRef);
+    this._document = inject(DOCUMENT);
+    this._nativeElement = inject(ElementRef).nativeElement;
+    this.destroyRef = inject(DestroyRef);
+    this._navigatingWithKeyboard = false;
     this.activeIdChange = new EventEmitter();
+    this.animation = this._config.animation;
+    this.destroyOnHide = this._config.destroyOnHide;
+    this.orientation = this._config.orientation;
+    this.roles = this._config.roles;
+    this.keyboard = this._config.keyboard;
     this.shown = new EventEmitter();
     this.hidden = new EventEmitter();
-    this.destroy$ = new import_rxjs2.Subject();
     this.navItemChange$ = new import_rxjs2.Subject();
     this.navChange = new EventEmitter();
-    this.animation = config.animation;
-    this.destroyOnHide = config.destroyOnHide;
-    this.orientation = config.orientation;
-    this.roles = config.roles;
-    this.keyboard = config.keyboard;
   }
   click(item) {
     if (!item.disabled) {
       this._updateActiveId(item.id);
     }
   }
+  onFocusout({
+    relatedTarget
+  }) {
+    if (!this._nativeElement.contains(relatedTarget)) {
+      this._navigatingWithKeyboard = false;
+    }
+  }
   onKeyDown(event) {
     if (this.roles !== "tablist" || !this.keyboard) {
       return;
     }
-    const key = event.which;
     const enabledLinks = this.links.filter((link) => !link.navItem.disabled);
     const {
       length
     } = enabledLinks;
     let position = -1;
     enabledLinks.forEach((link, index) => {
-      if (link.elRef.nativeElement === this._document.activeElement) {
+      if (link.nativeElement === this._document.activeElement) {
         position = index;
       }
     });
     if (length) {
-      switch (key) {
-        case Key.ArrowLeft:
-          if (this.orientation === "vertical") {
-            return;
-          }
+      switch (event.key) {
+        case "ArrowUp":
+        case "ArrowLeft":
           position = (position - 1 + length) % length;
           break;
-        case Key.ArrowRight:
-          if (this.orientation === "vertical") {
-            return;
-          }
+        case "ArrowRight":
+        case "ArrowDown":
           position = (position + 1) % length;
           break;
-        case Key.ArrowDown:
-          if (this.orientation === "horizontal") {
-            return;
-          }
-          position = (position + 1) % length;
-          break;
-        case Key.ArrowUp:
-          if (this.orientation === "horizontal") {
-            return;
-          }
-          position = (position - 1 + length) % length;
-          break;
-        case Key.Home:
+        case "Home":
           position = 0;
           break;
-        case Key.End:
+        case "End":
           position = length - 1;
           break;
       }
       if (this.keyboard === "changeWithArrows") {
         this.select(enabledLinks[position].navItem.id);
       }
-      enabledLinks[position].elRef.nativeElement.focus();
+      enabledLinks[position].nativeElement.focus();
+      this._navigatingWithKeyboard = true;
       event.preventDefault();
     }
   }
@@ -11931,7 +11139,7 @@ var NgbNav = class _NgbNav {
         this._cd.detectChanges();
       }
     }
-    this.items.changes.pipe((0, import_operators2.takeUntil)(this.destroy$)).subscribe(() => this._notifyItemChanged(this.activeId));
+    this.items.changes.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => this._notifyItemChanged(this.activeId));
   }
   ngOnChanges({
     activeId
@@ -11939,9 +11147,6 @@ var NgbNav = class _NgbNav {
     if (activeId && !activeId.firstChange) {
       this._notifyItemChanged(activeId.currentValue);
     }
-  }
-  ngOnDestroy() {
-    this.destroy$.next();
   }
   _updateActiveId(nextId2, emitNavChange = true) {
     if (this.activeId !== nextId2) {
@@ -11970,7 +11175,7 @@ var NgbNav = class _NgbNav {
   }
   static {
     this.ɵfac = function NgbNav_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbNav)(ɵɵinjectAttribute("role"), ɵɵdirectiveInject(NgbNavConfig), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(DOCUMENT));
+      return new (__ngFactoryType__ || _NgbNav)(ɵɵinjectAttribute("role"));
     };
   }
   static {
@@ -11988,7 +11193,8 @@ var NgbNav = class _NgbNav {
           ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.links = _t);
         }
       },
-      hostVars: 6,
+      hostAttrs: [1, "nav"],
+      hostVars: 4,
       hostBindings: function NgbNav_HostBindings(rf, ctx) {
         if (rf & 1) {
           ɵɵlistener("keydown.arrowLeft", function NgbNav_keydown_arrowLeft_HostBindingHandler($event) {
@@ -12003,11 +11209,13 @@ var NgbNav = class _NgbNav {
             return ctx.onKeyDown($event);
           })("keydown.End", function NgbNav_keydown_End_HostBindingHandler($event) {
             return ctx.onKeyDown($event);
+          })("focusout", function NgbNav_focusout_HostBindingHandler($event) {
+            return ctx.onFocusout($event);
           });
         }
         if (rf & 2) {
           ɵɵattribute("aria-orientation", ctx.orientation === "vertical" && ctx.roles === "tablist" ? "vertical" : void 0)("role", ctx.role ? ctx.role : ctx.roles ? "tablist" : void 0);
-          ɵɵclassProp("nav", true)("flex-column", ctx.orientation === "vertical");
+          ɵɵclassProp("flex-column", ctx.orientation === "vertical");
         }
       },
       inputs: {
@@ -12038,7 +11246,7 @@ var NgbNav = class _NgbNav {
       exportAs: "ngbNav",
       standalone: true,
       host: {
-        "[class.nav]": "true",
+        class: "nav",
         "[class.flex-column]": `orientation === 'vertical'`,
         "[attr.aria-orientation]": `orientation === 'vertical' && roles === 'tablist' ? 'vertical' : undefined`,
         "[attr.role]": `role ? role : roles ? 'tablist' : undefined`,
@@ -12047,28 +11255,17 @@ var NgbNav = class _NgbNav {
         "(keydown.arrowDown)": "onKeyDown($event)",
         "(keydown.arrowUp)": "onKeyDown($event)",
         "(keydown.Home)": "onKeyDown($event)",
-        "(keydown.End)": "onKeyDown($event)"
+        "(keydown.End)": "onKeyDown($event)",
+        "(focusout)": "onFocusout($event)"
       }
     }]
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Attribute,
-        args: ["role"]
-      }]
-    }, {
-      type: NgbNavConfig
-    }, {
-      type: ChangeDetectorRef
-    }, {
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }];
-  }, {
+  }], () => [{
+    type: void 0,
+    decorators: [{
+      type: Attribute,
+      args: ["role"]
+    }]
+  }], {
     activeId: [{
       type: Input
     }],
@@ -12112,30 +11309,37 @@ var NgbNav = class _NgbNav {
   });
 })();
 var NgbNavLinkBase = class _NgbNavLinkBase {
-  constructor(role, navItem, nav, elRef) {
+  constructor(role) {
     this.role = role;
-    this.navItem = navItem;
-    this.nav = nav;
-    this.elRef = elRef;
+    this.navItem = inject(NgbNavItem);
+    this.nav = inject(NgbNav);
+    this.nativeElement = inject(ElementRef).nativeElement;
   }
-  hasNavItemClass() {
-    return this.navItem.elementRef.nativeElement.nodeType === Node.COMMENT_NODE;
+  get tabindex() {
+    if (this.nav.keyboard === false) {
+      return this.navItem.disabled ? -1 : void 0;
+    }
+    if (this.nav._navigatingWithKeyboard) {
+      return -1;
+    }
+    return this.navItem.disabled || !this.navItem.active ? -1 : void 0;
   }
   static {
     this.ɵfac = function NgbNavLinkBase_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbNavLinkBase)(ɵɵinjectAttribute("role"), ɵɵdirectiveInject(NgbNavItem), ɵɵdirectiveInject(NgbNav), ɵɵdirectiveInject(ElementRef));
+      return new (__ngFactoryType__ || _NgbNavLinkBase)(ɵɵinjectAttribute("role"));
     };
   }
   static {
     this.ɵdir = ɵɵdefineDirective({
       type: _NgbNavLinkBase,
       selectors: [["", "ngbNavLink", ""]],
-      hostVars: 14,
+      hostAttrs: [1, "nav-link"],
+      hostVars: 12,
       hostBindings: function NgbNavLinkBase_HostBindings(rf, ctx) {
         if (rf & 2) {
           ɵɵhostProperty("id", ctx.navItem.domId);
-          ɵɵattribute("role", ctx.role ? ctx.role : ctx.nav.roles ? "tab" : void 0)("tabindex", ctx.navItem.disabled ? -1 : void 0)("aria-controls", ctx.navItem.isPanelInDom() ? ctx.navItem.panelDomId : null)("aria-selected", ctx.navItem.active)("aria-disabled", ctx.navItem.disabled);
-          ɵɵclassProp("nav-link", true)("nav-item", ctx.hasNavItemClass())("active", ctx.navItem.active)("disabled", ctx.navItem.disabled);
+          ɵɵattribute("role", ctx.role ? ctx.role : ctx.nav.roles ? "tab" : void 0)("tabindex", ctx.tabindex)("aria-controls", ctx.navItem.isPanelInDom() ? ctx.navItem.panelDomId : null)("aria-selected", ctx.navItem.active)("aria-disabled", ctx.navItem.disabled);
+          ɵɵclassProp("nav-item", ctx.navItem.isNgContainer())("active", ctx.navItem.active)("disabled", ctx.navItem.disabled);
         }
       },
       standalone: true
@@ -12150,42 +11354,33 @@ var NgbNavLinkBase = class _NgbNavLinkBase {
       standalone: true,
       host: {
         "[id]": "navItem.domId",
-        "[class.nav-link]": "true",
-        "[class.nav-item]": "hasNavItemClass()",
+        class: "nav-link",
+        "[class.nav-item]": "navItem.isNgContainer()",
         "[attr.role]": `role ? role : nav.roles ? 'tab' : undefined`,
         "[class.active]": "navItem.active",
         "[class.disabled]": "navItem.disabled",
-        "[attr.tabindex]": "navItem.disabled ? -1 : undefined",
+        "[attr.tabindex]": "tabindex",
         "[attr.aria-controls]": "navItem.isPanelInDom() ? navItem.panelDomId : null",
         "[attr.aria-selected]": "navItem.active",
         "[attr.aria-disabled]": "navItem.disabled"
       }
     }]
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Attribute,
-        args: ["role"]
-      }]
-    }, {
-      type: NgbNavItem
-    }, {
-      type: NgbNav
-    }, {
-      type: ElementRef
-    }];
-  }, null);
+  }], () => [{
+    type: void 0,
+    decorators: [{
+      type: Attribute,
+      args: ["role"]
+    }]
+  }], null);
 })();
-var NgbNavLinkButton = class _NgbNavLinkButton {
-  constructor(navItem, nav) {
-    this.navItem = navItem;
-    this.nav = nav;
-  }
+var NgbNavLinkButton = class _NgbNavLinkButton extends NgbNavLinkBase {
   static {
-    this.ɵfac = function NgbNavLinkButton_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbNavLinkButton)(ɵɵdirectiveInject(NgbNavItem), ɵɵdirectiveInject(NgbNav));
-    };
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵNgbNavLinkButton_BaseFactory;
+      return function NgbNavLinkButton_Factory(__ngFactoryType__) {
+        return (ɵNgbNavLinkButton_BaseFactory || (ɵNgbNavLinkButton_BaseFactory = ɵɵgetInheritedFactory(_NgbNavLinkButton)))(__ngFactoryType__ || _NgbNavLinkButton);
+      };
+    })();
   }
   static {
     this.ɵdir = ɵɵdefineDirective({
@@ -12204,7 +11399,7 @@ var NgbNavLinkButton = class _NgbNavLinkButton {
         }
       },
       standalone: true,
-      features: [ɵɵHostDirectivesFeature([NgbNavLinkBase])]
+      features: [ɵɵInheritDefinitionFeature]
     });
   }
 };
@@ -12214,30 +11409,22 @@ var NgbNavLinkButton = class _NgbNavLinkButton {
     args: [{
       selector: "button[ngbNavLink]",
       standalone: true,
-      hostDirectives: [NgbNavLinkBase],
       host: {
         type: "button",
         "[disabled]": "navItem.disabled",
         "(click)": "nav.click(navItem)"
       }
     }]
-  }], function() {
-    return [{
-      type: NgbNavItem
-    }, {
-      type: NgbNav
-    }];
-  }, null);
+  }], null, null);
 })();
-var NgbNavLink = class _NgbNavLink {
-  constructor(navItem, nav) {
-    this.navItem = navItem;
-    this.nav = nav;
-  }
+var NgbNavLink = class _NgbNavLink extends NgbNavLinkBase {
   static {
-    this.ɵfac = function NgbNavLink_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbNavLink)(ɵɵdirectiveInject(NgbNavItem), ɵɵdirectiveInject(NgbNav));
-    };
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵNgbNavLink_BaseFactory;
+      return function NgbNavLink_Factory(__ngFactoryType__) {
+        return (ɵNgbNavLink_BaseFactory || (ɵNgbNavLink_BaseFactory = ɵɵgetInheritedFactory(_NgbNavLink)))(__ngFactoryType__ || _NgbNavLink);
+      };
+    })();
   }
   static {
     this.ɵdir = ɵɵdefineDirective({
@@ -12253,7 +11440,7 @@ var NgbNavLink = class _NgbNavLink {
         }
       },
       standalone: true,
-      features: [ɵɵHostDirectivesFeature([NgbNavLinkBase])]
+      features: [ɵɵInheritDefinitionFeature]
     });
   }
 };
@@ -12263,19 +11450,12 @@ var NgbNavLink = class _NgbNavLink {
     args: [{
       selector: "a[ngbNavLink]",
       standalone: true,
-      hostDirectives: [NgbNavLinkBase],
       host: {
         href: "",
         "(click)": "nav.click(navItem); $event.preventDefault()"
       }
     }]
-  }], function() {
-    return [{
-      type: NgbNavItem
-    }, {
-      type: NgbNav
-    }];
-  }, null);
+  }], null, null);
 })();
 var ngbNavFadeOutTransition = ({
   classList
@@ -12290,12 +11470,12 @@ var ngbNavFadeInTransition = (element, animation) => {
   element.classList.add("show");
 };
 var NgbNavPane = class _NgbNavPane {
-  constructor(elRef) {
-    this.elRef = elRef;
+  constructor() {
+    this.nativeElement = inject(ElementRef).nativeElement;
   }
   static {
     this.ɵfac = function NgbNavPane_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbNavPane)(ɵɵdirectiveInject(ElementRef));
+      return new (__ngFactoryType__ || _NgbNavPane)();
     };
   }
   static {
@@ -12334,11 +11514,7 @@ var NgbNavPane = class _NgbNavPane {
         "[attr.aria-labelledby]": "item.domId"
       }
     }]
-  }], function() {
-    return [{
-      type: ElementRef
-    }];
-  }, {
+  }], null, {
     item: [{
       type: Input
     }],
@@ -12351,9 +11527,9 @@ var NgbNavPane = class _NgbNavPane {
   });
 })();
 var NgbNavOutlet = class _NgbNavOutlet {
-  constructor(_cd, _ngZone) {
-    this._cd = _cd;
-    this._ngZone = _ngZone;
+  constructor() {
+    this._cd = inject(ChangeDetectorRef);
+    this._ngZone = inject(NgZone);
     this._activePane = null;
   }
   isPanelTransitioning(item) {
@@ -12361,20 +11537,20 @@ var NgbNavOutlet = class _NgbNavOutlet {
   }
   ngAfterViewInit() {
     this._updateActivePane();
-    this.nav.navItemChange$.pipe((0, import_operators2.takeUntil)(this.nav.destroy$), (0, import_operators2.startWith)(this._activePane?.item || null), (0, import_operators2.distinctUntilChanged)(), (0, import_operators2.skip)(1)).subscribe((nextItem) => {
+    this.nav.navItemChange$.pipe(takeUntilDestroyed(this.nav.destroyRef), (0, import_operators2.startWith)(this._activePane?.item || null), (0, import_operators2.distinctUntilChanged)(), (0, import_operators2.skip)(1)).subscribe((nextItem) => {
       const options = {
         animation: this.nav.animation,
         runningTransition: "stop"
       };
       this._cd.detectChanges();
       if (this._activePane) {
-        ngbRunTransition(this._ngZone, this._activePane.elRef.nativeElement, ngbNavFadeOutTransition, options).subscribe(() => {
+        ngbRunTransition(this._ngZone, this._activePane.nativeElement, ngbNavFadeOutTransition, options).subscribe(() => {
           const activeItem = this._activePane?.item;
           this._activePane = this._getPaneForItem(nextItem);
           this._cd.markForCheck();
           if (this._activePane) {
-            this._activePane.elRef.nativeElement.classList.add("active");
-            ngbRunTransition(this._ngZone, this._activePane.elRef.nativeElement, ngbNavFadeInTransition, options).subscribe(() => {
+            this._activePane.nativeElement.classList.add("active");
+            ngbRunTransition(this._ngZone, this._activePane.nativeElement, ngbNavFadeInTransition, options).subscribe(() => {
               if (nextItem) {
                 nextItem.shown.emit();
                 this.nav.shown.emit(nextItem.id);
@@ -12393,8 +11569,7 @@ var NgbNavOutlet = class _NgbNavOutlet {
   }
   _updateActivePane() {
     this._activePane = this._getActivePane();
-    this._activePane?.elRef.nativeElement.classList.add("show");
-    this._activePane?.elRef.nativeElement.classList.add("active");
+    this._activePane?.nativeElement.classList.add("show", "active");
   }
   _getPaneForItem(item) {
     return this._panes && this._panes.find((pane) => pane.item === item) || null;
@@ -12404,7 +11579,7 @@ var NgbNavOutlet = class _NgbNavOutlet {
   }
   static {
     this.ɵfac = function NgbNavOutlet_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbNavOutlet)(ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(NgZone));
+      return new (__ngFactoryType__ || _NgbNavOutlet)();
     };
   }
   static {
@@ -12420,31 +11595,26 @@ var NgbNavOutlet = class _NgbNavOutlet {
           ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._panes = _t);
         }
       },
-      hostVars: 2,
-      hostBindings: function NgbNavOutlet_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          ɵɵclassProp("tab-content", true);
-        }
-      },
+      hostAttrs: [1, "tab-content"],
       inputs: {
         paneRole: "paneRole",
         nav: [0, "ngbNavOutlet", "nav"]
       },
       standalone: true,
       features: [ɵɵStandaloneFeature],
-      attrs: _c9,
-      decls: 1,
-      vars: 1,
-      consts: [["ngFor", "", 3, "ngForOf"], ["ngbNavPane", "", 3, "item", "nav", "role", 4, "ngIf"], ["ngbNavPane", "", 3, "item", "nav", "role"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
+      attrs: _c8,
+      decls: 2,
+      vars: 0,
+      consts: [["ngbNavPane", "", 3, "item", "nav", "role"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
       template: function NgbNavOutlet_Template(rf, ctx) {
         if (rf & 1) {
-          ɵɵtemplate(0, NgbNavOutlet_ng_template_0_Template, 1, 1, "ng-template", 0);
+          ɵɵrepeaterCreate(0, NgbNavOutlet_For_1_Template, 1, 1, null, null, ɵɵrepeaterTrackByIdentity);
         }
         if (rf & 2) {
-          ɵɵproperty("ngForOf", ctx.nav.items);
+          ɵɵrepeater(ctx.nav.items);
         }
       },
-      dependencies: [NgbNavPane, NgForOf, NgIf, NgTemplateOutlet],
+      dependencies: [NgbNavPane, NgTemplateOutlet],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -12456,36 +11626,26 @@ var NgbNavOutlet = class _NgbNavOutlet {
     args: [{
       selector: "[ngbNavOutlet]",
       standalone: true,
-      imports: [NgbNavPane, NgForOf, NgIf, NgTemplateOutlet],
+      imports: [NgbNavPane, NgTemplateOutlet],
       host: {
-        "[class.tab-content]": "true"
+        class: "tab-content"
       },
       encapsulation: ViewEncapsulation$1.None,
       changeDetection: ChangeDetectionStrategy.OnPush,
       template: `
-		<ng-template ngFor let-item [ngForOf]="nav.items">
-			<div
-				ngbNavPane
-				*ngIf="item.isPanelInDom() || isPanelTransitioning(item)"
-				[item]="item"
-				[nav]="nav"
-				[role]="paneRole"
-			>
-				<ng-template
-					[ngTemplateOutlet]="item.contentTpl?.templateRef || null"
-					[ngTemplateOutletContext]="{ $implicit: item.active || isPanelTransitioning(item) }"
-				></ng-template>
-			</div>
-		</ng-template>
+		@for (item of nav.items; track item) {
+			@if (item.isPanelInDom() || isPanelTransitioning(item)) {
+				<div ngbNavPane [item]="item" [nav]="nav" [role]="paneRole">
+					<ng-template
+						[ngTemplateOutlet]="item.contentTpl?.templateRef || null"
+						[ngTemplateOutletContext]="{ $implicit: item.active || isPanelTransitioning(item) }"
+					/>
+				</div>
+			}
+		}
 	`
     }]
-  }], function() {
-    return [{
-      type: ChangeDetectorRef
-    }, {
-      type: NgZone
-    }];
-  }, {
+  }], null, {
     _panes: [{
       type: ViewChildren,
       args: [NgbNavPane]
@@ -12558,12 +11718,12 @@ var NgbPaginationConfig = class _NgbPaginationConfig {
   }], null, null);
 })();
 var NgbPaginationEllipsis = class _NgbPaginationEllipsis {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
+  constructor() {
+    this.templateRef = inject(TemplateRef);
   }
   static {
     this.ɵfac = function NgbPaginationEllipsis_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPaginationEllipsis)(ɵɵdirectiveInject(TemplateRef));
+      return new (__ngFactoryType__ || _NgbPaginationEllipsis)();
     };
   }
   static {
@@ -12581,19 +11741,15 @@ var NgbPaginationEllipsis = class _NgbPaginationEllipsis {
       selector: "ng-template[ngbPaginationEllipsis]",
       standalone: true
     }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbPaginationFirst = class _NgbPaginationFirst {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
+  constructor() {
+    this.templateRef = inject(TemplateRef);
   }
   static {
     this.ɵfac = function NgbPaginationFirst_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPaginationFirst)(ɵɵdirectiveInject(TemplateRef));
+      return new (__ngFactoryType__ || _NgbPaginationFirst)();
     };
   }
   static {
@@ -12611,19 +11767,15 @@ var NgbPaginationFirst = class _NgbPaginationFirst {
       selector: "ng-template[ngbPaginationFirst]",
       standalone: true
     }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbPaginationLast = class _NgbPaginationLast {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
+  constructor() {
+    this.templateRef = inject(TemplateRef);
   }
   static {
     this.ɵfac = function NgbPaginationLast_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPaginationLast)(ɵɵdirectiveInject(TemplateRef));
+      return new (__ngFactoryType__ || _NgbPaginationLast)();
     };
   }
   static {
@@ -12641,19 +11793,15 @@ var NgbPaginationLast = class _NgbPaginationLast {
       selector: "ng-template[ngbPaginationLast]",
       standalone: true
     }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbPaginationNext = class _NgbPaginationNext {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
+  constructor() {
+    this.templateRef = inject(TemplateRef);
   }
   static {
     this.ɵfac = function NgbPaginationNext_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPaginationNext)(ɵɵdirectiveInject(TemplateRef));
+      return new (__ngFactoryType__ || _NgbPaginationNext)();
     };
   }
   static {
@@ -12671,19 +11819,15 @@ var NgbPaginationNext = class _NgbPaginationNext {
       selector: "ng-template[ngbPaginationNext]",
       standalone: true
     }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbPaginationNumber = class _NgbPaginationNumber {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
+  constructor() {
+    this.templateRef = inject(TemplateRef);
   }
   static {
     this.ɵfac = function NgbPaginationNumber_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPaginationNumber)(ɵɵdirectiveInject(TemplateRef));
+      return new (__ngFactoryType__ || _NgbPaginationNumber)();
     };
   }
   static {
@@ -12701,19 +11845,15 @@ var NgbPaginationNumber = class _NgbPaginationNumber {
       selector: "ng-template[ngbPaginationNumber]",
       standalone: true
     }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbPaginationPrevious = class _NgbPaginationPrevious {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
+  constructor() {
+    this.templateRef = inject(TemplateRef);
   }
   static {
     this.ɵfac = function NgbPaginationPrevious_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPaginationPrevious)(ɵɵdirectiveInject(TemplateRef));
+      return new (__ngFactoryType__ || _NgbPaginationPrevious)();
     };
   }
   static {
@@ -12731,19 +11871,15 @@ var NgbPaginationPrevious = class _NgbPaginationPrevious {
       selector: "ng-template[ngbPaginationPrevious]",
       standalone: true
     }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbPaginationPages = class _NgbPaginationPages {
-  constructor(templateRef) {
-    this.templateRef = templateRef;
+  constructor() {
+    this.templateRef = inject(TemplateRef);
   }
   static {
     this.ɵfac = function NgbPaginationPages_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPaginationPages)(ɵɵdirectiveInject(TemplateRef));
+      return new (__ngFactoryType__ || _NgbPaginationPages)();
     };
   }
   static {
@@ -12761,26 +11897,23 @@ var NgbPaginationPages = class _NgbPaginationPages {
       selector: "ng-template[ngbPaginationPages]",
       standalone: true
     }]
-  }], function() {
-    return [{
-      type: TemplateRef
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbPagination = class _NgbPagination {
-  constructor(config) {
+  constructor() {
+    this._config = inject(NgbPaginationConfig);
     this.pageCount = 0;
     this.pages = [];
+    this.disabled = this._config.disabled;
+    this.boundaryLinks = this._config.boundaryLinks;
+    this.directionLinks = this._config.directionLinks;
+    this.ellipses = this._config.ellipses;
+    this.rotate = this._config.rotate;
+    this.maxSize = this._config.maxSize;
     this.page = 1;
+    this.pageSize = this._config.pageSize;
     this.pageChange = new EventEmitter(true);
-    this.disabled = config.disabled;
-    this.boundaryLinks = config.boundaryLinks;
-    this.directionLinks = config.directionLinks;
-    this.ellipses = config.ellipses;
-    this.maxSize = config.maxSize;
-    this.pageSize = config.pageSize;
-    this.rotate = config.rotate;
-    this.size = config.size;
+    this.size = this._config.size;
   }
   hasPrevious() {
     return this.page > 1;
@@ -12889,7 +12022,7 @@ var NgbPagination = class _NgbPagination {
   }
   static {
     this.ɵfac = function NgbPagination_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPagination)(ɵɵdirectiveInject(NgbPaginationConfig));
+      return new (__ngFactoryType__ || _NgbPagination)();
     };
   }
   static {
@@ -12994,13 +12127,13 @@ var NgbPagination = class _NgbPagination {
         } else {
           i18n_19 = $localize`:@@ngb.pagination.last-aria:Last`;
         }
-        return [["first", ""], ["previous", ""], ["next", ""], ["last", ""], ["ellipsis", ""], ["defaultNumber", ""], ["defaultPages", ""], i18n_12, i18n_13, i18n_14, i18n_15, ["class", "page-item", 3, "disabled", 4, "ngIf"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["aria-hidden", "true"], ["class", "page-item", 3, "active", "disabled", 4, "ngFor", "ngForOf"], [1, "page-item"], ["class", "page-link", "tabindex", "-1", "aria-disabled", "true", 4, "ngIf"], ["class", "page-link", "href", "", 3, "click", 4, "ngIf"], ["tabindex", "-1", "aria-disabled", "true", 1, "page-link"], ["href", "", 1, "page-link", 3, "click"], ["aria-label", i18n_16, "href", "", 1, "page-link", 3, "click"], ["aria-label", i18n_17, "href", "", 1, "page-link", 3, "click"], ["aria-label", i18n_18, "href", "", 1, "page-link", 3, "click"], ["aria-label", i18n_19, "href", "", 1, "page-link", 3, "click"]];
+        return [["first", ""], ["previous", ""], ["next", ""], ["last", ""], ["ellipsis", ""], ["defaultNumber", ""], ["defaultPages", ""], i18n_12, i18n_13, i18n_14, i18n_15, [1, "page-item", 3, "disabled"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["aria-hidden", "true"], [1, "page-item", 3, "active", "disabled"], [1, "page-item"], ["tabindex", "-1", "aria-disabled", "true", 1, "page-link"], ["href", "", 1, "page-link"], ["href", "", 1, "page-link", 3, "click"], ["aria-label", i18n_16, "href", "", 1, "page-link", 3, "click"], ["aria-label", i18n_17, "href", "", 1, "page-link", 3, "click"], ["aria-label", i18n_18, "href", "", 1, "page-link", 3, "click"], ["aria-label", i18n_19, "href", "", 1, "page-link", 3, "click"]];
       },
       template: function NgbPagination_Template(rf, ctx) {
         if (rf & 1) {
-          ɵɵtemplate(0, NgbPagination_ng_template_0_Template, 2, 0, "ng-template", null, 0, ɵɵtemplateRefExtractor)(2, NgbPagination_ng_template_2_Template, 2, 0, "ng-template", null, 1, ɵɵtemplateRefExtractor)(4, NgbPagination_ng_template_4_Template, 2, 0, "ng-template", null, 2, ɵɵtemplateRefExtractor)(6, NgbPagination_ng_template_6_Template, 2, 0, "ng-template", null, 3, ɵɵtemplateRefExtractor)(8, NgbPagination_ng_template_8_Template, 1, 0, "ng-template", null, 4, ɵɵtemplateRefExtractor)(10, NgbPagination_ng_template_10_Template, 1, 1, "ng-template", null, 5, ɵɵtemplateRefExtractor)(12, NgbPagination_ng_template_12_Template, 1, 1, "ng-template", null, 6, ɵɵtemplateRefExtractor);
+          ɵɵtemplate(0, NgbPagination_ng_template_0_Template, 2, 0, "ng-template", null, 0, ɵɵtemplateRefExtractor)(2, NgbPagination_ng_template_2_Template, 2, 0, "ng-template", null, 1, ɵɵtemplateRefExtractor)(4, NgbPagination_ng_template_4_Template, 2, 0, "ng-template", null, 2, ɵɵtemplateRefExtractor)(6, NgbPagination_ng_template_6_Template, 2, 0, "ng-template", null, 3, ɵɵtemplateRefExtractor)(8, NgbPagination_ng_template_8_Template, 1, 0, "ng-template", null, 4, ɵɵtemplateRefExtractor)(10, NgbPagination_ng_template_10_Template, 1, 1, "ng-template", null, 5, ɵɵtemplateRefExtractor)(12, NgbPagination_ng_template_12_Template, 2, 0, "ng-template", null, 6, ɵɵtemplateRefExtractor);
           ɵɵelementStart(14, "ul");
-          ɵɵtemplate(15, NgbPagination_li_15_Template, 3, 9, "li", 11)(16, NgbPagination_li_16_Template, 3, 8, "li", 11)(17, NgbPagination_ng_template_17_Template, 0, 0, "ng-template", 12)(18, NgbPagination_li_18_Template, 3, 9, "li", 11)(19, NgbPagination_li_19_Template, 3, 9, "li", 11);
+          ɵɵtemplate(15, NgbPagination_Conditional_15_Template, 3, 9, "li", 11)(16, NgbPagination_Conditional_16_Template, 3, 8, "li", 11)(17, NgbPagination_ng_template_17_Template, 0, 0, "ng-template", 12)(18, NgbPagination_Conditional_18_Template, 3, 9, "li", 11)(19, NgbPagination_Conditional_19_Template, 3, 9, "li", 11);
           ɵɵelementEnd();
         }
         if (rf & 2) {
@@ -13008,18 +12141,18 @@ var NgbPagination = class _NgbPagination {
           ɵɵadvance(14);
           ɵɵclassMap("pagination" + (ctx.size ? " pagination-" + ctx.size : ""));
           ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.boundaryLinks);
+          ɵɵconditional(ctx.boundaryLinks ? 15 : -1);
           ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.directionLinks);
+          ɵɵconditional(ctx.directionLinks ? 16 : -1);
           ɵɵadvance();
-          ɵɵproperty("ngTemplateOutlet", (ctx.tplPages == null ? null : ctx.tplPages.templateRef) || defaultPages_r19)("ngTemplateOutletContext", ɵɵpureFunction3(8, _c10, ctx.page, ctx.pages, ctx.disabled));
+          ɵɵproperty("ngTemplateOutlet", (ctx.tplPages == null ? null : ctx.tplPages.templateRef) || defaultPages_r19)("ngTemplateOutletContext", ɵɵpureFunction3(8, _c9, ctx.page, ctx.pages, ctx.disabled));
           ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.directionLinks);
+          ɵɵconditional(ctx.directionLinks ? 18 : -1);
           ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.boundaryLinks);
+          ɵɵconditional(ctx.boundaryLinks ? 19 : -1);
         }
       },
-      dependencies: [NgIf, NgForOf, NgTemplateOutlet],
+      dependencies: [NgTemplateOutlet],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -13031,7 +12164,7 @@ var NgbPagination = class _NgbPagination {
     args: [{
       selector: "ngb-pagination",
       standalone: true,
-      imports: [NgIf, NgForOf, NgTemplateOutlet],
+      imports: [NgTemplateOutlet],
       changeDetection: ChangeDetectionStrategy.OnPush,
       host: {
         role: "navigation"
@@ -13044,114 +12177,118 @@ var NgbPagination = class _NgbPagination {
 		<ng-template #ellipsis>...</ng-template>
 		<ng-template #defaultNumber let-page let-currentPage="currentPage">{{ page }}</ng-template>
 		<ng-template #defaultPages let-page let-pages="pages" let-disabled="disabled">
-			<li
-				*ngFor="let pageNumber of pages"
-				class="page-item"
-				[class.active]="pageNumber === page"
-				[class.disabled]="isEllipsis(pageNumber) || disabled"
-				[attr.aria-current]="pageNumber === page ? 'page' : null"
-			>
-				<a *ngIf="isEllipsis(pageNumber)" class="page-link" tabindex="-1" aria-disabled="true">
-					<ng-template
-						[ngTemplateOutlet]="tplEllipsis?.templateRef || ellipsis"
-						[ngTemplateOutletContext]="{ disabled: true, currentPage: page }"
-					></ng-template>
-				</a>
-				<a
-					*ngIf="!isEllipsis(pageNumber)"
-					class="page-link"
-					href
-					(click)="selectPage(pageNumber); $event.preventDefault()"
-					[attr.tabindex]="disabled ? '-1' : null"
-					[attr.aria-disabled]="disabled ? 'true' : null"
+			@for (pageNumber of pages; track $index) {
+				<li
+					class="page-item"
+					[class.active]="pageNumber === page"
+					[class.disabled]="isEllipsis(pageNumber) || disabled"
+					[attr.aria-current]="pageNumber === page ? 'page' : null"
 				>
-					<ng-template
-						[ngTemplateOutlet]="tplNumber?.templateRef || defaultNumber"
-						[ngTemplateOutletContext]="{ disabled: disabled, $implicit: pageNumber, currentPage: page }"
-					></ng-template>
-				</a>
-			</li>
+					@if (isEllipsis(pageNumber)) {
+						<a class="page-link" tabindex="-1" aria-disabled="true">
+							<ng-template
+								[ngTemplateOutlet]="tplEllipsis?.templateRef || ellipsis"
+								[ngTemplateOutletContext]="{ disabled: true, currentPage: page }"
+							/>
+						</a>
+					} @else {
+						<a
+							class="page-link"
+							href
+							(click)="selectPage(pageNumber); $event.preventDefault()"
+							[attr.tabindex]="disabled ? '-1' : null"
+							[attr.aria-disabled]="disabled ? 'true' : null"
+						>
+							<ng-template
+								[ngTemplateOutlet]="tplNumber?.templateRef || defaultNumber"
+								[ngTemplateOutletContext]="{ disabled: disabled, $implicit: pageNumber, currentPage: page }"
+							/>
+						</a>
+					}
+				</li>
+			}
 		</ng-template>
 		<ul [class]="'pagination' + (size ? ' pagination-' + size : '')">
-			<li *ngIf="boundaryLinks" class="page-item" [class.disabled]="previousDisabled()">
-				<a
-					aria-label="First"
-					i18n-aria-label="@@ngb.pagination.first-aria"
-					class="page-link"
-					href
-					(click)="selectPage(1); $event.preventDefault()"
-					[attr.tabindex]="previousDisabled() ? '-1' : null"
-					[attr.aria-disabled]="previousDisabled() ? 'true' : null"
-				>
-					<ng-template
-						[ngTemplateOutlet]="tplFirst?.templateRef || first"
-						[ngTemplateOutletContext]="{ disabled: previousDisabled(), currentPage: page }"
-					></ng-template>
-				</a>
-			</li>
-
-			<li *ngIf="directionLinks" class="page-item" [class.disabled]="previousDisabled()">
-				<a
-					aria-label="Previous"
-					i18n-aria-label="@@ngb.pagination.previous-aria"
-					class="page-link"
-					href
-					(click)="selectPage(page - 1); $event.preventDefault()"
-					[attr.tabindex]="previousDisabled() ? '-1' : null"
-					[attr.aria-disabled]="previousDisabled() ? 'true' : null"
-				>
-					<ng-template
-						[ngTemplateOutlet]="tplPrevious?.templateRef || previous"
-						[ngTemplateOutletContext]="{ disabled: previousDisabled() }"
-					></ng-template>
-				</a>
-			</li>
+			@if (boundaryLinks) {
+				<li class="page-item" [class.disabled]="previousDisabled()">
+					<a
+						aria-label="First"
+						i18n-aria-label="@@ngb.pagination.first-aria"
+						class="page-link"
+						href
+						(click)="selectPage(1); $event.preventDefault()"
+						[attr.tabindex]="previousDisabled() ? '-1' : null"
+						[attr.aria-disabled]="previousDisabled() ? 'true' : null"
+					>
+						<ng-template
+							[ngTemplateOutlet]="tplFirst?.templateRef || first"
+							[ngTemplateOutletContext]="{ disabled: previousDisabled(), currentPage: page }"
+						/>
+					</a>
+				</li>
+			}
+			@if (directionLinks) {
+				<li class="page-item" [class.disabled]="previousDisabled()">
+					<a
+						aria-label="Previous"
+						i18n-aria-label="@@ngb.pagination.previous-aria"
+						class="page-link"
+						href
+						(click)="selectPage(page - 1); $event.preventDefault()"
+						[attr.tabindex]="previousDisabled() ? '-1' : null"
+						[attr.aria-disabled]="previousDisabled() ? 'true' : null"
+					>
+						<ng-template
+							[ngTemplateOutlet]="tplPrevious?.templateRef || previous"
+							[ngTemplateOutletContext]="{ disabled: previousDisabled() }"
+						/>
+					</a>
+				</li>
+			}
 			<ng-template
 				[ngTemplateOutlet]="tplPages?.templateRef || defaultPages"
 				[ngTemplateOutletContext]="{ $implicit: page, pages: pages, disabled: disabled }"
-			>
-			</ng-template>
-			<li *ngIf="directionLinks" class="page-item" [class.disabled]="nextDisabled()">
-				<a
-					aria-label="Next"
-					i18n-aria-label="@@ngb.pagination.next-aria"
-					class="page-link"
-					href
-					(click)="selectPage(page + 1); $event.preventDefault()"
-					[attr.tabindex]="nextDisabled() ? '-1' : null"
-					[attr.aria-disabled]="nextDisabled() ? 'true' : null"
-				>
-					<ng-template
-						[ngTemplateOutlet]="tplNext?.templateRef || next"
-						[ngTemplateOutletContext]="{ disabled: nextDisabled(), currentPage: page }"
-					></ng-template>
-				</a>
-			</li>
-
-			<li *ngIf="boundaryLinks" class="page-item" [class.disabled]="nextDisabled()">
-				<a
-					aria-label="Last"
-					i18n-aria-label="@@ngb.pagination.last-aria"
-					class="page-link"
-					href
-					(click)="selectPage(pageCount); $event.preventDefault()"
-					[attr.tabindex]="nextDisabled() ? '-1' : null"
-					[attr.aria-disabled]="nextDisabled() ? 'true' : null"
-				>
-					<ng-template
-						[ngTemplateOutlet]="tplLast?.templateRef || last"
-						[ngTemplateOutletContext]="{ disabled: nextDisabled(), currentPage: page }"
-					></ng-template>
-				</a>
-			</li>
+			/>
+			@if (directionLinks) {
+				<li class="page-item" [class.disabled]="nextDisabled()">
+					<a
+						aria-label="Next"
+						i18n-aria-label="@@ngb.pagination.next-aria"
+						class="page-link"
+						href
+						(click)="selectPage(page + 1); $event.preventDefault()"
+						[attr.tabindex]="nextDisabled() ? '-1' : null"
+						[attr.aria-disabled]="nextDisabled() ? 'true' : null"
+					>
+						<ng-template
+							[ngTemplateOutlet]="tplNext?.templateRef || next"
+							[ngTemplateOutletContext]="{ disabled: nextDisabled(), currentPage: page }"
+						/>
+					</a>
+				</li>
+			}
+			@if (boundaryLinks) {
+				<li class="page-item" [class.disabled]="nextDisabled()">
+					<a
+						aria-label="Last"
+						i18n-aria-label="@@ngb.pagination.last-aria"
+						class="page-link"
+						href
+						(click)="selectPage(pageCount); $event.preventDefault()"
+						[attr.tabindex]="nextDisabled() ? '-1' : null"
+						[attr.aria-disabled]="nextDisabled() ? 'true' : null"
+					>
+						<ng-template
+							[ngTemplateOutlet]="tplLast?.templateRef || last"
+							[ngTemplateOutletContext]="{ disabled: nextDisabled(), currentPage: page }"
+						/>
+					</a>
+				</li>
+			}
 		</ul>
 	`
     }]
-  }], function() {
-    return [{
-      type: NgbPaginationConfig
-    }];
-  }, {
+  }], null, {
     tplEllipsis: [{
       type: ContentChild,
       args: [NgbPaginationEllipsis, {
@@ -13316,8 +12453,8 @@ function listenToTriggers(element, triggers, isOpenedFn, openFn, closeFn, openDe
   return () => cleanupFns.forEach((cleanupFn) => cleanupFn());
 }
 var NgbPopoverConfig = class _NgbPopoverConfig {
-  constructor(_ngbConfig) {
-    this._ngbConfig = _ngbConfig;
+  constructor() {
+    this._ngbConfig = inject(NgbConfig);
     this.autoClose = true;
     this.placement = "auto";
     this.popperOptions = (options) => options;
@@ -13327,14 +12464,14 @@ var NgbPopoverConfig = class _NgbPopoverConfig {
     this.closeDelay = 0;
   }
   get animation() {
-    return this._animation === void 0 ? this._ngbConfig.animation : this._animation;
+    return this._animation ?? this._ngbConfig.animation;
   }
   set animation(animation) {
     this._animation = animation;
   }
   static {
     this.ɵfac = function NgbPopoverConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPopoverConfig)(ɵɵinject(NgbConfig));
+      return new (__ngFactoryType__ || _NgbPopoverConfig)();
     };
   }
   static {
@@ -13351,11 +12488,7 @@ var NgbPopoverConfig = class _NgbPopoverConfig {
     args: [{
       providedIn: "root"
     }]
-  }], function() {
-    return [{
-      type: NgbConfig
-    }];
-  }, null);
+  }], null, null);
 })();
 var nextId$1 = 0;
 var NgbPopoverWindow = class _NgbPopoverWindow {
@@ -13389,25 +12522,25 @@ var NgbPopoverWindow = class _NgbPopoverWindow {
       },
       standalone: true,
       features: [ɵɵStandaloneFeature],
-      ngContentSelectors: _c1,
+      ngContentSelectors: _c0,
       decls: 4,
       vars: 1,
-      consts: [["simpleTitle", ""], ["data-popper-arrow", "", 1, "popover-arrow"], ["class", "popover-header", 4, "ngIf"], [1, "popover-body"], [1, "popover-header"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
+      consts: [["simpleTitle", ""], ["data-popper-arrow", "", 1, "popover-arrow"], [1, "popover-header"], [1, "popover-body"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
       template: function NgbPopoverWindow_Template(rf, ctx) {
         if (rf & 1) {
           ɵɵprojectionDef();
           ɵɵelement(0, "div", 1);
-          ɵɵtemplate(1, NgbPopoverWindow_h3_1_Template, 4, 2, "h3", 2);
+          ɵɵtemplate(1, NgbPopoverWindow_Conditional_1_Template, 4, 2, "h3", 2);
           ɵɵelementStart(2, "div", 3);
           ɵɵprojection(3);
           ɵɵelementEnd();
         }
         if (rf & 2) {
           ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.title);
+          ɵɵconditional(ctx.title ? 1 : -1);
         }
       },
-      dependencies: [NgTemplateOutlet, NgIf],
+      dependencies: [NgTemplateOutlet],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -13419,7 +12552,7 @@ var NgbPopoverWindow = class _NgbPopoverWindow {
     args: [{
       selector: "ngb-popover-window",
       standalone: true,
-      imports: [NgTemplateOutlet, NgIf],
+      imports: [NgTemplateOutlet],
       changeDetection: ChangeDetectionStrategy.OnPush,
       encapsulation: ViewEncapsulation$1.None,
       host: {
@@ -13429,15 +12562,21 @@ var NgbPopoverWindow = class _NgbPopoverWindow {
         "[id]": "id",
         style: "position: absolute;"
       },
-      template: ` <div class="popover-arrow" data-popper-arrow></div>
-		<h3 class="popover-header" *ngIf="title">
-			<ng-template #simpleTitle>{{ title }}</ng-template>
-			<ng-template
-				[ngTemplateOutlet]="isTitleTemplate() ? $any(title) : simpleTitle"
-				[ngTemplateOutletContext]="context"
-			></ng-template>
-		</h3>
-		<div class="popover-body"><ng-content></ng-content></div>`
+      template: `
+		<div class="popover-arrow" data-popper-arrow></div>
+		@if (title) {
+			<h3 class="popover-header">
+				<ng-template #simpleTitle>{{ title }}</ng-template>
+				<ng-template
+					[ngTemplateOutlet]="isTitleTemplate() ? $any(title) : simpleTitle"
+					[ngTemplateOutletContext]="context"
+				/>
+			</h3>
+		}
+		<div class="popover-body">
+			<ng-content />
+		</div>
+	`
     }]
   }], null, {
     animation: [{
@@ -13458,37 +12597,29 @@ var NgbPopoverWindow = class _NgbPopoverWindow {
   });
 })();
 var NgbPopover = class _NgbPopover {
-  _isDisabled() {
-    if (this.disablePopover) {
-      return true;
-    }
-    if (!this.ngbPopover && !this.popoverTitle) {
-      return true;
-    }
-    return false;
-  }
-  constructor(_elementRef, _renderer, injector, viewContainerRef, config, _ngZone, _document, _changeDetector, applicationRef) {
-    this._elementRef = _elementRef;
-    this._renderer = _renderer;
-    this._ngZone = _ngZone;
-    this._document = _document;
-    this._changeDetector = _changeDetector;
+  constructor() {
+    this._config = inject(NgbPopoverConfig);
+    this.animation = this._config.animation;
+    this.autoClose = this._config.autoClose;
+    this.placement = this._config.placement;
+    this.popperOptions = this._config.popperOptions;
+    this.triggers = this._config.triggers;
+    this.container = this._config.container;
+    this.disablePopover = this._config.disablePopover;
+    this.popoverClass = this._config.popoverClass;
+    this.openDelay = this._config.openDelay;
+    this.closeDelay = this._config.closeDelay;
     this.shown = new EventEmitter();
     this.hidden = new EventEmitter();
+    this._nativeElement = inject(ElementRef).nativeElement;
+    this._ngZone = inject(NgZone);
+    this._document = inject(DOCUMENT);
+    this._changeDetector = inject(ChangeDetectorRef);
+    this._injector = inject(Injector);
     this._ngbPopoverWindowId = `ngb-popover-${nextId$1++}`;
+    this._popupService = new PopupService(NgbPopoverWindow);
     this._windowRef = null;
-    this.animation = config.animation;
-    this.autoClose = config.autoClose;
-    this.placement = config.placement;
-    this.popperOptions = config.popperOptions;
-    this.triggers = config.triggers;
-    this.container = config.container;
-    this.disablePopover = config.disablePopover;
-    this.popoverClass = config.popoverClass;
-    this.openDelay = config.openDelay;
-    this.closeDelay = config.closeDelay;
     this._positioning = ngbPositioning();
-    this._popupService = new PopupService(NgbPopoverWindow, injector, viewContainerRef, _renderer, this._ngZone, applicationRef);
   }
   /**
    * Opens the popover.
@@ -13508,9 +12639,9 @@ var NgbPopover = class _NgbPopover {
       this._windowRef.setInput("context", context ?? this.popoverContext);
       this._windowRef.setInput("popoverClass", this.popoverClass);
       this._windowRef.setInput("id", this._ngbPopoverWindowId);
-      this._renderer.setAttribute(this._getPositionTargetElement(), "aria-describedby", this._ngbPopoverWindowId);
+      this._getPositionTargetElement().setAttribute("aria-describedby", this._ngbPopoverWindowId);
       if (this.container === "body") {
-        this._document.querySelector(this.container).appendChild(this._windowRef.location.nativeElement);
+        this._document.body.appendChild(this._windowRef.location.nativeElement);
       }
       this._windowRef.changeDetectorRef.detectChanges();
       this._windowRef.changeDetectorRef.markForCheck();
@@ -13519,13 +12650,17 @@ var NgbPopover = class _NgbPopover {
           hostElement: this._getPositionTargetElement(),
           targetElement: this._windowRef.location.nativeElement,
           placement: this.placement,
-          appendToBody: this.container === "body",
           baseClass: "bs-popover",
           updatePopperOptions: (options) => this.popperOptions(addPopperOffset([0, 8])(options))
         });
         Promise.resolve().then(() => {
           this._positioning.update();
-          this._zoneSubscription = this._ngZone.onStable.subscribe(() => this._positioning.update());
+        });
+        this._afterRenderRef = afterRender(() => {
+          this._positioning.update();
+        }, {
+          phase: AfterRenderPhase.MixedReadWrite,
+          injector: this._injector
         });
       });
       ngbAutoClose(this._ngZone, this._document, this.autoClose, () => this.close(), this.hidden, [this._windowRef.location.nativeElement]);
@@ -13539,11 +12674,11 @@ var NgbPopover = class _NgbPopover {
    */
   close(animation = this.animation) {
     if (this._windowRef) {
-      this._renderer.removeAttribute(this._getPositionTargetElement(), "aria-describedby");
+      this._getPositionTargetElement().removeAttribute("aria-describedby");
       this._popupService.close(animation).subscribe(() => {
         this._windowRef = null;
         this._positioning.destroy();
-        this._zoneSubscription?.unsubscribe();
+        this._afterRenderRef?.destroy();
         this.hidden.emit();
         this._changeDetector.markForCheck();
       });
@@ -13568,7 +12703,7 @@ var NgbPopover = class _NgbPopover {
     return this._windowRef != null;
   }
   ngOnInit() {
-    this._unregisterListenersFn = listenToTriggers(this._elementRef.nativeElement, this.triggers, this.isOpen.bind(this), this.open.bind(this), this.close.bind(this), +this.openDelay, +this.closeDelay);
+    this._unregisterListenersFn = listenToTriggers(this._nativeElement, this.triggers, this.isOpen.bind(this), this.open.bind(this), this.close.bind(this), +this.openDelay, +this.closeDelay);
   }
   ngOnChanges({
     ngbPopover,
@@ -13577,7 +12712,7 @@ var NgbPopover = class _NgbPopover {
     popoverClass
   }) {
     if (popoverClass && this.isOpen()) {
-      this._windowRef.instance.popoverClass = popoverClass.currentValue;
+      this._windowRef.setInput("popoverClass", popoverClass.currentValue);
     }
     if ((ngbPopover || popoverTitle || disablePopover) && this._isDisabled()) {
       this.close();
@@ -13587,12 +12722,15 @@ var NgbPopover = class _NgbPopover {
     this.close(false);
     this._unregisterListenersFn?.();
   }
+  _isDisabled() {
+    return this.disablePopover ? true : !this.ngbPopover && !this.popoverTitle;
+  }
   _getPositionTargetElement() {
-    return (isString(this.positionTarget) ? this._document.querySelector(this.positionTarget) : this.positionTarget) || this._elementRef.nativeElement;
+    return (isString(this.positionTarget) ? this._document.querySelector(this.positionTarget) : this.positionTarget) || this._nativeElement;
   }
   static {
     this.ɵfac = function NgbPopover_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbPopover)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(Injector), ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(NgbPopoverConfig), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ApplicationRef));
+      return new (__ngFactoryType__ || _NgbPopover)();
     };
   }
   static {
@@ -13633,31 +12771,7 @@ var NgbPopover = class _NgbPopover {
       exportAs: "ngbPopover",
       standalone: true
     }]
-  }], function() {
-    return [{
-      type: ElementRef
-    }, {
-      type: Renderer2
-    }, {
-      type: Injector
-    }, {
-      type: ViewContainerRef
-    }, {
-      type: NgbPopoverConfig
-    }, {
-      type: NgZone
-    }, {
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }, {
-      type: ChangeDetectorRef
-    }, {
-      type: ApplicationRef
-    }];
-  }, {
+  }], null, {
     animation: [{
       type: Input
     }],
@@ -13775,16 +12889,20 @@ var NgbProgressbar = class _NgbProgressbar {
   get max() {
     return this._max;
   }
-  constructor(config) {
+  constructor() {
+    this._config = inject(NgbProgressbarConfig);
+    this.stacked = inject(NgbProgressbarStacked, {
+      optional: true
+    });
+    this.animated = this._config.animated;
+    this.ariaLabel = this._config.ariaLabel;
+    this.striped = this._config.striped;
+    this.showValue = this._config.showValue;
+    this.textType = this._config.textType;
+    this.type = this._config.type;
     this.value = 0;
-    this.max = config.max;
-    this.animated = config.animated;
-    this.ariaLabel = config.ariaLabel;
-    this.striped = config.striped;
-    this.textType = config.textType;
-    this.type = config.type;
-    this.showValue = config.showValue;
-    this.height = config.height;
+    this.height = this._config.height;
+    this.max = this._config.max;
   }
   getValue() {
     return getValueInRange(this.value, this.max);
@@ -13794,7 +12912,7 @@ var NgbProgressbar = class _NgbProgressbar {
   }
   static {
     this.ɵfac = function NgbProgressbar_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbProgressbar)(ɵɵdirectiveInject(NgbProgressbarConfig));
+      return new (__ngFactoryType__ || _NgbProgressbar)();
     };
   }
   static {
@@ -13802,11 +12920,11 @@ var NgbProgressbar = class _NgbProgressbar {
       type: _NgbProgressbar,
       selectors: [["ngb-progressbar"]],
       hostAttrs: ["role", "progressbar", "aria-valuemin", "0", 1, "progress"],
-      hostVars: 5,
+      hostVars: 7,
       hostBindings: function NgbProgressbar_HostBindings(rf, ctx) {
         if (rf & 2) {
           ɵɵattribute("aria-valuenow", ctx.getValue())("aria-valuemax", ctx.max)("aria-label", ctx.ariaLabel);
-          ɵɵstyleProp("height", ctx.height);
+          ɵɵstyleProp("width", ctx.stacked ? ctx.getPercentValue() : null, "%")("height", ctx.height);
         }
       },
       inputs: {
@@ -13822,7 +12940,7 @@ var NgbProgressbar = class _NgbProgressbar {
       },
       standalone: true,
       features: [ɵɵStandaloneFeature],
-      ngContentSelectors: _c1,
+      ngContentSelectors: _c0,
       decls: 3,
       vars: 11,
       consts: () => {
@@ -13839,25 +12957,25 @@ var NgbProgressbar = class _NgbProgressbar {
         } else {
           i18n_20 = $localize`:@@ngb.progressbar.value:${"�0�"}:INTERPOLATION:`;
         }
-        return [i18n_20, [4, "ngIf"]];
+        return [i18n_20];
       },
       template: function NgbProgressbar_Template(rf, ctx) {
         if (rf & 1) {
           ɵɵprojectionDef();
           ɵɵelementStart(0, "div");
-          ɵɵtemplate(1, NgbProgressbar_span_1_Template, 3, 3, "span", 1);
+          ɵɵtemplate(1, NgbProgressbar_Conditional_1_Template, 3, 3, "span");
           ɵɵprojection(2);
           ɵɵelementEnd();
         }
         if (rf & 2) {
           ɵɵclassMapInterpolate2("progress-bar", ctx.type ? ctx.textType ? " bg-" + ctx.type : " text-bg-" + ctx.type : "", "", ctx.textType ? " text-" + ctx.textType : "", "");
-          ɵɵstyleProp("width", ctx.getPercentValue(), "%");
+          ɵɵstyleProp("width", !ctx.stacked ? ctx.getPercentValue() : null, "%");
           ɵɵclassProp("progress-bar-animated", ctx.animated)("progress-bar-striped", ctx.striped);
           ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.showValue);
+          ɵɵconditional(ctx.showValue ? 1 : -1);
         }
       },
-      dependencies: [NgIf, PercentPipe],
+      dependencies: [PercentPipe],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -13869,7 +12987,7 @@ var NgbProgressbar = class _NgbProgressbar {
     args: [{
       selector: "ngb-progressbar",
       standalone: true,
-      imports: [NgIf, PercentPipe],
+      imports: [PercentPipe],
       changeDetection: ChangeDetectionStrategy.OnPush,
       encapsulation: ViewEncapsulation$1.None,
       host: {
@@ -13878,7 +12996,9 @@ var NgbProgressbar = class _NgbProgressbar {
         "[attr.aria-valuenow]": "getValue()",
         "aria-valuemin": "0",
         "[attr.aria-valuemax]": "max",
-        "[attr.aria-label]": "ariaLabel"
+        "[attr.aria-label]": "ariaLabel",
+        "[style.width.%]": "stacked ? getPercentValue() : null",
+        "[style.height]": "height"
       },
       template: `
 		<div
@@ -13887,18 +13007,16 @@ var NgbProgressbar = class _NgbProgressbar {
 			}}"
 			[class.progress-bar-animated]="animated"
 			[class.progress-bar-striped]="striped"
-			[style.width.%]="getPercentValue()"
+			[style.width.%]="!stacked ? getPercentValue() : null"
 		>
-			<span *ngIf="showValue" i18n="@@ngb.progressbar.value">{{ getValue() / max | percent }}</span
-			><ng-content></ng-content>
+			@if (showValue) {
+				<span i18n="@@ngb.progressbar.value">{{ getValue() / max | percent }}</span>
+			}
+			<ng-content />
 		</div>
 	`
     }]
-  }], function() {
-    return [{
-      type: NgbProgressbarConfig
-    }];
-  }, {
+  }], () => [], {
     max: [{
       type: Input
     }],
@@ -13928,11 +13046,50 @@ var NgbProgressbar = class _NgbProgressbar {
     }],
     height: [{
       type: Input
-    }, {
-      type: HostBinding,
-      args: ["style.height"]
     }]
   });
+})();
+var NgbProgressbarStacked = class _NgbProgressbarStacked {
+  static {
+    this.ɵfac = function NgbProgressbarStacked_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbProgressbarStacked)();
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _NgbProgressbarStacked,
+      selectors: [["ngb-progressbar-stacked"]],
+      hostAttrs: [1, "progress-stacked"],
+      standalone: true,
+      features: [ɵɵStandaloneFeature],
+      ngContentSelectors: _c0,
+      decls: 1,
+      vars: 0,
+      template: function NgbProgressbarStacked_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵprojectionDef();
+          ɵɵprojection(0);
+        }
+      },
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbProgressbarStacked, [{
+    type: Component,
+    args: [{
+      selector: "ngb-progressbar-stacked",
+      standalone: true,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation$1.None,
+      host: {
+        class: "progress-stacked"
+      },
+      template: `<ng-content></ng-content>`
+    }]
+  }], null, null);
 })();
 var NgbProgressbarModule = class _NgbProgressbarModule {
   static {
@@ -13943,8 +13100,8 @@ var NgbProgressbarModule = class _NgbProgressbarModule {
   static {
     this.ɵmod = ɵɵdefineNgModule({
       type: _NgbProgressbarModule,
-      imports: [NgbProgressbar],
-      exports: [NgbProgressbar]
+      imports: [NgbProgressbar, NgbProgressbarStacked],
+      exports: [NgbProgressbar, NgbProgressbarStacked]
     });
   }
   static {
@@ -13955,8 +13112,8 @@ var NgbProgressbarModule = class _NgbProgressbarModule {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbProgressbarModule, [{
     type: NgModule,
     args: [{
-      imports: [NgbProgressbar],
-      exports: [NgbProgressbar]
+      imports: [NgbProgressbar, NgbProgressbarStacked],
+      exports: [NgbProgressbar, NgbProgressbarStacked]
     }]
   }], null, null);
 })();
@@ -13989,18 +13146,15 @@ var NgbRatingConfig = class _NgbRatingConfig {
   }], null, null);
 })();
 var NgbRating = class _NgbRating {
-  /**
-   * Allows to provide a function to set a custom aria-valuetext
-   *
-   * @since 14.1.0
-   */
-  ariaValueText(current, max2) {
-    return `${current} out of ${max2}`;
-  }
-  constructor(config, _changeDetectorRef) {
-    this._changeDetectorRef = _changeDetectorRef;
+  constructor() {
     this.contexts = [];
+    this._config = inject(NgbRatingConfig);
+    this._changeDetectorRef = inject(ChangeDetectorRef);
     this.disabled = false;
+    this.max = this._config.max;
+    this.readonly = this._config.readonly;
+    this.resettable = this._config.resettable;
+    this.tabindex = this._config.tabindex;
     this.hover = new EventEmitter();
     this.leave = new EventEmitter();
     this.rateChange = new EventEmitter(true);
@@ -14008,9 +13162,14 @@ var NgbRating = class _NgbRating {
     };
     this.onTouched = () => {
     };
-    this.max = config.max;
-    this.readonly = config.readonly;
-    this.tabindex = config.tabindex;
+  }
+  /**
+   * Allows to provide a function to set a custom aria-valuetext
+   *
+   * @since 14.1.0
+   */
+  ariaValueText(current, max2) {
+    return `${current} out of ${max2}`;
   }
   isInteractive() {
     return !this.readonly && !this.disabled;
@@ -14030,19 +13189,19 @@ var NgbRating = class _NgbRating {
     }
   }
   handleKeyDown(event) {
-    switch (event.which) {
-      case Key.ArrowDown:
-      case Key.ArrowLeft:
+    switch (event.key) {
+      case "ArrowDown":
+      case "ArrowLeft":
         this.update(this.rate - 1);
         break;
-      case Key.ArrowUp:
-      case Key.ArrowRight:
+      case "ArrowUp":
+      case "ArrowRight":
         this.update(this.rate + 1);
         break;
-      case Key.Home:
+      case "Home":
         this.update(0);
         break;
-      case Key.End:
+      case "End":
         this.update(this.max);
         break;
       default:
@@ -14111,7 +13270,7 @@ var NgbRating = class _NgbRating {
   }
   static {
     this.ɵfac = function NgbRating_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbRating)(ɵɵdirectiveInject(NgbRatingConfig), ɵɵdirectiveInject(ChangeDetectorRef));
+      return new (__ngFactoryType__ || _NgbRating)();
     };
   }
   static {
@@ -14165,19 +13324,20 @@ var NgbRating = class _NgbRating {
         useExisting: forwardRef(() => _NgbRating),
         multi: true
       }]), ɵɵNgOnChangesFeature, ɵɵStandaloneFeature],
-      decls: 3,
-      vars: 1,
-      consts: [["t", ""], ["ngFor", "", 3, "ngForOf"], [1, "visually-hidden"], [3, "mouseenter", "click"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
+      decls: 4,
+      vars: 0,
+      consts: [["t", ""], [1, "visually-hidden"], [3, "mouseenter", "click"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
       template: function NgbRating_Template(rf, ctx) {
         if (rf & 1) {
-          ɵɵtemplate(0, NgbRating_ng_template_0_Template, 1, 1, "ng-template", null, 0, ɵɵtemplateRefExtractor)(2, NgbRating_ng_template_2_Template, 4, 5, "ng-template", 1);
+          ɵɵtemplate(0, NgbRating_ng_template_0_Template, 1, 1, "ng-template", null, 0, ɵɵtemplateRefExtractor);
+          ɵɵrepeaterCreate(2, NgbRating_For_3_Template, 4, 5, null, null, ɵɵrepeaterTrackByIdentity);
         }
         if (rf & 2) {
           ɵɵadvance(2);
-          ɵɵproperty("ngForOf", ctx.contexts);
+          ɵɵrepeater(ctx.contexts);
         }
       },
-      dependencies: [NgForOf, NgTemplateOutlet],
+      dependencies: [NgTemplateOutlet],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -14189,7 +13349,7 @@ var NgbRating = class _NgbRating {
     args: [{
       selector: "ngb-rating",
       standalone: true,
-      imports: [NgForOf, NgTemplateOutlet],
+      imports: [NgTemplateOutlet],
       changeDetection: ChangeDetectionStrategy.OnPush,
       encapsulation: ViewEncapsulation$1.None,
       host: {
@@ -14208,7 +13368,7 @@ var NgbRating = class _NgbRating {
       },
       template: `
 		<ng-template #t let-fill="fill">{{ fill === 100 ? '&#9733;' : '&#9734;' }}</ng-template>
-		<ng-template ngFor [ngForOf]="contexts" let-index="index">
+		@for (_ of contexts; track _; let index = $index) {
 			<span class="visually-hidden">({{ index < nextRate ? '*' : ' ' }})</span>
 			<span
 				(mouseenter)="enter(index + 1)"
@@ -14218,10 +13378,9 @@ var NgbRating = class _NgbRating {
 				<ng-template
 					[ngTemplateOutlet]="starTemplate || starTemplateFromContent || t"
 					[ngTemplateOutletContext]="contexts[index]"
-				>
-				</ng-template>
+				/>
 			</span>
-		</ng-template>
+		}
 	`,
       providers: [{
         provide: NG_VALUE_ACCESSOR,
@@ -14229,13 +13388,7 @@ var NgbRating = class _NgbRating {
         multi: true
       }]
     }]
-  }], function() {
-    return [{
-      type: NgbRatingConfig
-    }, {
-      type: ChangeDetectorRef
-    }];
-  }, {
+  }], null, {
     disabled: [{
       type: Input
     }],
@@ -14592,9 +13745,7 @@ var NgbScrollSpyService = class _NgbScrollSpyService {
     args: [{
       providedIn: "root"
     }]
-  }], function() {
-    return [];
-  }, null);
+  }], () => [], null);
 })();
 var NgbScrollSpyItem = class _NgbScrollSpyItem {
   constructor() {
@@ -15143,9 +14294,6 @@ var NgbTimeStructAdapter = class _NgbTimeStructAdapter extends NgbTimeAdapter {
     type: Injectable
   }], null, null);
 })();
-function NGB_TIMEPICKER_I18N_FACTORY(locale) {
-  return new NgbTimepickerI18nDefault(locale);
-}
 var NgbTimepickerI18n = class _NgbTimepickerI18n {
   static {
     this.ɵfac = function NgbTimepickerI18n_Factory(__ngFactoryType__) {
@@ -15155,15 +14303,7 @@ var NgbTimepickerI18n = class _NgbTimepickerI18n {
   static {
     this.ɵprov = ɵɵdefineInjectable({
       token: _NgbTimepickerI18n,
-      factory: function NgbTimepickerI18n_Factory(__ngFactoryType__) {
-        let __ngConditionalFactory__ = null;
-        if (__ngFactoryType__) {
-          __ngConditionalFactory__ = new __ngFactoryType__();
-        } else {
-          __ngConditionalFactory__ = NGB_TIMEPICKER_I18N_FACTORY(ɵɵinject(LOCALE_ID));
-        }
-        return __ngConditionalFactory__;
-      },
+      factory: () => (() => new NgbTimepickerI18nDefault())(),
       providedIn: "root"
     });
   }
@@ -15173,15 +14313,15 @@ var NgbTimepickerI18n = class _NgbTimepickerI18n {
     type: Injectable,
     args: [{
       providedIn: "root",
-      useFactory: NGB_TIMEPICKER_I18N_FACTORY,
-      deps: [LOCALE_ID]
+      useFactory: () => new NgbTimepickerI18nDefault()
     }]
   }], null, null);
 })();
 var NgbTimepickerI18nDefault = class _NgbTimepickerI18nDefault extends NgbTimepickerI18n {
-  constructor(locale) {
-    super();
-    this._periods = getLocaleDayPeriods(locale, FormStyle.Standalone, TranslationWidth.Narrow);
+  constructor() {
+    super(...arguments);
+    this._locale = inject(LOCALE_ID);
+    this._periods = [formatDate(/* @__PURE__ */ new Date(36e5), "a", this._locale, "UTC"), formatDate(new Date(36e5 * 13), "a", this._locale, "UTC")];
   }
   getMorningPeriod() {
     return this._periods[0];
@@ -15190,9 +14330,12 @@ var NgbTimepickerI18nDefault = class _NgbTimepickerI18nDefault extends NgbTimepi
     return this._periods[1];
   }
   static {
-    this.ɵfac = function NgbTimepickerI18nDefault_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbTimepickerI18nDefault)(ɵɵinject(LOCALE_ID));
-    };
+    this.ɵfac = /* @__PURE__ */ (() => {
+      let ɵNgbTimepickerI18nDefault_BaseFactory;
+      return function NgbTimepickerI18nDefault_Factory(__ngFactoryType__) {
+        return (ɵNgbTimepickerI18nDefault_BaseFactory || (ɵNgbTimepickerI18nDefault_BaseFactory = ɵɵgetInheritedFactory(_NgbTimepickerI18nDefault)))(__ngFactoryType__ || _NgbTimepickerI18nDefault);
+      };
+    })();
   }
   static {
     this.ɵprov = ɵɵdefineInjectable({
@@ -15204,15 +14347,7 @@ var NgbTimepickerI18nDefault = class _NgbTimepickerI18nDefault extends NgbTimepi
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbTimepickerI18nDefault, [{
     type: Injectable
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [LOCALE_ID]
-      }]
-    }];
-  }, null);
+  }], null, null);
 })();
 var FILTER_REGEX = /[^0-9]/g;
 var NgbTimepicker = class _NgbTimepicker {
@@ -15404,8 +14539,8 @@ var NgbTimepicker = class _NgbTimepicker {
         useExisting: forwardRef(() => _NgbTimepicker),
         multi: true
       }]), ɵɵNgOnChangesFeature, ɵɵStandaloneFeature],
-      decls: 16,
-      vars: 25,
+      decls: 14,
+      vars: 23,
       consts: () => {
         let i18n_21;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
@@ -15497,33 +14632,20 @@ var NgbTimepicker = class _NgbTimepicker {
             "interpolation": "�0�"
           }, {
             original_code: {
-              "interpolation": "{{\n							i18n.getAfternoonPeriod()\n						}}"
+              "interpolation": "{{ i18n.getAfternoonPeriod() }}"
             }
           });
           i18n_33 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33;
         } else {
           i18n_33 = $localize`:@@ngb.timepicker.PM:${"�0�"}:INTERPOLATION:`;
         }
-        let i18n_34;
-        if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34 = goog.getMsg("{$interpolation}", {
-            "interpolation": "�0�"
-          }, {
-            original_code: {
-              "interpolation": "{{ i18n.getMorningPeriod() }}"
-            }
-          });
-          i18n_34 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34;
-        } else {
-          i18n_34 = $localize`:@@ngb.timepicker.AM:${"�0�"}:INTERPOLATION:`;
-        }
-        return [["am", ""], i18n_25, i18n_26, i18n_27, i18n_28, i18n_31, i18n_32, i18n_33, i18n_34, [3, "disabled"], [1, "ngb-tp"], [1, "ngb-tp-input-container", "ngb-tp-hour"], ["tabindex", "-1", "type", "button", "class", "btn btn-link", 3, "btn-sm", "btn-lg", "disabled", "click", 4, "ngIf"], ["type", "text", "maxlength", "2", "inputmode", "numeric", "placeholder", i18n_21, "aria-label", i18n_22, 1, "ngb-tp-input", "form-control", 3, "change", "blur", "input", "keydown.ArrowUp", "keydown.ArrowDown", "value", "readOnly", "disabled"], [1, "ngb-tp-spacer"], [1, "ngb-tp-input-container", "ngb-tp-minute"], ["type", "text", "maxlength", "2", "inputmode", "numeric", "placeholder", i18n_23, "aria-label", i18n_24, 1, "ngb-tp-input", "form-control", 3, "change", "blur", "input", "keydown.ArrowUp", "keydown.ArrowDown", "value", "readOnly", "disabled"], ["class", "ngb-tp-spacer", 4, "ngIf"], ["class", "ngb-tp-input-container ngb-tp-second", 4, "ngIf"], ["class", "ngb-tp-meridian", 4, "ngIf"], ["tabindex", "-1", "type", "button", 1, "btn", "btn-link", 3, "click", "disabled"], [1, "chevron", "ngb-tp-chevron"], [1, "visually-hidden"], [1, "chevron", "ngb-tp-chevron", "bottom"], [1, "ngb-tp-input-container", "ngb-tp-second"], ["type", "text", "maxlength", "2", "inputmode", "numeric", "placeholder", i18n_29, "aria-label", i18n_30, 1, "ngb-tp-input", "form-control", 3, "change", "blur", "input", "keydown.ArrowUp", "keydown.ArrowDown", "value", "readOnly", "disabled"], [1, "ngb-tp-meridian"], ["type", "button", 1, "btn", "btn-outline-primary", 3, "click", "disabled"], [4, "ngIf", "ngIfElse"]];
+        return [i18n_25, i18n_26, i18n_27, i18n_28, i18n_31, i18n_32, i18n_33, [3, "disabled"], [1, "ngb-tp"], [1, "ngb-tp-input-container", "ngb-tp-hour"], ["tabindex", "-1", "type", "button", 1, "btn", "btn-link", 3, "btn-sm", "btn-lg", "disabled"], ["type", "text", "maxlength", "2", "inputmode", "numeric", "placeholder", i18n_21, "aria-label", i18n_22, 1, "ngb-tp-input", "form-control", 3, "change", "blur", "input", "keydown.ArrowUp", "keydown.ArrowDown", "value", "readOnly", "disabled"], [1, "ngb-tp-spacer"], [1, "ngb-tp-input-container", "ngb-tp-minute"], ["type", "text", "maxlength", "2", "inputmode", "numeric", "placeholder", i18n_23, "aria-label", i18n_24, 1, "ngb-tp-input", "form-control", 3, "change", "blur", "input", "keydown.ArrowUp", "keydown.ArrowDown", "value", "readOnly", "disabled"], ["tabindex", "-1", "type", "button", 1, "btn", "btn-link", 3, "click", "disabled"], [1, "chevron", "ngb-tp-chevron"], [1, "visually-hidden"], [1, "chevron", "ngb-tp-chevron", "bottom"], [1, "ngb-tp-input-container", "ngb-tp-second"], ["type", "text", "maxlength", "2", "inputmode", "numeric", "placeholder", i18n_29, "aria-label", i18n_30, 1, "ngb-tp-input", "form-control", 3, "change", "blur", "input", "keydown.ArrowUp", "keydown.ArrowDown", "value", "readOnly", "disabled"], [1, "ngb-tp-meridian"], ["type", "button", 1, "btn", "btn-outline-primary", 3, "click", "disabled"]];
       },
       template: function NgbTimepicker_Template(rf, ctx) {
         if (rf & 1) {
-          ɵɵelementStart(0, "fieldset", 9)(1, "div", 10)(2, "div", 11);
-          ɵɵtemplate(3, NgbTimepicker_button_3_Template, 4, 7, "button", 12);
-          ɵɵelementStart(4, "input", 13);
+          ɵɵelementStart(0, "fieldset", 7)(1, "div", 8)(2, "div", 9);
+          ɵɵtemplate(3, NgbTimepicker_Conditional_3_Template, 4, 7, "button", 10);
+          ɵɵelementStart(4, "input", 11);
           ɵɵlistener("change", function NgbTimepicker_Template_input_change_4_listener($event) {
             return ctx.updateHour($event.target.value);
           })("blur", function NgbTimepicker_Template_input_blur_4_listener() {
@@ -15538,14 +14660,14 @@ var NgbTimepicker = class _NgbTimepicker {
             return $event.preventDefault();
           });
           ɵɵelementEnd();
-          ɵɵtemplate(5, NgbTimepicker_button_5_Template, 4, 7, "button", 12);
+          ɵɵtemplate(5, NgbTimepicker_Conditional_5_Template, 4, 7, "button", 10);
           ɵɵelementEnd();
-          ɵɵelementStart(6, "div", 14);
+          ɵɵelementStart(6, "div", 12);
           ɵɵtext(7, ":");
           ɵɵelementEnd();
-          ɵɵelementStart(8, "div", 15);
-          ɵɵtemplate(9, NgbTimepicker_button_9_Template, 4, 7, "button", 12);
-          ɵɵelementStart(10, "input", 16);
+          ɵɵelementStart(8, "div", 13);
+          ɵɵtemplate(9, NgbTimepicker_Conditional_9_Template, 4, 7, "button", 10);
+          ɵɵelementStart(10, "input", 14);
           ɵɵlistener("change", function NgbTimepicker_Template_input_change_10_listener($event) {
             return ctx.updateMinute($event.target.value);
           })("blur", function NgbTimepicker_Template_input_blur_10_listener() {
@@ -15560,39 +14682,34 @@ var NgbTimepicker = class _NgbTimepicker {
             return $event.preventDefault();
           });
           ɵɵelementEnd();
-          ɵɵtemplate(11, NgbTimepicker_button_11_Template, 4, 7, "button", 12);
+          ɵɵtemplate(11, NgbTimepicker_Conditional_11_Template, 4, 7, "button", 10);
           ɵɵelementEnd();
-          ɵɵtemplate(12, NgbTimepicker_div_12_Template, 2, 0, "div", 17)(13, NgbTimepicker_div_13_Template, 4, 9, "div", 18)(14, NgbTimepicker_div_14_Template, 1, 0, "div", 17)(15, NgbTimepicker_div_15_Template, 5, 9, "div", 19);
+          ɵɵtemplate(12, NgbTimepicker_Conditional_12_Template, 6, 9)(13, NgbTimepicker_Conditional_13_Template, 5, 8);
           ɵɵelementEnd()();
         }
         if (rf & 2) {
           ɵɵclassProp("disabled", ctx.disabled);
           ɵɵproperty("disabled", ctx.disabled);
           ɵɵadvance(3);
-          ɵɵproperty("ngIf", ctx.spinners);
+          ɵɵconditional(ctx.spinners ? 3 : -1);
           ɵɵadvance();
           ɵɵclassProp("form-control-sm", ctx.isSmallSize)("form-control-lg", ctx.isLargeSize);
           ɵɵproperty("value", ctx.formatHour(ctx.model == null ? null : ctx.model.hour))("readOnly", ctx.readonlyInputs)("disabled", ctx.disabled);
           ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.spinners);
+          ɵɵconditional(ctx.spinners ? 5 : -1);
           ɵɵadvance(4);
-          ɵɵproperty("ngIf", ctx.spinners);
+          ɵɵconditional(ctx.spinners ? 9 : -1);
           ɵɵadvance();
           ɵɵclassProp("form-control-sm", ctx.isSmallSize)("form-control-lg", ctx.isLargeSize);
           ɵɵproperty("value", ctx.formatMinSec(ctx.model == null ? null : ctx.model.minute))("readOnly", ctx.readonlyInputs)("disabled", ctx.disabled);
           ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.spinners);
+          ɵɵconditional(ctx.spinners ? 11 : -1);
           ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.seconds);
+          ɵɵconditional(ctx.seconds ? 12 : -1);
           ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.seconds);
-          ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.meridian);
-          ɵɵadvance();
-          ɵɵproperty("ngIf", ctx.meridian);
+          ɵɵconditional(ctx.meridian ? 13 : -1);
         }
       },
-      dependencies: [NgIf],
       styles: ['ngb-timepicker{font-size:1rem}.ngb-tp{display:flex;align-items:center}.ngb-tp-input-container{width:4em}.ngb-tp-chevron:before{border-style:solid;border-width:.29em .29em 0 0;content:"";display:inline-block;height:.69em;left:.05em;position:relative;top:.15em;transform:rotate(-45deg);vertical-align:middle;width:.69em}.ngb-tp-chevron.bottom:before{top:-.3em;transform:rotate(135deg)}.ngb-tp-input{text-align:center}.ngb-tp-hour,.ngb-tp-minute,.ngb-tp-second,.ngb-tp-meridian{display:flex;flex-direction:column;align-items:center;justify-content:space-around}.ngb-tp-spacer{width:1em;text-align:center}\n'],
       encapsulation: 2
     });
@@ -15605,26 +14722,26 @@ var NgbTimepicker = class _NgbTimepicker {
       exportAs: "ngbTimepicker",
       selector: "ngb-timepicker",
       standalone: true,
-      imports: [NgIf],
       encapsulation: ViewEncapsulation$1.None,
       template: `
 		<fieldset [disabled]="disabled" [class.disabled]="disabled">
 			<div class="ngb-tp">
 				<div class="ngb-tp-input-container ngb-tp-hour">
-					<button
-						*ngIf="spinners"
-						tabindex="-1"
-						type="button"
-						(click)="changeHour(hourStep)"
-						class="btn btn-link"
-						[class.btn-sm]="isSmallSize"
-						[class.btn-lg]="isLargeSize"
-						[class.disabled]="disabled"
-						[disabled]="disabled"
-					>
-						<span class="chevron ngb-tp-chevron"></span>
-						<span class="visually-hidden" i18n="@@ngb.timepicker.increment-hours">Increment hours</span>
-					</button>
+					@if (spinners) {
+						<button
+							tabindex="-1"
+							type="button"
+							(click)="changeHour(hourStep)"
+							class="btn btn-link"
+							[class.btn-sm]="isSmallSize"
+							[class.btn-lg]="isLargeSize"
+							[class.disabled]="disabled"
+							[disabled]="disabled"
+						>
+							<span class="chevron ngb-tp-chevron"></span>
+							<span class="visually-hidden" i18n="@@ngb.timepicker.increment-hours">Increment hours</span>
+						</button>
+					}
 					<input
 						type="text"
 						class="ngb-tp-input form-control"
@@ -15645,37 +14762,39 @@ var NgbTimepicker = class _NgbTimepicker {
 						(keydown.ArrowUp)="changeHour(hourStep); $event.preventDefault()"
 						(keydown.ArrowDown)="changeHour(-hourStep); $event.preventDefault()"
 					/>
-					<button
-						*ngIf="spinners"
-						tabindex="-1"
-						type="button"
-						(click)="changeHour(-hourStep)"
-						class="btn btn-link"
-						[class.btn-sm]="isSmallSize"
-						[class.btn-lg]="isLargeSize"
-						[class.disabled]="disabled"
-						[disabled]="disabled"
-					>
-						<span class="chevron ngb-tp-chevron bottom"></span>
-						<span class="visually-hidden" i18n="@@ngb.timepicker.decrement-hours">Decrement hours</span>
-					</button>
+					@if (spinners) {
+						<button
+							tabindex="-1"
+							type="button"
+							(click)="changeHour(-hourStep)"
+							class="btn btn-link"
+							[class.btn-sm]="isSmallSize"
+							[class.btn-lg]="isLargeSize"
+							[class.disabled]="disabled"
+							[disabled]="disabled"
+						>
+							<span class="chevron ngb-tp-chevron bottom"></span>
+							<span class="visually-hidden" i18n="@@ngb.timepicker.decrement-hours">Decrement hours</span>
+						</button>
+					}
 				</div>
 				<div class="ngb-tp-spacer">:</div>
 				<div class="ngb-tp-input-container ngb-tp-minute">
-					<button
-						*ngIf="spinners"
-						tabindex="-1"
-						type="button"
-						(click)="changeMinute(minuteStep)"
-						class="btn btn-link"
-						[class.btn-sm]="isSmallSize"
-						[class.btn-lg]="isLargeSize"
-						[class.disabled]="disabled"
-						[disabled]="disabled"
-					>
-						<span class="chevron ngb-tp-chevron"></span>
-						<span class="visually-hidden" i18n="@@ngb.timepicker.increment-minutes">Increment minutes</span>
-					</button>
+					@if (spinners) {
+						<button
+							tabindex="-1"
+							type="button"
+							(click)="changeMinute(minuteStep)"
+							class="btn btn-link"
+							[class.btn-sm]="isSmallSize"
+							[class.btn-lg]="isLargeSize"
+							[class.disabled]="disabled"
+							[disabled]="disabled"
+						>
+							<span class="chevron ngb-tp-chevron"></span>
+							<span class="visually-hidden" i18n="@@ngb.timepicker.increment-minutes">Increment minutes</span>
+						</button>
+					}
 					<input
 						type="text"
 						class="ngb-tp-input form-control"
@@ -15696,89 +14815,97 @@ var NgbTimepicker = class _NgbTimepicker {
 						(keydown.ArrowUp)="changeMinute(minuteStep); $event.preventDefault()"
 						(keydown.ArrowDown)="changeMinute(-minuteStep); $event.preventDefault()"
 					/>
-					<button
-						*ngIf="spinners"
-						tabindex="-1"
-						type="button"
-						(click)="changeMinute(-minuteStep)"
-						class="btn btn-link"
-						[class.btn-sm]="isSmallSize"
-						[class.btn-lg]="isLargeSize"
-						[class.disabled]="disabled"
-						[disabled]="disabled"
-					>
-						<span class="chevron ngb-tp-chevron bottom"></span>
-						<span class="visually-hidden" i18n="@@ngb.timepicker.decrement-minutes">Decrement minutes</span>
-					</button>
+					@if (spinners) {
+						<button
+							tabindex="-1"
+							type="button"
+							(click)="changeMinute(-minuteStep)"
+							class="btn btn-link"
+							[class.btn-sm]="isSmallSize"
+							[class.btn-lg]="isLargeSize"
+							[class.disabled]="disabled"
+							[disabled]="disabled"
+						>
+							<span class="chevron ngb-tp-chevron bottom"></span>
+							<span class="visually-hidden" i18n="@@ngb.timepicker.decrement-minutes">Decrement minutes</span>
+						</button>
+					}
 				</div>
-				<div *ngIf="seconds" class="ngb-tp-spacer">:</div>
-				<div *ngIf="seconds" class="ngb-tp-input-container ngb-tp-second">
-					<button
-						*ngIf="spinners"
-						tabindex="-1"
-						type="button"
-						(click)="changeSecond(secondStep)"
-						class="btn btn-link"
-						[class.btn-sm]="isSmallSize"
-						[class.btn-lg]="isLargeSize"
-						[class.disabled]="disabled"
-						[disabled]="disabled"
-					>
-						<span class="chevron ngb-tp-chevron"></span>
-						<span class="visually-hidden" i18n="@@ngb.timepicker.increment-seconds">Increment seconds</span>
-					</button>
-					<input
-						type="text"
-						class="ngb-tp-input form-control"
-						[class.form-control-sm]="isSmallSize"
-						[class.form-control-lg]="isLargeSize"
-						maxlength="2"
-						inputmode="numeric"
-						placeholder="SS"
-						i18n-placeholder="@@ngb.timepicker.SS"
-						[value]="formatMinSec(model?.second)"
-						(change)="updateSecond($any($event).target.value)"
-						[readOnly]="readonlyInputs"
-						[disabled]="disabled"
-						aria-label="Seconds"
-						i18n-aria-label="@@ngb.timepicker.seconds"
-						(blur)="handleBlur()"
-						(input)="formatInput($any($event).target)"
-						(keydown.ArrowUp)="changeSecond(secondStep); $event.preventDefault()"
-						(keydown.ArrowDown)="changeSecond(-secondStep); $event.preventDefault()"
-					/>
-					<button
-						*ngIf="spinners"
-						tabindex="-1"
-						type="button"
-						(click)="changeSecond(-secondStep)"
-						class="btn btn-link"
-						[class.btn-sm]="isSmallSize"
-						[class.btn-lg]="isLargeSize"
-						[class.disabled]="disabled"
-						[disabled]="disabled"
-					>
-						<span class="chevron ngb-tp-chevron bottom"></span>
-						<span class="visually-hidden" i18n="@@ngb.timepicker.decrement-seconds">Decrement seconds</span>
-					</button>
-				</div>
-				<div *ngIf="meridian" class="ngb-tp-spacer"></div>
-				<div *ngIf="meridian" class="ngb-tp-meridian">
-					<button
-						type="button"
-						class="btn btn-outline-primary"
-						[class.btn-sm]="isSmallSize"
-						[class.btn-lg]="isLargeSize"
-						[disabled]="disabled"
-						[class.disabled]="disabled"
-						(click)="toggleMeridian()"
-					>
-						<ng-container *ngIf="model && model.hour >= 12; else am" i18n="@@ngb.timepicker.PM">{{
-							i18n.getAfternoonPeriod()
-						}}</ng-container>
-						<ng-template #am i18n="@@ngb.timepicker.AM">{{ i18n.getMorningPeriod() }}</ng-template>
-					</button>
-				</div>
+				@if (seconds) {
+					<div class="ngb-tp-spacer">:</div>
+					<div class="ngb-tp-input-container ngb-tp-second">
+						@if (spinners) {
+							<button
+								tabindex="-1"
+								type="button"
+								(click)="changeSecond(secondStep)"
+								class="btn btn-link"
+								[class.btn-sm]="isSmallSize"
+								[class.btn-lg]="isLargeSize"
+								[class.disabled]="disabled"
+								[disabled]="disabled"
+							>
+								<span class="chevron ngb-tp-chevron"></span>
+								<span class="visually-hidden" i18n="@@ngb.timepicker.increment-seconds">Increment seconds</span>
+							</button>
+						}
+						<input
+							type="text"
+							class="ngb-tp-input form-control"
+							[class.form-control-sm]="isSmallSize"
+							[class.form-control-lg]="isLargeSize"
+							maxlength="2"
+							inputmode="numeric"
+							placeholder="SS"
+							i18n-placeholder="@@ngb.timepicker.SS"
+							[value]="formatMinSec(model?.second)"
+							(change)="updateSecond($any($event).target.value)"
+							[readOnly]="readonlyInputs"
+							[disabled]="disabled"
+							aria-label="Seconds"
+							i18n-aria-label="@@ngb.timepicker.seconds"
+							(blur)="handleBlur()"
+							(input)="formatInput($any($event).target)"
+							(keydown.ArrowUp)="changeSecond(secondStep); $event.preventDefault()"
+							(keydown.ArrowDown)="changeSecond(-secondStep); $event.preventDefault()"
+						/>
+						@if (spinners) {
+							<button
+								tabindex="-1"
+								type="button"
+								(click)="changeSecond(-secondStep)"
+								class="btn btn-link"
+								[class.btn-sm]="isSmallSize"
+								[class.btn-lg]="isLargeSize"
+								[class.disabled]="disabled"
+								[disabled]="disabled"
+							>
+								<span class="chevron ngb-tp-chevron bottom"></span>
+								<span class="visually-hidden" i18n="@@ngb.timepicker.decrement-seconds">Decrement seconds</span>
+							</button>
+						}
+					</div>
+				}
+				@if (meridian) {
+					<div class="ngb-tp-spacer"></div>
+					<div class="ngb-tp-meridian">
+						<button
+							type="button"
+							class="btn btn-outline-primary"
+							[class.btn-sm]="isSmallSize"
+							[class.btn-lg]="isLargeSize"
+							[disabled]="disabled"
+							[class.disabled]="disabled"
+							(click)="toggleMeridian()"
+						>
+							@if (model && model.hour >= 12) {
+								<ng-container i18n="@@ngb.timepicker.PM">{{ i18n.getAfternoonPeriod() }}</ng-container>
+							} @else {
+								<ng-container>{{ i18n.getMorningPeriod() }}</ng-container>
+							}
+						</button>
+					</div>
+				}
 			</div>
 		</fieldset>
 	`,
@@ -15789,17 +14916,15 @@ var NgbTimepicker = class _NgbTimepicker {
       }],
       styles: ['ngb-timepicker{font-size:1rem}.ngb-tp{display:flex;align-items:center}.ngb-tp-input-container{width:4em}.ngb-tp-chevron:before{border-style:solid;border-width:.29em .29em 0 0;content:"";display:inline-block;height:.69em;left:.05em;position:relative;top:.15em;transform:rotate(-45deg);vertical-align:middle;width:.69em}.ngb-tp-chevron.bottom:before{top:-.3em;transform:rotate(135deg)}.ngb-tp-input{text-align:center}.ngb-tp-hour,.ngb-tp-minute,.ngb-tp-second,.ngb-tp-meridian{display:flex;flex-direction:column;align-items:center;justify-content:space-around}.ngb-tp-spacer{width:1em;text-align:center}\n']
     }]
-  }], function() {
-    return [{
-      type: NgbTimepickerConfig
-    }, {
-      type: NgbTimeAdapter
-    }, {
-      type: ChangeDetectorRef
-    }, {
-      type: NgbTimepickerI18n
-    }];
+  }], () => [{
+    type: NgbTimepickerConfig
   }, {
+    type: NgbTimeAdapter
+  }, {
+    type: ChangeDetectorRef
+  }, {
+    type: NgbTimepickerI18n
+  }], {
     meridian: [{
       type: Input
     }],
@@ -15852,6 +14977,40 @@ var NgbTimepickerModule = class _NgbTimepickerModule {
     }]
   }], null, null);
 })();
+var NgbToastConfig = class _NgbToastConfig {
+  constructor() {
+    this._ngbConfig = inject(NgbConfig);
+    this.autohide = true;
+    this.delay = 5e3;
+    this.ariaLive = "polite";
+  }
+  get animation() {
+    return this._animation ?? this._ngbConfig.animation;
+  }
+  set animation(animation) {
+    this._animation = animation;
+  }
+  static {
+    this.ɵfac = function NgbToastConfig_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbToastConfig)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbToastConfig,
+      factory: _NgbToastConfig.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbToastConfig, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
 var ngbToastFadeInTransition = (element, animation) => {
   const {
     classList
@@ -15876,44 +15035,6 @@ var ngbToastFadeOutTransition = ({
     classList.remove("show", "showing");
   };
 };
-var NgbToastConfig = class _NgbToastConfig {
-  constructor(_ngbConfig) {
-    this._ngbConfig = _ngbConfig;
-    this.autohide = true;
-    this.delay = 5e3;
-    this.ariaLive = "polite";
-  }
-  get animation() {
-    return this._animation === void 0 ? this._ngbConfig.animation : this._animation;
-  }
-  set animation(animation) {
-    this._animation = animation;
-  }
-  static {
-    this.ɵfac = function NgbToastConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbToastConfig)(ɵɵinject(NgbConfig));
-    };
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _NgbToastConfig,
-      factory: _NgbToastConfig.ɵfac,
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbToastConfig, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], function() {
-    return [{
-      type: NgbConfig
-    }];
-  }, null);
-})();
 var NgbToastHeader = class _NgbToastHeader {
   static {
     this.ɵfac = function NgbToastHeader_Factory(__ngFactoryType__) {
@@ -15938,24 +15059,27 @@ var NgbToastHeader = class _NgbToastHeader {
   }], null, null);
 })();
 var NgbToast = class _NgbToast {
-  constructor(ariaLive, config, _zone, _element) {
+  constructor(ariaLive) {
     this.ariaLive = ariaLive;
-    this._zone = _zone;
-    this._element = _element;
+    this._config = inject(NgbToastConfig);
+    this._zone = inject(NgZone);
+    this._injector = inject(Injector);
+    this._element = inject(ElementRef);
+    this.animation = this._config.animation;
+    this.delay = this._config.delay;
+    this.autohide = this._config.autohide;
     this.contentHeaderTpl = null;
     this.shown = new EventEmitter();
     this.hidden = new EventEmitter();
-    if (this.ariaLive == null) {
-      this.ariaLive = config.ariaLive;
-    }
-    this.delay = config.delay;
-    this.autohide = config.autohide;
-    this.animation = config.animation;
+    this.ariaLive ??= this._config.ariaLive;
   }
   ngAfterContentInit() {
-    this._zone.onStable.asObservable().pipe((0, import_operators2.take)(1)).subscribe(() => {
+    afterNextRender(() => {
       this._init();
       this.show();
+    }, {
+      phase: AfterRenderPhase.MixedReadWrite,
+      injector: this._injector
     });
   }
   ngOnChanges(changes) {
@@ -16018,7 +15142,7 @@ var NgbToast = class _NgbToast {
   }
   static {
     this.ɵfac = function NgbToast_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbToast)(ɵɵinjectAttribute("aria-live"), ɵɵdirectiveInject(NgbToastConfig), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ElementRef));
+      return new (__ngFactoryType__ || _NgbToast)(ɵɵinjectAttribute("aria-live"));
     };
   }
   static {
@@ -16055,33 +15179,33 @@ var NgbToast = class _NgbToast {
       exportAs: ["ngbToast"],
       standalone: true,
       features: [ɵɵNgOnChangesFeature, ɵɵStandaloneFeature],
-      ngContentSelectors: _c1,
+      ngContentSelectors: _c0,
       decls: 5,
       vars: 1,
       consts: () => {
-        let i18n_35;
+        let i18n_34;
         if (typeof ngI18nClosureMode !== "undefined" && ngI18nClosureMode) {
-          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_35 = goog.getMsg("Close");
-          i18n_35 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_35;
+          const MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34 = goog.getMsg("Close");
+          i18n_34 = MSG_C__USERS_WINDOWS_DOCUMENTS_GITHUB_E_J_TOUR_E_J_TOUR_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34;
         } else {
-          i18n_35 = $localize`:@@ngb.toast.close-aria:Close`;
+          i18n_34 = $localize`:@@ngb.toast.close-aria:Close`;
         }
-        return [["headerTpl", ""], [3, "ngIf"], [1, "toast-body"], [1, "me-auto"], [1, "toast-header"], [3, "ngTemplateOutlet"], ["type", "button", "aria-label", i18n_35, 1, "btn-close", 3, "click"]];
+        return [["headerTpl", ""], [1, "toast-header"], [1, "toast-body"], [1, "me-auto"], [3, "ngTemplateOutlet"], ["type", "button", "aria-label", i18n_34, 1, "btn-close", 3, "click"]];
       },
       template: function NgbToast_Template(rf, ctx) {
         if (rf & 1) {
           ɵɵprojectionDef();
-          ɵɵtemplate(0, NgbToast_ng_template_0_Template, 2, 1, "ng-template", null, 0, ɵɵtemplateRefExtractor)(2, NgbToast_ng_template_2_Template, 3, 1, "ng-template", 1);
+          ɵɵtemplate(0, NgbToast_ng_template_0_Template, 2, 1, "ng-template", null, 0, ɵɵtemplateRefExtractor)(2, NgbToast_Conditional_2_Template, 3, 1, "div", 1);
           ɵɵelementStart(3, "div", 2);
           ɵɵprojection(4);
           ɵɵelementEnd();
         }
         if (rf & 2) {
           ɵɵadvance(2);
-          ɵɵproperty("ngIf", ctx.contentHeaderTpl || ctx.header);
+          ɵɵconditional(ctx.contentHeaderTpl || ctx.header ? 2 : -1);
         }
       },
-      dependencies: [NgIf, NgTemplateOutlet],
+      dependencies: [NgTemplateOutlet],
       styles: ["ngb-toast{display:block}ngb-toast .toast-header .close{margin-left:auto;margin-bottom:.25rem}\n"],
       encapsulation: 2
     });
@@ -16094,7 +15218,7 @@ var NgbToast = class _NgbToast {
       selector: "ngb-toast",
       exportAs: "ngbToast",
       standalone: true,
-      imports: [NgIf, NgTemplateOutlet],
+      imports: [NgTemplateOutlet],
       encapsulation: ViewEncapsulation$1.None,
       host: {
         role: "alert",
@@ -16107,9 +15231,9 @@ var NgbToast = class _NgbToast {
 		<ng-template #headerTpl>
 			<strong class="me-auto">{{ header }}</strong>
 		</ng-template>
-		<ng-template [ngIf]="contentHeaderTpl || header">
+		@if (contentHeaderTpl || header) {
 			<div class="toast-header">
-				<ng-template [ngTemplateOutlet]="contentHeaderTpl || headerTpl"></ng-template>
+				<ng-template [ngTemplateOutlet]="contentHeaderTpl || headerTpl" />
 				<button
 					type="button"
 					class="btn-close"
@@ -16119,28 +15243,20 @@ var NgbToast = class _NgbToast {
 				>
 				</button>
 			</div>
-		</ng-template>
+		}
 		<div class="toast-body">
-			<ng-content></ng-content>
+			<ng-content />
 		</div>
 	`,
       styles: ["ngb-toast{display:block}ngb-toast .toast-header .close{margin-left:auto;margin-bottom:.25rem}\n"]
     }]
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Attribute,
-        args: ["aria-live"]
-      }]
-    }, {
-      type: NgbToastConfig
-    }, {
-      type: NgZone
-    }, {
-      type: ElementRef
-    }];
-  }, {
+  }], () => [{
+    type: void 0,
+    decorators: [{
+      type: Attribute,
+      args: ["aria-live"]
+    }]
+  }], {
     animation: [{
       type: Input
     }],
@@ -16195,8 +15311,8 @@ var NgbToastModule = class _NgbToastModule {
   }], null, null);
 })();
 var NgbTooltipConfig = class _NgbTooltipConfig {
-  constructor(_ngbConfig) {
-    this._ngbConfig = _ngbConfig;
+  constructor() {
+    this._ngbConfig = inject(NgbConfig);
     this.autoClose = true;
     this.placement = "auto";
     this.popperOptions = (options) => options;
@@ -16206,14 +15322,14 @@ var NgbTooltipConfig = class _NgbTooltipConfig {
     this.closeDelay = 0;
   }
   get animation() {
-    return this._animation === void 0 ? this._ngbConfig.animation : this._animation;
+    return this._animation ?? this._ngbConfig.animation;
   }
   set animation(animation) {
     this._animation = animation;
   }
   static {
     this.ɵfac = function NgbTooltipConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbTooltipConfig)(ɵɵinject(NgbConfig));
+      return new (__ngFactoryType__ || _NgbTooltipConfig)();
     };
   }
   static {
@@ -16230,11 +15346,7 @@ var NgbTooltipConfig = class _NgbTooltipConfig {
     args: [{
       providedIn: "root"
     }]
-  }], function() {
-    return [{
-      type: NgbConfig
-    }];
-  }, null);
+  }], null, null);
 })();
 var nextId = 0;
 var NgbTooltipWindow = class _NgbTooltipWindow {
@@ -16263,7 +15375,7 @@ var NgbTooltipWindow = class _NgbTooltipWindow {
       },
       standalone: true,
       features: [ɵɵStandaloneFeature],
-      ngContentSelectors: _c1,
+      ngContentSelectors: _c0,
       decls: 3,
       vars: 0,
       consts: [["data-popper-arrow", "", 1, "tooltip-arrow"], [1, "tooltip-inner"]],
@@ -16296,8 +15408,12 @@ var NgbTooltipWindow = class _NgbTooltipWindow {
         role: "tooltip",
         "[id]": "id"
       },
-      template: `<div class="tooltip-arrow" data-popper-arrow></div
-		><div class="tooltip-inner"><ng-content></ng-content></div>`,
+      template: `
+		<div class="tooltip-arrow" data-popper-arrow></div>
+		<div class="tooltip-inner">
+			<ng-content />
+		</div>
+	`,
       styles: ["ngb-tooltip-window{pointer-events:none;position:absolute}ngb-tooltip-window .tooltip-inner{pointer-events:auto}ngb-tooltip-window.bs-tooltip-top,ngb-tooltip-window.bs-tooltip-bottom{padding-left:0;padding-right:0}ngb-tooltip-window.bs-tooltip-start,ngb-tooltip-window.bs-tooltip-end{padding-top:0;padding-bottom:0}\n"]
     }]
   }], null, {
@@ -16313,27 +15429,28 @@ var NgbTooltipWindow = class _NgbTooltipWindow {
   });
 })();
 var NgbTooltip = class _NgbTooltip {
-  constructor(_elementRef, _renderer, injector, viewContainerRef, config, _ngZone, _document, _changeDetector, applicationRef) {
-    this._elementRef = _elementRef;
-    this._renderer = _renderer;
-    this._ngZone = _ngZone;
-    this._document = _document;
-    this._changeDetector = _changeDetector;
+  constructor() {
+    this._config = inject(NgbTooltipConfig);
+    this.animation = this._config.animation;
+    this.autoClose = this._config.autoClose;
+    this.placement = this._config.placement;
+    this.popperOptions = this._config.popperOptions;
+    this.triggers = this._config.triggers;
+    this.container = this._config.container;
+    this.disableTooltip = this._config.disableTooltip;
+    this.tooltipClass = this._config.tooltipClass;
+    this.openDelay = this._config.openDelay;
+    this.closeDelay = this._config.closeDelay;
     this.shown = new EventEmitter();
     this.hidden = new EventEmitter();
+    this._nativeElement = inject(ElementRef).nativeElement;
+    this._ngZone = inject(NgZone);
+    this._document = inject(DOCUMENT);
+    this._changeDetector = inject(ChangeDetectorRef);
+    this._injector = inject(Injector);
     this._ngbTooltipWindowId = `ngb-tooltip-${nextId++}`;
+    this._popupService = new PopupService(NgbTooltipWindow);
     this._windowRef = null;
-    this.animation = config.animation;
-    this.autoClose = config.autoClose;
-    this.placement = config.placement;
-    this.popperOptions = config.popperOptions;
-    this.triggers = config.triggers;
-    this.container = config.container;
-    this.disableTooltip = config.disableTooltip;
-    this.tooltipClass = config.tooltipClass;
-    this.openDelay = config.openDelay;
-    this.closeDelay = config.closeDelay;
-    this._popupService = new PopupService(NgbTooltipWindow, injector, viewContainerRef, _renderer, this._ngZone, applicationRef);
     this._positioning = ngbPositioning();
   }
   /**
@@ -16366,9 +15483,9 @@ var NgbTooltip = class _NgbTooltip {
       this._windowRef.setInput("animation", this.animation);
       this._windowRef.setInput("tooltipClass", this.tooltipClass);
       this._windowRef.setInput("id", this._ngbTooltipWindowId);
-      this._renderer.setAttribute(this._getPositionTargetElement(), "aria-describedby", this._ngbTooltipWindowId);
+      this._getPositionTargetElement().setAttribute("aria-describedby", this._ngbTooltipWindowId);
       if (this.container === "body") {
-        this._document.querySelector(this.container).appendChild(this._windowRef.location.nativeElement);
+        this._document.body.appendChild(this._windowRef.location.nativeElement);
       }
       this._windowRef.changeDetectorRef.detectChanges();
       this._windowRef.changeDetectorRef.markForCheck();
@@ -16377,16 +15494,20 @@ var NgbTooltip = class _NgbTooltip {
           hostElement: this._getPositionTargetElement(),
           targetElement: this._windowRef.location.nativeElement,
           placement: this.placement,
-          appendToBody: this.container === "body",
           baseClass: "bs-tooltip",
-          updatePopperOptions: (options) => this.popperOptions(options)
+          updatePopperOptions: (options) => this.popperOptions(addPopperOffset([0, 6])(options))
         });
         Promise.resolve().then(() => {
           this._positioning.update();
-          this._zoneSubscription = this._ngZone.onStable.subscribe(() => this._positioning.update());
+        });
+        this._afterRenderRef = afterRender(() => {
+          this._positioning.update();
+        }, {
+          phase: AfterRenderPhase.MixedReadWrite,
+          injector: this._injector
         });
       });
-      ngbAutoClose(this._ngZone, this._document, this.autoClose, () => this.close(), this.hidden, [this._windowRef.location.nativeElement], [this._elementRef.nativeElement]);
+      ngbAutoClose(this._ngZone, this._document, this.autoClose, () => this.close(), this.hidden, [this._windowRef.location.nativeElement], [this._nativeElement]);
       transition$.subscribe(() => this.shown.emit());
     }
   }
@@ -16397,11 +15518,11 @@ var NgbTooltip = class _NgbTooltip {
    */
   close(animation = this.animation) {
     if (this._windowRef != null) {
-      this._renderer.removeAttribute(this._getPositionTargetElement(), "aria-describedby");
+      this._getPositionTargetElement().removeAttribute("aria-describedby");
       this._popupService.close(animation).subscribe(() => {
         this._windowRef = null;
         this._positioning.destroy();
-        this._zoneSubscription?.unsubscribe();
+        this._afterRenderRef?.destroy();
         this.hidden.emit();
         this._changeDetector.markForCheck();
       });
@@ -16426,13 +15547,13 @@ var NgbTooltip = class _NgbTooltip {
     return this._windowRef != null;
   }
   ngOnInit() {
-    this._unregisterListenersFn = listenToTriggers(this._elementRef.nativeElement, this.triggers, this.isOpen.bind(this), this.open.bind(this), this.close.bind(this), +this.openDelay, +this.closeDelay);
+    this._unregisterListenersFn = listenToTriggers(this._nativeElement, this.triggers, this.isOpen.bind(this), this.open.bind(this), this.close.bind(this), +this.openDelay, +this.closeDelay);
   }
   ngOnChanges({
     tooltipClass
   }) {
     if (tooltipClass && this.isOpen()) {
-      this._windowRef.instance.tooltipClass = tooltipClass.currentValue;
+      this._windowRef.setInput("tooltipClass", tooltipClass.currentValue);
     }
   }
   ngOnDestroy() {
@@ -16440,11 +15561,11 @@ var NgbTooltip = class _NgbTooltip {
     this._unregisterListenersFn?.();
   }
   _getPositionTargetElement() {
-    return (isString(this.positionTarget) ? this._document.querySelector(this.positionTarget) : this.positionTarget) || this._elementRef.nativeElement;
+    return (isString(this.positionTarget) ? this._document.querySelector(this.positionTarget) : this.positionTarget) || this._nativeElement;
   }
   static {
     this.ɵfac = function NgbTooltip_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbTooltip)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(Injector), ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(NgbTooltipConfig), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ApplicationRef));
+      return new (__ngFactoryType__ || _NgbTooltip)();
     };
   }
   static {
@@ -16484,31 +15605,7 @@ var NgbTooltip = class _NgbTooltip {
       standalone: true,
       exportAs: "ngbTooltip"
     }]
-  }], function() {
-    return [{
-      type: ElementRef
-    }, {
-      type: Renderer2
-    }, {
-      type: Injector
-    }, {
-      type: ViewContainerRef
-    }, {
-      type: NgbTooltipConfig
-    }, {
-      type: NgZone
-    }, {
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }, {
-      type: ChangeDetectorRef
-    }, {
-      type: ApplicationRef
-    }];
-  }, {
+  }], null, {
     animation: [{
       type: Input
     }],
@@ -16622,18 +15719,17 @@ var NgbHighlight = class _NgbHighlight {
       },
       standalone: true,
       features: [ɵɵNgOnChangesFeature, ɵɵStandaloneFeature],
-      decls: 1,
-      vars: 1,
-      consts: [["even", ""], ["ngFor", "", 3, "ngForOf"], [3, "class", 4, "ngIf", "ngIfElse"]],
+      decls: 2,
+      vars: 0,
+      consts: [[3, "class"]],
       template: function NgbHighlight_Template(rf, ctx) {
         if (rf & 1) {
-          ɵɵtemplate(0, NgbHighlight_ng_template_0_Template, 3, 2, "ng-template", 1);
+          ɵɵrepeaterCreate(0, NgbHighlight_For_1_Template, 2, 1, null, null, ɵɵrepeaterTrackByIndex);
         }
         if (rf & 2) {
-          ɵɵproperty("ngForOf", ctx.parts);
+          ɵɵrepeater(ctx.parts);
         }
       },
-      dependencies: [NgIf, NgForOf],
       styles: [".ngb-highlight{font-weight:700}\n"],
       encapsulation: 2,
       changeDetection: 0
@@ -16646,10 +15742,17 @@ var NgbHighlight = class _NgbHighlight {
     args: [{
       selector: "ngb-highlight",
       standalone: true,
-      imports: [NgIf, NgForOf],
       changeDetection: ChangeDetectionStrategy.OnPush,
       encapsulation: ViewEncapsulation$1.None,
-      template: `<ng-template ngFor [ngForOf]="parts" let-part let-isOdd="odd"><span *ngIf="isOdd; else even" [class]="highlightClass">{{part}}</span><ng-template #even>{{part}}</ng-template></ng-template>`,
+      template: `
+		@for (part of parts; track $index) {
+			@if ($odd) {
+				<span class="{{ highlightClass }}">{{ part }}</span>
+			} @else {
+				<ng-container>{{ part }}</ng-container>
+			}
+		}
+	`,
       styles: [".ngb-highlight{font-weight:700}\n"]
     }]
   }], null, {
@@ -16672,6 +15775,97 @@ var NgbHighlight = class _NgbHighlight {
       type: Input
     }]
   });
+})();
+var ARIA_LIVE_DELAY = new InjectionToken("live announcer delay", {
+  providedIn: "root",
+  factory: () => 100
+});
+function getLiveElement(document2, lazyCreate = false) {
+  let element = document2.body.querySelector("#ngb-live");
+  if (element == null && lazyCreate) {
+    element = document2.createElement("div");
+    element.setAttribute("id", "ngb-live");
+    element.setAttribute("aria-live", "polite");
+    element.setAttribute("aria-atomic", "true");
+    element.classList.add("visually-hidden");
+    document2.body.appendChild(element);
+  }
+  return element;
+}
+var Live = class _Live {
+  constructor() {
+    this._document = inject(DOCUMENT);
+    this._delay = inject(ARIA_LIVE_DELAY);
+  }
+  ngOnDestroy() {
+    const element = getLiveElement(this._document);
+    if (element) {
+      element.parentElement.removeChild(element);
+    }
+  }
+  say(message) {
+    const element = getLiveElement(this._document, true);
+    const delay2 = this._delay;
+    if (element != null) {
+      element.textContent = "";
+      const setText = () => element.textContent = message;
+      if (delay2 === null) {
+        setText();
+      } else {
+        setTimeout(setText, delay2);
+      }
+    }
+  }
+  static {
+    this.ɵfac = function Live_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _Live)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _Live,
+      factory: _Live.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Live, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
+var NgbTypeaheadConfig = class _NgbTypeaheadConfig {
+  constructor() {
+    this.editable = true;
+    this.focusFirst = true;
+    this.selectOnExact = false;
+    this.showHint = false;
+    this.placement = ["bottom-start", "bottom-end", "top-start", "top-end"];
+    this.popperOptions = (options) => options;
+  }
+  static {
+    this.ɵfac = function NgbTypeaheadConfig_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbTypeaheadConfig)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbTypeaheadConfig,
+      factory: _NgbTypeaheadConfig.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbTypeaheadConfig, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
 })();
 var NgbTypeaheadWindow = class _NgbTypeaheadWindow {
   constructor() {
@@ -16760,19 +15954,20 @@ var NgbTypeaheadWindow = class _NgbTypeaheadWindow {
       exportAs: ["ngbTypeaheadWindow"],
       standalone: true,
       features: [ɵɵStandaloneFeature],
-      decls: 3,
-      vars: 1,
-      consts: [["rt", ""], ["ngFor", "", 3, "ngForOf"], [3, "result", "term"], ["type", "button", "role", "option", 1, "dropdown-item", 3, "mouseenter", "click", "id"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
+      decls: 4,
+      vars: 0,
+      consts: [["rt", ""], ["type", "button", "role", "option", 1, "dropdown-item", 3, "id", "active"], [3, "result", "term"], ["type", "button", "role", "option", 1, "dropdown-item", 3, "mouseenter", "click", "id"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
       template: function NgbTypeaheadWindow_Template(rf, ctx) {
         if (rf & 1) {
-          ɵɵtemplate(0, NgbTypeaheadWindow_ng_template_0_Template, 1, 2, "ng-template", null, 0, ɵɵtemplateRefExtractor)(2, NgbTypeaheadWindow_ng_template_2_Template, 2, 9, "ng-template", 1);
+          ɵɵtemplate(0, NgbTypeaheadWindow_ng_template_0_Template, 1, 2, "ng-template", null, 0, ɵɵtemplateRefExtractor);
+          ɵɵrepeaterCreate(2, NgbTypeaheadWindow_For_3_Template, 2, 9, "button", 1, ɵɵrepeaterTrackByIndex);
         }
         if (rf & 2) {
           ɵɵadvance(2);
-          ɵɵproperty("ngForOf", ctx.results);
+          ɵɵrepeater(ctx.results);
         }
       },
-      dependencies: [NgbHighlight, NgForOf, NgTemplateOutlet],
+      dependencies: [NgbHighlight, NgTemplateOutlet],
       encapsulation: 2
     });
   }
@@ -16784,7 +15979,7 @@ var NgbTypeaheadWindow = class _NgbTypeaheadWindow {
       selector: "ngb-typeahead-window",
       exportAs: "ngbTypeaheadWindow",
       standalone: true,
-      imports: [NgbHighlight, NgForOf, NgTemplateOutlet],
+      imports: [NgbHighlight, NgTemplateOutlet],
       encapsulation: ViewEncapsulation$1.None,
       host: {
         "(mousedown)": "$event.preventDefault()",
@@ -16794,24 +15989,24 @@ var NgbTypeaheadWindow = class _NgbTypeaheadWindow {
       },
       template: `
 		<ng-template #rt let-result="result" let-term="term" let-formatter="formatter">
-			<ngb-highlight [result]="formatter(result)" [term]="term"></ngb-highlight>
+			<ngb-highlight [result]="formatter(result)" [term]="term" />
 		</ng-template>
-		<ng-template ngFor [ngForOf]="results" let-result let-idx="index">
+		@for (result of results; track $index) {
 			<button
 				type="button"
 				class="dropdown-item"
 				role="option"
-				[id]="id + '-' + idx"
-				[class.active]="idx === activeIdx"
-				(mouseenter)="markActive(idx)"
+				[id]="id + '-' + $index"
+				[class.active]="$index === activeIdx"
+				(mouseenter)="markActive($index)"
 				(click)="select(result)"
 			>
 				<ng-template
 					[ngTemplateOutlet]="resultTemplate || rt"
 					[ngTemplateOutletContext]="{ result: result, term: term, formatter: formatter }"
-				></ng-template>
+				/>
 			</button>
-		</ng-template>
+		}
 	`
     }]
   }], null, {
@@ -16846,130 +16041,33 @@ var NgbTypeaheadWindow = class _NgbTypeaheadWindow {
     }]
   });
 })();
-var NgbTypeaheadConfig = class _NgbTypeaheadConfig {
-  constructor() {
-    this.editable = true;
-    this.focusFirst = true;
-    this.selectOnExact = false;
-    this.showHint = false;
-    this.placement = ["bottom-start", "bottom-end", "top-start", "top-end"];
-    this.popperOptions = (options) => options;
-  }
-  static {
-    this.ɵfac = function NgbTypeaheadConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbTypeaheadConfig)();
-    };
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _NgbTypeaheadConfig,
-      factory: _NgbTypeaheadConfig.ɵfac,
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbTypeaheadConfig, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-var ARIA_LIVE_DELAY = new InjectionToken("live announcer delay", {
-  providedIn: "root",
-  factory: ARIA_LIVE_DELAY_FACTORY
-});
-function ARIA_LIVE_DELAY_FACTORY() {
-  return 100;
-}
-function getLiveElement(document2, lazyCreate = false) {
-  let element = document2.body.querySelector("#ngb-live");
-  if (element == null && lazyCreate) {
-    element = document2.createElement("div");
-    element.setAttribute("id", "ngb-live");
-    element.setAttribute("aria-live", "polite");
-    element.setAttribute("aria-atomic", "true");
-    element.classList.add("visually-hidden");
-    document2.body.appendChild(element);
-  }
-  return element;
-}
-var Live = class _Live {
-  constructor(_document, _delay) {
-    this._document = _document;
-    this._delay = _delay;
-  }
-  ngOnDestroy() {
-    const element = getLiveElement(this._document);
-    if (element) {
-      element.parentElement.removeChild(element);
-    }
-  }
-  say(message) {
-    const element = getLiveElement(this._document, true);
-    const delay2 = this._delay;
-    if (element != null) {
-      element.textContent = "";
-      const setText = () => element.textContent = message;
-      if (delay2 === null) {
-        setText();
-      } else {
-        setTimeout(setText, delay2);
-      }
-    }
-  }
-  static {
-    this.ɵfac = function Live_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _Live)(ɵɵinject(DOCUMENT), ɵɵinject(ARIA_LIVE_DELAY));
-    };
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _Live,
-      factory: _Live.ɵfac,
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Live, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }, {
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [ARIA_LIVE_DELAY]
-      }]
-    }];
-  }, null);
-})();
 var nextWindowId = 0;
 var NgbTypeahead = class _NgbTypeahead {
-  constructor(_elementRef, viewContainerRef, _renderer, injector, config, ngZone, _live, _document, _ngZone, _changeDetector, applicationRef) {
-    this._elementRef = _elementRef;
-    this._renderer = _renderer;
-    this._live = _live;
-    this._document = _document;
-    this._ngZone = _ngZone;
-    this._changeDetector = _changeDetector;
+  constructor() {
+    this._nativeElement = inject(ElementRef).nativeElement;
+    this._config = inject(NgbTypeaheadConfig);
+    this._live = inject(Live);
+    this._document = inject(DOCUMENT);
+    this._ngZone = inject(NgZone);
+    this._changeDetector = inject(ChangeDetectorRef);
+    this._injector = inject(Injector);
+    this._popupService = new PopupService(NgbTypeaheadWindow);
+    this._positioning = ngbPositioning();
     this._subscription = null;
     this._closed$ = new import_rxjs2.Subject();
     this._inputValueBackup = null;
     this._inputValueForSelectOnExact = null;
+    this._valueChanges$ = (0, import_rxjs2.fromEvent)(this._nativeElement, "input").pipe((0, import_operators2.map)(($event) => $event.target.value));
+    this._resubscribeTypeahead$ = new import_rxjs2.BehaviorSubject(null);
     this._windowRef = null;
     this.autocomplete = "off";
-    this.placement = "bottom-start";
+    this.container = this._config.container;
+    this.editable = this._config.editable;
+    this.focusFirst = this._config.focusFirst;
+    this.selectOnExact = this._config.selectOnExact;
+    this.showHint = this._config.showHint;
+    this.placement = this._config.placement;
+    this.popperOptions = this._config.popperOptions;
     this.selectItem = new EventEmitter();
     this.activeDescendant = null;
     this.popupId = `ngb-typeahead-${nextWindowId++}`;
@@ -16977,17 +16075,6 @@ var NgbTypeahead = class _NgbTypeahead {
     };
     this._onChange = (_) => {
     };
-    this.container = config.container;
-    this.editable = config.editable;
-    this.focusFirst = config.focusFirst;
-    this.selectOnExact = config.selectOnExact;
-    this.showHint = config.showHint;
-    this.placement = config.placement;
-    this.popperOptions = config.popperOptions;
-    this._valueChanges = (0, import_rxjs2.fromEvent)(_elementRef.nativeElement, "input").pipe((0, import_operators2.map)(($event) => $event.target.value));
-    this._resubscribeTypeahead = new import_rxjs2.BehaviorSubject(null);
-    this._popupService = new PopupService(NgbTypeaheadWindow, injector, viewContainerRef, _renderer, this._ngZone, applicationRef);
-    this._positioning = ngbPositioning();
   }
   ngOnInit() {
     this._subscribeToUserInput();
@@ -17017,14 +16104,14 @@ var NgbTypeahead = class _NgbTypeahead {
     }
   }
   setDisabledState(isDisabled) {
-    this._renderer.setProperty(this._elementRef.nativeElement, "disabled", isDisabled);
+    this._nativeElement.disabled = isDisabled;
   }
   /**
    * Dismisses typeahead popup window
    */
   dismissPopup() {
     if (this.isPopupOpen()) {
-      this._resubscribeTypeahead.next(null);
+      this._resubscribeTypeahead$.next(null);
       this._closePopup();
       if (this.showHint && this._inputValueBackup !== null) {
         this._writeInputValue(this._inputValueBackup);
@@ -17039,26 +16126,26 @@ var NgbTypeahead = class _NgbTypeahead {
     return this._windowRef != null;
   }
   handleBlur() {
-    this._resubscribeTypeahead.next(null);
+    this._resubscribeTypeahead$.next(null);
     this._onTouched();
   }
   handleKeyDown(event) {
     if (!this.isPopupOpen()) {
       return;
     }
-    switch (event.which) {
-      case Key.ArrowDown:
+    switch (event.key) {
+      case "ArrowDown":
         event.preventDefault();
         this._windowRef.instance.next();
         this._showHint();
         break;
-      case Key.ArrowUp:
+      case "ArrowUp":
         event.preventDefault();
         this._windowRef.instance.prev();
         this._showHint();
         break;
-      case Key.Enter:
-      case Key.Tab: {
+      case "Enter":
+      case "Tab": {
         const result = this._windowRef.instance.getActive();
         if (isDefined(result)) {
           event.preventDefault();
@@ -17072,7 +16159,7 @@ var NgbTypeahead = class _NgbTypeahead {
   }
   _openPopup() {
     if (!this.isPopupOpen()) {
-      this._inputValueBackup = this._elementRef.nativeElement.value;
+      this._inputValueBackup = this._nativeElement.value;
       const {
         windowRef
       } = this._popupService.open();
@@ -17082,29 +16169,33 @@ var NgbTypeahead = class _NgbTypeahead {
       this._windowRef.instance.selectEvent.subscribe((result) => this._selectResultClosePopup(result));
       this._windowRef.instance.activeChangeEvent.subscribe((activeId) => this.activeDescendant = activeId);
       if (this.container === "body") {
-        this._renderer.setStyle(this._windowRef.location.nativeElement, "z-index", "1055");
-        this._document.querySelector(this.container).appendChild(this._windowRef.location.nativeElement);
+        this._windowRef.location.nativeElement.style.zIndex = "1055";
+        this._document.body.appendChild(this._windowRef.location.nativeElement);
       }
       this._changeDetector.markForCheck();
       this._ngZone.runOutsideAngular(() => {
         if (this._windowRef) {
           this._positioning.createPopper({
-            hostElement: this._elementRef.nativeElement,
+            hostElement: this._nativeElement,
             targetElement: this._windowRef.location.nativeElement,
             placement: this.placement,
-            appendToBody: this.container === "body",
             updatePopperOptions: (options) => this.popperOptions(addPopperOffset([0, 2])(options))
           });
-          this._zoneSubscription = this._ngZone.onStable.subscribe(() => this._positioning.update());
+          this._afterRenderRef = afterRender(() => {
+            this._positioning.update();
+          }, {
+            phase: AfterRenderPhase.MixedReadWrite,
+            injector: this._injector
+          });
         }
       });
-      ngbAutoClose(this._ngZone, this._document, "outside", () => this.dismissPopup(), this._closed$, [this._elementRef.nativeElement, this._windowRef.location.nativeElement]);
+      ngbAutoClose(this._ngZone, this._document, "outside", () => this.dismissPopup(), this._closed$, [this._nativeElement, this._windowRef.location.nativeElement]);
     }
   }
   _closePopup() {
     this._popupService.close().subscribe(() => {
       this._positioning.destroy();
-      this._zoneSubscription?.unsubscribe();
+      this._afterRenderRef?.destroy();
       this._closed$.next();
       this._windowRef = null;
       this.activeDescendant = null;
@@ -17118,7 +16209,7 @@ var NgbTypeahead = class _NgbTypeahead {
         defaultPrevented = true;
       }
     });
-    this._resubscribeTypeahead.next(null);
+    this._resubscribeTypeahead$.next(null);
     if (!defaultPrevented) {
       this.writeValue(result);
       this._onChange(result);
@@ -17134,7 +16225,7 @@ var NgbTypeahead = class _NgbTypeahead {
       const formattedVal = this._formatItemForInput(this._windowRef.instance.getActive());
       if (userInputLowerCase === formattedVal.substring(0, this._inputValueBackup.length).toLowerCase()) {
         this._writeInputValue(this._inputValueBackup + formattedVal.substring(this._inputValueBackup.length));
-        this._elementRef.nativeElement["setSelectionRange"].apply(this._elementRef.nativeElement, [this._inputValueBackup.length, formattedVal.length]);
+        this._nativeElement["setSelectionRange"].apply(this._nativeElement, [this._inputValueBackup.length, formattedVal.length]);
       } else {
         this._writeInputValue(formattedVal);
       }
@@ -17144,15 +16235,15 @@ var NgbTypeahead = class _NgbTypeahead {
     return item != null && this.inputFormatter ? this.inputFormatter(item) : toString(item);
   }
   _writeInputValue(value) {
-    this._renderer.setProperty(this._elementRef.nativeElement, "value", toString(value));
+    this._nativeElement.value = toString(value);
   }
   _subscribeToUserInput() {
-    const results$ = this._valueChanges.pipe((0, import_operators2.tap)((value) => {
+    const results$ = this._valueChanges$.pipe((0, import_operators2.tap)((value) => {
       this._inputValueBackup = this.showHint ? value : null;
       this._inputValueForSelectOnExact = this.selectOnExact ? value : null;
       this._onChange(this.editable ? value : void 0);
     }), this.ngbTypeahead ? this.ngbTypeahead : () => (0, import_rxjs2.of)([]));
-    this._subscription = this._resubscribeTypeahead.pipe((0, import_operators2.switchMap)(() => results$)).subscribe((results) => {
+    this._subscription = this._resubscribeTypeahead$.pipe((0, import_operators2.switchMap)(() => results$)).subscribe((results) => {
       if (!results || results.length === 0) {
         this._closePopup();
       } else {
@@ -17161,14 +16252,14 @@ var NgbTypeahead = class _NgbTypeahead {
           this._closePopup();
         } else {
           this._openPopup();
-          this._windowRef.instance.focusFirst = this.focusFirst;
-          this._windowRef.instance.results = results;
-          this._windowRef.instance.term = this._elementRef.nativeElement.value;
+          this._windowRef.setInput("focusFirst", this.focusFirst);
+          this._windowRef.setInput("results", results);
+          this._windowRef.setInput("term", this._nativeElement.value);
           if (this.resultFormatter) {
-            this._windowRef.instance.formatter = this.resultFormatter;
+            this._windowRef.setInput("formatter", this.resultFormatter);
           }
           if (this.resultTemplate) {
-            this._windowRef.instance.resultTemplate = this.resultTemplate;
+            this._windowRef.setInput("resultTemplate", this.resultTemplate);
           }
           this._windowRef.instance.resetActive();
           this._windowRef.changeDetectorRef.detectChanges();
@@ -17187,7 +16278,7 @@ var NgbTypeahead = class _NgbTypeahead {
   }
   static {
     this.ɵfac = function NgbTypeahead_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbTypeahead)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(Injector), ɵɵdirectiveInject(NgbTypeaheadConfig), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(Live), ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ApplicationRef));
+      return new (__ngFactoryType__ || _NgbTypeahead)();
     };
   }
   static {
@@ -17264,35 +16355,7 @@ var NgbTypeahead = class _NgbTypeahead {
         multi: true
       }]
     }]
-  }], function() {
-    return [{
-      type: ElementRef
-    }, {
-      type: ViewContainerRef
-    }, {
-      type: Renderer2
-    }, {
-      type: Injector
-    }, {
-      type: NgbTypeaheadConfig
-    }, {
-      type: NgZone
-    }, {
-      type: Live
-    }, {
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }, {
-      type: NgZone
-    }, {
-      type: ChangeDetectorRef
-    }, {
-      type: ApplicationRef
-    }];
-  }, {
+  }], null, {
     autocomplete: [{
       type: Input
     }],
@@ -17360,6 +16423,41 @@ var NgbTypeaheadModule = class _NgbTypeaheadModule {
     args: [{
       imports: [NgbHighlight, NgbTypeahead],
       exports: [NgbHighlight, NgbTypeahead]
+    }]
+  }], null, null);
+})();
+var NgbOffcanvasConfig = class _NgbOffcanvasConfig {
+  constructor() {
+    this._ngbConfig = inject(NgbConfig);
+    this.backdrop = true;
+    this.keyboard = true;
+    this.position = "start";
+    this.scroll = false;
+  }
+  get animation() {
+    return this._animation ?? this._ngbConfig.animation;
+  }
+  set animation(animation) {
+    this._animation = animation;
+  }
+  static {
+    this.ɵfac = function NgbOffcanvasConfig_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _NgbOffcanvasConfig)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NgbOffcanvasConfig,
+      factory: _NgbOffcanvasConfig.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbOffcanvasConfig, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
     }]
   }], null, null);
 })();
@@ -17499,9 +16597,7 @@ var NgbOffcanvasRef = class {
       } = this._panelCmptRef.location;
       nativeElement.parentNode.removeChild(nativeElement);
       this._panelCmptRef.destroy();
-      if (this._contentRef && this._contentRef.viewRef) {
-        this._contentRef.viewRef.destroy();
-      }
+      this._contentRef?.viewRef?.destroy();
       this._panelCmptRef = null;
       this._contentRef = null;
     });
@@ -17527,26 +16623,28 @@ var OffcanvasDismissReasons;
   OffcanvasDismissReasons2[OffcanvasDismissReasons2["ESC"] = 1] = "ESC";
 })(OffcanvasDismissReasons || (OffcanvasDismissReasons = {}));
 var NgbOffcanvasBackdrop = class _NgbOffcanvasBackdrop {
-  constructor(_el, _zone) {
-    this._el = _el;
-    this._zone = _zone;
+  constructor() {
+    this._nativeElement = inject(ElementRef).nativeElement;
+    this._zone = inject(NgZone);
+    this._injector = inject(Injector);
     this.dismissEvent = new EventEmitter();
   }
   ngOnInit() {
-    this._zone.onStable.asObservable().pipe((0, import_operators2.take)(1)).subscribe(() => {
-      ngbRunTransition(this._zone, this._el.nativeElement, (element, animation) => {
-        if (animation) {
-          reflow(element);
-        }
-        element.classList.add("show");
-      }, {
-        animation: this.animation,
-        runningTransition: "continue"
-      });
+    afterNextRender(() => ngbRunTransition(this._zone, this._nativeElement, (element, animation) => {
+      if (animation) {
+        reflow(element);
+      }
+      element.classList.add("show");
+    }, {
+      animation: this.animation,
+      runningTransition: "continue"
+    }), {
+      injector: this._injector,
+      phase: AfterRenderPhase.MixedReadWrite
     });
   }
   hide() {
-    return ngbRunTransition(this._zone, this._el.nativeElement, ({
+    return ngbRunTransition(this._zone, this._nativeElement, ({
       classList
     }) => classList.remove("show"), {
       animation: this.animation,
@@ -17560,7 +16658,7 @@ var NgbOffcanvasBackdrop = class _NgbOffcanvasBackdrop {
   }
   static {
     this.ɵfac = function NgbOffcanvasBackdrop_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbOffcanvasBackdrop)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+      return new (__ngFactoryType__ || _NgbOffcanvasBackdrop)();
     };
   }
   static {
@@ -17612,13 +16710,7 @@ var NgbOffcanvasBackdrop = class _NgbOffcanvasBackdrop {
         "(mousedown)": "dismiss()"
       }
     }]
-  }], function() {
-    return [{
-      type: ElementRef
-    }, {
-      type: NgZone
-    }];
-  }, {
+  }], null, {
     animation: [{
       type: Input
     }],
@@ -17635,10 +16727,11 @@ var NgbOffcanvasBackdrop = class _NgbOffcanvasBackdrop {
   });
 })();
 var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
-  constructor(_document, _elRef, _zone) {
-    this._document = _document;
-    this._elRef = _elRef;
-    this._zone = _zone;
+  constructor() {
+    this._document = inject(DOCUMENT);
+    this._elRef = inject(ElementRef);
+    this._zone = inject(NgZone);
+    this._injector = inject(Injector);
     this._closed$ = new import_rxjs2.Subject();
     this._elWithFocus = null;
     this.keyboard = true;
@@ -17652,25 +16745,23 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
   }
   ngOnInit() {
     this._elWithFocus = this._document.activeElement;
-    this._zone.onStable.asObservable().pipe((0, import_operators2.take)(1)).subscribe(() => {
-      this._show();
+    afterNextRender(() => this._show(), {
+      injector: this._injector,
+      phase: AfterRenderPhase.MixedReadWrite
     });
   }
   ngOnDestroy() {
     this._disableEventHandling();
   }
   hide() {
-    const {
-      nativeElement
-    } = this._elRef;
     const context = {
       animation: this.animation,
       runningTransition: "stop"
     };
     const offcanvasTransition$ = ngbRunTransition(this._zone, this._elRef.nativeElement, (element) => {
-      nativeElement.classList.remove("showing");
-      nativeElement.classList.add("hiding");
-      return () => nativeElement.classList.remove("show", "hiding");
+      element.classList.remove("showing");
+      element.classList.add("hiding");
+      return () => element.classList.remove("show", "hiding");
     }, context);
     offcanvasTransition$.subscribe(() => {
       this.hidden.next();
@@ -17704,11 +16795,7 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
       nativeElement
     } = this._elRef;
     this._zone.runOutsideAngular(() => {
-      (0, import_rxjs2.fromEvent)(nativeElement, "keydown").pipe(
-        (0, import_operators2.takeUntil)(this._closed$),
-        /* eslint-disable-next-line deprecation/deprecation */
-        (0, import_operators2.filter)((e) => e.which === Key.Escape)
-      ).subscribe((event) => {
+      (0, import_rxjs2.fromEvent)(nativeElement, "keydown").pipe((0, import_operators2.takeUntil)(this._closed$), (0, import_operators2.filter)((e) => e.key === "Escape")).subscribe((event) => {
         if (this.keyboard) {
           requestAnimationFrame(() => {
             if (!event.defaultPrevented) {
@@ -17749,7 +16836,7 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
   }
   static {
     this.ɵfac = function NgbOffcanvasPanel_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbOffcanvasPanel)(ɵɵdirectiveInject(DOCUMENT), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone));
+      return new (__ngFactoryType__ || _NgbOffcanvasPanel)();
     };
   }
   static {
@@ -17777,7 +16864,7 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
       },
       standalone: true,
       features: [ɵɵStandaloneFeature],
-      ngContentSelectors: _c1,
+      ngContentSelectors: _c0,
       decls: 1,
       vars: 0,
       template: function NgbOffcanvasPanel_Template(rf, ctx) {
@@ -17796,7 +16883,7 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
     args: [{
       selector: "ngb-offcanvas-panel",
       standalone: true,
-      template: "<ng-content></ng-content>",
+      template: "<ng-content />",
       encapsulation: ViewEncapsulation$1.None,
       host: {
         "[class]": '"offcanvas offcanvas-" + position  + (panelClass ? " " + panelClass : "")',
@@ -17807,19 +16894,7 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
         "[attr.aria-describedby]": "ariaDescribedBy"
       }
     }]
-  }], function() {
-    return [{
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }, {
-      type: ElementRef
-    }, {
-      type: NgZone
-    }];
-  }, {
+  }], null, {
     animation: [{
       type: Input
     }],
@@ -17845,20 +16920,20 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
   });
 })();
 var NgbOffcanvasStack = class _NgbOffcanvasStack {
-  constructor(_applicationRef, _injector, _document, _scrollBar, _ngZone) {
-    this._applicationRef = _applicationRef;
-    this._injector = _injector;
-    this._document = _document;
-    this._scrollBar = _scrollBar;
-    this._ngZone = _ngZone;
+  constructor() {
+    this._applicationRef = inject(ApplicationRef);
+    this._injector = inject(Injector);
+    this._document = inject(DOCUMENT);
+    this._scrollBar = inject(ScrollBar);
     this._activePanelCmptHasChanged = new import_rxjs2.Subject();
     this._scrollBarRestoreFn = null;
     this._backdropAttributes = ["animation", "backdropClass"];
     this._panelAttributes = ["animation", "ariaDescribedBy", "ariaLabelledBy", "keyboard", "panelClass", "position"];
     this._activeInstance = new EventEmitter();
+    const ngZone = inject(NgZone);
     this._activePanelCmptHasChanged.subscribe(() => {
       if (this._panelCmpt) {
-        ngbFocusTrap(this._ngZone, this._panelCmpt.location.nativeElement, this._activePanelCmptHasChanged);
+        ngbFocusTrap(ngZone, this._panelCmpt.location.nativeElement, this._activePanelCmptHasChanged);
       }
     });
   }
@@ -18011,7 +17086,7 @@ var NgbOffcanvasStack = class _NgbOffcanvasStack {
   }
   static {
     this.ɵfac = function NgbOffcanvasStack_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbOffcanvasStack)(ɵɵinject(ApplicationRef), ɵɵinject(Injector), ɵɵinject(DOCUMENT), ɵɵinject(ScrollBar), ɵɵinject(NgZone));
+      return new (__ngFactoryType__ || _NgbOffcanvasStack)();
     };
   }
   static {
@@ -18028,68 +17103,13 @@ var NgbOffcanvasStack = class _NgbOffcanvasStack {
     args: [{
       providedIn: "root"
     }]
-  }], function() {
-    return [{
-      type: ApplicationRef
-    }, {
-      type: Injector
-    }, {
-      type: void 0,
-      decorators: [{
-        type: Inject,
-        args: [DOCUMENT]
-      }]
-    }, {
-      type: ScrollBar
-    }, {
-      type: NgZone
-    }];
-  }, null);
-})();
-var NgbOffcanvasConfig = class _NgbOffcanvasConfig {
-  constructor(_ngbConfig) {
-    this._ngbConfig = _ngbConfig;
-    this.backdrop = true;
-    this.keyboard = true;
-    this.position = "start";
-    this.scroll = false;
-  }
-  get animation() {
-    return this._animation === void 0 ? this._ngbConfig.animation : this._animation;
-  }
-  set animation(animation) {
-    this._animation = animation;
-  }
-  static {
-    this.ɵfac = function NgbOffcanvasConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbOffcanvasConfig)(ɵɵinject(NgbConfig));
-    };
-  }
-  static {
-    this.ɵprov = ɵɵdefineInjectable({
-      token: _NgbOffcanvasConfig,
-      factory: _NgbOffcanvasConfig.ɵfac,
-      providedIn: "root"
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgbOffcanvasConfig, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], function() {
-    return [{
-      type: NgbConfig
-    }];
-  }, null);
+  }], () => [], null);
 })();
 var NgbOffcanvas = class _NgbOffcanvas {
-  constructor(_injector, _offcanvasStack, _config) {
-    this._injector = _injector;
-    this._offcanvasStack = _offcanvasStack;
-    this._config = _config;
+  constructor() {
+    this._injector = inject(Injector);
+    this._offcanvasStack = inject(NgbOffcanvasStack);
+    this._config = inject(NgbOffcanvasConfig);
   }
   /**
    * Opens a new offcanvas panel with the specified content and supplied options.
@@ -18127,7 +17147,7 @@ var NgbOffcanvas = class _NgbOffcanvas {
   }
   static {
     this.ɵfac = function NgbOffcanvas_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _NgbOffcanvas)(ɵɵinject(Injector), ɵɵinject(NgbOffcanvasStack), ɵɵinject(NgbOffcanvasConfig));
+      return new (__ngFactoryType__ || _NgbOffcanvas)();
     };
   }
   static {
@@ -18144,15 +17164,7 @@ var NgbOffcanvas = class _NgbOffcanvas {
     args: [{
       providedIn: "root"
     }]
-  }], function() {
-    return [{
-      type: Injector
-    }, {
-      type: NgbOffcanvasStack
-    }, {
-      type: NgbOffcanvasConfig
-    }];
-  }, null);
+  }], null, null);
 })();
 var NgbOffcanvasModule = class _NgbOffcanvasModule {
   static {
@@ -18206,7 +17218,6 @@ var NgbModule = class _NgbModule {
 })();
 export {
   ModalDismissReasons,
-  NgbAccordion,
   NgbAccordionBody,
   NgbAccordionButton,
   NgbAccordionCollapse,
@@ -18223,6 +17234,7 @@ export {
   NgbAlertModule,
   NgbCalendar,
   NgbCalendarBuddhist,
+  NgbCalendarEthiopian,
   NgbCalendarGregorian,
   NgbCalendarHebrew,
   NgbCalendarIslamicCivil,
@@ -18245,6 +17257,7 @@ export {
   NgbDatepickerConfig,
   NgbDatepickerContent,
   NgbDatepickerI18n,
+  NgbDatepickerI18nAmharic,
   NgbDatepickerI18nDefault,
   NgbDatepickerI18nHebrew,
   NgbDatepickerKeyboardService,
@@ -18252,6 +17265,7 @@ export {
   NgbDatepickerMonth,
   NgbDropdown,
   NgbDropdownAnchor,
+  NgbDropdownButtonItem,
   NgbDropdownConfig,
   NgbDropdownItem,
   NgbDropdownMenu,
@@ -18276,7 +17290,6 @@ export {
   NgbNavModule,
   NgbNavOutlet,
   NgbNavPane,
-  NgbNavbar,
   NgbOffcanvas,
   NgbOffcanvasConfig,
   NgbOffcanvasModule,
@@ -18291,17 +17304,13 @@ export {
   NgbPaginationNumber,
   NgbPaginationPages,
   NgbPaginationPrevious,
-  NgbPanel,
-  NgbPanelContent,
-  NgbPanelHeader,
-  NgbPanelTitle,
-  NgbPanelToggle,
   NgbPopover,
   NgbPopoverConfig,
   NgbPopoverModule,
   NgbProgressbar,
   NgbProgressbarConfig,
   NgbProgressbarModule,
+  NgbProgressbarStacked,
   NgbRating,
   NgbRatingConfig,
   NgbRatingModule,
