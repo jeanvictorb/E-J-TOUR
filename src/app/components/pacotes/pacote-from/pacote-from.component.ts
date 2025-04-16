@@ -20,7 +20,7 @@ export class PacoteFromComponent {
         'Trilha nas Cataratas do Iguaçu',
         'Voo de Helicóptero sobre as Cataratas',
       ],
-      imagem: '',
+      imagem: './../assets/imgPackage/aventura_nas_cataratas.png',
     },
     {
       titulo: 'Explorador da Natureza',
@@ -31,7 +31,7 @@ export class PacoteFromComponent {
         'Itaipu Refúgio Biológico',
         'Cataratas do Iguaçu (lado brasileiro)',
       ],
-      imagem: '',
+      imagem: './../assets/imgPackage/explorando_natureza.png',
     },
     {
       titulo: 'Adrenalina Total',
@@ -42,7 +42,7 @@ export class PacoteFromComponent {
         'Voo de Helicóptero sobre as Cataratas',
         'Kattamaram II',
       ],
-      imagem: '',
+      imagem: './../assets/imgPackage/adrenalina.png',
     },
     {
       titulo: 'História e Cultura de Foz',
@@ -53,7 +53,7 @@ export class PacoteFromComponent {
         'Mesquita Árabe',
         'Marco das Três Fronteiras',
       ],
-      imagem: '',
+      imagem: './../assets/imgPackage/historia.png',
     },
     {
       titulo: 'Noite Argentina',
@@ -63,7 +63,7 @@ export class PacoteFromComponent {
         'Jantar e Show de Tango',
         'Cassino de Puerto Iguazú (opcional)',
       ],
-      imagem: '',
+      imagem: './../assets/imgPackage/noite_argentina.png',
     },
     {
       titulo: 'Descobrindo a Argentina',
@@ -75,7 +75,7 @@ export class PacoteFromComponent {
         'Almoço em Puerto Iguazú',
         'Duty Free Shop',
       ],
-      imagem: '',
+      imagem: './../assets/imgPackage/descobrindo-argentina.png',
     },
     {
       titulo: 'Aventuras no Paraguai',
@@ -89,7 +89,7 @@ export class PacoteFromComponent {
         'Lago da República',
         'Mercado de Abasto',
       ],
-      imagem: '',
+      imagem: './../assets/imgCard/compraspy.jpg',
     },
     {
       titulo: 'Tour Três Fronteiras',
@@ -100,25 +100,14 @@ export class PacoteFromComponent {
         'City Tour Paraguai',
         'Marco das Três Fronteiras',
       ],
-      imagem: '',
+      imagem: './../assets/imgPackage/fronteiras.png',
     },
     {
       titulo: 'Diversão em Família',
       descricao:
         'Pacote ideal para toda a família, combinando atrações educativas e interativas para crianças e adultos.',
       atividades: ['Parque das Aves', 'Complexo Dreams', 'Wonder Park'],
-      imagem: '',
-    },
-    {
-      titulo: 'Pacote Kids',
-      descricao:
-        'Uma experiência mágica para as crianças, com atrações lúdicas e temáticas que garantem muita diversão.',
-      atividades: [
-        'Vale dos Dinossauros',
-        'Maravilhas do Mundo',
-        'Dreams Ice Bar',
-      ],
-      imagem: '',
+      imagem: './../assets/imgPackage/diversao.png',
     },
     {
       titulo: 'Romance nas Cataratas',
@@ -129,7 +118,7 @@ export class PacoteFromComponent {
         'Jantar no Kattamaram II',
         'Noite nas Cataratas',
       ],
-      imagem: '',
+      imagem: './../assets/imgPackage/romance.png',
     },
     {
       titulo: 'Lua de Mel em Foz',
@@ -140,7 +129,7 @@ export class PacoteFromComponent {
         'Jantar romântico',
         'Passeio noturno no Marco das Três Fronteiras',
       ],
-      imagem: '',
+      imagem: './../assets/imgPackage/lua_mel.png',
     },
     {
       titulo: 'Foz do Iguaçu 3 Dias e 2 Noites',
@@ -152,7 +141,7 @@ export class PacoteFromComponent {
         'Parque das Aves',
         'Jantar Temático (opcional)',
       ],
-      imagem: '',
+      imagem: './../assets/imgPackage/passeio-3dias.png',
     },
     {
       titulo: 'Foz do Iguaçu 5 Dias e 4 Noites',
@@ -166,7 +155,7 @@ export class PacoteFromComponent {
         'Noite Argentina',
         'City Tour Paraguai',
       ],
-      imagem: '',
+      imagem: './../assets/imgPackage/passeio-5dias.png',
     },
   ];
 }
