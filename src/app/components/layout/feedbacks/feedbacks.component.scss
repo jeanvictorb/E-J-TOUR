@@ -1,0 +1,29 @@
+.cardcomments {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    align-items: stretch; 
+  }
+  
+  .card {
+    background-color: #a5c79a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  

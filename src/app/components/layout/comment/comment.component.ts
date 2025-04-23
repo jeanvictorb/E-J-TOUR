@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import * as emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
+import { CardComponent } from "../../card/card.component";
 
 @Component({
   selector: 'app-comment',
@@ -17,7 +18,7 @@ export class CommentComponent {
   rating: number = 0;
   hoverRating: number = 0;
 
-  constructor() {}
+  constructor() { }
 
   addComment(): void {
     if (!this.nameComment || !this.text) {
@@ -55,4 +56,5 @@ export class CommentComponent {
   clearHover(): void {
     this.hoverRating = 0;
   }
+
 }
