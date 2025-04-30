@@ -22,7 +22,7 @@ export class FeedbacksComponent {
   loadDefaultComments(): void {
 
     this.comments = [
-      { titulo: 'Mariana', descricao: 'Foi uma experiência incrível! Os guias são muito experientes e atenciosos, nos fazendo sentir como parte da família.' },
+      { titulo: 'Priscila Castanheira', descricao: 'Fomos ciceroneados pelo Eder em nossa estadia em Foz do Iguaçu. Foi um presente em nosso passeio. Eder conhece os pontos turísticos da cidade como ninguém. É prestativo, discreto, alegre e uma companhia muito bacana. Vale a pena demais, contratar os serviços com ele.' },
       { titulo: 'Carlos', descricao: 'Os passeios foram maravilhosos, muito bem organizados e com muita informação sobre os pontos turísticos. Super recomendo!' },
       { titulo: 'Fernanda', descricao: 'Simplesmente amei o passeio! A equipe é super profissional e torna a visita a Foz do Iguaçu ainda mais especial.' },
       { titulo: 'Luiza', descricao: 'Tivemos um atendimento excepcional. Todos os detalhes foram pensados com muito carinho e isso fez toda a diferença para nossa experiência.' },
