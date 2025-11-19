@@ -1,22 +1,51 @@
+<div class="feedback-form-container">
+  <h2>Deixe seu Feedback</h2>
+  <p class="subtitle">Sua opinião é muito importante para nós! ✨</p>
 
-<h2>Deixe seu FeedBack</h2>
+  <!-- Campo de Nome -->
+  <input 
+    [(ngModel)]="nameComment" 
+    placeholder="Seu nome" 
+    type="text"
+    maxlength="50"
+  />
 
-<input [(ngModel)]="nameComment" placeholder="Seu nome" />
-<br />
-<textarea [(ngModel)]="text" placeholder="Escreva seu feedback..."></textarea>
-<br />
-<button (click)="addComment()">Enviar</button>
+  <!-- Campo de Feedback -->
+  <textarea 
+    [(ngModel)]="text" 
+    placeholder="Conte-nos sobre sua experiência..."
+    maxlength="500"
+  ></textarea>
 
-<div class="rating-stars">
-      <span class="star" [class.filled]="(hoverRating || rating) >= 1" (mouseenter)="setHover(1)"
-            (mouseleave)="clearHover()" (click)="setRating(1)">★</span>
-      <span class="star" [class.filled]="(hoverRating || rating) >= 2" (mouseenter)="setHover(2)"
-            (mouseleave)="clearHover()" (click)="setRating(2)">★</span>
-      <span class="star" [class.filled]="(hoverRating || rating) >= 3" (mouseenter)="setHover(3)"
-            (mouseleave)="clearHover()" (click)="setRating(3)">★</span>
-      <span class="star" [class.filled]="(hoverRating || rating) >= 4" (mouseenter)="setHover(4)"
-            (mouseleave)="clearHover()" (click)="setRating(4)">★</span>
-      <span class="star" [class.filled]="(hoverRating || rating) >= 5" (mouseenter)="setHover(5)"
-            (mouseleave)="clearHover()" (click)="setRating(5)">★</span>
+  <!-- Contador de caracteres (opcional) -->
+  <div class="char-counter" *ngIf="text.length > 0">
+    {{ text.length }}/500 caracteres
+  </div>
+
+  <!-- Sistema de Avaliação -->
+  <div class="rating-stars">
+    <span 
+      class="star" 
+      *ngFor="let star of [1, 2, 3, 4, 5]"
+      [class.filled]="(hoverRating || rating) >= star" 
+      (mouseenter)="setHover(star)"
+      (mouseleave)="clearHover()" 
+      (click)="setRating(star)"
+    >
+      ★
+    </span>
+  </div>
+
+  <!-- Botão de Enviar -->
+  <button 
+    (click)="addComment()"
+    [disabled]="!nameComment || !text || rating === 0"
+  >
+    Enviar Feedback
+  </button>
+
+  <!-- Mensagem de ajuda -->
+  <p class="help-text">
+    Por favor, avalie sua experiência com as estrelas acima
+  </p>
 </div>
-
