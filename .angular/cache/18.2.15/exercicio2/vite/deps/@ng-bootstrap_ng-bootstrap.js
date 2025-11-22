@@ -1,15 +1,14 @@
-import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR
-} from "./chunk-GOIC65CV.js";
+} from "./chunk-AWGDE4BO.js";
 import {
   DOCUMENT,
   NgTemplateOutlet,
   PercentPipe,
   formatDate,
   isPlatformBrowser
-} from "./chunk-3G5TURKA.js";
+} from "./chunk-ZANNSWOP.js";
 import {
   AfterRenderPhase,
   ApplicationRef,
@@ -29,6 +28,7 @@ import {
   Injector,
   Input,
   LOCALE_ID,
+  NEVER,
   NgModule,
   NgZone,
   Output,
@@ -43,8 +43,9 @@ import {
   assertInInjectionContext,
   createComponent,
   forwardRef,
+  fromEvent,
   inject,
-  require_cjs,
+  merge,
   setClassMetadata,
   ɵɵHostDirectivesFeature,
   ɵɵInheritDefinitionFeature,
@@ -102,36 +103,51 @@ import {
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-AN2A5BM6.js";
+} from "./chunk-TA4QIUFH.js";
 import {
-  require_operators
-} from "./chunk-PY7D3I5M.js";
+  BehaviorSubject,
+  EMPTY,
+  Observable,
+  Subject,
+  combineLatest,
+  delay,
+  distinctUntilChanged,
+  endWith,
+  filter,
+  finalize,
+  map,
+  mergeMap,
+  of,
+  race,
+  skip,
+  startWith,
+  switchMap,
+  take,
+  takeUntil,
+  tap,
+  timer,
+  withLatestFrom,
+  zip
+} from "./chunk-U5YOOJV4.js";
 import {
   __spreadProps,
-  __spreadValues,
-  __toESM
-} from "./chunk-NQ4HTGF6.js";
+  __spreadValues
+} from "./chunk-R2QGWZ7S.js";
 
 // node_modules/@angular/core/fesm2022/rxjs-interop.mjs
-var import_rxjs = __toESM(require_cjs(), 1);
-var import_operators = __toESM(require_operators(), 1);
 function takeUntilDestroyed(destroyRef) {
   if (!destroyRef) {
     assertInInjectionContext(takeUntilDestroyed);
     destroyRef = inject(DestroyRef);
   }
-  const destroyed$ = new import_rxjs.Observable((observer) => {
+  const destroyed$ = new Observable((observer) => {
     const unregisterFn = destroyRef.onDestroy(observer.next.bind(observer));
     return unregisterFn;
   });
   return (source) => {
-    return source.pipe((0, import_operators.takeUntil)(destroyed$));
+    return source.pipe(takeUntil(destroyed$));
   };
 }
-
-// node_modules/@ng-bootstrap/ng-bootstrap/fesm2022/ng-bootstrap.mjs
-var import_rxjs2 = __toESM(require_cjs(), 1);
-var import_operators2 = __toESM(require_operators(), 1);
 
 // node_modules/@popperjs/core/lib/enums.js
 var top = "top";
@@ -2755,7 +2771,7 @@ function reflow(element) {
 }
 function runInZone(zone) {
   return (source) => {
-    return new import_rxjs2.Observable((observer) => {
+    return new Observable((observer) => {
       const next = (value) => zone.run(() => observer.next(value));
       const error = (e) => zone.run(() => observer.error(e));
       const complete = () => zone.run(() => observer.complete());
@@ -2789,7 +2805,7 @@ var ngbRunTransition = (zone, element, startFn, options) => {
   if (running) {
     switch (options.runningTransition) {
       case "continue":
-        return import_rxjs2.EMPTY;
+        return EMPTY;
       case "stop":
         zone.run(() => running.transition$.complete());
         context = Object.assign(running.context, context);
@@ -2799,11 +2815,11 @@ var ngbRunTransition = (zone, element, startFn, options) => {
   const endFn = startFn(element, options.animation, context) || noopFn;
   if (!options.animation || window.getComputedStyle(element).transitionProperty === "none") {
     zone.run(() => endFn());
-    return (0, import_rxjs2.of)(void 0).pipe(runInZone(zone));
+    return of(void 0).pipe(runInZone(zone));
   }
-  const transition$ = new import_rxjs2.Subject();
-  const finishTransition$ = new import_rxjs2.Subject();
-  const stop$ = transition$.pipe((0, import_operators2.endWith)(true));
+  const transition$ = new Subject();
+  const finishTransition$ = new Subject();
+  const stop$ = transition$.pipe(endWith(true));
   runningTransitions.set(element, {
     transition$,
     complete: () => {
@@ -2814,11 +2830,11 @@ var ngbRunTransition = (zone, element, startFn, options) => {
   });
   const transitionDurationMs = getTransitionDurationMs(element);
   zone.runOutsideAngular(() => {
-    const transitionEnd$ = (0, import_rxjs2.fromEvent)(element, "transitionend").pipe((0, import_operators2.takeUntil)(stop$), (0, import_operators2.filter)(({
+    const transitionEnd$ = fromEvent(element, "transitionend").pipe(takeUntil(stop$), filter(({
       target
     }) => target === element));
-    const timer$ = (0, import_rxjs2.timer)(transitionDurationMs + transitionTimerDelayMs).pipe((0, import_operators2.takeUntil)(stop$));
-    (0, import_rxjs2.race)(timer$, transitionEnd$, finishTransition$).pipe((0, import_operators2.takeUntil)(stop$)).subscribe(() => {
+    const timer$ = timer(transitionDurationMs + transitionTimerDelayMs).pipe(takeUntil(stop$));
+    race(timer$, transitionEnd$, finishTransition$).pipe(takeUntil(stop$)).subscribe(() => {
       runningTransitions.delete(element);
       zone.run(() => {
         endFn();
@@ -4036,13 +4052,13 @@ var NgbCarousel = class _NgbCarousel {
     this._container = inject(ElementRef);
     this._destroyRef = inject(DestroyRef);
     this._injector = inject(Injector);
-    this._interval$ = new import_rxjs2.BehaviorSubject(this._config.interval);
-    this._mouseHover$ = new import_rxjs2.BehaviorSubject(false);
-    this._focused$ = new import_rxjs2.BehaviorSubject(false);
-    this._pauseOnHover$ = new import_rxjs2.BehaviorSubject(this._config.pauseOnHover);
-    this._pauseOnFocus$ = new import_rxjs2.BehaviorSubject(this._config.pauseOnFocus);
-    this._pause$ = new import_rxjs2.BehaviorSubject(false);
-    this._wrap$ = new import_rxjs2.BehaviorSubject(this._config.wrap);
+    this._interval$ = new BehaviorSubject(this._config.interval);
+    this._mouseHover$ = new BehaviorSubject(false);
+    this._focused$ = new BehaviorSubject(false);
+    this._pauseOnHover$ = new BehaviorSubject(this._config.pauseOnHover);
+    this._pauseOnFocus$ = new BehaviorSubject(this._config.pauseOnFocus);
+    this._pause$ = new BehaviorSubject(false);
+    this._wrap$ = new BehaviorSubject(this._config.wrap);
     this.id = `ngb-carousel-${carouselId++}`;
     this.animation = this._config.animation;
     this.keyboard = this._config.keyboard;
@@ -4113,12 +4129,12 @@ var NgbCarousel = class _NgbCarousel {
   ngAfterContentInit() {
     if (isPlatformBrowser(this._platformId)) {
       this._ngZone.runOutsideAngular(() => {
-        const hasNextSlide$ = (0, import_rxjs2.combineLatest)([this.slide.pipe((0, import_operators2.map)((slideEvent) => slideEvent.current), (0, import_operators2.startWith)(this.activeId)), this._wrap$, this.slides.changes.pipe((0, import_operators2.startWith)(null))]).pipe((0, import_operators2.map)(([currentSlideId, wrap]) => {
+        const hasNextSlide$ = combineLatest([this.slide.pipe(map((slideEvent) => slideEvent.current), startWith(this.activeId)), this._wrap$, this.slides.changes.pipe(startWith(null))]).pipe(map(([currentSlideId, wrap]) => {
           const slideArr = this.slides.toArray();
           const currentSlideIdx = this._getSlideIdxById(currentSlideId);
           return wrap ? slideArr.length > 1 : currentSlideIdx < slideArr.length - 1;
-        }), (0, import_operators2.distinctUntilChanged)());
-        (0, import_rxjs2.combineLatest)([this._pause$, this._pauseOnHover$, this._mouseHover$, this._pauseOnFocus$, this._focused$, this._interval$, hasNextSlide$]).pipe((0, import_operators2.map)(([pause, pauseOnHover, mouseHover, pauseOnFocus, focused, interval, hasNextSlide]) => pause || pauseOnHover && mouseHover || pauseOnFocus && focused || !hasNextSlide ? 0 : interval), (0, import_operators2.distinctUntilChanged)(), (0, import_operators2.switchMap)((interval) => interval > 0 ? (0, import_rxjs2.timer)(interval, interval) : import_rxjs2.NEVER), takeUntilDestroyed(this._destroyRef)).subscribe(() => this._ngZone.run(() => this.next(NgbSlideEventSource.TIMER)));
+        }), distinctUntilChanged());
+        combineLatest([this._pause$, this._pauseOnHover$, this._mouseHover$, this._pauseOnFocus$, this._focused$, this._interval$, hasNextSlide$]).pipe(map(([pause, pauseOnHover, mouseHover, pauseOnFocus, focused, interval, hasNextSlide]) => pause || pauseOnHover && mouseHover || pauseOnFocus && focused || !hasNextSlide ? 0 : interval), distinctUntilChanged(), switchMap((interval) => interval > 0 ? timer(interval, interval) : NEVER), takeUntilDestroyed(this._destroyRef)).subscribe(() => this._ngZone.run(() => this.next(NgbSlideEventSource.TIMER)));
       });
     }
     this.slides.changes.pipe(takeUntilDestroyed(this._destroyRef)).subscribe(() => {
@@ -4237,7 +4253,7 @@ var NgbCarousel = class _NgbCarousel {
         });
       });
       transitions.push(transition);
-      (0, import_rxjs2.zip)(...transitions).pipe((0, import_operators2.take)(1)).subscribe(() => {
+      zip(...transitions).pipe(take(1)).subscribe(() => {
         this._transitionIds = null;
         this.slid.emit({
           prev: previousId,
@@ -5145,8 +5161,8 @@ var NgbDatepickerService = class _NgbDatepickerService {
     };
     this._calendar = inject(NgbCalendar);
     this._i18n = inject(NgbDatepickerI18n);
-    this._model$ = new import_rxjs2.Subject();
-    this._dateSelect$ = new import_rxjs2.Subject();
+    this._model$ = new Subject();
+    this._dateSelect$ = new Subject();
     this._state = {
       dayTemplateData: null,
       markDisabled: null,
@@ -5174,10 +5190,10 @@ var NgbDatepickerService = class _NgbDatepickerService {
     };
   }
   get model$() {
-    return this._model$.pipe((0, import_operators2.filter)((model) => model.months.length > 0));
+    return this._model$.pipe(filter((model) => model.months.length > 0));
   }
   get dateSelect$() {
-    return this._dateSelect$.pipe((0, import_operators2.filter)((date) => date !== null));
+    return this._dateSelect$.pipe(filter((date) => date !== null));
   }
   set(options) {
     let patch = Object.keys(options).map((key) => this._VALIDATORS[key](options[key])).reduce((obj, part) => __spreadValues(__spreadValues({}, obj), part), {});
@@ -6295,9 +6311,9 @@ var NgbDatepicker = class _NgbDatepicker {
   }
   ngAfterViewInit() {
     this._ngZone.runOutsideAngular(() => {
-      const focusIns$ = (0, import_rxjs2.fromEvent)(this._contentEl.nativeElement, "focusin");
-      const focusOuts$ = (0, import_rxjs2.fromEvent)(this._contentEl.nativeElement, "focusout");
-      (0, import_rxjs2.merge)(focusIns$, focusOuts$).pipe((0, import_operators2.filter)((focusEvent) => {
+      const focusIns$ = fromEvent(this._contentEl.nativeElement, "focusin");
+      const focusOuts$ = fromEvent(this._contentEl.nativeElement, "focusout");
+      merge(focusIns$, focusOuts$).pipe(filter((focusEvent) => {
         const target = focusEvent.target;
         const relatedTarget = focusEvent.relatedTarget;
         return !(target?.classList.contains("ngb-dp-day") && relatedTarget?.classList.contains("ngb-dp-day") && this._nativeElement.contains(target) && this._nativeElement.contains(relatedTarget));
@@ -6635,13 +6651,13 @@ function ngbAutoClose(zone, document2, type, close, closed$, insideElements, ign
           return matchesSelectorIfAny(element, insideSelector) || !isContainedIn(element, insideElements);
         }
       };
-      const escapes$ = (0, import_rxjs2.fromEvent)(document2, "keydown").pipe((0, import_operators2.takeUntil)(closed$), (0, import_operators2.filter)((e) => e.key === "Escape"), (0, import_operators2.tap)((e) => e.preventDefault()));
-      const mouseDowns$ = (0, import_rxjs2.fromEvent)(document2, "mousedown").pipe((0, import_operators2.map)(shouldCloseOnClick), (0, import_operators2.takeUntil)(closed$));
-      const closeableClicks$ = (0, import_rxjs2.fromEvent)(document2, "mouseup").pipe((0, import_operators2.withLatestFrom)(mouseDowns$), (0, import_operators2.filter)(([_, shouldClose]) => shouldClose), (0, import_operators2.delay)(0), (0, import_operators2.takeUntil)(closed$));
-      (0, import_rxjs2.race)([escapes$.pipe((0, import_operators2.map)(
+      const escapes$ = fromEvent(document2, "keydown").pipe(takeUntil(closed$), filter((e) => e.key === "Escape"), tap((e) => e.preventDefault()));
+      const mouseDowns$ = fromEvent(document2, "mousedown").pipe(map(shouldCloseOnClick), takeUntil(closed$));
+      const closeableClicks$ = fromEvent(document2, "mouseup").pipe(withLatestFrom(mouseDowns$), filter(([_, shouldClose]) => shouldClose), delay(0), takeUntil(closed$));
+      race([escapes$.pipe(map(
         (_) => 0
         /* SOURCE.ESCAPE */
-      )), closeableClicks$.pipe((0, import_operators2.map)(
+      )), closeableClicks$.pipe(map(
         (_) => 1
         /* SOURCE.CLICK */
       ))]).subscribe((source) => zone.run(() => close(source)));
@@ -6655,8 +6671,8 @@ function getFocusableBoundaryElements(element) {
 }
 var ngbFocusTrap = (zone, element, stopFocusTrap$, refocusOnClick = false) => {
   zone.runOutsideAngular(() => {
-    const lastFocusedElement$ = (0, import_rxjs2.fromEvent)(element, "focusin").pipe((0, import_operators2.takeUntil)(stopFocusTrap$), (0, import_operators2.map)((e) => e.target));
-    (0, import_rxjs2.fromEvent)(element, "keydown").pipe((0, import_operators2.takeUntil)(stopFocusTrap$), (0, import_operators2.filter)((e) => e.key === "Tab"), (0, import_operators2.withLatestFrom)(lastFocusedElement$)).subscribe(([tabEvent, focusedElement]) => {
+    const lastFocusedElement$ = fromEvent(element, "focusin").pipe(takeUntil(stopFocusTrap$), map((e) => e.target));
+    fromEvent(element, "keydown").pipe(takeUntil(stopFocusTrap$), filter((e) => e.key === "Tab"), withLatestFrom(lastFocusedElement$)).subscribe(([tabEvent, focusedElement]) => {
       const [first, last] = getFocusableBoundaryElements(element);
       if ((focusedElement === first || focusedElement === element) && tabEvent.shiftKey) {
         last.focus();
@@ -6668,7 +6684,7 @@ var ngbFocusTrap = (zone, element, stopFocusTrap$, refocusOnClick = false) => {
       }
     });
     if (refocusOnClick) {
-      (0, import_rxjs2.fromEvent)(element, "click").pipe((0, import_operators2.takeUntil)(stopFocusTrap$), (0, import_operators2.withLatestFrom)(lastFocusedElement$), (0, import_operators2.map)((arr) => arr[1])).subscribe((lastFocusedElement) => lastFocusedElement.focus());
+      fromEvent(element, "click").pipe(takeUntil(stopFocusTrap$), withLatestFrom(lastFocusedElement$), map((arr) => arr[1])).subscribe((lastFocusedElement) => lastFocusedElement.focus());
     }
   });
 };
@@ -6971,7 +6987,7 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
     this._elWithFocus = null;
     this._model = null;
     this._positioning = ngbPositioning();
-    this._destroyCloseHandlers$ = new import_rxjs2.Subject();
+    this._destroyCloseHandlers$ = new Subject();
     this.autoClose = this._config.autoClose;
     this.placement = this._config.placement;
     this.popperOptions = this._config.popperOptions;
@@ -9397,7 +9413,7 @@ var NgbDropdown = class _NgbDropdown {
     this._injector = inject(Injector);
     this._ngZone = inject(NgZone);
     this._nativeElement = inject(ElementRef).nativeElement;
-    this._destroyCloseHandlers$ = new import_rxjs2.Subject();
+    this._destroyCloseHandlers$ = new Subject();
     this._bodyContainer = null;
     this._positioning = ngbPositioning();
     this.autoClose = this._config.autoClose;
@@ -9540,7 +9556,7 @@ var NgbDropdown = class _NgbDropdown {
     }
     if (key === " " || key === "Enter") {
       if (itemElement && (this.autoClose === true || this.autoClose === "inside")) {
-        (0, import_rxjs2.fromEvent)(itemElement, "click").pipe((0, import_operators2.take)(1)).subscribe(() => this.close());
+        fromEvent(itemElement, "click").pipe(take(1)).subscribe(() => this.close());
       }
       return;
     }
@@ -9565,7 +9581,7 @@ var NgbDropdown = class _NgbDropdown {
             this.close();
           }
         } else {
-          (0, import_rxjs2.fromEvent)(event.target, "focusout").pipe((0, import_operators2.take)(1)).subscribe(({
+          fromEvent(event.target, "focusout").pipe(take(1)).subscribe(({
             relatedTarget
           }) => {
             if (!this._nativeElement.contains(relatedTarget)) {
@@ -9866,7 +9882,7 @@ var PopupService = class {
     const {
       nativeElement
     } = this._windowRef.location;
-    const nextRenderSubject = new import_rxjs2.Subject();
+    const nextRenderSubject = new Subject();
     afterNextRender(() => {
       nextRenderSubject.next();
       nextRenderSubject.complete();
@@ -9874,7 +9890,7 @@ var PopupService = class {
       injector: this._injector,
       phase: AfterRenderPhase.MixedReadWrite
     });
-    const transition$ = nextRenderSubject.pipe((0, import_operators2.mergeMap)(() => ngbRunTransition(this._ngZone, nativeElement, ({
+    const transition$ = nextRenderSubject.pipe(mergeMap(() => ngbRunTransition(this._ngZone, nativeElement, ({
       classList
     }) => classList.add("show"), {
       animation,
@@ -9887,14 +9903,14 @@ var PopupService = class {
   }
   close(animation = false) {
     if (!this._windowRef) {
-      return (0, import_rxjs2.of)(void 0);
+      return of(void 0);
     }
     return ngbRunTransition(this._ngZone, this._windowRef.location.nativeElement, ({
       classList
     }) => classList.remove("show"), {
       animation,
       runningTransition: "stop"
-    }).pipe((0, import_operators2.tap)(() => {
+    }).pipe(tap(() => {
       this._windowRef?.destroy();
       this._contentRef?.viewRef?.destroy();
       this._windowRef = null;
@@ -10118,7 +10134,7 @@ var NgbModalRef = class {
    * @since 8.0.0
    */
   get closed() {
-    return this._closed.asObservable().pipe((0, import_operators2.takeUntil)(this._hidden));
+    return this._closed.asObservable().pipe(takeUntil(this._hidden));
   }
   /**
    * The observable that emits when the modal is dismissed via the `.dismiss()` method.
@@ -10129,7 +10145,7 @@ var NgbModalRef = class {
    * @since 8.0.0
    */
   get dismissed() {
-    return this._dismissed.asObservable().pipe((0, import_operators2.takeUntil)(this._hidden));
+    return this._dismissed.asObservable().pipe(takeUntil(this._hidden));
   }
   /**
    * The observable that emits when both modal window and backdrop are closed and animations were finished.
@@ -10159,9 +10175,9 @@ var NgbModalRef = class {
     this._contentRef = _contentRef;
     this._backdropCmptRef = _backdropCmptRef;
     this._beforeDismiss = _beforeDismiss;
-    this._closed = new import_rxjs2.Subject();
-    this._dismissed = new import_rxjs2.Subject();
-    this._hidden = new import_rxjs2.Subject();
+    this._closed = new Subject();
+    this._dismissed = new Subject();
+    this._hidden = new Subject();
     _windowCmptRef.instance.dismissEvent.subscribe((reason) => {
       this.dismiss(reason);
     });
@@ -10215,7 +10231,7 @@ var NgbModalRef = class {
   }
   _removeModalElements() {
     const windowTransition$ = this._windowCmptRef.instance.hide();
-    const backdropTransition$ = this._backdropCmptRef ? this._backdropCmptRef.instance.hide() : (0, import_rxjs2.of)(void 0);
+    const backdropTransition$ = this._backdropCmptRef ? this._backdropCmptRef.instance.hide() : of(void 0);
     windowTransition$.subscribe(() => {
       const {
         nativeElement
@@ -10236,7 +10252,7 @@ var NgbModalRef = class {
         this._backdropCmptRef = null;
       }
     });
-    (0, import_rxjs2.zip)(windowTransition$, backdropTransition$).subscribe(() => {
+    zip(windowTransition$, backdropTransition$).subscribe(() => {
       this._hidden.next();
       this._hidden.complete();
     });
@@ -10253,13 +10269,13 @@ var NgbModalWindow = class _NgbModalWindow {
     this._elRef = inject(ElementRef);
     this._zone = inject(NgZone);
     this._injector = inject(Injector);
-    this._closed$ = new import_rxjs2.Subject();
+    this._closed$ = new Subject();
     this._elWithFocus = null;
     this.backdrop = true;
     this.keyboard = true;
     this.dismissEvent = new EventEmitter();
-    this.shown = new import_rxjs2.Subject();
-    this.hidden = new import_rxjs2.Subject();
+    this.shown = new Subject();
+    this.hidden = new Subject();
   }
   get fullscreenClass() {
     return this.fullscreen === true ? " modal-fullscreen" : isString(this.fullscreen) ? ` modal-fullscreen-${this.fullscreen}-down` : "";
@@ -10288,7 +10304,7 @@ var NgbModalWindow = class _NgbModalWindow {
     const windowTransition$ = ngbRunTransition(this._zone, nativeElement, () => nativeElement.classList.remove("show"), context);
     const dialogTransition$ = ngbRunTransition(this._zone, this._dialogEl.nativeElement, () => {
     }, context);
-    const transitions$ = (0, import_rxjs2.zip)(windowTransition$, dialogTransition$);
+    const transitions$ = zip(windowTransition$, dialogTransition$);
     transitions$.subscribe(() => {
       this.hidden.next();
       this.hidden.complete();
@@ -10310,7 +10326,7 @@ var NgbModalWindow = class _NgbModalWindow {
     }, context);
     const dialogTransition$ = ngbRunTransition(this._zone, this._dialogEl.nativeElement, () => {
     }, context);
-    (0, import_rxjs2.zip)(windowTransition$, dialogTransition$).subscribe(() => {
+    zip(windowTransition$, dialogTransition$).subscribe(() => {
       this.shown.next();
       this.shown.complete();
     });
@@ -10322,7 +10338,7 @@ var NgbModalWindow = class _NgbModalWindow {
       nativeElement
     } = this._elRef;
     this._zone.runOutsideAngular(() => {
-      (0, import_rxjs2.fromEvent)(nativeElement, "keydown").pipe((0, import_operators2.takeUntil)(this._closed$), (0, import_operators2.filter)((e) => e.key === "Escape")).subscribe((event) => {
+      fromEvent(nativeElement, "keydown").pipe(takeUntil(this._closed$), filter((e) => e.key === "Escape")).subscribe((event) => {
         if (this.keyboard) {
           requestAnimationFrame(() => {
             if (!event.defaultPrevented) {
@@ -10334,12 +10350,12 @@ var NgbModalWindow = class _NgbModalWindow {
         }
       });
       let preventClose = false;
-      (0, import_rxjs2.fromEvent)(this._dialogEl.nativeElement, "mousedown").pipe((0, import_operators2.takeUntil)(this._closed$), (0, import_operators2.tap)(() => preventClose = false), (0, import_operators2.switchMap)(() => (0, import_rxjs2.fromEvent)(nativeElement, "mouseup").pipe((0, import_operators2.takeUntil)(this._closed$), (0, import_operators2.take)(1))), (0, import_operators2.filter)(({
+      fromEvent(this._dialogEl.nativeElement, "mousedown").pipe(takeUntil(this._closed$), tap(() => preventClose = false), switchMap(() => fromEvent(nativeElement, "mouseup").pipe(takeUntil(this._closed$), take(1))), filter(({
         target
       }) => nativeElement === target)).subscribe(() => {
         preventClose = true;
       });
-      (0, import_rxjs2.fromEvent)(nativeElement, "click").pipe((0, import_operators2.takeUntil)(this._closed$)).subscribe(({
+      fromEvent(nativeElement, "click").pipe(takeUntil(this._closed$)).subscribe(({
         target
       }) => {
         if (nativeElement === target) {
@@ -10546,7 +10562,7 @@ var NgbModalStack = class _NgbModalStack {
     this._environmentInjector = inject(EnvironmentInjector);
     this._document = inject(DOCUMENT);
     this._scrollBar = inject(ScrollBar);
-    this._activeWindowCmptHasChanged = new import_rxjs2.Subject();
+    this._activeWindowCmptHasChanged = new Subject();
     this._ariaHiddenValues = /* @__PURE__ */ new Map();
     this._scrollBarRestoreFn = null;
     this._modalRefs = [];
@@ -10589,7 +10605,7 @@ var NgbModalStack = class _NgbModalStack {
     let ngbModalRef = new NgbModalRef(windowCmptRef, contentRef, backdropCmptRef, options.beforeDismiss);
     this._registerModalRef(ngbModalRef);
     this._registerWindowCmpt(windowCmptRef);
-    ngbModalRef.hidden.pipe((0, import_operators2.take)(1)).subscribe(() => Promise.resolve(true).then(() => {
+    ngbModalRef.hidden.pipe(take(1)).subscribe(() => Promise.resolve(true).then(() => {
       if (!this._modalRefs.length) {
         this._document.body.classList.remove("modal-open");
         this._restoreScrollBar();
@@ -11072,7 +11088,7 @@ var NgbNav = class _NgbNav {
     this.keyboard = this._config.keyboard;
     this.shown = new EventEmitter();
     this.hidden = new EventEmitter();
-    this.navItemChange$ = new import_rxjs2.Subject();
+    this.navItemChange$ = new Subject();
     this.navChange = new EventEmitter();
   }
   click(item) {
@@ -11539,7 +11555,7 @@ var NgbNavOutlet = class _NgbNavOutlet {
   }
   ngAfterViewInit() {
     this._updateActivePane();
-    this.nav.navItemChange$.pipe(takeUntilDestroyed(this.nav.destroyRef), (0, import_operators2.startWith)(this._activePane?.item || null), (0, import_operators2.distinctUntilChanged)(), (0, import_operators2.skip)(1)).subscribe((nextItem) => {
+    this.nav.navItemChange$.pipe(takeUntilDestroyed(this.nav.destroyRef), startWith(this._activePane?.item || null), distinctUntilChanged(), skip(1)).subscribe((nextItem) => {
       const options = {
         animation: this.nav.animation,
         runningTransition: "stop"
@@ -13563,8 +13579,8 @@ var NgbScrollSpyService = class _NgbScrollSpyService {
     this._containerElement = null;
     this._fragments = /* @__PURE__ */ new Set();
     this._preRegisteredFragments = /* @__PURE__ */ new Set();
-    this._active$ = new import_rxjs2.Subject();
-    this._distinctActive$ = this._active$.pipe((0, import_operators2.distinctUntilChanged)());
+    this._active$ = new Subject();
+    this._distinctActive$ = this._active$.pipe(distinctUntilChanged());
     this._active = "";
     this._config = inject(NgbScrollSpyConfig);
     this._document = inject(DOCUMENT);
@@ -16056,11 +16072,11 @@ var NgbTypeahead = class _NgbTypeahead {
     this._popupService = new PopupService(NgbTypeaheadWindow);
     this._positioning = ngbPositioning();
     this._subscription = null;
-    this._closed$ = new import_rxjs2.Subject();
+    this._closed$ = new Subject();
     this._inputValueBackup = null;
     this._inputValueForSelectOnExact = null;
-    this._valueChanges$ = (0, import_rxjs2.fromEvent)(this._nativeElement, "input").pipe((0, import_operators2.map)(($event) => $event.target.value));
-    this._resubscribeTypeahead$ = new import_rxjs2.BehaviorSubject(null);
+    this._valueChanges$ = fromEvent(this._nativeElement, "input").pipe(map(($event) => $event.target.value));
+    this._resubscribeTypeahead$ = new BehaviorSubject(null);
     this._windowRef = null;
     this.autocomplete = "off";
     this.container = this._config.container;
@@ -16240,12 +16256,12 @@ var NgbTypeahead = class _NgbTypeahead {
     this._nativeElement.value = toString(value);
   }
   _subscribeToUserInput() {
-    const results$ = this._valueChanges$.pipe((0, import_operators2.tap)((value) => {
+    const results$ = this._valueChanges$.pipe(tap((value) => {
       this._inputValueBackup = this.showHint ? value : null;
       this._inputValueForSelectOnExact = this.selectOnExact ? value : null;
       this._onChange(this.editable ? value : void 0);
-    }), this.ngbTypeahead ? this.ngbTypeahead : () => (0, import_rxjs2.of)([]));
-    this._subscription = this._resubscribeTypeahead$.pipe((0, import_operators2.switchMap)(() => results$)).subscribe((results) => {
+    }), this.ngbTypeahead ? this.ngbTypeahead : () => of([]));
+    this._subscription = this._resubscribeTypeahead$.pipe(switchMap(() => results$)).subscribe((results) => {
       if (!results || results.length === 0) {
         this._closePopup();
       } else {
@@ -16496,7 +16512,7 @@ var NgbOffcanvasRef = class {
    * It will emit the result passed to the `.close()` method.
    */
   get closed() {
-    return this._closed.asObservable().pipe((0, import_operators2.takeUntil)(this._hidden));
+    return this._closed.asObservable().pipe(takeUntil(this._hidden));
   }
   /**
    * The observable that emits when the offcanvas is dismissed via the `.dismiss()` method.
@@ -16505,7 +16521,7 @@ var NgbOffcanvasRef = class {
    * reasons like backdrop click or ESC key press.
    */
   get dismissed() {
-    return this._dismissed.asObservable().pipe((0, import_operators2.takeUntil)(this._hidden));
+    return this._dismissed.asObservable().pipe(takeUntil(this._hidden));
   }
   /**
    * The observable that emits when both offcanvas window and backdrop are closed and animations were finished.
@@ -16531,9 +16547,9 @@ var NgbOffcanvasRef = class {
     this._contentRef = _contentRef;
     this._backdropCmptRef = _backdropCmptRef;
     this._beforeDismiss = _beforeDismiss;
-    this._closed = new import_rxjs2.Subject();
-    this._dismissed = new import_rxjs2.Subject();
-    this._hidden = new import_rxjs2.Subject();
+    this._closed = new Subject();
+    this._dismissed = new Subject();
+    this._hidden = new Subject();
     _panelCmptRef.instance.dismissEvent.subscribe((reason) => {
       this.dismiss(reason);
     });
@@ -16592,7 +16608,7 @@ var NgbOffcanvasRef = class {
   }
   _removeOffcanvasElements() {
     const panelTransition$ = this._panelCmptRef.instance.hide();
-    const backdropTransition$ = this._backdropCmptRef ? this._backdropCmptRef.instance.hide() : (0, import_rxjs2.of)(void 0);
+    const backdropTransition$ = this._backdropCmptRef ? this._backdropCmptRef.instance.hide() : of(void 0);
     panelTransition$.subscribe(() => {
       const {
         nativeElement
@@ -16613,7 +16629,7 @@ var NgbOffcanvasRef = class {
         this._backdropCmptRef = null;
       }
     });
-    (0, import_rxjs2.zip)(panelTransition$, backdropTransition$).subscribe(() => {
+    zip(panelTransition$, backdropTransition$).subscribe(() => {
       this._hidden.next();
       this._hidden.complete();
     });
@@ -16734,13 +16750,13 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
     this._elRef = inject(ElementRef);
     this._zone = inject(NgZone);
     this._injector = inject(Injector);
-    this._closed$ = new import_rxjs2.Subject();
+    this._closed$ = new Subject();
     this._elWithFocus = null;
     this.keyboard = true;
     this.position = "start";
     this.dismissEvent = new EventEmitter();
-    this.shown = new import_rxjs2.Subject();
-    this.hidden = new import_rxjs2.Subject();
+    this.shown = new Subject();
+    this.hidden = new Subject();
   }
   dismiss(reason) {
     this.dismissEvent.emit(reason);
@@ -16797,7 +16813,7 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
       nativeElement
     } = this._elRef;
     this._zone.runOutsideAngular(() => {
-      (0, import_rxjs2.fromEvent)(nativeElement, "keydown").pipe((0, import_operators2.takeUntil)(this._closed$), (0, import_operators2.filter)((e) => e.key === "Escape")).subscribe((event) => {
+      fromEvent(nativeElement, "keydown").pipe(takeUntil(this._closed$), filter((e) => e.key === "Escape")).subscribe((event) => {
         if (this.keyboard) {
           requestAnimationFrame(() => {
             if (!event.defaultPrevented) {
@@ -16927,7 +16943,7 @@ var NgbOffcanvasStack = class _NgbOffcanvasStack {
     this._injector = inject(Injector);
     this._document = inject(DOCUMENT);
     this._scrollBar = inject(ScrollBar);
-    this._activePanelCmptHasChanged = new import_rxjs2.Subject();
+    this._activePanelCmptHasChanged = new Subject();
     this._scrollBarRestoreFn = null;
     this._backdropAttributes = ["animation", "backdropClass"];
     this._panelAttributes = ["animation", "ariaDescribedBy", "ariaLabelledBy", "keyboard", "panelClass", "position"];
@@ -16966,7 +16982,7 @@ var NgbOffcanvasStack = class _NgbOffcanvasStack {
     let ngbOffcanvasRef = new NgbOffcanvasRef(panelCmptRef, contentRef, backdropCmptRef, options.beforeDismiss);
     this._registerOffcanvasRef(ngbOffcanvasRef);
     this._registerPanelCmpt(panelCmptRef);
-    ngbOffcanvasRef.hidden.pipe((0, import_operators2.finalize)(() => this._restoreScrollBar())).subscribe();
+    ngbOffcanvasRef.hidden.pipe(finalize(() => this._restoreScrollBar())).subscribe();
     activeOffcanvas.close = (result) => {
       ngbOffcanvasRef.close(result);
     };

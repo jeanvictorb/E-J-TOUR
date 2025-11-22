@@ -1,4 +1,3 @@
-import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   Directive,
   ElementRef,
@@ -8,24 +7,20 @@ import {
   NgModule,
   Output,
   Renderer2,
-  require_cjs,
+  fromEvent,
   setClassMetadata,
   ɵɵclassProp,
   ɵɵdefineDirective,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵdirectiveInject
-} from "./chunk-AN2A5BM6.js";
+} from "./chunk-TA4QIUFH.js";
 import {
-  require_operators
-} from "./chunk-PY7D3I5M.js";
-import {
-  __toESM
-} from "./chunk-NQ4HTGF6.js";
+  take
+} from "./chunk-U5YOOJV4.js";
+import "./chunk-R2QGWZ7S.js";
 
 // node_modules/mdb-angular-ui-kit/fesm2022/mdb-angular-ui-kit-collapse.mjs
-var import_rxjs = __toESM(require_cjs(), 1);
-var import_operators = __toESM(require_operators(), 1);
 var TRANSITION_TIME = 350;
 var MdbCollapseDirective = class _MdbCollapseDirective {
   _elementRef;
@@ -63,7 +58,7 @@ var MdbCollapseDirective = class _MdbCollapseDirective {
     this._renderer.setStyle(this.host, "height", "0px");
     this._isTransitioning = true;
     const scrollHeight = this.host.scrollHeight;
-    (0, import_rxjs.fromEvent)(this.host, "transitionend").pipe((0, import_operators.take)(1)).subscribe(() => {
+    fromEvent(this.host, "transitionend").pipe(take(1)).subscribe(() => {
       this._isTransitioning = false;
       this.collapsed = false;
       this._renderer.removeClass(this.host, "collapsing");
@@ -87,7 +82,7 @@ var MdbCollapseDirective = class _MdbCollapseDirective {
     this._renderer.removeClass(this.host, "collapse");
     this._renderer.removeClass(this.host, "show");
     this._isTransitioning = true;
-    (0, import_rxjs.fromEvent)(this.host, "transitionend").pipe((0, import_operators.take)(1)).subscribe(() => {
+    fromEvent(this.host, "transitionend").pipe(take(1)).subscribe(() => {
       this._renderer.removeClass(this.host, "collapsing");
       this._renderer.addClass(this.host, "collapse");
       this._isTransitioning = false;
@@ -111,7 +106,7 @@ var MdbCollapseDirective = class _MdbCollapseDirective {
     let eventEmitted = false;
     const durationPadding = 5;
     const emulatedDuration = duration + durationPadding;
-    (0, import_rxjs.fromEvent)(element, "transitionend").pipe((0, import_operators.take)(1)).subscribe(() => {
+    fromEvent(element, "transitionend").pipe(take(1)).subscribe(() => {
       eventEmitted = true;
     });
     setTimeout(() => {

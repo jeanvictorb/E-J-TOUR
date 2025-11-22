@@ -1,4 +1,3 @@
-import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   ALLOW_MULTIPLE_PLATFORMS,
   ANIMATION_MODULE_TYPE,
@@ -462,9 +461,9 @@ import {
   ɵɵvalidateIframeAttribute,
   ɵɵviewQuery,
   ɵɵviewQuerySignal
-} from "./chunk-AN2A5BM6.js";
-import "./chunk-PY7D3I5M.js";
-import "./chunk-NQ4HTGF6.js";
+} from "./chunk-TA4QIUFH.js";
+import "./chunk-U5YOOJV4.js";
+import "./chunk-R2QGWZ7S.js";
 export {
   ANIMATION_MODULE_TYPE,
   APP_BOOTSTRAP_LISTENER,
