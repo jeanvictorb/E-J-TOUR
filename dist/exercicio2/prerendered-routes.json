@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/principal",
+    "/principal/index",
+    "/principal/pacotes",
+    "/principal/passeio"
+  ]
+}
