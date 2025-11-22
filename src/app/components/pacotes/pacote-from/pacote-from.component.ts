@@ -1,6 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CardComponent } from '../../card/card.component';
 import { CommonModule } from '@angular/common';
+
+// Interface para melhor tipagem
+interface Package {
+  titulo: string;
+  descricao: string;
+  atividades: string[];
+  imagem: string;
+  categoria?: string; // Opcional para filtros
+  destaque?: 'novo' | 'popular'; // Opcional para badges
+}
 
 @Component({
   selector: 'app-pacote-from',
@@ -9,18 +19,21 @@ import { CommonModule } from '@angular/common';
   templateUrl: './pacote-from.component.html',
   styleUrl: './pacote-from.component.scss',
 })
-export class PacoteFromComponent {
-  cardpackage = [
+export class PacoteFromComponent implements OnInit {
+  // Lista completa de pacotes
+  allPackages: Package[] = [
     {
       titulo: 'Aventura nas Cataratas',
       descricao:
-        'Explore as Cataratas do Iguaçu de forma emocionante, combinando trilhas, passeios de barco e um voo panorâmico sobre as quedas d’água.',
+        'Explore as Cataratas do Iguaçu de forma emocionante, combinando trilhas, passeios de barco e um voo panorâmico sobre as quedas d.água.',
       atividades: [
         'Macuco Safari',
         'Trilha nas Cataratas do Iguaçu',
         'Voo de Helicóptero sobre as Cataratas',
       ],
       imagem: './../assets/imgPackage/aventura_nas_cataratas.png',
+      categoria: 'aventura',
+      destaque: 'popular'
     },
     {
       titulo: 'Explorador da Natureza',
@@ -32,6 +45,7 @@ export class PacoteFromComponent {
         'Cataratas do Iguaçu (lado brasileiro)',
       ],
       imagem: './../assets/imgPackage/explorando_natureza.png',
+      categoria: 'natureza'
     },
     {
       titulo: 'Adrenalina Total',
@@ -43,6 +57,8 @@ export class PacoteFromComponent {
         'Kattamaram II',
       ],
       imagem: './../assets/imgPackage/adrenalina.png',
+      categoria: 'aventura',
+      destaque: 'novo'
     },
     {
       titulo: 'História e Cultura de Foz',
@@ -54,6 +70,7 @@ export class PacoteFromComponent {
         'Marco das Três Fronteiras',
       ],
       imagem: './../assets/imgPackage/historia.png',
+      categoria: 'cultural'
     },
     {
       titulo: 'Noite Argentina',
@@ -64,6 +81,7 @@ export class PacoteFromComponent {
         'Cassino de Puerto Iguazú (opcional)',
       ],
       imagem: './../assets/imgPackage/noite_argentina.png',
+      categoria: 'cultural'
     },
     {
       titulo: 'Descobrindo a Argentina',
@@ -76,6 +94,7 @@ export class PacoteFromComponent {
         'Duty Free Shop',
       ],
       imagem: './../assets/imgPackage/descobrindo-argentina.png',
+      categoria: 'cultural'
     },
     {
       titulo: 'Aventuras no Paraguai',
@@ -90,6 +109,7 @@ export class PacoteFromComponent {
         'Mercado de Abasto',
       ],
       imagem: './../assets/imgCard/compraspy.jpg',
+      categoria: 'cultural'
     },
     {
       titulo: 'Tour Três Fronteiras',
@@ -101,6 +121,7 @@ export class PacoteFromComponent {
         'Marco das Três Fronteiras',
       ],
       imagem: './../assets/imgPackage/fronteiras.png',
+      categoria: 'cultural'
     },
     {
       titulo: 'Diversão em Família',
@@ -108,6 +129,8 @@ export class PacoteFromComponent {
         'Pacote ideal para toda a família, combinando atrações educativas e interativas para crianças e adultos.',
       atividades: ['Parque das Aves', 'Complexo Dreams', 'Wonder Park'],
       imagem: './../assets/imgPackage/diversao.png',
+      categoria: 'familia',
+      destaque: 'popular'
     },
     {
       titulo: 'Romance nas Cataratas',
@@ -119,6 +142,7 @@ export class PacoteFromComponent {
         'Noite nas Cataratas',
       ],
       imagem: './../assets/imgPackage/romance.png',
+      categoria: 'romantico'
     },
     {
       titulo: 'Lua de Mel em Foz',
@@ -130,6 +154,8 @@ export class PacoteFromComponent {
         'Passeio noturno no Marco das Três Fronteiras',
       ],
       imagem: './../assets/imgPackage/lua_mel.png',
+      categoria: 'romantico',
+      destaque: 'novo'
     },
     {
       titulo: 'Foz do Iguaçu 3 Dias e 2 Noites',
@@ -142,6 +168,7 @@ export class PacoteFromComponent {
         'Jantar Temático (opcional)',
       ],
       imagem: './../assets/imgPackage/passeio-3dias.png',
+      categoria: 'completo'
     },
     {
       titulo: 'Foz do Iguaçu 5 Dias e 4 Noites',
@@ -156,6 +183,53 @@ export class PacoteFromComponent {
         'City Tour Paraguai',
       ],
       imagem: './../assets/imgPackage/passeio-5dias.png',
+      categoria: 'completo',
+      destaque: 'popular'
     },
   ];
+
+  // Pacotes exibidos (podem ser filtrados)
+  cardpackage: Package[] = [];
+
+  // Categoria ativa do filtro
+  activeFilter: string = 'todos';
+
+  ngOnInit(): void {
+    // Inicializa com todos os pacotes
+    this.cardpackage = this.allPackages;
+  }
+
+  // Método para filtrar pacotes (opcional)
+  filterPackages(categoria: string): void {
+    this.activeFilter = categoria;
+    
+    if (categoria === 'todos') {
+      this.cardpackage = this.allPackages;
+    } else {
+      this.cardpackage = this.allPackages.filter(
+        pkg => pkg.categoria === categoria
+      );
+    }
+
+    // Scroll suave para o topo da lista
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Método para obter badge (opcional)
+  getBadgeClass(destaque?: 'novo' | 'popular'): string {
+    if (destaque === 'novo') return 'package-badge new';
+    if (destaque === 'popular') return 'package-badge popular';
+    return '';
+  }
+
+  // Método para ordenar pacotes (opcional)
+  sortPackages(order: 'asc' | 'desc'): void {
+    this.cardpackage.sort((a, b) => {
+      if (order === 'asc') {
+        return a.titulo.localeCompare(b.titulo);
+      } else {
+        return b.titulo.localeCompare(a.titulo);
+      }
+    });
+  }
 }

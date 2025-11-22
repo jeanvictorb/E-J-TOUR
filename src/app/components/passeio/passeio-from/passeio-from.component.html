@@ -1,11 +1,96 @@
-<div class="cards">
+<div class="tours-wrapper">
+  
+  <!-- Cabeçalho da Seção -->
+  <div class="tours-header">
+    <h1>Nossos Passeios</h1>
+    <p>
+      Descubra as maravilhas de Foz do Iguaçu com nossos passeios exclusivos. 
+      Aventura, cultura e natureza te esperam!
+    </p>
+  </div>
 
-    <ng-container *ngFor="let card of cardList" >
-        <app-card 
+  <!-- Barra de Busca -->
+  <div class="search-bar">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm"
+      (input)="filterTours()"
+      placeholder="Buscar passeios... (ex: Cataratas, Itaipu, Parque)"
+    />
+    <i class="fas fa-search search-icon"></i>
+  </div>
+  <div class="tours-categories">
+    <div 
+      class="category-tag"
+      [class.active]="activeCategory === 'todos'"
+      (click)="filterByCategory('todos')"
+    >
+      Todos <span class="count">{{ cardList.length }}</span>
+    </div>
+    <div 
+      class="category-tag"
+      [class.active]="activeCategory === 'natureza'"
+      (click)="filterByCategory('natureza')"
+    >
+      Natureza <span class="count">8</span>
+    </div>
+    <div 
+      class="category-tag"
+      [class.active]="activeCategory === 'cultura'"
+      (click)="filterByCategory('cultura')"
+    >
+      Cultura <span class="count">6</span>
+    </div>
+    <div 
+      class="category-tag"
+      [class.active]="activeCategory === 'aventura'"
+      (click)="filterByCategory('aventura')"
+    >
+      Aventura <span class="count">5</span>
+    </div>
+  </div>
+  
+
+  <!-- Contador de Resultados -->
+  <div class="results-count" *ngIf="searchTerm">
+    Mostrando <span>{{ filteredCardList.length }}</span> de <span>{{ cardList.length }}</span> passeios
+  </div>
+
+  <!-- Grid de Passeios -->
+  <div class="cards" *ngIf="filteredCardList.length > 0">
+    <ng-container *ngFor="let card of filteredCardList">
+      <app-card 
         [titulo]="card.titulo"
         [descricao]="card.descricao"
-        [imagem]="card.imagem">
-    </app-card>
-</ng-container>
-</div>
+        [imagem]="card.imagem"
+      >
+      </app-card>
+    </ng-container>
+  </div>
+
+  <!-- Mensagem quando não há resultados -->
+  <div class="no-results" *ngIf="filteredCardList.length === 0 && searchTerm">
+    <div class="no-results-icon">🔍</div>
+    <h3>Nenhum passeio encontrado</h3>
+    <p>Não encontramos passeios com o termo "{{ searchTerm }}"</p>
+    <button class="clear-search-btn" (click)="clearSearch()">
+      Limpar busca
+    </button>
+  </div>
+
+  <div class="tours-loading" *ngIf="isLoading">
+    <div class="skeleton-card" *ngFor="let i of [1,2,3,4,5,6]"></div>
+  </div>
   
+
+  <!-- Botão Voltar ao Topo -->
+  <button 
+    class="back-to-top" 
+    [class.visible]="showBackToTop"
+    (click)="scrollToTop()"
+    aria-label="Voltar ao topo"
+  >
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+</div>

@@ -9,13 +9,15 @@ import {
   Renderer2,
   fromEvent,
   setClassMetadata,
-  take,
   ɵɵclassProp,
   ɵɵdefineDirective,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵdirectiveInject
-} from "./chunk-DQZYQNBR.js";
+} from "./chunk-TA4QIUFH.js";
+import {
+  take
+} from "./chunk-U5YOOJV4.js";
 import "./chunk-R2QGWZ7S.js";
 
 // node_modules/mdb-angular-ui-kit/fesm2022/mdb-angular-ui-kit-collapse.mjs
