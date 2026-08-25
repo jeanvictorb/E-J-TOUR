@@ -1,0 +1,329 @@
+{
+  "LANG_NAME": "English",
+  "MENU": {
+    "BRAND": "E&J Tourism",
+    "PACOTES": "Packages",
+    "PASSEIOS": "Tours"
+  },
+  "HOME": {
+    "TOP_TOURS_TITLE": "Most wanted tours",
+    "PACKAGES_TITLE": "Available Packages",
+    "TRANSPORT_TITLE": "Available Transportation",
+    "VAN_TITLE": "Van",
+    "VAN_DESC": "For small groups, our van offers comfort and practicality, with capacity for up to 15 people. Ideal for exclusive tours and personalized services.",
+    "CAR_TITLE": "Executive Car",
+    "CAR_DESC": "For more private and luxurious transportation, we offer executive cars with all the comfort, perfect for business trips or special tours.",
+    "BUS_TITLE": "Bus",
+    "BUS_DESC": "For large groups, our bus is the perfect choice. With capacity for up to 40 people, it offers comfort, safety, and space for everyone to enjoy the trip.",
+    "HISTORIA_TITLE": "History and Culture",
+    "HISTORIA_DESC": "Discover the cultural and religious richness of Foz do Iguaçu by visiting temples and historical monuments",
+    "COMPRAS_TITLE": "Paraguay Shopping",
+    "COMPRAS_DESC": "Experience a shopping journey tailored to you in Ciudad del Este. On this tour, an experienced professional will be by your side, guiding and helping throughout the process, so you can enjoy every moment of your shopping to the fullest and with peace of mind."
+  },
+  "PACOTES_PAGE": {
+    "HEADER_TITLE": "Our Packages",
+    "HEADER_DESC": "Choose the perfect package for your adventure in Foz do Iguaçu. Unforgettable experiences await you!",
+    "CTA_TITLE": "Didn't find the ideal package?",
+    "CTA_DESC": "Contact us and build a personalized itinerary for the trip of your dreams!",
+    "CTA_BUTTON": "Contact Us"
+  },
+  "PASSEIOS_PAGE": {
+    "HEADER_TITLE": "Our Tours",
+    "HEADER_DESC": "Discover the wonders of Foz do Iguaçu with our exclusive tours. Adventure, culture, and nature await you!",
+    "SEARCH_PLACEHOLDER": "Search tours... (e.g. Falls, Itaipu, Park)",
+    "CATEGORY_ALL": "All",
+    "CATEGORY_NATURE": "Nature",
+    "CATEGORY_CULTURE": "Culture",
+    "CATEGORY_ADVENTURE": "Adventure",
+    "RESULTS_COUNT_SHOWING": "Showing",
+    "RESULTS_COUNT_OF": "of",
+    "RESULTS_COUNT_TOURS": "tours",
+    "NO_RESULTS_TITLE": "No tours found",
+    "NO_RESULTS_DESC": "We couldn't find any tours matching",
+    "CLEAR_SEARCH": "Clear search"
+  },
+  "CARD": {
+    "WANT_TO_KNOW_MORE": "I want to know more"
+  },
+  "COMMENT_FORM": {
+    "TITLE": "Leave your Feedback",
+    "SUBTITLE": "Your opinion matters a lot to us! ✨",
+    "NAME_PLACEHOLDER": "Your name",
+    "TEXT_PLACEHOLDER": "Tell us about your experience...",
+    "CHAR_COUNTER": "characters",
+    "SEND_BUTTON": "Send Feedback",
+    "HELP_TEXT": "Please rate your experience using the stars above",
+    "NAME_REQUIRED_TITLE": "Name required",
+    "NAME_REQUIRED_TEXT": "Please enter your name",
+    "FEEDBACK_REQUIRED_TITLE": "Feedback required",
+    "FEEDBACK_REQUIRED_TEXT": "Please write your feedback",
+    "RATING_REQUIRED_TITLE": "Rating required",
+    "RATING_REQUIRED_TEXT": "Please rate your experience using the stars",
+    "TOO_SHORT_TITLE": "Feedback too short",
+    "TOO_SHORT_TEXT": "Please write at least 10 characters",
+    "SUCCESS_TITLE": "Feedback sent!",
+    "SUCCESS_TEXT": "Thank you so much for your review! 🎉",
+    "ERROR_TITLE": "Error sending feedback",
+    "ERROR_TEXT": "We couldn't send your feedback. Please try again.",
+    "RATING_TEXTS": {
+      "VERY_UNSATISFIED": "Very unsatisfied",
+      "UNSATISFIED": "Unsatisfied",
+      "NEUTRAL": "Neutral",
+      "SATISFIED": "Satisfied",
+      "VERY_SATISFIED": "Very satisfied",
+      "RATE_EXPERIENCE": "Rate your experience"
+    }
+  },
+  "FOOTER": {
+    "SOCIAL_TEXT": "Connect with us on social media:",
+    "ABOUT_TEXT": "For over 10 years, E&J Tour has turned tours into unforgettable experiences in Foz do Iguaçu. Our commitment is to guarantee comfort, safety, and the best experience for every visitor. With experienced guides and personalized itineraries, we take you to the main tourist spots, such as the Iguazu Falls, the Itaipu Dam, and the Triple Frontier. Travel with us and discover Foz do Iguaçu in a unique way!",
+    "CONTACT_TITLE": "Contact",
+    "COPYRIGHT": "Copyright E&J Tour"
+  },
+  "TOURS": {
+    "AQUAFOZ": {
+      "TITLE": "AquaFoz - Foz do Iguaçu Aquarium",
+      "DESC": "Explore the largest aquarium in the region with over 300 freshwater and saltwater species in 3.3 million liters. A journey from the Iguaçu and Paraná rivers to the oceans, featuring an underwater tunnel and unforgettable immersive experiences."
+    },
+    "CATARATAS_BR": {
+      "TITLE": "Iguazu Falls - Brazilian Side",
+      "DESC": "Explore the impressive waterfalls of Iguazu from the Brazilian side, with panoramic views and trails that provide an unforgettable experience."
+    },
+    "ITAIPU_CIRCUITO": {
+      "TITLE": "Itaipu Circuit",
+      "DESC": "Explore the Itaipu Dam on a circuit that allows you to see its operations up close and its importance for power generation."
+    },
+    "CITY_TOUR_FOZ": {
+      "TITLE": "City Tour Foz do Iguaçu",
+      "DESC": "Meet the main tourist spots of Foz do Iguaçu, including visits to the Buddhist Temple, Omar Ibn Al-Khattab Mosque, and the Three Borders Landmark, exploring the city's cultural and historical diversity."
+    },
+    "CITY_TOUR_PY": {
+      "TITLE": "Paraguay City Tour",
+      "DESC": "Discover a different side of Paraguay, visiting cultural and historical points beyond traditional shopping in Ciudad del Este."
+    },
+    "COMPLEXO_DREAMS": {
+      "TITLE": "Dreams Complex",
+      "DESC": "Explore a set of attractions that includes the Wax Museum, Wonders of the World, Dinosaur Valley and Dreams Motor Show, offering interactive and educational experiences for the whole family."
+    },
+    "ICE_BAR": {
+      "TITLE": "Dreams Ice Bar",
+      "DESC": "Experience a bar made entirely of ice, with elaborate sculptures and decorations, where you can enjoy drinks served in ice glasses in a freezing and stunning atmosphere."
+    },
+    "ITAIPU_ILUMINADA": {
+      "TITLE": "Illuminated Itaipu",
+      "DESC": "Enjoy a night spectacle where the Itaipu Dam is illuminated with over 747 reflectors and 112 luminaires, creating an impressive visual experience."
+    },
+    "ITAIPU_PANORAMICA": {
+      "TITLE": "Panoramic Itaipu",
+      "DESC": "Discover the grandeur of the Itaipu Dam on a tour offering comprehensive views of the dam, spillway, and Itaipu Lake from strategic observation points."
+    },
+    "REFUGIO": {
+      "TITLE": "Itaipu Biological Refuge",
+      "DESC": "Explore the richness of local biodiversity on ecological trails passing through preservation areas, learning about environmental conservation projects and diverse plant and animal species."
+    },
+    "KATTAMARAM": {
+      "TITLE": "Kattamaram II",
+      "DESC": "Navigate the waters of the Iguaçu River on a luxurious boat, enjoying panoramic views of the Brazilian, Argentine, and Paraguayan shores, with an optional onboard buffet."
+    },
+    "MACUCO": {
+      "TITLE": "Macuco Safari",
+      "DESC": "Embark on a tour combining a forest trail and boat navigation to the falls of Iguazu, providing an exciting experience close to the waters."
+    },
+    "MARAVILHAS": {
+      "TITLE": "Wonders of the World",
+      "DESC": "Take a trip through the planet's greatest monuments in a theme park featuring detailed replicas of icons like the Eiffel Tower, Christ the Redeemer, and the Statue of Liberty."
+    },
+    "MESQUITA": {
+      "TITLE": "Arab Mosque",
+      "DESC": "Visit the Omar Ibn Al-Khatab Mosque, a tourist spot highlighting the cultural diversity of Foz do Iguaçu, with impressive architecture and an atmosphere of serenity."
+    },
+    "MOTOR_SHOW": {
+      "TITLE": "Motor Show",
+      "DESC": "Enjoy a unique combination of motorcycles, live music, and gastronomy in a themed environment that enchants motorcycle and culture enthusiasts."
+    },
+    "MUSEU_CERA": {
+      "TITLE": "Wax Museum",
+      "DESC": "Encounter realistic replicas of iconic figures from pop culture, history, and entertainment in interactive settings allowing memorable photos."
+    },
+    "NOITE_ARG": {
+      "TITLE": "Argentine Night - Dinner and Show",
+      "DESC": "Enjoy Argentine culture on a special night with a typical dinner and tango and folklore performances in Puerto Iguazú."
+    },
+    "NOITE_CATARATAS": {
+      "TITLE": "Night at the Falls",
+      "DESC": "Experience a night visit to the Iguazu Falls, contemplating the falls illuminated by the moon and special lights, in a mystical and engaging atmosphere."
+    },
+    "PARQUE_AVES": {
+      "TITLE": "Bird Park",
+      "DESC": "Visit a conservation sanctuary with over 1,300 birds of 150 different species, walking along trails passing through giant aviaries and interacting with tropical birds in their natural habitat."
+    },
+    "POR_SOL_CATARATAS": {
+      "TITLE": "Sunset at the Falls",
+      "DESC": "Experience the magic of the sunset at the Iguazu Falls, when the waters reflect the golden and orange tones of the sun, providing a peaceful and unforgettable experience."
+    },
+    "POR_SOL_MARCO": {
+      "TITLE": "Sunset at the Three Borders Landmark",
+      "DESC": "Enjoy one of the most beautiful sunsets in Foz do Iguaçu, overlooking the Iguaçu and Paraná rivers, while enjoying cultural performances and local gastronomy."
+    },
+    "MOVIES_CAR": {
+      "TITLE": "Movies Car",
+      "DESC": "Experience the magic of cinema in one of Brazil's largest themed drive-ins! Movies Car offers a unique experience with shows, characters, and unforgettable movies in a Hollywood-inspired setting."
+    },
+    "TEMPLO_BUDISTA": {
+      "TITLE": "Buddhist Temple",
+      "DESC": "Visit the Foz do Iguaçu Buddhist Temple, admire the Buddha statues and traditional architecture while learning about Buddhist philosophy in an environment of peace and serenity."
+    },
+    "HELICOPTERO": {
+      "TITLE": "Helicopter Flight over the Falls",
+      "DESC": "Get a unique perspective of the Iguazu Falls on a panoramic helicopter flight, enjoying the waterfalls and surrounding forest from a privileged angle."
+    },
+    "WONDER_PARK": {
+      "TITLE": "Wonder Park",
+      "DESC": "Have fun in a theme park combining attractions like Movie Cars and Water Show, offering entertainment for the whole family."
+    }
+  },
+  "PACKAGES": {
+    "AVENTURA_CATARATAS": {
+      "TITLE": "Adventure at the Falls",
+      "DESC": "Explore the Iguazu Falls in an exciting way, combining trails, boat rides, and a panoramic flight over the waterfalls.",
+      "ACTIVITIES": [
+        "Macuco Safari",
+        "Iguazu Falls Trail",
+        "Helicopter Flight over the Falls"
+      ]
+    },
+    "EXPLORADOR_NATUREZA": {
+      "TITLE": "Nature Explorer",
+      "DESC": "Discover the biodiversity of Foz do Iguaçu on a tour combining the region's preserved fauna and flora.",
+      "ACTIVITIES": [
+        "Bird Park",
+        "Itaipu Biological Refuge",
+        "Iguazu Falls (Brazilian side)"
+      ]
+    },
+    "ADRENALINA_TOTAL": {
+      "TITLE": "Total Adrenaline",
+      "DESC": "A package made for adventure lovers, with activities full of emotion and direct contact with nature.",
+      "ACTIVITIES": [
+        "Macuco Safari",
+        "Helicopter Flight over the Falls",
+        "Kattamaram II"
+      ]
+    },
+    "HISTORIA_CULTURA": {
+      "TITLE": "History and Culture of Foz",
+      "DESC": "Discover the cultural and religious richness of Foz do Iguaçu by visiting historical temples and monuments.",
+      "ACTIVITIES": [
+        "Buddhist Temple",
+        "Arab Mosque",
+        "Three Borders Landmark"
+      ]
+    },
+    "NOITE_ARGENTINA": {
+      "TITLE": "Argentine Night",
+      "DESC": "Enjoy Argentine culture with a themed dinner and a tango and folklore show in Puerto Iguazú.",
+      "ACTIVITIES": [
+        "Dinner and Tango Show",
+        "Puerto Iguazú Casino (optional)"
+      ]
+    },
+    "DESCOBRINDO_ARGENTINA": {
+      "TITLE": "Discovering Argentina",
+      "DESC": "Explore the charms of the Argentine side of Foz do Iguaçu, including the impressive Argentine Falls, a tour through the historic center of Puerto Iguazú, and a gastronomic experience with typical dishes.",
+      "ACTIVITIES": [
+        "Iguazu Falls - Argentine Side",
+        "Argentina City Tour",
+        "Lunch in Puerto Iguazú",
+        "Duty Free Shop"
+      ]
+    },
+    "AVENTURAS_PY": {
+      "TITLE": "Adventures in Paraguay",
+      "DESC": "Discover a cultural and natural side of Paraguay that goes beyond shopping, visiting historical monuments, impressive waterfalls, and traditional markets.",
+      "ACTIVITIES": [
+        "Paraguay City Tour",
+        "Monday Falls",
+        "San Blas Cathedral",
+        "San Lucas Church",
+        "Republic Lake",
+        "Abasto Market"
+      ]
+    },
+    "TOUR_FRONTEIRAS": {
+      "TITLE": "Three Borders Tour",
+      "DESC": "Visit the main tourist spots of three countries in a single day, exploring Brazil, Paraguay, and Argentina.",
+      "ACTIVITIES": [
+        "Foz do Iguaçu City Tour",
+        "Paraguay City Tour",
+        "Three Borders Landmark"
+      ]
+    },
+    "DIVERSAO_FAMILIA": {
+      "TITLE": "Family Fun",
+      "DESC": "Ideal package for the whole family, combining educational and interactive attractions for children and adults.",
+      "ACTIVITIES": [
+        "Bird Park",
+        "Dreams Complex",
+        "Wonder Park"
+      ]
+    },
+    "ROMANCE_CATARATAS": {
+      "TITLE": "Romance at the Falls",
+      "DESC": "A perfect package for couples who desire special moments in a heavenly setting.",
+      "ACTIVITIES": [
+        "Sunset at the Iguazu National Park",
+        "Dinner at Kattamaram II",
+        "Night at the Falls"
+      ]
+    },
+    "LUA_MEL": {
+      "TITLE": "Honeymoon in Foz",
+      "DESC": "Celebrate love with an exclusive package including unique and unforgettable experiences.",
+      "ACTIVITIES": [
+        "Helicopter Flight over the Falls",
+        "Romantic dinner",
+        "Night tour at the Three Borders Landmark"
+      ]
+    },
+    "FOZ_3_DIAS": {
+      "TITLE": "Foz do Iguaçu 3 Days and 2 Nights",
+      "DESC": "Discover the main tourist spots of Foz do Iguaçu on a 3-day trip.",
+      "ACTIVITIES": [
+        "Iguazu Falls",
+        "Panoramic Itaipu",
+        "Bird Park",
+        "Themed Dinner (optional)"
+      ]
+    },
+    "FOZ_5_DIAS": {
+      "TITLE": "Foz do Iguaçu 5 Days and 4 Nights",
+      "DESC": "A complete itinerary for those who want to explore Foz do Iguaçu calmly and enjoy all attractions.",
+      "ACTIVITIES": [
+        "Iguazu Falls",
+        "Macuco Safari",
+        "Bird Park",
+        "Illuminated Itaipu",
+        "Argentine Night",
+        "Paraguay City Tour"
+      ]
+    }
+  },
+  "CAROUSEL": {
+    "ITAIPU": {
+      "TITLE": "Itaipu Hydroelectric Plant",
+      "DESC": "Known for its night light shows and the views from the central lookout point."
+    },
+    "AQUAFOZ": {
+      "TITLE": "AquaFoz - Foz do Iguaçu Aquarium",
+      "DESC": "South America's newest aquarium! An immersive journey through 3.3 million liters of water with over 300 species, an underwater tunnel, and giant tanks connecting the Iguaçu and Paraná rivers to the oceans. Conservation, education, and nature all in one place!"
+    },
+    "CATARATAS": {
+      "TITLE": "Iguazu Falls",
+      "DESC": "The Iguazu Falls are a set of waterfalls on the Iguaçu River, located on the border between Brazil and Argentina. They are considered one of the Seven New Wonders of Nature."
+    },
+    "MARCO": {
+      "TITLE": "Three Borders Landmark",
+      "DESC": "A unique attraction in the world. Three countries, two rivers, a spectacular view of the borders, rich culture, singular geography between nations, and many stories!"
+    }
+  }
+}

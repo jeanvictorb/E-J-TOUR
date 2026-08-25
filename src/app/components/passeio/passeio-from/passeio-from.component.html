@@ -1,0 +1,95 @@
+<div class="tours-wrapper">
+  
+  <!-- Cabeçalho da Seção -->
+  <div class="tours-header">
+    <h1>{{ 'PASSEIOS_PAGE.HEADER_TITLE' | translate }}</h1>
+    <p>
+      {{ 'PASSEIOS_PAGE.HEADER_DESC' | translate }}
+    </p>
+  </div>
+
+  <!-- Barra de Busca -->
+  <div class="search-bar">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm"
+      (input)="filterTours()"
+      [placeholder]="'PASSEIOS_PAGE.SEARCH_PLACEHOLDER' | translate"
+    />
+    <i class="fas fa-search search-icon"></i>
+  </div>
+  <div class="tours-categories">
+    <div 
+      class="category-tag"
+      [class.active]="activeCategory === 'todos'"
+      (click)="filterByCategory('todos')"
+    >
+      {{ 'PASSEIOS_PAGE.CATEGORY_ALL' | translate }} <span class="count">{{ cardList.length }}</span>
+    </div>
+    <div 
+      class="category-tag"
+      [class.active]="activeCategory === 'natureza'"
+      (click)="filterByCategory('natureza')"
+    >
+      {{ 'PASSEIOS_PAGE.CATEGORY_NATURE' | translate }} <span class="count">{{ getCategoryCount('natureza') }}</span>
+    </div>
+    <div 
+      class="category-tag"
+      [class.active]="activeCategory === 'cultura'"
+      (click)="filterByCategory('cultura')"
+    >
+      {{ 'PASSEIOS_PAGE.CATEGORY_CULTURE' | translate }} <span class="count">{{ getCategoryCount('cultura') }}</span>
+    </div>
+    <div 
+      class="category-tag"
+      [class.active]="activeCategory === 'aventura'"
+      (click)="filterByCategory('aventura')"
+    >
+      {{ 'PASSEIOS_PAGE.CATEGORY_ADVENTURE' | translate }} <span class="count">{{ getCategoryCount('aventura') }}</span>
+    </div>
+  </div>
+  
+
+  <!-- Contador de Resultados -->
+  <div class="results-count" *ngIf="searchTerm">
+    {{ 'PASSEIOS_PAGE.RESULTS_COUNT_SHOWING' | translate }} <span>{{ filteredCardList.length }}</span> {{ 'PASSEIOS_PAGE.RESULTS_COUNT_OF' | translate }} <span>{{ cardList.length }}</span> {{ 'PASSEIOS_PAGE.RESULTS_COUNT_TOURS' | translate }}
+  </div>
+
+  <!-- Grid de Passeios -->
+  <div class="cards" *ngIf="filteredCardList.length > 0">
+    <ng-container *ngFor="let card of filteredCardList">
+      <app-card 
+        [titulo]="card.titulo"
+        [descricao]="card.descricao"
+        [imagem]="card.imagem"
+      >
+      </app-card>
+    </ng-container>
+  </div>
+
+  <!-- Mensagem quando não há resultados -->
+  <div class="no-results" *ngIf="filteredCardList.length === 0 && searchTerm">
+    <div class="no-results-icon">🔍</div>
+    <h3>{{ 'PASSEIOS_PAGE.NO_RESULTS_TITLE' | translate }}</h3>
+    <p>{{ 'PASSEIOS_PAGE.NO_RESULTS_DESC' | translate }} "{{ searchTerm }}"</p>
+    <button class="clear-search-btn" (click)="clearSearch()">
+      {{ 'PASSEIOS_PAGE.CLEAR_SEARCH' | translate }}
+    </button>
+  </div>
+
+  <div class="tours-loading" *ngIf="isLoading">
+    <div class="skeleton-card" *ngFor="let i of [1,2,3,4,5,6]"></div>
+  </div>
+  
+
+  <!-- Botão Voltar ao Topo -->
+  <button 
+    class="back-to-top" 
+    [class.visible]="showBackToTop"
+    (click)="scrollToTop()"
+    aria-label="Voltar ao topo"
+  >
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+</div>

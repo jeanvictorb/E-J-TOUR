@@ -1,0 +1,51 @@
+<div class="meu-carrossel">
+  <ngb-carousel
+    [interval]="3000"
+    [pauseOnHover]="true"
+    [wrap]="true"
+    [keyboard]="true"
+  >
+    <ng-template ngbSlide>
+      <img
+        src="./assets/img/itaipu.webp"
+        alt="Slide 1"
+      />
+      <div class="carousel-caption">
+        <h5>{{ 'CAROUSEL.ITAIPU.TITLE' | translate }}</h5>
+        <p>{{ 'CAROUSEL.ITAIPU.DESC' | translate }}</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img
+        src="./assets/img/acquafoz2.webp"
+        alt="Slide 4"
+      />
+      <div class="carousel-caption">
+        <h5>{{ 'CAROUSEL.AQUAFOZ.TITLE' | translate }}</h5>
+        <p>{{ 'CAROUSEL.AQUAFOZ.DESC' | translate }}</p>
+      </div>
+
+    </ng-template>
+    <ng-template ngbSlide>
+      <img
+        src="./assets/img/waterfalls-of-iguacu.webp"
+        alt="Slide 2"
+      />
+      <div class="carousel-caption">
+        <h5>{{ 'CAROUSEL.CATARATAS.TITLE' | translate }}</h5>
+        <p>{{ 'CAROUSEL.CATARATAS.DESC' | translate }}</p>
+      </div>
+    </ng-template>
+
+    <ng-template ngbSlide>
+      <img
+        src="./assets/img/foto_marco_tres_fronteiras_novo_4.webp"
+        alt="Slide 3"
+      />
+      <div class="carousel-caption">
+        <h5>{{ 'CAROUSEL.MARCO.TITLE' | translate }}</h5>
+        <p>{{ 'CAROUSEL.MARCO.DESC' | translate }}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

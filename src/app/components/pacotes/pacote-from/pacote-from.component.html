@@ -1,0 +1,57 @@
+<div class="packages-wrapper">
+  
+  <!-- Cabeçalho da Seção -->
+  <div class="packages-header">
+    <h1>{{ 'PACOTES_PAGE.HEADER_TITLE' | translate }}</h1>
+    <p>
+      {{ 'PACOTES_PAGE.HEADER_DESC' | translate }}
+    </p>
+  </div>
+
+  <!-- Filtros de Categoria (Opcional) -->
+  <!-- Descomente se quiser adicionar filtros
+  <div class="packages-filters">
+    <button class="filter-btn active">Todos</button>
+    <button class="filter-btn">Aventura</button>
+    <button class="filter-btn">Família</button>
+    <button class="filter-btn">Romântico</button>
+    <button class="filter-btn">Cultural</button>
+  </div>
+  -->
+
+  <!-- Grid de Pacotes -->
+  <div class="cardspackage">
+    <ng-container *ngFor="let card of cardpackage; let i = index">
+      <app-card
+        [titulo]="card.titulo"
+        [descricao]="card.descricao"
+        [atividades]="card.atividades.join(', ')"
+        [imagem]="card.imagem"
+      >
+        <!-- Badge opcional - descomente para usar -->
+        <!-- 
+        <div class="package-badge" *ngIf="i === 0">Novo</div>
+        <div class="package-badge popular" *ngIf="i === 1">Popular</div>
+        -->
+      </app-card>
+    </ng-container>
+  </div>
+
+  <!-- CTA (Call to Action) -->
+  <div class="packages-cta">
+    <h2>{{ 'PACOTES_PAGE.CTA_TITLE' | translate }}</h2>
+    <p>
+      {{ 'PACOTES_PAGE.CTA_DESC' | translate }}
+    </p>
+    <a 
+      href="https://api.whatsapp.com/send?phone=5545999492697&text=Olá,%20gostaria%20de%20montar%20um%20pacote%20personalizado"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="cta-button"
+    >
+      <i class="fab fa-whatsapp"></i>
+      {{ 'PACOTES_PAGE.CTA_BUTTON' | translate }}
+    </a>
+  </div>
+
+</div>

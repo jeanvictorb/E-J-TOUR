@@ -1,0 +1,21 @@
+<div class="cardcomments">
+    <div class="cardbody" *ngFor="let comment of comments; let i = index">
+          <div class="card">
+                <!-- Avatar com inicial do nome (opcional) -->
+                <div class="card-avatar">
+                  {{ comment.titulo.charAt(0) }}
+                </div>
+
+                <!-- Nome do cliente -->
+                <h3 class="card-title">{{ comment.titulo }}</h3>
+                
+                <!-- Feedback -->
+                <p class="card-description">{{ comment.descricao }}</p>
+
+                <!-- Estrelas de avaliação -->
+                <div class="card-rating">
+                  <span class="star" *ngFor="let filled of starsArray(comment.rating)">{{ filled ? '⭐' : '☆' }}</span>
+                </div>
+          </div>
+    </div>
+</div>

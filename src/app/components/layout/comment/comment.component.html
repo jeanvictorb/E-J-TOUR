@@ -1,0 +1,51 @@
+<div class="feedback-form-container">
+  <h2>{{ 'COMMENT_FORM.TITLE' | translate }}</h2>
+  <p class="subtitle">{{ 'COMMENT_FORM.SUBTITLE' | translate }}</p>
+
+  <!-- Campo de Nome -->
+  <input 
+    [(ngModel)]="nameComment" 
+    [placeholder]="'COMMENT_FORM.NAME_PLACEHOLDER' | translate" 
+    type="text"
+    maxlength="50"
+  />
+
+  <!-- Campo de Feedback -->
+  <textarea 
+    [(ngModel)]="text" 
+    [placeholder]="'COMMENT_FORM.TEXT_PLACEHOLDER' | translate"
+    maxlength="500"
+  ></textarea>
+
+  <!-- Contador de caracteres (opcional) -->
+  <div class="char-counter" *ngIf="text.length > 0">
+    {{ text.length }}/500 {{ 'COMMENT_FORM.CHAR_COUNTER' | translate }}
+  </div>
+
+  <!-- Sistema de Avaliação -->
+  <div class="rating-stars">
+    <span 
+      class="star" 
+      *ngFor="let star of [1, 2, 3, 4, 5]"
+      [class.filled]="(hoverRating || rating) >= star" 
+      (mouseenter)="setHover(star)"
+      (mouseleave)="clearHover()" 
+      (click)="setRating(star)"
+    >
+      ★
+    </span>
+  </div>
+
+  <!-- Botão de Enviar -->
+  <button 
+    (click)="addComment()"
+    [disabled]="!nameComment || !text || rating === 0"
+  >
+    {{ 'COMMENT_FORM.SEND_BUTTON' | translate }}
+  </button>
+
+  <!-- Mensagem de ajuda -->
+  <p class="help-text">
+    {{ 'COMMENT_FORM.HELP_TEXT' | translate }}
+  </p>
+</div>

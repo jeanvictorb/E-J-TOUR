@@ -1,0 +1,443 @@
+// Container principal dos passeios
+.tours-wrapper {
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+  padding: 5rem 2rem;
+  min-height: 100vh;
+}
+
+// Cabeçalho da seção
+.tours-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInDown 0.8s ease;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #2f4538;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #6dbf4b 0%, #a5c79a 100%);
+      border-radius: 2px;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+}
+
+// Barra de busca
+.search-bar {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  position: relative;
+  animation: fadeIn 1s ease;
+
+  input {
+    width: 100%;
+    padding: 1rem 3.5rem 1rem 1.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    &:focus {
+      outline: none;
+      border-color: #a5c79a;
+      box-shadow: 0 0 0 4px rgba(165, 199, 154, 0.15), 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    &::placeholder {
+      color: #cbd5e0;
+    }
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a5c79a;
+    font-size: 1.2rem;
+    pointer-events: none;
+  }
+}
+
+// Contador de resultados
+.results-count {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #4a5568;
+  font-size: 1rem;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease;
+
+  span {
+    color: #2f4538;
+    font-weight: 700;
+  }
+}
+
+// Grid de cards
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  // Animação de entrada escalonada
+  app-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+
+    @for $i from 1 through 30 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.05}s;
+      }
+    }
+  }
+}
+
+// Mensagem quando não há resultados
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  animation: fadeIn 0.5s ease;
+
+  .no-results-icon {
+    font-size: 4rem;
+    color: #cbd5e0;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: #2f4538;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #718096;
+    margin-bottom: 2rem;
+  }
+
+  .clear-search-btn {
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #6dbf4b 0%, #a5c79a 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(109, 191, 75, 0.3);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(109, 191, 75, 0.4);
+    }
+  }
+}
+
+// Botão "Voltar ao topo"
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #6dbf4b 0%, #a5c79a 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(109, 191, 75, 0.4);
+  transition: all 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(100px);
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(109, 191, 75, 0.5);
+  }
+
+  i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Categorias/Tags (opcional)
+.tours-categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  animation: fadeIn 1s ease;
+
+  .category-tag {
+    padding: 0.6rem 1.5rem;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 25px;
+    color: #4a5568;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      border-color: #a5c79a;
+      color: #2f4538;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(165, 199, 154, 0.3);
+    }
+
+    &.active {
+      background: linear-gradient(135deg, #6dbf4b 0%, #a5c79a 100%);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 4px 15px rgba(109, 191, 75, 0.4);
+    }
+
+    .count {
+      display: inline-block;
+      margin-left: 0.5rem;
+      padding: 0.1rem 0.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// Loading skeleton
+.tours-loading {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  .skeleton-card {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 12px;
+    height: 400px;
+  }
+}
+
+// Animações
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// Responsivo - Tablet
+@media (max-width: 992px) {
+  .tours-wrapper {
+    padding: 4rem 1.5rem;
+  }
+
+  .tours-header {
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .search-bar {
+    margin-bottom: 2.5rem;
+  }
+}
+
+// Responsivo - Mobile
+@media (max-width: 768px) {
+  .tours-wrapper {
+    padding: 3rem 1rem;
+  }
+
+  .tours-header {
+    margin-bottom: 2.5rem;
+
+    h1 {
+      font-size: 2rem;
+
+      &::after {
+        width: 80px;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+  }
+
+  .search-bar {
+    margin-bottom: 2rem;
+
+    input {
+      padding: 0.9rem 3rem 0.9rem 1.2rem;
+      font-size: 0.95rem;
+    }
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .tours-categories {
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+
+    .category-tag {
+      padding: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  .back-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.3rem;
+  }
+
+  .no-results {
+    padding: 3rem 1rem;
+
+    .no-results-icon {
+      font-size: 3rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+// Responsivo - Mobile Pequeno
+@media (max-width: 480px) {
+  .tours-wrapper {
+    padding: 2rem 0.5rem;
+  }
+
+  .tours-header {
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+
+  .search-bar {
+    input {
+      padding: 0.8rem 2.8rem 0.8rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .search-icon {
+      right: 1rem;
+      font-size: 1.1rem;
+    }
+  }
+
+  .cards {
+    gap: 1.2rem;
+  }
+
+  .results-count {
+    font-size: 0.9rem;
+  }
+}
+
+// Efeito de hover global suave
+* {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}

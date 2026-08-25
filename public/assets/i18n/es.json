@@ -1,0 +1,329 @@
+{
+  "LANG_NAME": "Español",
+  "MENU": {
+    "BRAND": "E&J Turismo",
+    "PACOTES": "Paquetes",
+    "PASSEIOS": "Paseos"
+  },
+  "HOME": {
+    "TOP_TOURS_TITLE": "Paseos más deseados",
+    "PACKAGES_TITLE": "Paquetes Disponibles",
+    "TRANSPORT_TITLE": "Transportes Disponibles",
+    "VAN_TITLE": "Van",
+    "VAN_DESC": "Para grupos pequeños, nuestra van ofrece comodidad y practicidad, con capacidad para hasta 15 personas. Ideal para paseos exclusivos y servicios personalizados.",
+    "CAR_TITLE": "Auto Ejecutivo",
+    "CAR_DESC": "Para un transporte más privado y lujoso, ofrecemos autos ejecutivos con toda la comodidad, perfectos para viajes de negocios o paseos especiales.",
+    "BUS_TITLE": "Autobús",
+    "BUS_DESC": "Para grupos grandes, nuestro autobús es la elección perfecta. Con capacidad para hasta 40 personas, ofrece comodidad, seguridad y espacio para que todos disfruten del viaje.",
+    "HISTORIA_TITLE": "Historia y Cultura",
+    "HISTORIA_DESC": "Descubre la riqueza cultural y religiosa de Foz do Iguaçu visitando templos y monumentos históricos",
+    "COMPRAS_TITLE": "Compras en Paraguay",
+    "COMPRAS_DESC": "Vive un recorrido de compras hecho a tu medida en Ciudad del Este. En este paseo, un profesional experimentado estará a tu lado, orientándote y ayudándote durante todo el proceso, para que aproveches al máximo y con tranquilidad cada momento de tus compras."
+  },
+  "PACOTES_PAGE": {
+    "HEADER_TITLE": "Nuestros Paquetes",
+    "HEADER_DESC": "Elige el paquete perfecto para tu aventura en Foz do Iguaçu. ¡Experiencias inolvidables te esperan!",
+    "CTA_TITLE": "¿No encontraste el paquete ideal?",
+    "CTA_DESC": "¡Contáctanos y arma un itinerario personalizado para el viaje de tus sueños!",
+    "CTA_BUTTON": "Hablar con Nosotros"
+  },
+  "PASSEIOS_PAGE": {
+    "HEADER_TITLE": "Nuestros Paseos",
+    "HEADER_DESC": "Descubre las maravillas de Foz do Iguaçu con nuestros paseos exclusivos. ¡Aventura, cultura y naturaleza te esperan!",
+    "SEARCH_PLACEHOLDER": "Buscar paseos... (ej: Cataratas, Itaipú, Parque)",
+    "CATEGORY_ALL": "Todos",
+    "CATEGORY_NATURE": "Naturaleza",
+    "CATEGORY_CULTURE": "Cultura",
+    "CATEGORY_ADVENTURE": "Aventura",
+    "RESULTS_COUNT_SHOWING": "Mostrando",
+    "RESULTS_COUNT_OF": "de",
+    "RESULTS_COUNT_TOURS": "paseos",
+    "NO_RESULTS_TITLE": "Ningún paseo encontrado",
+    "NO_RESULTS_DESC": "No encontramos paseos con el término",
+    "CLEAR_SEARCH": "Limpiar búsqueda"
+  },
+  "CARD": {
+    "WANT_TO_KNOW_MORE": "Quiero saber más"
+  },
+  "COMMENT_FORM": {
+    "TITLE": "Deja tu Comentario",
+    "SUBTITLE": "¡Tu opinión es muy importante para nosotros! ✨",
+    "NAME_PLACEHOLDER": "Tu nombre",
+    "TEXT_PLACEHOLDER": "Cuéntanos sobre tu experiencia...",
+    "CHAR_COUNTER": "caracteres",
+    "SEND_BUTTON": "Enviar Comentario",
+    "HELP_TEXT": "Por favor, califica tu experiencia con las estrellas de arriba",
+    "NAME_REQUIRED_TITLE": "Nombre obligatorio",
+    "NAME_REQUIRED_TEXT": "Por favor, ingresa tu nombre",
+    "FEEDBACK_REQUIRED_TITLE": "Comentario obligatorio",
+    "FEEDBACK_REQUIRED_TEXT": "Por favor, escribe tu comentario",
+    "RATING_REQUIRED_TITLE": "Calificación obligatoria",
+    "RATING_REQUIRED_TEXT": "Por favor, califica tu experiencia con las estrellas",
+    "TOO_SHORT_TITLE": "Comentario muy corto",
+    "TOO_SHORT_TEXT": "Por favor, escribe al menos 10 caracteres",
+    "SUCCESS_TITLE": "¡Comentario enviado!",
+    "SUCCESS_TEXT": "¡Muchas gracias por tu evaluación! 🎉",
+    "ERROR_TITLE": "Error al enviar",
+    "ERROR_TEXT": "No fue posible enviar tu comentario. Inténtalo de nuevo.",
+    "RATING_TEXTS": {
+      "VERY_UNSATISFIED": "Muy insatisfecho",
+      "UNSATISFIED": "Insatisfecho",
+      "NEUTRAL": "Neutral",
+      "SATISFIED": "Satisfecho",
+      "VERY_SATISFIED": "Muy satisfecho",
+      "RATE_EXPERIENCE": "Califica tu experiencia"
+    }
+  },
+  "FOOTER": {
+    "SOCIAL_TEXT": "Conéctate con nosotros en redes sociales:",
+    "ABOUT_TEXT": "Desde hace más de 10 años, E&J Tour transforma paseos en experiencias inolvidables en Foz do Iguaçu. Nuestro compromiso es garantizar comodidad, seguridad y la mejor experiencia para cada visitante. Con guías experimentados y itinerarios personalizados, te llevamos a los principales puntos turísticos, como las Cataratas del Iguazú, la Represa de Itaipú y la Triple Frontera. ¡Viaja con nosotros y descubre Foz do Iguaçu de una manera única!",
+    "CONTACT_TITLE": "Contacto",
+    "COPYRIGHT": "Copyright E&J Tour"
+  },
+  "TOURS": {
+    "AQUAFOZ": {
+      "TITLE": "AquaFoz - Acuario de Foz do Iguaçu",
+      "DESC": "Explora el acuario más grande de la región con más de 300 especies de agua dulce y salada en 3,3 millones de litros. Un viaje desde los ríos Iguaçu y Paraná hasta los océanos, con túnel submarino y experiencias inmersivas inolvidables."
+    },
+    "CATARATAS_BR": {
+      "TITLE": "Cataratas del Iguazú - Lado Brasileño",
+      "DESC": "Explora las impresionantes cascadas de las Cataratas del Iguazú desde el lado brasileño, con vistas panorámicas y senderos que brindan una experiencia inolvidable."
+    },
+    "ITAIPU_CIRCUITO": {
+      "TITLE": "Circuito Itaipu",
+      "DESC": "Explora la Represa de Itaipu en un circuito que permite conocer de cerca sus operaciones y su importancia para la generación de energía."
+    },
+    "CITY_TOUR_FOZ": {
+      "TITLE": "City Tour Foz do Iguaçu",
+      "DESC": "Conoce los principales puntos turísticos de Foz do Iguaçu, incluyendo visitas al Templo Budista, Mezquita Omar Ibn Al-Khattab y el Hito de las Tres Fronteras, explorando la diversidad cultural e histórica de la ciudad."
+    },
+    "CITY_TOUR_PY": {
+      "TITLE": "City Tour Paraguay",
+      "DESC": "Descubre un lado diferente de Paraguay, visitando puntos culturales e históricos más allá de las tradicionales compras en Ciudad del Este."
+    },
+    "COMPLEXO_DREAMS": {
+      "TITLE": "Complejo Dreams",
+      "DESC": "Explora un conjunto de atracciones que incluye el Museo de Cera, Maravillas del Mundo, Valle de los Dinosaurios y Dreams Motor Show, ofreciendo experiencias interactivas y educativas para toda la familia."
+    },
+    "ICE_BAR": {
+      "TITLE": "Dreams Ice Bar",
+      "DESC": "Experimenta un bar hecho completamente de hielo, con elaboradas esculturas y decoraciones, donde puedes disfrutar de bebidas servidas en vasos de hielo en una atmósfera helada e impresionante."
+    },
+    "ITAIPU_ILUMINADA": {
+      "TITLE": "Itaipu Iluminada",
+      "DESC": "Disfruta de un espectáculo nocturno donde la represa de Itaipu se ilumina con más de 747 reflectores y 112 luminarias, creando una experiencia visual impresionante."
+    },
+    "ITAIPU_PANORAMICA": {
+      "TITLE": "Itaipu Panorámica",
+      "DESC": "Conoce la grandiosidad de la Represa de Itaipu en un tour que ofrece vistas completas de la represa, el vertedero y el lago de Itaipu desde puntos de observación estratégicos."
+    },
+    "REFUGIO": {
+      "TITLE": "Refugio Biológico Itaipu",
+      "DESC": "Explora la riqueza de la biodiversidad local en senderos ecológicos que atraviesan áreas de preservación, conociendo proyectos de conservación ambiental y diversas especies de plantas y animales."
+    },
+    "KATTAMARAM": {
+      "TITLE": "Kattamaram II",
+      "DESC": "Navega por las aguas del Río Iguazú en un lujoso barco, disfrutando de vistas panorámicas de las costas brasileñas, argentinas y paraguayas, con opción de buffet a bordo."
+    },
+    "MACUCO": {
+      "TITLE": "Macuco Safari",
+      "DESC": "Aventúrate en un tour que combina un sendero en el bosque y navegación en barco hasta las cascadas del Iguazú, brindando una experiencia emocionante cerca de las aguas."
+    },
+    "MARAVILHAS": {
+      "TITLE": "Maravillas del Mundo",
+      "DESC": "Haz un viaje por los mayores monumentos del planeta en un parque temático que presenta réplicas detalladas de iconos como la Torre Eiffel, el Cristo Redentor y la Estatua de la Libertad."
+    },
+    "MESQUITA": {
+      "TITLE": "Mezquita Árabe",
+      "DESC": "Visita la Mezquita Omar Ibn Al-Khatab, un punto turístico que destaca la diversidad cultural de Foz do Iguaçu, con arquitectura impresionante y un ambiente de serenidad."
+    },
+    "MOTOR_SHOW": {
+      "TITLE": "Motor Show",
+      "DESC": "Disfruta de una combinación única de motocicletas, música en vivo y gastronomía en un entorno temático que encanta a los entusiastas de las motos y la cultura."
+    },
+    "MUSEU_CERA": {
+      "TITLE": "Museo de Cera",
+      "DESC": "Encuentra réplicas realistas de figuras icónicas de la cultura pop, historia y entretenimiento en escenarios interactivos que permiten fotos memorables."
+    },
+    "NOITE_ARG": {
+      "TITLE": "Noche Argentina - Cena y Show",
+      "DESC": "Disfruta de la cultura argentina en una noche especial con cena típica y presentaciones de tango y folclore en Puerto Iguazú."
+    },
+    "NOITE_CATARATAS": {
+      "TITLE": "Noche en las Cataratas",
+      "DESC": "Experimenta una visita nocturna a las Cataratas del Iguazú, contemplando las cascadas iluminadas por la luna y luces especiales, en una atmósfera mística y envolvente."
+    },
+    "PARQUE_AVES": {
+      "TITLE": "Parque de las Aves",
+      "DESC": "Visita un santuario de conservación con más de 1.300 aves de 150 especies diferentes, caminando por senderos que pasan por pajareras gigantes e interactuando con aves tropicales en su hábitat natural."
+    },
+    "POR_SOL_CATARATAS": {
+      "TITLE": "Puesta de Sol en las Cataratas",
+      "DESC": "Vive la magia de la puesta de sol en las Cataratas del Iguazú, cuando las aguas reflejan los tonos dorados y anaranjados del sol, brindando una experiencia tranquila e inolvidable."
+    },
+    "POR_SOL_MARCO": {
+      "TITLE": "Puesta de Sol en el Hito de las Tres Fronteras",
+      "DESC": "Disfruta de una de las más bellas puestas de sol en Foz do Iguaçu, con vistas a los ríos Iguazú y Paraná, mientras disfrutas de presentaciones culturales y gastronomía local."
+    },
+    "MOVIES_CAR": {
+      "TITLE": "Movies Car",
+      "DESC": "¡Vive la magia del cine en uno de los autocines temáticos más grandes de Brasil! Movies Car ofrece una experiencia única con shows, personajes y películas inolvidables en un escenario inspirado en Hollywood."
+    },
+    "TEMPLO_BUDISTA": {
+      "TITLE": "Templo Budista",
+      "DESC": "Visita el Templo Budista de Foz do Iguaçu, admira las estatuas de Buda y la arquitectura tradicional mientras aprendes sobre la filosofía budista en un ambiente de paz y serenidad."
+    },
+    "HELICOPTERO": {
+      "TITLE": "Vuelo en Helicóptero sobre las Cataratas",
+      "DESC": "Obtén una perspectiva única de las Cataratas del Iguazú en un vuelo panorámico en helicóptero, disfrutando de las cascadas y el bosque circundante desde un ángulo privilegiado."
+    },
+    "WONDER_PARK": {
+      "TITLE": "Wonder Park",
+      "DESC": "Diviértete en un parque temático que combina atracciones como Movie Cars y Water Show, ofreciendo entretenimiento para toda la familia."
+    }
+  },
+  "PACKAGES": {
+    "AVENTURA_CATARATAS": {
+      "TITLE": "Aventura en las Cataratas",
+      "DESC": "Explora las Cataratas del Iguazú de forma emocionante, combinando senderos, paseos en barco y un vuelo panorámico sobre las cascadas.",
+      "ACTIVITIES": [
+        "Macuco Safari",
+        "Sendero en las Cataratas del Iguazú",
+        "Vuelo en Helicóptero sobre las Cataratas"
+      ]
+    },
+    "EXPLORADOR_NATUREZA": {
+      "TITLE": "Explorador de la Naturaleza",
+      "DESC": "Conoce la biodiversidad de Foz do Iguaçu en un tour que combina la fauna y flora preservadas de la región.",
+      "ACTIVITIES": [
+        "Parque de las Aves",
+        "Refugio Biológico Itaipu",
+        "Cataratas del Iguazú (lado brasileño)"
+      ]
+    },
+    "ADRENALINA_TOTAL": {
+      "TITLE": "Adrenalina Total",
+      "DESC": "Un paquete hecho para los amantes de la aventura, con actividades llenas de emoción y contacto directo con la naturaleza.",
+      "ACTIVITIES": [
+        "Macuco Safari",
+        "Vuelo en Helicóptero sobre las Cataratas",
+        "Kattamaram II"
+      ]
+    },
+    "HISTORIA_CULTURA": {
+      "TITLE": "Historia y Cultura de Foz",
+      "DESC": "Descubre la riqueza cultural y religiosa de Foz do Iguaçu visitando templos y monumentos históricos.",
+      "ACTIVITIES": [
+        "Templo Budista",
+        "Mezquita Árabe",
+        "Hito de las Tres Fronteras"
+      ]
+    },
+    "NOITE_ARGENTINA": {
+      "TITLE": "Noche Argentina",
+      "DESC": "Disfruta de la cultura argentina con una cena temática y un show de tango y folclore en Puerto Iguazú.",
+      "ACTIVITIES": [
+        "Cena y Show de Tango",
+        "Casino de Puerto Iguazú (opcional)"
+      ]
+    },
+    "DESCOBRINDO_ARGENTINA": {
+      "TITLE": "Descubriendo Argentina",
+      "DESC": "Explora los encantos del lado argentino de Foz do Iguaçu, incluyendo las impresionantes Cataratas Argentinas, un tour por el centro histórico de Puerto Iguazú y una experiencia gastronómica con platos típicos.",
+      "ACTIVITIES": [
+        "Cataratas del Iguazú - Lado Argentino",
+        "City Tour Argentina",
+        "Almuerzo en Puerto Iguazú",
+        "Duty Free Shop"
+      ]
+    },
+    "AVENTURAS_PY": {
+      "TITLE": "Aventuras en Paraguay",
+      "DESC": "Descubre un lado cultural y natural de Paraguay que va más allá de las compras, visitando monumentos históricos, impresionantes cascadas y mercados tradicionales.",
+      "ACTIVITIES": [
+        "City Tour Paraguay",
+        "Saltos del Monday",
+        "Catedral de San Blas",
+        "Iglesia San Lucas",
+        "Lago de la República",
+        "Mercado de Abasto"
+      ]
+    },
+    "TOUR_FRONTEIRAS": {
+      "TITLE": "Tour Tres Fronteras",
+      "DESC": "Visita los principales puntos turísticos de tres países en un solo día, explorando Brasil, Paraguay y Argentina.",
+      "ACTIVITIES": [
+        "City Tour Foz do Iguaçu",
+        "City Tour Paraguay",
+        "Hito de las Tres Fronteras"
+      ]
+    },
+    "DIVERSAO_FAMILIA": {
+      "TITLE": "Diversión en Familia",
+      "DESC": "Paquete ideal para toda la familia, combinando atracciones educativas e interactivas para niños y adultos.",
+      "ACTIVITIES": [
+        "Parque de las Aves",
+        "Complejo Dreams",
+        "Wonder Park"
+      ]
+    },
+    "ROMANCE_CATARATAS": {
+      "TITLE": "Romance en las Cataratas",
+      "DESC": "Un paquete perfecto para parejas que desean momentos especiales en un escenario paradisíaco.",
+      "ACTIVITIES": [
+        "Puesta de Sol en el Parque Nacional do Iguaçu",
+        "Cena en Kattamaram II",
+        "Noche en las Cataratas"
+      ]
+    },
+    "LUA_MEL": {
+      "TITLE": "Luna de Miel en Foz",
+      "DESC": "Celebra el amor con un paquete exclusivo que incluye experiencias únicas e inolvidables.",
+      "ACTIVITIES": [
+        "Vuelo en Helicóptero sobre las Cataratas",
+        "Cena romántica",
+        "Tour nocturno en el Hito de las Tres Fronteras"
+      ]
+    },
+    "FOZ_3_DIAS": {
+      "TITLE": "Foz do Iguaçu 3 Días y 2 Noches",
+      "DESC": "Descubre los principales puntos turísticos de Foz do Iguaçu en un viaje de 3 días.",
+      "ACTIVITIES": [
+        "Cataratas del Iguazú",
+        "Itaipu Panorámica",
+        "Parque de las Aves",
+        "Cena Temática (opcional)"
+      ]
+    },
+    "FOZ_5_DIAS": {
+      "TITLE": "Foz do Iguaçu 5 Días y 4 Noches",
+      "DESC": "Un itinerario completo para quienes quieren explorar Foz do Iguaçu con calma y disfrutar de todas las atracciones.",
+      "ACTIVITIES": [
+        "Cataratas del Iguazú",
+        "Macuco Safari",
+        "Parque de las Aves",
+        "Itaipu Iluminada",
+        "Noche Argentina",
+        "City Tour Paraguay"
+      ]
+    }
+  },
+  "CAROUSEL": {
+    "ITAIPU": {
+      "TITLE": "Represa Hidroeléctrica de Itaipú",
+      "DESC": "Conocida por sus espectáculos de luces nocturnos y las vistas desde el mirador central."
+    },
+    "AQUAFOZ": {
+      "TITLE": "AquaFoz - Acuario de Foz do Iguaçu",
+      "DESC": "¡El acuario más nuevo de Sudamérica! Un recorrido inmersivo por 3,3 millones de litros de agua con más de 300 especies, túnel subacuático y tanques gigantes que conectan los ríos Iguazú y Paraná con los océanos. ¡Conservación, educación y naturaleza en un solo lugar!"
+    },
+    "CATARATAS": {
+      "TITLE": "Cataratas del Iguazú",
+      "DESC": "Las Cataratas del Iguazú son un conjunto de saltos de agua en el río Iguazú, ubicadas en la frontera entre Brasil y Argentina. Son consideradas una de las Siete Nuevas Maravillas de la Naturaleza."
+    },
+    "MARCO": {
+      "TITLE": "Hito de las Tres Fronteras",
+      "DESC": "Un atractivo único en el mundo. Tres países, dos ríos, vista espectacular de las fronteras, riquísima cultura, geografía singular entre naciones, ¡y muchas historias!"
+    }
+  }
+}

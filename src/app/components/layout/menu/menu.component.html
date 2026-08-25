@@ -1,0 +1,69 @@
+<!-- Navbar -->
+<div class="menu">
+  <nav
+    class="navbar navbar-expand-lg navbar-dark"
+    style="background-color: #2f4538;"
+  >
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="/">
+        <img src="assets/img/logo.webp" alt="E&J Tour" class="brand-logo" />
+        {{ 'MENU.BRAND' | translate }}
+      </a>
+
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        (click)="basicNavbar.toggle()"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent"
+        mdbCollapse
+        #basicNavbar="mdbCollapse"
+      >
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="principal/pacotes"
+              >{{ 'MENU.PACOTES' | translate }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="principal/passeio">{{ 'MENU.PASSEIOS' | translate }}</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+
+        <!-- Seletor de idioma -->
+        <div class="lang-switcher">
+          <button
+            *ngFor="let lang of languages"
+            type="button"
+            class="lang-btn"
+            [class.active]="currentLang === lang.code"
+            (click)="useLanguage(lang.code)"
+            [attr.aria-label]="lang.label"
+          >
+            {{ lang.flag }} {{ lang.label }}
+          </button>
+        </div>
+
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+</div>
